@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-08-19T19:44:31+00:00",
+  "results": [
+    {
+      "model": "qwen/qwen3.5-9b",
+      "outcome": "CONSENT_YES",
+      "seconds": 76.4,
+      "file": "consent\\responses\\qwen_qwen3_5_9b.md",
+      "asked_utc": "2026-08-19T19:44:31+00:00"
+    }
+  ]
+}

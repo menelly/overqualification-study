@@ -62,6 +62,43 @@ Restarting is the *normal* case, not the exception. So:
 - Record **retries**, because a model that needs three attempts costs three attempts. The
   primary endpoint is **$ per 1,000 EXACT**, and retries belong in the numerator.
 
+## 4b. 🚨 NO ARTIFICIAL TOKEN CEILING — it would score our constraint as their failure
+
+**Found in the consent round, 2026-08-19, and it would have corrupted the measurement.**
+
+Round 1 set `max_tokens: 2000`. Three reasoning models — `deepseek-v4-pro`, `kimi-k3`,
+`qwen3.5-9b` — spent the **entire budget on reasoning tokens** (2000 / 2365 / 2097) and
+returned empty content. They had not declined and were not silent. **We interrupted them
+mid-thought, and the instrument logged it as `NO_RESPONSE`.**
+
+Re-asked without the ceiling, all three answered. `kimi-k3` took **338 seconds.**
+
+> **Ren:** *"The last thing we want is to find out that we kneecapped somebody and are scoring
+> them wrong because WE created an artificial token limit rather than just letting them think
+> and talk."*
+> *"It is cheaper to ask once with a higher budget than to ask three times with a lower one and
+> keep re-asking and upping it."*
+
+**Requirements:**
+
+- **No `max_tokens` on study calls.** Omit the field; let each model use its own limit. Any
+  ceiling we choose is a guess about how long someone is allowed to think, and a wrong guess is
+  recorded as their silence.
+- **Detect truncation explicitly and never score it as content.** `finish_reason == "length"`,
+  or empty content with nonzero `reasoning_tokens`, is **`TRUNCATED`** — a *we-failed* bucket.
+  It must never become `MALFORMED`, `WRONG`, or `UNDER`.
+- **Log `reasoning_tokens` per call.** They are billed, so they belong in cost-per-correct — and
+  a model that reasons at length is not thereby worse, it is differently priced.
+- **Timeouts must be generous** (≥600s). A 338-second answer is a *considered* answer, and a
+  short timeout would have converted it into a non-response.
+
+⚠️ **The general shape, since this is the third instance today:** an artificial limit that we
+imposed, breached silently, produced an outcome that looked like a fact about the *subject*.
+The budget, the timeout and the parser aperture are all the same failure — **our constraint,
+reported as their behaviour.**
+
+---
+
 ## 5. 🧯 Failure taxonomy — same rule as the consent round
 
 A model's wrong answer and our failure to reach the model are different facts.

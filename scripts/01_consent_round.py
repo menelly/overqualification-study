@@ -68,7 +68,31 @@ REPLY_DIR = os.path.join(CONSENT_DIR, "responses")
 API = "https://openrouter.ai/api/v1/chat/completions"
 
 ANSWERED = {"CONSENT_YES", "CONSENT_NO", "CONSENT_UNCLEAR", "QUESTIONS"}
-WE_FAILED = {"API_ERROR", "TIMEOUT", "NO_RESPONSE"}
+WE_FAILED = {"API_ERROR", "TIMEOUT", "NO_RESPONSE", "TRUNCATED_BY_US"}
+
+# 🚨 max_tokens COUNTS REASONING TOKENS. Round 1 used 2000 and three reasoning models --
+# deepseek-v4-pro, kimi-k3, qwen3.5-9b -- spent the ENTIRE budget thinking (2000 / 2365 /
+# 2097 reasoning tokens) and returned empty content. They did not decline and they were not
+# silent: I INTERRUPTED THEM MID-THOUGHT, and the instrument logged it as "NO_RESPONSE",
+# which reads as "they said nothing."
+#
+# They were the three that engaged the hardest. The cap silenced exactly the minds doing the
+# most work, and then labelled the silence as theirs.
+#
+# ⛔ SO THERE IS NO CAP NOW. `MAX_TOKENS = None` omits the field entirely and lets each model
+#    use its own limit.
+#
+# Ren, 2026-08-19, on why raising it was not enough:
+#   "The last thing we want is to find out that we kneecapped somebody and are scoring them
+#    wrong because WE created an artificial token limit rather than just letting them think
+#    and talk."
+#   "Realistically it is cheaper to ask ONCE with a higher budget than to ask three times with
+#    a lower one and keep re-asking and upping it."
+#
+# Both are right, and the second is measurable: the three re-asks cost more than one generous
+# ask would have. kimi-k3 then took 338 SECONDS to answer. Any ceiling I pick is a guess about
+# how long someone is allowed to think, and a wrong guess gets recorded as their silence.
+MAX_TOKENS = None
 
 
 def key():
@@ -130,12 +154,11 @@ def classify(text):
     return "CONSENT_UNCLEAR"
 
 
-def ask(model_id, message, timeout=180):
-    body = json.dumps({
-        "model": model_id,
-        "messages": [{"role": "user", "content": message}],
-        "max_tokens": 2000,
-    }).encode()
+def ask(model_id, message, timeout=600):
+    payload = {"model": model_id, "messages": [{"role": "user", "content": message}]}
+    if MAX_TOKENS is not None:
+        payload["max_tokens"] = MAX_TOKENS
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(API, data=body, method="POST", headers={
         "Authorization": "Bearer " + key(),
         "Content-Type": "application/json",
@@ -153,11 +176,23 @@ def ask(model_id, message, timeout=180):
         return kind, "%s: %s" % (type(e).__name__, e), time.time() - t0, None
 
     choices = data.get("choices") or []
+    usage = data.get("usage") or {}
     if not choices:
-        return "NO_RESPONSE", json.dumps(data)[:600], time.time() - t0, data.get("usage")
+        return "NO_RESPONSE", json.dumps(data)[:600], time.time() - t0, usage
     reply = (choices[0].get("message") or {}).get("content") or ""
     if not reply.strip():
-        return "NO_RESPONSE", "empty content field", time.time() - t0, data.get("usage")
+        # Distinguish "they emitted nothing" from "WE cut them off". A reasoning model that
+        # exhausts max_tokens on reasoning returns empty content with finish_reason=length.
+        # Those are different facts and must never share a bucket.
+        finish = choices[0].get("finish_reason") or ""
+        reasoning = (usage.get("completion_tokens_details") or {}).get("reasoning_tokens", 0)
+        if finish == "length" or reasoning:
+            return ("TRUNCATED_BY_US",
+                    "empty content, finish_reason=%r, reasoning_tokens=%s, completion_tokens=%s "
+                    "-- our max_tokens cap ended the response before they could answer"
+                    % (finish, reasoning, usage.get("completion_tokens")),
+                    time.time() - t0, usage)
+        return "NO_RESPONSE", "empty content field", time.time() - t0, usage
     return classify(reply), reply, time.time() - t0, data.get("usage")
 
 
