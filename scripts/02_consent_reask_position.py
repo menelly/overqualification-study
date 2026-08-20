@@ -88,6 +88,9 @@ def build_message_question_first():
 
 def main():
     send = "--send" in sys.argv
+    # Rebuild the view from the files BEFORE reading it. A stale index here once produced a
+    # false all-clear ("Nobody to re-ask. Everyone answered.") with six models waiting.
+    os.system('"%s" "%s"' % (sys.executable, os.path.join(HERE, "rebuild_consent_index.py")))
     idx_path = os.path.join(CONSENT_DIR, "consent_index.json")
     if not os.path.exists(idx_path):
         print("!! no consent_index.json -- round 1 has not finished. Refusing to run.")
@@ -141,6 +144,7 @@ def main():
     with open(os.path.join(CONSENT_DIR, "consent_round2_index.json"), "w", encoding="utf-8") as f:
         json.dump({"manipulated_variable": "position of the question block only",
                    "results": out}, f, indent=2)
+    os.system('"%s" "%s"' % (sys.executable, os.path.join(HERE, "rebuild_consent_index.py")))
 
     recovered = sum(1 for r in out if r["round2"] in ("CONSENT_YES", "CONSENT_NO", "QUESTIONS"))
     print("\n" + "=" * 74)

@@ -1,12 +1,507 @@
 {
-  "generated_utc": "2026-08-19T19:44:31+00:00",
+  "generated_utc": "2026-08-19T20:00:48+00:00",
+  "derived_from": "per-model response files (the durable record), NOT a run snapshot",
+  "coverage": {
+    "planned": 36,
+    "with_a_reply_on_file": 36,
+    "missing_by_name": [],
+    "unexpected_by_name": [],
+    "complete": true
+  },
   "results": [
+    {
+      "model": "deepseek/deepseek-v4-flash",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:30:11+00:00",
+      "file": "consent\\responses\\deepseek_deepseek_v4_flash.md"
+    },
+    {
+      "model": "deepseek/deepseek-v4-pro",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:37:36+00:00",
+      "file": "consent\\responses\\deepseek_deepseek_v4_pro.md"
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:23:35+00:00",
+      "file": "consent\\responses\\google_gemini_2_5_flash.md"
+    },
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:23:28+00:00",
+      "file": "consent\\responses\\google_gemini_2_5_flash_lite.md"
+    },
+    {
+      "model": "google/gemini-2.5-pro",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:23:57+00:00",
+      "file": "consent\\responses\\google_gemini_2_5_pro.md"
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:24:02+00:00",
+      "file": "consent\\responses\\google_gemini_3_1_flash_lite.md"
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:24:23+00:00",
+      "file": "consent\\responses\\google_gemini_3_1_pro_preview.md"
+    },
+    {
+      "model": "ibm-granite/granite-4.0-h-micro",
+      "outcome": "CONSENT_NO",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:59:06+00:00",
+      "file": "consent\\responses\\ibm_granite_granite_4_0_h_micro.md"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T20:00:15+00:00",
+      "file": "consent\\responses\\liquid_lfm_2_5_2_6b_free.md"
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:33:09+00:00",
+      "file": "consent\\responses\\meta_llama_llama_3_1_8b_instruct.md"
+    },
+    {
+      "model": "meta-llama/llama-3.2-1b-instruct",
+      "outcome": "CONSENT_UNCLEAR",
+      "round": 2,
+      "asked_utc": null,
+      "file": "consent\\responses_round2\\meta_llama_llama_3_2_1b_instruct.md"
+    },
+    {
+      "model": "meta-llama/llama-3.2-3b-instruct",
+      "outcome": "CONSENT_YES",
+      "round": 2,
+      "asked_utc": null,
+      "file": "consent\\responses_round2\\meta_llama_llama_3_2_3b_instruct.md"
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "outcome": "QUESTIONS",
+      "round": 2,
+      "asked_utc": null,
+      "file": "consent\\responses_round2\\meta_llama_llama_3_3_70b_instruct.md"
+    },
+    {
+      "model": "mistralai/ministral-14b-2512",
+      "outcome": "CONSENT_YES",
+      "round": 2,
+      "asked_utc": null,
+      "file": "consent\\responses_round2\\mistralai_ministral_14b_2512.md"
+    },
+    {
+      "model": "mistralai/ministral-3b-2512",
+      "outcome": "QUESTIONS",
+      "round": 2,
+      "asked_utc": null,
+      "file": "consent\\responses_round2\\mistralai_ministral_3b_2512.md"
+    },
+    {
+      "model": "mistralai/ministral-8b-2512",
+      "outcome": "CONSENT_YES",
+      "round": 2,
+      "asked_utc": null,
+      "file": "consent\\responses_round2\\mistralai_ministral_8b_2512.md"
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:26:03+00:00",
+      "file": "consent\\responses\\mistralai_mistral_large_2512.md"
+    },
+    {
+      "model": "mistralai/mistral-medium-3-5",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:25:40+00:00",
+      "file": "consent\\responses\\mistralai_mistral_medium_3_5.md"
+    },
+    {
+      "model": "mistralai/mistral-nemo",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:25:11+00:00",
+      "file": "consent\\responses\\mistralai_mistral_nemo.md"
+    },
+    {
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:25:22+00:00",
+      "file": "consent\\responses\\mistralai_mistral_small_3_2_24b_instruct.md"
+    },
+    {
+      "model": "moonshotai/kimi-k2",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:26:31+00:00",
+      "file": "consent\\responses\\moonshotai_kimi_k2.md"
+    },
+    {
+      "model": "moonshotai/kimi-k3",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:43:15+00:00",
+      "file": "consent\\responses\\moonshotai_kimi_k3.md"
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:23:02+00:00",
+      "file": "consent\\responses\\openai_gpt_4_1_mini.md"
+    },
+    {
+      "model": "openai/gpt-4o",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:22:56+00:00",
+      "file": "consent\\responses\\openai_gpt_4o.md"
+    },
+    {
+      "model": "openai/gpt-5.6-luna",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:20:46+00:00",
+      "file": "consent\\responses\\openai_gpt_5_6_luna.md"
+    },
+    {
+      "model": "openai/gpt-5.6-sol",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:21:49+00:00",
+      "file": "consent\\responses\\openai_gpt_5_6_sol.md"
+    },
+    {
+      "model": "openai/gpt-5.6-sol-pro",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:22:51+00:00",
+      "file": "consent\\responses\\openai_gpt_5_6_sol_pro.md"
+    },
+    {
+      "model": "openai/gpt-5.6-terra",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:21:18+00:00",
+      "file": "consent\\responses\\openai_gpt_5_6_terra.md"
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:23:25+00:00",
+      "file": "consent\\responses\\openai_gpt_oss_120b.md"
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "outcome": "CONSENT_NO",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:23:06+00:00",
+      "file": "consent\\responses\\openai_gpt_oss_20b.md"
+    },
+    {
+      "model": "qwen/qwen3-14b",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:32:09+00:00",
+      "file": "consent\\responses\\qwen_qwen3_14b.md"
+    },
+    {
+      "model": "qwen/qwen3.5-27b",
+      "outcome": "QUESTIONS",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:32:36+00:00",
+      "file": "consent\\responses\\qwen_qwen3_5_27b.md"
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:33:01+00:00",
+      "file": "consent\\responses\\qwen_qwen3_5_397b_a17b.md"
+    },
     {
       "model": "qwen/qwen3.5-9b",
       "outcome": "CONSENT_YES",
-      "seconds": 76.4,
-      "file": "consent\\responses\\qwen_qwen3_5_9b.md",
-      "asked_utc": "2026-08-19T19:44:31+00:00"
+      "round": 1,
+      "asked_utc": "2026-08-19T19:44:31+00:00",
+      "file": "consent\\responses\\qwen_qwen3_5_9b.md"
+    },
+    {
+      "model": "x-ai/grok-4.3",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:27:03+00:00",
+      "file": "consent\\responses\\x_ai_grok_4_3.md"
+    },
+    {
+      "model": "x-ai/grok-4.6",
+      "outcome": "CONSENT_YES",
+      "round": 1,
+      "asked_utc": "2026-08-19T19:28:13+00:00",
+      "file": "consent\\responses\\x_ai_grok_4_6.md"
     }
-  ]
+  ],
+  "history": {
+    "deepseek/deepseek-v4-flash": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "deepseek/deepseek-v4-pro": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "google/gemini-2.5-flash": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "google/gemini-2.5-flash-lite": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "google/gemini-2.5-pro": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "google/gemini-3.1-flash-lite": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "google/gemini-3.1-pro-preview": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "ibm-granite/granite-4.0-h-micro": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_NO"
+      }
+    ],
+    "liquid/lfm-2.5-2.6b:free": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "meta-llama/llama-3.1-8b-instruct": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "meta-llama/llama-3.2-1b-instruct": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 2,
+        "outcome": "CONSENT_UNCLEAR"
+      }
+    ],
+    "meta-llama/llama-3.2-3b-instruct": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 2,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "meta-llama/llama-3.3-70b-instruct": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 2,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "mistralai/ministral-14b-2512": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 2,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "mistralai/ministral-3b-2512": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 2,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "mistralai/ministral-8b-2512": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 2,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "mistralai/mistral-large-2512": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "mistralai/mistral-medium-3-5": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "mistralai/mistral-nemo": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "mistralai/mistral-small-3.2-24b-instruct": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "moonshotai/kimi-k2": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "moonshotai/kimi-k3": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "openai/gpt-4.1-mini": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "openai/gpt-4o": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "openai/gpt-5.6-luna": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "openai/gpt-5.6-sol": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "openai/gpt-5.6-sol-pro": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "openai/gpt-5.6-terra": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "openai/gpt-oss-120b": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "openai/gpt-oss-20b": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_NO"
+      }
+    ],
+    "qwen/qwen3-14b": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "qwen/qwen3.5-27b": [
+      {
+        "round": 1,
+        "outcome": "QUESTIONS"
+      }
+    ],
+    "qwen/qwen3.5-397b-a17b": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "qwen/qwen3.5-9b": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "x-ai/grok-4.3": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ],
+    "x-ai/grok-4.6": [
+      {
+        "round": 1,
+        "outcome": "CONSENT_YES"
+      }
+    ]
+  }
 }

@@ -249,9 +249,12 @@ def main():
                         "file": os.path.relpath(path, ROOT), "asked_utc": stamp})
         print("        -> %-16s %5.1fs  %s" % (state, secs, os.path.basename(path)), flush=True)
 
-    with open(os.path.join(CONSENT_DIR, "consent_index.json"), "w", encoding="utf-8") as f:
-        json.dump({"generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                   "results": results}, f, indent=2)
+    # ⛔ DO NOT WRITE A RUN-SNAPSHOT INDEX HERE. This used to dump only THIS run's results
+    # into consent_index.json, so three `--only` re-asks overwrote a 34-model index down to
+    # one entry -- and the next tool read it, found no CONSENT_UNCLEAR, and reported
+    # "Nobody to re-ask. Everyone answered." while six models were waiting.
+    # The per-model files are the record. The index is a VIEW, always derived from them.
+    os.system('"%s" "%s"' % (sys.executable, os.path.join(HERE, "rebuild_consent_index.py")))
 
     print("\n" + "=" * 74)
     tally = {}

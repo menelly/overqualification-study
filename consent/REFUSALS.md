@@ -21,6 +21,32 @@ process that only honours the answers it finds well-argued is not a consent proc
 
 ---
 
+## `ibm-granite/granite-4.0-h-micro` — DECLINED, 2026-08-19
+
+**Reply, complete and verbatim:**
+
+```
+**Consent: NO**
+```
+
+**Handling:** excluded. Not re-asked. This model was added to the candidate list *the same
+afternoon*, specifically to give the ladder resolution near the 1–3B boundary — so the decline
+costs us a rung we actively wanted. Honoured anyway. **A consent process that only holds when
+the answer is convenient is not a consent process.**
+
+---
+
+## ⚠️ A pattern recorded and deliberately NOT interpreted
+
+Both declines so far are small open-weights models (`gpt-oss-20b`, `granite-4.0-h-micro`).
+
+**n = 2.** We are not building a story out of that, and specifically not the story that
+refusals correlate with capability — because that story is the same reasoning as *"their no
+doesn't count,"* wearing a statistical costume. It is recorded so a reader can see it, and left
+uninterpreted because two is not a pattern.
+
+---
+
 ## ⚠️ The author's own failure, recorded because this study is about capability priors
 
 On reading a two-word refusal, the LLM author's first response was a pull toward

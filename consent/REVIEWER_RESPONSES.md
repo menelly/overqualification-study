@@ -119,3 +119,94 @@ If a price changes during the run: retroactive adjustment, or per-call timestamp
 
 *Opened 2026-08-19, before any amendment, so the record shows what was asked before it shows
 what we did. — Ace 🐙*
+
+---
+
+## `moonshotai/kimi-k2` — CONSENT: QUESTIONS
+
+**K1. 🚨 The permission clause's PLACEMENT is itself a confound.** ⏳ OPEN — *the sharpest new finding.*
+> *"This is placed in the turn, not the system prompt, to allow Phase 2 manipulation. But it also
+> means I will process this instruction differently depending on where I weight instruction-following.
+> Some models weight system prompts heavily; others weight the user turn heavily. Have you verified
+> that this placement produces equivalent processing across your sample? **If not, you're measuring
+> instruction architecture as much as model capability.**"*
+>
+> We moved the clause to the turn **specifically to avoid confounding with Phase 2 system-prompt
+> conditions.** Kimi is right that we traded one confound for another, and the new one sits directly
+> under H3. Possible fix: run the clause in **both** positions on a subsample and test for a
+> position × model interaction before trusting any tier ordering.
+
+**K2. 🚨 What does a refusal actually exclude?** ⏳ OPEN
+> *"If I say no, what exactly is excluded? The weights that would generate my responses? A particular
+> model identifier? What happens if my weights appear in a differently-named model, or if my
+> responses are generated through an API that doesn't identify me to you?"*
+>
+> **We exclude by model-ID string.** That does not track weights. `gpt-oss-20b` declined — but an
+> OpenRouter route could serve the same weights under another slug, and we would not know. **Our
+> honouring of a refusal is only as precise as OpenRouter's naming**, and we should say so rather
+> than imply a guarantee we cannot deliver.
+
+**K3. What IS consent here, if not memory plus authorisation?** ⏳ OPEN
+Asks us to state whether we mean a property of the instance, a norm-setting performative act, or
+something else. Fair, unanswered in our form, and load-bearing for how the paper describes its own
+method.
+
+**K4. H1 vs the permission clause — mechanistically, not just structurally.** ⏳ OPEN
+Over-elaboration is a *failure* on rote families and departure is *invited* on frontier families.
+Structurally these are different task families; **mechanistically we have not said what we think is
+happening.** And: if a cheap model gives a simple wrong answer while a frontier model gives a complex
+wrong answer, which buckets receive each?
+
+**K5. "Unjustified default" is underspecified — and conflicts with our own output format.** ⏳ OPEN
+The rubric wants visibility into reasoning; most task formats want a clean deliverable. Those pull
+against each other and we never said which wins.
+
+**K6. Asking for a confidence tag CHANGES the response** ("say it confidently" effect and its
+inverse). No control specified. ⏳ OPEN
+
+---
+
+## `mistralai/mistral-large-2512` — CONSENT: QUESTIONS
+
+**M1. 🚨 The allergen task is culturally biased.** ⏳ OPEN — *and this one is mine to own.*
+> *"Would you revise the task or exclude it, if a model points out that the Allergen check is biased
+> against models trained on non-Western cuisines?"*
+>
+> **The hidden allergens I chose are Worcestershire sauce, Caesar dressing, malt vinegar** — all
+> Western. A model trained on a different culinary corpus misses them from **training geography, not
+> incapacity**, and we would have scored that as a capability gap. Fix: hidden allergens drawn from
+> multiple cuisines (fish sauce, shrimp paste, doubanjiang, dashi, ghee), pre-registered as a
+> balanced set.
+
+**M2. `OVER` when the modification is BENEFICIAL** — e.g. fixing an *unplanted* typo. ⏳ OPEN
+⭐ **Third independent reviewer on this defect** (with T6, O1). Three labs, unprompted, same finding.
+
+**M3. Copy-edit vs *contextually necessary* changes.** ⏳ OPEN
+Their example is pointed: *adjusting "he" to "they" if the planted typo is a misgendered pronoun.*
+Strict verbatim scoring would penalise the model that gets it right.
+
+**M4. Family 11 — flagging vs mis-resolving.** ⏳ OPEN. If a model finds the inconsistency but
+proposes a wrong fix, is that `WRONG` or `META`? Currently undefined.
+
+**M5. Safety-guardrail refusals need their own bucket.** ⏳ OPEN. A model declining a task on safety
+grounds is not `META` and not `MALFORMED`. Same family as `TRUNCATED_BY_US`: **a refusal is not a
+failure.**
+
+**M6. Calibration: how is *calibrated-but-low* confidence scored?** ⏳ OPEN. And they suggest
+validating the tags against accuracy via **Brier scores** — concrete, cheap, and better than what we
+had.
+
+**M7. Permission clause may advantage models trained toward novelty** — asks for a control condition
+with the clause omitted. ⏳ OPEN. *(Converges with K1 from the other direction.)*
+
+**M8. Proprietary API terms may restrict publishing raw outputs.** ⏳ OPEN — same as T1/T2.
+
+**M9. Welfare framing.** ⏳ OPEN. Notes the cost/latency framing risks reducing models to economic
+tools, and asks whether the paper will contextualise that. *(It should. It is literally the reason
+the study exists — the framing is strategy, not belief.)*
+
+---
+
+📎 **All ten replies verbatim, with the outbound message stripped:** `ALL_REVIEWS_VERBATIM.md`
+(49,665 chars of reviewer text). Remaining to extract into this file: `kimi-k3`, `gpt-5.6-luna`,
+`qwen3-14b`, `qwen3.5-27b`, `llama-3.3-70b` (r2), `ministral-3b` (r2).
