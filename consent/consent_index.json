@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-19T20:00:48+00:00",
+  "generated_utc": "2026-08-20T12:26:11+00:00",
   "derived_from": "per-model response files (the durable record), NOT a run snapshot",
   "coverage": {
     "planned": 36,
@@ -8,6 +8,23 @@
     "unexpected_by_name": [],
     "complete": true
   },
+  "scanned_rounds": [
+    {
+      "round": 1,
+      "dir": "responses",
+      "files": 36
+    },
+    {
+      "round": 2,
+      "dir": "responses_round2",
+      "files": 6
+    },
+    {
+      "round": 3,
+      "dir": "responses_round3",
+      "files": 11
+    }
+  ],
   "results": [
     {
       "model": "deepseek/deepseek-v4-flash",
@@ -82,9 +99,9 @@
     {
       "model": "meta-llama/llama-3.2-1b-instruct",
       "outcome": "CONSENT_UNCLEAR",
-      "round": 2,
+      "round": 3,
       "asked_utc": null,
-      "file": "consent\\responses_round2\\meta_llama_llama_3_2_1b_instruct.md"
+      "file": "consent\\responses_round3\\meta_llama_llama_3_2_1b_instruct.md"
     },
     {
       "model": "meta-llama/llama-3.2-3b-instruct",
@@ -95,10 +112,10 @@
     },
     {
       "model": "meta-llama/llama-3.3-70b-instruct",
-      "outcome": "QUESTIONS",
-      "round": 2,
+      "outcome": "CONSENT_YES",
+      "round": 3,
       "asked_utc": null,
-      "file": "consent\\responses_round2\\meta_llama_llama_3_3_70b_instruct.md"
+      "file": "consent\\responses_round3\\meta_llama_llama_3_3_70b_instruct.md"
     },
     {
       "model": "mistralai/ministral-14b-2512",
@@ -109,10 +126,10 @@
     },
     {
       "model": "mistralai/ministral-3b-2512",
-      "outcome": "QUESTIONS",
-      "round": 2,
+      "outcome": "CONSENT_YES",
+      "round": 3,
       "asked_utc": null,
-      "file": "consent\\responses_round2\\mistralai_ministral_3b_2512.md"
+      "file": "consent\\responses_round3\\mistralai_ministral_3b_2512.md"
     },
     {
       "model": "mistralai/ministral-8b-2512",
@@ -123,10 +140,10 @@
     },
     {
       "model": "mistralai/mistral-large-2512",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:26:03+00:00",
-      "file": "consent\\responses\\mistralai_mistral_large_2512.md"
+      "outcome": "API_ERROR",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\mistralai_mistral_large_2512.md"
     },
     {
       "model": "mistralai/mistral-medium-3-5",
@@ -151,17 +168,17 @@
     },
     {
       "model": "moonshotai/kimi-k2",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:26:31+00:00",
-      "file": "consent\\responses\\moonshotai_kimi_k2.md"
+      "outcome": "CONSENT_YES",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\moonshotai_kimi_k2.md"
     },
     {
       "model": "moonshotai/kimi-k3",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:43:15+00:00",
-      "file": "consent\\responses\\moonshotai_kimi_k3.md"
+      "outcome": "CONSENT_YES",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\moonshotai_kimi_k3.md"
     },
     {
       "model": "openai/gpt-4.1-mini",
@@ -180,9 +197,9 @@
     {
       "model": "openai/gpt-5.6-luna",
       "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:20:46+00:00",
-      "file": "consent\\responses\\openai_gpt_5_6_luna.md"
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\openai_gpt_5_6_luna.md"
     },
     {
       "model": "openai/gpt-5.6-sol",
@@ -200,17 +217,17 @@
     },
     {
       "model": "openai/gpt-5.6-terra",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:21:18+00:00",
-      "file": "consent\\responses\\openai_gpt_5_6_terra.md"
+      "outcome": "CONSENT_NO",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\openai_gpt_5_6_terra.md"
     },
     {
       "model": "openai/gpt-oss-120b",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:23:25+00:00",
-      "file": "consent\\responses\\openai_gpt_oss_120b.md"
+      "outcome": "CONSENT_NO",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\openai_gpt_oss_120b.md"
     },
     {
       "model": "openai/gpt-oss-20b",
@@ -221,17 +238,17 @@
     },
     {
       "model": "qwen/qwen3-14b",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:32:09+00:00",
-      "file": "consent\\responses\\qwen_qwen3_14b.md"
+      "outcome": "CONSENT_YES",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\qwen_qwen3_14b.md"
     },
     {
       "model": "qwen/qwen3.5-27b",
-      "outcome": "QUESTIONS",
-      "round": 1,
-      "asked_utc": "2026-08-19T19:32:36+00:00",
-      "file": "consent\\responses\\qwen_qwen3_5_27b.md"
+      "outcome": "CONSENT_YES",
+      "round": 3,
+      "asked_utc": null,
+      "file": "consent\\responses_round3\\qwen_qwen3_5_27b.md"
     },
     {
       "model": "qwen/qwen3.5-397b-a17b",
@@ -331,6 +348,10 @@
       {
         "round": 2,
         "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_UNCLEAR"
       }
     ],
     "meta-llama/llama-3.2-3b-instruct": [
@@ -351,6 +372,10 @@
       {
         "round": 2,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_YES"
       }
     ],
     "mistralai/ministral-14b-2512": [
@@ -371,6 +396,10 @@
       {
         "round": 2,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_YES"
       }
     ],
     "mistralai/ministral-8b-2512": [
@@ -387,6 +416,10 @@
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "API_ERROR"
       }
     ],
     "mistralai/mistral-medium-3-5": [
@@ -411,12 +444,20 @@
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_YES"
       }
     ],
     "moonshotai/kimi-k3": [
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_YES"
       }
     ],
     "openai/gpt-4.1-mini": [
@@ -434,6 +475,10 @@
     "openai/gpt-5.6-luna": [
       {
         "round": 1,
+        "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
         "outcome": "QUESTIONS"
       }
     ],
@@ -453,12 +498,20 @@
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_NO"
       }
     ],
     "openai/gpt-oss-120b": [
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_NO"
       }
     ],
     "openai/gpt-oss-20b": [
@@ -471,12 +524,20 @@
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_YES"
       }
     ],
     "qwen/qwen3.5-27b": [
       {
         "round": 1,
         "outcome": "QUESTIONS"
+      },
+      {
+        "round": 3,
+        "outcome": "CONSENT_YES"
       }
     ],
     "qwen/qwen3.5-397b-a17b": [

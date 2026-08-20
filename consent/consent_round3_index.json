@@ -1,0 +1,72 @@
+{
+  "round": 3,
+  "basis": "amended pre-registration + personalised responses",
+  "results": [
+    {
+      "model": "meta-llama/llama-3.2-1b-instruct",
+      "prior": "CONSENT_UNCLEAR",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 28.1
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 3.7
+    },
+    {
+      "model": "mistralai/ministral-3b-2512",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 1.1
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "prior": "QUESTIONS",
+      "round3": "API_ERROR",
+      "seconds": 0.5
+    },
+    {
+      "model": "moonshotai/kimi-k2",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 5.4
+    },
+    {
+      "model": "moonshotai/kimi-k3",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 32.7
+    },
+    {
+      "model": "openai/gpt-5.6-luna",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 4.2
+    },
+    {
+      "model": "openai/gpt-5.6-terra",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 2.2
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 1.7
+    },
+    {
+      "model": "qwen/qwen3-14b",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 11.3
+    },
+    {
+      "model": "qwen/qwen3.5-27b",
+      "prior": "QUESTIONS",
+      "round3": "CONSENT_UNCLEAR",
+      "seconds": 33.1
+    }
+  ]
+}

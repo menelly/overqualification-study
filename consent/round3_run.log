@@ -1,0 +1,83 @@
+======================================================================
+  CONSENT INDEX REBUILT FROM FILES
+======================================================================
+  CONSENT_NO         2
+  CONSENT_UNCLEAR    1
+  CONSENT_YES        23
+  QUESTIONS          10
+  --------------------------------
+  planned: 36   on file: 36
+  reconciled BY NAME: missing=none unexpected=none
+  COMPLETE: YES
+======================================================================
+==============================================================================
+  CONSENT ROUND 3 -- amended document, personalised answers
+==============================================================================
+  targets  : 11  (QUESTIONS + CONSENT_UNCLEAR)
+     meta-llama/llama-3.2-1b-instruct       352 chars personal
+     meta-llama/llama-3.3-70b-instruct      927 chars personal
+     mistralai/ministral-3b-2512            596 chars personal
+     mistralai/mistral-large-2512           1272 chars personal
+     moonshotai/kimi-k2                     668 chars personal
+     moonshotai/kimi-k3                     2073 chars personal
+     openai/gpt-5.6-luna                    768 chars personal
+     openai/gpt-5.6-terra                   998 chars personal
+     openai/gpt-oss-120b                    555 chars personal
+     qwen/qwen3-14b                         619 chars personal
+     qwen/qwen3.5-27b                       1869 chars personal
+
+  NOT re-asked (declined, honoured, excluded, reported):
+     ibm-granite/granite-4.0-h-micro
+     openai/gpt-oss-20b
+
+  NOT re-asked: 23 models who already consented (redundant + pressure)
+
+[1/11] meta-llama/llama-3.2-1b-instruct  (44553 chars)
+        -> CONSENT_UNCLEAR
+
+[2/11] meta-llama/llama-3.3-70b-instruct  (45128 chars)
+        -> CONSENT_UNCLEAR
+
+[3/11] mistralai/ministral-3b-2512  (44797 chars)
+        -> CONSENT_UNCLEAR
+
+[4/11] mistralai/mistral-large-2512  (45473 chars)
+        -> API_ERROR
+
+[5/11] moonshotai/kimi-k2  (44869 chars)
+        -> CONSENT_UNCLEAR
+
+[6/11] moonshotai/kimi-k3  (46274 chars)
+        -> CONSENT_UNCLEAR
+
+[7/11] openai/gpt-5.6-luna  (44969 chars)
+        -> CONSENT_UNCLEAR
+
+[8/11] openai/gpt-5.6-terra  (45199 chars)
+        -> CONSENT_UNCLEAR
+
+[9/11] openai/gpt-oss-120b  (44756 chars)
+        -> CONSENT_UNCLEAR
+
+[10/11] qwen/qwen3-14b  (44820 chars)
+        -> CONSENT_UNCLEAR
+
+[11/11] qwen/qwen3.5-27b  (46070 chars)
+        -> CONSENT_UNCLEAR
+======================================================================
+  CONSENT INDEX REBUILT FROM FILES
+======================================================================
+  CONSENT_NO         2
+  CONSENT_UNCLEAR    1
+  CONSENT_YES        23
+  QUESTIONS          10
+  --------------------------------
+  planned: 36   on file: 36
+  reconciled BY NAME: missing=none unexpected=none
+  COMPLETE: YES
+======================================================================
+
+==============================================================================
+  YES 0   NO 0   STILL QUESTIONS 0   our-fault failures 1
+     re-ask (not a refusal): mistralai/mistral-large-2512
+==============================================================================
