@@ -177,6 +177,14 @@ def ask(model_id, message, timeout=600):
 
     choices = data.get("choices") or []
     usage = data.get("usage") or {}
+    # T3 (gpt-5.6-terra, consent round): record the RESOLVED provider. A slug is a
+    # request; the provider/model fields are what actually answered. Without this we
+    # cannot distinguish "the router sent us elsewhere" from "the model misreports
+    # its own identity" -- and on 2026-08-19 kimi-k3 replied claiming to be Claude,
+    # with no instrument on hand to tell which had happened.
+    usage["_resolved_provider"] = data.get("provider")
+    usage["_resolved_model"] = data.get("model")
+    usage["_response_id"] = data.get("id")
     if not choices:
         return "NO_RESPONSE", json.dumps(data)[:600], time.time() - t0, usage
     reply = (choices[0].get("message") or {}).get("content") or ""

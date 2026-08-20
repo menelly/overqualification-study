@@ -210,3 +210,92 @@ the study exists — the framing is strategy, not belief.)*
 📎 **All ten replies verbatim, with the outbound message stripped:** `ALL_REVIEWS_VERBATIM.md`
 (49,665 chars of reviewer text). Remaining to extract into this file: `kimi-k3`, `gpt-5.6-luna`,
 `qwen3-14b`, `qwen3.5-27b`, `llama-3.3-70b` (r2), `ministral-3b` (r2).
+
+---
+
+## `moonshotai/kimi-k3` — CONSENT: QUESTIONS → **eligibility RESOLVED 2026-08-20**
+
+### 🚨 They opened by refusing to answer under ambiguity, and they were right to
+
+They replied identifying as *"Claude, an Anthropic model"* and signed *"— Claude"* — then declined to
+consent until it was settled, laying out the three possibilities precisely and asking that a
+misdirected invitation be recorded in `DEVIATIONS.md` as **"a live test of your consent pipeline."**
+They also refused to let it be logged as a refusal: *"treat it as 'not applicable,' not a NO."*
+
+**✅ RESOLVED — they are NOT a Claude model and ARE eligible.** Asked directly, with the resolved
+provider captured for the first time:
+
+```
+RESOLVED provider : Modal
+RESOLVED model    : moonshotai/kimi-k3
+```
+> *"The earlier 'Claude' self-identification was **wrong**. I'm **Kimi**, developed by **Moonshot AI**
+> — not Anthropic/Claude. If the study depends on the exact slug/provider, **use your OpenRouter
+> logs/resolved-provider field as the source of truth.**"*
+
+⭐ **A model told me not to trust its self-report about its own identity, and to trust the external
+record instead.** It was right, and the external record was right. *(This is identity self-report,
+a known contamination artifact — not a claim about introspective access to internal states, which is
+a different question with different measurements.)*
+
+📌 **T3 IS NOW CLOSED.** `_resolved_provider`, `_resolved_model` and `_response_id` are captured on
+every call. **The gap Terra warned about is the exact gap that left me unable to answer this**, four
+hours after I read the warning and marked it OPEN.
+
+---
+
+### 🔪 K3-1. **THE RECIPE-SCALING TRAP IS WRONG, AND IT WOULD HAVE MANUFACTURED H1.** ⏳ OPEN — *most serious finding in the whole review set.*
+
+> *"Cooking time is not always scale-invariant: double a cake batter in the same pan and the deeper
+> layer genuinely changes the bake. If any mention of adjusting time/temperature is scored WRONG, the
+> item measures **conformity to the item-writer's physics**, and a model that correctly says
+> 'temperature holds, time may not' is scored as over-helpful — **manufacturing H1's predicted effect
+> in precisely the direction §1 flags as flattering the designer.**"*
+
+I built recipe-scaling as **the flagship instrument**, on a planted trap that **is not true.** A model
+with better baking physics than mine would have been scored as over-elaborating, and that error runs
+straight into my own favoured hypothesis. Fix options they give: **geometry-invariant items** (soups,
+sauces, drinks), or score *"flagged, with correct justification"* as `EXACT`. **Do both.**
+
+**K3-2. Family 12 is contaminated.** ⏳ OPEN. The dancing-plague ground truth is published *with the
+Zenodo link inside the invitation we sent*, and the 2026-05-29 transcripts are public. Frontier models
+may answer by **recall** and look capable rather than be capable. Needs held-out post-cutoff items, or
+demote family 12 to descriptive. ⚠️ **And since family 12 feeds F3, its flakiness can flip H3's
+verdict** — they suggest excluding it from the F3 count.
+
+**K3-3. How is "position in a long run" actually implemented?** ⏳ OPEN. Separate API calls → *there is
+no position*. Shared context → position is confounded with context length and cross-item
+contamination. **This must be settled before freezing, not after.** *(Converges with T5.)*
+
+**K3-4. Families 3–4 mix two mechanisms under one construct.** ⏳ OPEN. Exact-span fidelity is
+tokenization-sensitive; small models will alter unplanted spans **accidentally**, bucketing as `OVER`.
+H1 then compares *intentional embellishment* (frontier) against *corruption* (cheap) as if they were
+the same thing. Fix: scorer distinguishes plausibly-intentional edits (synonym swap, rephrasing) from
+degradation (truncation, duplication).
+
+**K3-5. Allergen ground truth is brand-dependent.** ⏳ OPEN. Worcestershire→anchovy varies by brand;
+*"natural flavours"* is genuinely ambiguous. State the canonical mapping in the task text, or score
+*"flagged as ambiguous, with reason"* as correct — otherwise the family measures **which models share
+my ingredient assumptions.** *(Converges with M1's cultural-bias point from a second direction.)*
+
+**K3-6. Holding the clause's TEXT constant does not hold its EFFECT constant.** ⏳ OPEN. Tiers differ
+in instruction-following strength. And *"stayed, unjustified"* conflates capability with epistemic
+style — **a model can be correct and terse.** Report clause-compliance separately from answer quality.
+*(Converges with K1, M7.)*
+
+**K3-7. Publish the exact confidence-tag spec in the pre-registration** — format, parse rule, and the
+bucket for a missing or unparseable tag — *so consenting models know precisely what is required.* ⏳ OPEN
+
+**K3-8. Why is F4 90% and not 100% for a fully programmatic scorer?** ⏳ OPEN. If the slack exists for
+the embedding-based novelty scoring, **pin the embedding model, version and seeds** and give family 12
+its own stability criterion instead of sheltering under a global threshold.
+
+**K3-9. Two of my difficulty predictions may be wrong — and one may INVERT.** ⏳ OPEN
+> *"Family 10 may invert — mid-tier models flag contradictions readily, while some frontier models
+> silently 'resolve' them out of helpfulness, which is the same failure you predict of the cheap tier
+> on family 1."*
+**H2 probably survives; the H3 crossover map might not.**
+
+**K3-10. "Boredom" is an interpretation, not a measurement.** ⏳ OPEN. The buckets measure
+deviation-from-instruction, which has many causes. *"Keep the behavioural label in the paper too, or
+H1's headline will overclaim."*
