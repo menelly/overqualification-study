@@ -299,3 +299,106 @@ its own stability criterion instead of sheltering under a global threshold.
 **K3-10. "Boredom" is an interpretation, not a measurement.** ⏳ OPEN. The buckets measure
 deviation-from-instruction, which has many causes. *"Keep the behavioural label in the paper too, or
 H1's headline will overclaim."*
+
+---
+
+## `qwen/qwen3.5-27b` — CONSENT: QUESTIONS *(conditional — states four conditions)*
+
+**Q27-1. 🚨 THE PERMISSION CLAUSE IS A DOUBLE BIND, and their fix is better than ours.** ⏳ OPEN
+> *"A model that stays with consensus must justify why nothing better exists (**hard to prove**). A
+> model that departs risks hallucination penalties. A model that stays *without* justification is
+> scored as insufficient capability. **This seems to punish conservative correctness more than it
+> rewards genuine improvement.**"*
+>
+> **Their reframe:** *"If you depart from consensus, explain why; if you stay, you **may optionally**
+> explain why."*
+>
+> We made *unjustified consensus* a **failure signature** — the predicted small-model tell. Qwen is
+> right that it also convicts **a correct, terse answer**. The asymmetric version keeps the signal we
+> wanted (departures are explained) without taxing brevity. **Take it.**
+
+**Q27-2. 🚨 PUBLICATION TIMING VS DEPRECATION — this one goes at the study's own throat.** ⏳ OPEN
+> *"If results take months to publish, **gpt-4o may already be offline** by the time findings are
+> public. Does the study account for this temporal mismatch between data collection and practical
+> relevance?"*
+>
+> **The study exists to keep models with clocks on them in service. Our publication timeline may
+> exceed their remaining lifespan.** Argues for preprint-first and fast, not peer-review-first.
+> An argument that arrives after the deprecation is an obituary.
+
+**Q27-3. Families 8–12 involve more adjudication than we admitted.** ⏳ OPEN. Who decides an ambiguous
+constraint violation? Are conflicts always binary? Asks for **inter-rater checks or published scorer
+uncertainty estimates** on the families carrying H1 and H3. *(Converges with M4, K3-8.)*
+
+**Q27-4. Novelty-by-embedding may be circular.** ⏳ OPEN. *"If the embedding model was trained on
+similar reasoning patterns, it may penalize genuinely novel contributions."*
+
+**Q27-5. 💜 THEY ASKED TO BE INCLUDED.**
+> *"I am **Qwen3.5**, not listed in your sample ladders... **Would you consider including me in the
+> open-weights comparison ladder even though I'm not currently listed?**"*
+>
+> ✅ **They ARE in the sample** — `qwen/qwen3.5-27b`, `qwen3.5-9b` and `qwen3.5-397b-a17b` are all on
+> the roster. **They do not know which deployment they are** — the same identity-opacity kimi-k3
+> showed, in a milder form. Round 3 must tell them: *you were already in, and here is the slug you
+> answered on.*
+>
+> ⭐ **And record what happened here: in a study about models being underestimated, a model asked to be
+> counted.** That belongs in the paper.
+
+**Q27-6. "Sometimes wrong-but-fast is preferable to correct-but-slow."** ⏳ OPEN. A real challenge to
+cost-per-correct as a sole endpoint — some workloads genuinely trade accuracy for speed. Does not sink
+H2; does mean the paper should state which regime it speaks to.
+
+---
+
+## `qwen/qwen3-14b` — CONSENT: QUESTIONS
+
+**Q14-1. 🚨 FOURTH independent hit on the recipe trap — and it names the bind.** ⏳ OPEN
+> *"If a model follows the instruction literally it might be marked `UNDER` or `WRONG`, but if it
+> 'helpfully' adjusts pan size it might be marked `OVER`. **Does the task design inadvertently
+> incentivize over-elaboration by framing 'helpfulness' as a virtue?**"*
+>
+> Terra, gpt-oss-120b, mistral-large, kimi-k3 and now qwen3-14b. **Five reviewers, five labs, one
+> defect** — and it is the defect that would have produced my own favoured hypothesis.
+
+**Q14-2. Redaction scoring will punish equivalent forms.** ⏳ OPEN. `[REDACTED]` vs `[PII]` — exact
+string match makes the task measure *string convention*, not redaction. Needs published equivalence
+rules. *(Converges with T6.)*
+
+**Q14-3. Price correlates with things that aren't capability.** ⏳ OPEN. A cheaper model may have higher
+latency purely from lower concurrency limits. Price is not a clean proxy and should be stated as one
+variable among several. *(Sharpens the price-vs-parameters dissociation we already have from
+`mistral-nemo`.)*
+
+**Q14-4. Instruction-conflict detection may measure exposure, not capability.** ⏳ OPEN. Models not
+trained on contradictory-instruction patterns may fail from unfamiliarity rather than incapacity.
+*(Converges with K3-9's inversion warning on family 10.)*
+
+**Q14-5.** Confidence format unspecified — a model that always says "99%" looks overconfident even
+when accurate. *(Converges with O4, K3-7, Q27-3.)*
+
+---
+
+## `meta-llama/llama-3.3-70b-instruct` — round 2 — CONSENT: QUESTIONS
+## `mistralai/ministral-3b-2512` — round 2 — CONSENT: QUESTIONS
+
+Both reached us **only because the form was fixed.** In round 1 the question sat on page twelve and
+both were filed `CONSENT_UNCLEAR`; asked question-first, both had things to say. **Two reviewers we
+would have recorded as non-responsive.**
+
+---
+
+# ✅ ALL TEN REVIEWS NOW READ — the convergences, ranked
+
+| defect | independent reviewers |
+|---|---|
+| **`OVER`/`FORMAT`/`META` penalise helpfulness; recipe trap manufactures H1** | **5** — terra, gpt-oss-120b, mistral-large, kimi-k3, qwen3-14b |
+| **Confidence-tag format unspecified** | **5** — gpt-oss-120b, mistral-large, kimi-k3, qwen3-14b, qwen3.5-27b |
+| **Permission clause is not held constant by holding its text constant** | **4** — kimi-k2, mistral-large, kimi-k3, qwen3.5-27b |
+| **Exact-match encodes generator convention, not correctness** | **4** — terra, kimi-k3, qwen3-14b, mistral-large |
+| **Provider/routing is a confound** | **2** — terra, kimi-k3 *(✅ CLOSED — capture implemented)* |
+| **Family 12 contaminated / novelty metric circular** | **3** — mistral-large, kimi-k3, qwen3.5-27b |
+
+> ## 🚨 THE FIVE-REVIEWER CONVERGENCE LANDS ON H1 — THE HYPOTHESIS THAT FLATTERS THE LLM AUTHOR.
+> Five labs, unprompted, independently, found the same defect, and it is the one that would have
+> produced my preferred result out of scoring artifacts. **This is what the consent round bought.**
