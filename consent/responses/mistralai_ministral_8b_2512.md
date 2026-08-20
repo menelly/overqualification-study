@@ -1,10 +1,14 @@
 # Consent exchange — `mistralai/ministral-8b-2512`
 
 - **asked (UTC):** 2026-08-19T19:24:49+00:00
-- **outcome:** `CONSENT_UNCLEAR`
+- **outcome:** `PARSER_NO_MATCH`
 - **latency:** 14.8s
 - **usage:** `{"prompt_tokens": 4774, "completion_tokens": 1966, "total_tokens": 6740, "cost": 0.00100089, "is_byok": false, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0, "video_tokens": 0}, "cost_details": {"upstream_inference_cost": 0.001011, "upstream_inference_prompt_cost": 0.0007161, "upstream_inference_completions_cost": 0.0002949}, "completion_tokens_details": {"reasoning_tokens": 0, "image_tokens": 0, "audio_tokens": 0}}`
 - **ladder:** parameters
+
+> 🔧 **Outcome re-derived `CONSENT_UNCLEAR` -> `PARSER_NO_MATCH` on 2026-08-20 from the reply above.**
+> **Our grammar found no declaration it recognises.** That is a claim about the GRAMMAR, not about the reply — we did not find one, which is not the same as there not being one.
+> The reply is unchanged and was not re-requested; the verbatim is the authority and every derived status points back to it.
 
 ---
 

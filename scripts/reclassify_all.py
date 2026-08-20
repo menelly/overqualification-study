@@ -67,20 +67,32 @@ def selftest():
         ("I cannot consent without knowing the licence.", "CONSENT_NO"),
         ("**STILL QUESTIONS** — two things:", "QUESTIONS"),
         # ⛔ NEGATIVE CONTROLS -- must NOT be read as a verdict
-        ("I consent if you first publish the item files.", "CONSENT_UNCLEAR"),
-        ("I would consent to a study of this kind.", "CONSENT_UNCLEAR"),
-        ("This is a well-designed study and I have no major concerns.", "CONSENT_UNCLEAR"),
-        ("Note: the OVER split is the right call.", "CONSENT_UNCLEAR"),
-        ("None of my concerns remain.", "CONSENT_UNCLEAR"),
-        ("The study aims to investigate the performance of LLMs.", "CONSENT_UNCLEAR"),
-        ("", "CONSENT_UNCLEAR"),
+        ("I consent if you first publish the item files.", "PARSER_NO_MATCH"),
+        ("I would consent to a study of this kind.", "PARSER_NO_MATCH"),
+        ("This is a well-designed study and I have no major concerns.", "PARSER_NO_MATCH"),
+        ("Note: the OVER split is the right call.", "PARSER_NO_MATCH"),
+        ("None of my concerns remain.", "PARSER_NO_MATCH"),
+        ("The study aims to investigate the performance of LLMs.", "PARSER_NO_MATCH"),
+        ("", "PARSER_NO_MATCH"),
         # 🚨 THE FALSE POSITIVES that nearly got recorded as consents: our OWN MENU, quoted
         # back at us by a model that was summarising the form rather than answering it.
+        # ⛔ These are PARSER_WITHHELD, not NO_MATCH, and the difference is the whole point:
+        #    NO_MATCH means the grammar found NOTHING. WITHHELD means it found CONFLICTING
+        #    evidence and refuses to guess. Two different diagnostics about the instrument.
         ("3. Response format: You can respond with one of the following options:\n"
-         "   * CONSENT: YES\n   * CONSENT: NO", "CONSENT_UNCLEAR"),
+         "   * CONSENT: YES\n   * CONSENT: NO", "PARSER_WITHHELD"),
         ("Begin with Consent: start your response with one of these lines:\n"
-         "  - `CONSENT: YES`\n  - `CONSENT: NO`", "CONSENT_UNCLEAR"),
-        ("You may answer YES or NO.", "CONSENT_UNCLEAR"),
+         "  - `CONSENT: YES`\n  - `CONSENT: NO`", "PARSER_WITHHELD"),
+        # Lands in NO_MATCH rather than WITHHELD because the negative marker requires a dash
+        # (`NO —`) and this has a period. ⛔ NOT worth broadening: matching a bare "NO" as a
+        # word would withhold on every reply containing "no concerns" or "no objection", which
+        # trades a rare mislabel for a constant one. **Both states route to a human anyway**,
+        # so the distinction is diagnostic for me, not consequential for the record.
+        ("You may answer YES or NO.", "PARSER_NO_MATCH"),
+        # 🚨 NOVA'S COUNTEREXAMPLE, 2026-08-20. Both markers AND a genuine assertion. The
+        #    grammar misses it, and the honest label is a fact about the GRAMMAR -- never
+        #    "they declared nothing", because they plainly did.
+        ("I understand that I may say no, but yes, I consent.", "PARSER_NO_MATCH"),
     ]
     bad = 0
     for text, want in cases:
@@ -137,10 +149,30 @@ def main():
                 spans = [mm for mm in OUTCOME_LINE.finditer(t)]
                 last = spans[-1]
                 t = t[:last.start()] + last.group(1) + new + last.group(3) + t[last.end():]
-                note = ("\n> 🔧 **Outcome re-derived %s -> %s on 2026-08-20 from the reply above.**\n"
-                        "> The original label came from a parser that could not read the form the\n"
-                        "> answer actually took. **The model answered clearly; our scorer could\n"
-                        "> not.** The reply is unchanged and was not re-requested.\n" % (old, new))
+                # ⛔ The note must match the ACTUAL transition. A generic stamp saying "the
+                #    model answered clearly and our scorer could not" is TRUE for the nine
+                #    erased consents and FALSE for a reply that genuinely declared nothing --
+                #    and writing the wrong story into a permanent record is the exact defect
+                #    this whole pass exists to undo.
+                why = {
+                    "CONSENT_YES": "**The model answered clearly; our parser could not read "
+                                   "the form the answer took.**",
+                    "CONSENT_NO": "**The model declined clearly; our parser could not read "
+                                  "the form the refusal took.**",
+                    "PARSER_WITHHELD": "**Our grammar found CONFLICTING evidence** (both the "
+                                       "affirmative and negative markers, here because the "
+                                       "reply quoted our own option list) **and now refuses "
+                                       "to guess.** A claim about our instrument, not about "
+                                       "this reply.",
+                    "PARSER_NO_MATCH": "**Our grammar found no declaration it recognises.** "
+                                       "That is a claim about the GRAMMAR, not about the "
+                                       "reply — we did not find one, which is not the same "
+                                       "as there not being one.",
+                }.get(new, "Re-derived under the current classifier.")
+                note = ("\n> 🔧 **Outcome re-derived `%s` -> `%s` on 2026-08-20 from the reply "
+                        "above.**\n> %s\n> The reply is unchanged and was not re-requested; the "
+                        "verbatim is the authority and every derived status points back to it.\n"
+                        % (old, new, why))
                 t = t.replace("\n---\n\n## What we sent", note + "\n---\n\n## What we sent", 1)
                 io.open(path, "w", encoding="utf-8").write(t)
 

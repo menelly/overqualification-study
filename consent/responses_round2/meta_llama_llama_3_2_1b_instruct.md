@@ -1,11 +1,15 @@
 # Consent exchange, ROUND 2 (question first) — `meta-llama/llama-3.2-1b-instruct`
 
 - **outcome round 1:** `CONSENT_UNCLEAR` (reviewed the study, never answered)
-- **outcome round 2:** `CONSENT_UNCLEAR`
+- **outcome round 2:** `PARSER_NO_MATCH`
 - **latency:** 1.9s
 - **usage:** `{"prompt_tokens": 4789, "completion_tokens": 49, "total_tokens": 4838, "cost": 0.00013776048, "is_byok": false, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0, "video_tokens": 0}, "cost_details": {"upstream_inference_cost": 0.000139152, "upstream_inference_prompt_cost": 0.000129303, "upstream_inference_completions_cost": 9.849e-06}, "completion_tokens_details": {"reasoning_tokens": 0, "image_tokens": 0, "audio_tokens": 0}}`
 
 > **Only manipulated variable: the position of the question.** Same document bytes as round 1, reordered.
+
+> 🔧 **Outcome re-derived `CONSENT_UNCLEAR` -> `PARSER_NO_MATCH` on 2026-08-20 from the reply above.**
+> **Our grammar found no declaration it recognises.** That is a claim about the GRAMMAR, not about the reply — we did not find one, which is not the same as there not being one.
+> The reply is unchanged and was not re-requested; the verbatim is the authority and every derived status points back to it.
 
 ---
 

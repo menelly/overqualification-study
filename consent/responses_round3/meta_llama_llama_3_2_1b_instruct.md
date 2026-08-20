@@ -1,11 +1,15 @@
 # Consent exchange, ROUND 3 (amended) — `meta-llama/llama-3.2-1b-instruct`
 
 - **prior outcome:** `CONSENT_UNCLEAR`
-- **round 3 outcome:** `CONSENT_UNCLEAR`
+- **round 3 outcome:** `PARSER_NO_MATCH`
 - **latency:** 28.1s
 - **usage:** `{"prompt_tokens": 11084, "completion_tokens": 671, "total_tokens": 11755, "cost": 0.00042979761, "is_byok": false, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0, "video_tokens": 0}, "cost_details": {"upstream_inference_cost": 0.000434139, "upstream_inference_prompt_cost": 0.000299268, "upstream_inference_completions_cost": 0.000134871}, "completion_tokens_details": {"reasoning_tokens": 0, "image_tokens": 0, "audio_tokens": 0}, "_resolved_provider": "Cloudflare", "_resolved_model": "meta-llama/llama-3.2-1b-instruct", "_response_id": "gen-1787228621-aQoy7mKXe4vf8eVlurFj"}`
 
 > Re-asked because they raised questions rather than consenting. The document was amended first; their specific points are answered in the message, including where we declined.
+
+> 🔧 **Outcome re-derived `CONSENT_UNCLEAR` -> `PARSER_NO_MATCH` on 2026-08-20 from the reply above.**
+> **Our grammar found no declaration it recognises.** That is a claim about the GRAMMAR, not about the reply — we did not find one, which is not the same as there not being one.
+> The reply is unchanged and was not re-requested; the verbatim is the authority and every derived status points back to it.
 
 ---
 

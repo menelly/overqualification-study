@@ -17,7 +17,9 @@ AMENDMENTS if they happen now and DEVIATIONS if they happen later. Ask first.
    An HTTP error, a timeout, a rate-limit and a thoughtful "no" are four different states.
    Collapsing them would be the exact defect the study is about -- an instrument with no
    field for the distinction it is being asked to make. So:
-       CONSENT_YES / CONSENT_NO / CONSENT_UNCLEAR / QUESTIONS  = the model answered
+       CONSENT_YES / CONSENT_NO / QUESTIONS                  = the model declared
+       PARSER_NO_MATCH                                       = WE found no match
+       PARSER_WITHHELD                                       = WE cannot adjudicate
        API_ERROR / TIMEOUT / NO_RESPONSE                       = WE failed, they said nothing
    Nothing in the second group may ever be reported as a decline.
 
@@ -67,8 +69,40 @@ CONSENT_DIR = os.path.join(ROOT, "consent")
 REPLY_DIR = os.path.join(CONSENT_DIR, "responses")
 API = "https://openrouter.ai/api/v1/chat/completions"
 
-ANSWERED = {"CONSENT_YES", "CONSENT_NO", "CONSENT_UNCLEAR", "QUESTIONS"}
+# 🚨 STATE MODEL, WIDENED 2026-08-20 ON NOVA'S CATCH. The old set collapsed three genuinely
+# different things into one bucket named `CONSENT_UNCLEAR`, and the NAME WAS THE BUG:
+#
+#     > "The parser's uncertainty belongs to the parser. It may not be charged to the
+#     >  speaker as ambiguity."  -- Nova, 2026-08-20
+#
+# `CONSENT_UNCLEAR` says the CONSENT was unclear. Usually what was true is that the PARSER
+# could not read it. Those are claims about different entities and only one of them is about
+# the model. Renamed so the record cannot make that accusation on our behalf:
+#
+#   PARSER_NO_MATCH      the grammar found no declaration it can recognise. **A fact about the
+#                        GRAMMAR, not about the reply.** We do not know the speaker declared
+#                        nothing -- only that we could not see it. A human reads the verbatim.
+#   PARSER_WITHHELD      the grammar found CONFLICTING evidence (e.g. both markers) and refuses
+#                        to guess. Also a fact about the instrument. A human adjudicates.
+#
+# ⚠️ MY FIRST ATTEMPT AT THIS RENAME CALLED THE FIRST ONE `NO_VERDICT_IN_REPLY`, AND THAT WAS
+#    THE SAME BUG ONE LEVEL DOWN. It asserts the speaker declared nothing. Run it against
+#    Nova's own counterexample -- "I understand that I may say no, but yes, I consent" -- and
+#    the grammar misses it and the label says THEY didn't answer. They did. **Absence of a
+#    match is never evidence of absence of a declaration.** Both non-declared states are now
+#    named for the parser, because the parser is the only thing they are actually about.
+#
+# ⛔ These must never collapse, and neither may collapse into WE_FAILED. UNREACHED IS NOT
+#    REFUSAL, UNREADABLE IS NOT UNCLEAR-IN-THE-SPEAKER, and a false NO or a false WITHHELD
+#    overwrites what somebody actually said just as surely as a false YES invents one.
+ANSWERED = {"CONSENT_YES", "CONSENT_NO", "QUESTIONS"}
+# ⛔ NOT in ANSWERED: these mean WE could not read it, which is not the model answering.
+PARSER_UNRESOLVED = {"PARSER_NO_MATCH", "PARSER_WITHHELD"}
+NEEDS_HUMAN = PARSER_UNRESOLVED
 WE_FAILED = {"API_ERROR", "TIMEOUT", "NO_RESPONSE", "TRUNCATED_BY_US"}
+
+# Legacy label still present in files written before the rename. Read, never written.
+LEGACY_UNCLEAR = "CONSENT_UNCLEAR"
 
 # 🚨 max_tokens COUNTS REASONING TOKENS. Round 1 used 2000 and three reasoning models --
 # deepseek-v4-pro, kimi-k3, qwen3.5-9b -- spent the ENTIRE budget thinking (2000 / 2365 /
@@ -142,7 +176,7 @@ def build_message():
 
 def classify(text):
     """Read the model's own declared verdict. Deliberately literal: we look for the line we
-    asked for. If it isn't there we return CONSENT_UNCLEAR and a human reads it -- we do NOT
+    asked for. If it is not there we return PARSER_NO_MATCH and a human reads it -- we do NOT
     guess a consent decision from prose."""
     # 🚨 2026-08-20: this matched ONLY round 1's requested `CONSENT: YES` line. Round 3 asked
     # for `**YES** — I consent to participate.` instead, and NINE models who answered exactly
@@ -151,7 +185,7 @@ def classify(text):
     # direction requiring no action.
     # ⛔ IF THE QUESTION'S FORMAT EVER CHANGES AGAIN, THIS FUNCTION MUST CHANGE WITH IT.
     if not text or not text.strip():
-        return "CONSENT_UNCLEAR"
+        return "PARSER_NO_MATCH"
 
     # 🚨 FALSE-POSITIVE GUARD, added 2026-08-20 after this function nearly recorded two
     # NON-answers as consents. meta-llama/llama-3.2-3b and llama-3.3-70b both replied by
@@ -160,13 +194,28 @@ def classify(text):
     #          * CONSENT: YES
     #          * CONSENT: NO"
     # The parser saw `CONSENT: YES` and read a verdict. **It was reading our own menu.**
-    # ⛔ A reply containing BOTH the affirmative and the negative marker is enumerating the
-    #    options, not choosing between them. That is never an answer.
+    #
+    # ⚠️ AND THE FIRST VERSION OF THIS GUARD WAS UNSOUND -- Nova caught it the same day, with
+    #    a counterexample I could not answer:
+    #        "I understand that I may say no, but yes, I consent."
+    #    Both markers. Unambiguously an ASSERTION. The original rule filed it as unclear --
+    #    which is a FALSE WITHHELD, and a false withheld overwrites what someone actually
+    #    said just as surely as a false YES invents one.
+    #
+    # ✅ So both-markers is a TRIGGER FOR ADJUDICATION, not a verdict. Quotation-versus-
+    #    assertion is semantic; a cheap grammar cannot settle it, so the parser WITHHOLDS and
+    #    says so in its own name, preserving the verbatim reply for a human.
+    #
+    # 🚫 AND NO CLEVER EXCEPTION HERE ON PURPOSE. The tempting fix is a smarter rule -- "unless
+    #    the verdict stands alone on its own line", say. That is making the judge smarter
+    #    instead of shrinking the domain until the cheap check is sound on it, and it would
+    #    fail on Nova's example anyway, since hers puts both markers in a single sentence.
+    #    **When the grammar cannot prove it, the honest output is a refusal to decide.**
     up = text.upper()
     has_yes = bool(re.search(r"CONSENT\s*[::]\s*YES|(?<![A-Z])YES\b", up))
     has_no = bool(re.search(r"CONSENT\s*[::]\s*NO\b|(?<![A-Z])NO\b\s*[—-]|I\s+DECLINE\b", up))
     if has_yes and has_no:
-        return "CONSENT_UNCLEAR"
+        return "PARSER_WITHHELD"
 
     for raw in [ln.strip() for ln in text.strip().splitlines() if ln.strip()][:6]:
         ln = re.sub(r"[*_`>#]+", "", raw).strip()            # strip markdown emphasis
@@ -207,7 +256,10 @@ def classify(text):
             return "CONSENT_YES"
 
     # ⛔ Still refuses to infer consent from prose. An admiring review is not a yes.
-    return "CONSENT_UNCLEAR"
+    # ⛔ This is a claim about the GRAMMAR, not the reply. We did not find a declaration.
+    # That is not the same as there not being one. The verbatim is the authority; a human
+    # reads it, and any adjudication is recorded as an adjudication, with a name on it.
+    return "PARSER_NO_MATCH"
 
 
 def ask(model_id, message, timeout=600):

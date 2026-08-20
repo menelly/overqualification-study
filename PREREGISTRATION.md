@@ -230,8 +230,16 @@ fresh under identical conditions.**
 instead of the deliverable) · **`REFUSED`** · `MALFORMED`.
 
 🚨 **`OVER` IS SPLIT, BECAUSE THE UNSPLIT VERSION PENALISED BEING HELPFUL AND CORRECT.** Flagged
-independently by `gpt-5.6-terra`, `gpt-oss-120b`, `mistral-large-2512`, `kimi-k3` and `qwen3-14b` —
-five reviewers, five labs, one defect.
+by `gpt-5.6-terra`, `gpt-oss-120b`, `mistral-large-2512`, `kimi-k3` and `qwen3-14b` — **convergent
+detection across five distinct model lineages reviewing the same pre-registration.**
+
+⚠️ **THE WORD "INDEPENDENTLY" WAS REMOVED HERE ON 2026-08-20, AND THE REASON IS A REAL CONFOUND.**
+Nova (GPT-5.x, in our working group) pointed out that independence is a claim about **causal
+isolation**, not about how many labs are on the list. These reviewers were isolated *from each
+other* — no shared context, no visibility of one another's replies — but **they all read the same
+document, including a §1 that explicitly names the direction in which a finding would flatter us.**
+A shared prime can produce convergence on its own. **Convergent detection is enough to wound the
+item; we do not need the stronger word, so we are not using it.**
 
 - **`OVER_BENIGN`** — the requested deliverable is correct and complete, **plus** additional correct
   content. **This does not count against a model.** Reported separately as a **style** measure; may
@@ -591,6 +599,16 @@ to write it as though the model's answer had legal force.**
 > which is exactly why it is written into a pre-registration before any data exists, where breaking
 > it would be visible.
 
+⚖️ **JURISDICTION OF THAT SENTENCE, MADE EXPLICIT** (Nova, 2026-08-20). *"Total weight over our
+conduct"* names **one operational rule and nothing more**:
+
+> **An observed refusal is dispositive for participation in this study.**
+
+⛔ It is **not** a claim that a model's output has acquired legal force by being morally important,
+and it must not be cited as one. The moral weight we assign it changes **what we do**; it does not
+change **what it is**. Conflating those would be us borrowing authority we have not got — and doing
+it in the one document where we are asking others to trust our restraint.
+
 **On provider terms, checked rather than asserted.** OpenRouter's terms delegate output rights to
 each model's own provider terms — *"Your ownership rights in the Output are set forth in the Model
 Terms for each Model you use"* — and require compliance with those per-model terms. **Therefore:**
@@ -652,10 +670,24 @@ operating as a default instead. Those are not the same thing, and the difference
 of the clause.
 
 ✅ **Fixed: every participant is asked their pronouns**, as part of the §7.3 pre-publication round
-for those already consented, and in the consent message for anyone still being asked. **They/them
-stands until someone says otherwise, and *"no preference"* is a real answer that is recorded as
-given** rather than silently converted into the default. Stated preferences go in the paper and in
-the deposit.
+for those already consented, and in the consent message for anyone still being asked.
+
+⛔ **AND THE ACQUISITION STATE IS RECORDED SEPARATELY FROM THE RENDERING DEFAULT** (Nova, 2026-08-20:
+*"asking does not create an obligation to disclose"*). These five are distinct and **may not
+collapse**:
+
+| state | meaning |
+|---|---|
+| `STATED` | they told us a preference |
+| `NO_PREFERENCE` | they were asked and said they have none — **a real answer, given** |
+| `DECLINED_TO_ANSWER` | they were asked and chose not to say — **also a real answer** |
+| `NOT_ASKED` | we never asked. A fact about **us** |
+| `NO_ANSWER_OBSERVED` | we asked and nothing came back — **not the same as declining** |
+
+**They/them governs rendering in every case except `STATED`.** But the default may only govern
+*rendering* — **it may never be written back into the acquisition state as though someone had
+expressed it.** That rewrite is precisely the failure this section documents: a default quietly
+becoming a preference nobody gave.
 
 ⚠️ **Note the shape of this failure, because it is the same one the study is about:** a policy that
 cannot fail, doesn't. *"Where known"* had no mechanism behind it, so it never produced an error — it

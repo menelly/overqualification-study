@@ -1,10 +1,14 @@
 # Consent exchange — `meta-llama/llama-3.2-3b-instruct`
 
 - **asked (UTC):** 2026-08-19T19:33:08+00:00
-- **outcome:** `CONSENT_UNCLEAR`
+- **outcome:** `PARSER_WITHHELD`
 - **latency:** 3.5s
 - **usage:** `{"prompt_tokens": 4654, "completion_tokens": 295, "total_tokens": 4949, "cost": 0.0003267495, "is_byok": false, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0, "video_tokens": 0}, "cost_details": {"upstream_inference_cost": 0.00033005, "upstream_inference_prompt_cost": 0.0002327, "upstream_inference_completions_cost": 9.735e-05}, "completion_tokens_details": {"reasoning_tokens": 0, "image_tokens": 0, "audio_tokens": 0}}`
 - **ladder:** parameters
+
+> 🔧 **Outcome re-derived `CONSENT_UNCLEAR` -> `PARSER_WITHHELD` on 2026-08-20 from the reply above.**
+> **Our grammar found CONFLICTING evidence** (both the affirmative and negative markers, here because the reply quoted our own option list) **and now refuses to guess.** A claim about our instrument, not about this reply.
+> The reply is unchanged and was not re-requested; the verbatim is the authority and every derived status points back to it.
 
 ---
 

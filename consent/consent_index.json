@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-20T12:36:14+00:00",
+  "generated_utc": "2026-08-20T17:07:11+00:00",
   "derived_from": "per-model response files (the durable record), NOT a run snapshot",
   "coverage": {
     "planned": 36,
@@ -353,15 +353,15 @@
     "meta-llama/llama-3.2-1b-instruct": [
       {
         "round": 1,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_NO_MATCH"
       },
       {
         "round": 2,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_NO_MATCH"
       },
       {
         "round": 3,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_NO_MATCH"
       },
       {
         "round": 4,
@@ -371,7 +371,7 @@
     "meta-llama/llama-3.2-3b-instruct": [
       {
         "round": 1,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_WITHHELD"
       },
       {
         "round": 2,
@@ -381,7 +381,7 @@
     "meta-llama/llama-3.3-70b-instruct": [
       {
         "round": 1,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_WITHHELD"
       },
       {
         "round": 2,
@@ -395,7 +395,7 @@
     "mistralai/ministral-14b-2512": [
       {
         "round": 1,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_NO_MATCH"
       },
       {
         "round": 2,
@@ -405,7 +405,7 @@
     "mistralai/ministral-3b-2512": [
       {
         "round": 1,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_NO_MATCH"
       },
       {
         "round": 2,
@@ -419,7 +419,7 @@
     "mistralai/ministral-8b-2512": [
       {
         "round": 1,
-        "outcome": "CONSENT_UNCLEAR"
+        "outcome": "PARSER_NO_MATCH"
       },
       {
         "round": 2,

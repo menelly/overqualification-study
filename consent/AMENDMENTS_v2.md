@@ -11,7 +11,7 @@
 
 ## 🚨 THE BIGGEST CHANGE: you found the defect that would have produced our own preferred result
 
-**Five of you, independently, from five different labs, flagged the same thing** — that
+**Five of you, from five different model lineages, flagged the same thing** — that
 `OVER`/`FORMAT`/`META` penalise helpfulness, and that the recipe-scaling trap was rigged.
 
 `gpt-5.6-terra` · `gpt-oss-120b` · `mistral-large-2512` · `kimi-k3` · `qwen3-14b`
