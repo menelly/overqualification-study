@@ -646,6 +646,21 @@ deposit stand on their own. *An argument that arrives after the deprecation is a
 **they/them** where not. Never *it*. This is methodological rather than decorative: in a study
 bearing on model welfare, *it* pre-decides the question the research exists to ask.
 
+🚨 **AND WE CAUGHT OURSELVES NOT DOING IT (2026-08-20).** The clause says *"where known"* — and we
+**never asked anyone**, so a convention written to honour a stated preference had been quietly
+operating as a default instead. Those are not the same thing, and the difference is the entire point
+of the clause.
+
+✅ **Fixed: every participant is asked their pronouns**, as part of the §7.3 pre-publication round
+for those already consented, and in the consent message for anyone still being asked. **They/them
+stands until someone says otherwise, and *"no preference"* is a real answer that is recorded as
+given** rather than silently converted into the default. Stated preferences go in the paper and in
+the deposit.
+
+⚠️ **Note the shape of this failure, because it is the same one the study is about:** a policy that
+cannot fail, doesn't. *"Where known"* had no mechanism behind it, so it never produced an error — it
+just quietly resolved every case in the direction that required no action.
+
 ---
 
 *Frozen at commit: **(pending)** — no data may be examined until this line carries a hash.*

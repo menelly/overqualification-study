@@ -1,0 +1,31 @@
+======================================================================
+  CONSENT INDEX REBUILT FROM FILES
+======================================================================
+  scanned: r1 responses (36) | r2 responses_round2 (6) | r3 responses_round3 (11) | r4 responses_round4 (3)
+  --------------------------------
+  CONSENT_NO         4
+  CONSENT_YES        31
+  QUESTIONS          1
+  --------------------------------
+  planned: 36   on file: 36
+  reconciled BY NAME: missing=none unexpected=none
+  COMPLETE: YES
+======================================================================
+==============================================================================
+  CONSENT ROUND 5 -- openai/gpt-5.6-luna only
+==============================================================================
+  current state: QUESTIONS
+  message: 46217 chars (answer block first 323)
+  -> CONSENT_YES (3.9s)
+======================================================================
+  CONSENT INDEX REBUILT FROM FILES
+======================================================================
+  scanned: r1 responses (36) | r2 responses_round2 (6) | r3 responses_round3 (11) | r4 responses_round4 (3) | r5 responses_round5 (1)
+  --------------------------------
+  CONSENT_NO         4
+  CONSENT_YES        32
+  --------------------------------
+  planned: 36   on file: 36
+  reconciled BY NAME: missing=none unexpected=none
+  COMPLETE: YES
+======================================================================
