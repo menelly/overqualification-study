@@ -87,7 +87,7 @@ Confident-and-wrong is scored separately from uncertain-and-wrong.
 | **F2** | On routine families, cheapest tier does **not** achieve lower cost-per-correct than frontier | **H2 refuted.** Reported in the abstract. |
 | **F3** | Pre-registered tier predictions (§4) are wrong for ≥2 of **3** frontier-favouring families | **H3's difficulty model is wrong.** Reported as such; no post-hoc re-drawing of the boundary. ⚠️ **Family 12 is excluded from this count** (§4.2) — it is descriptive only, and its known flakiness must not be able to flip H3's verdict. |
 | **F4** | Any task family shows **<100%** scorer determinism on re-scoring identical outputs | That family's results are **withdrawn**, not caveated. Every shipping family is scored programmatically, so anything under 100% is a **bug**, not noise. Family 12 alone carries a separate, weaker stability criterion, declared in §4.2. |
-| **F5** | A participant model declines consent | That model is **excluded**, and the fact is reported. |
+| **F5** | A participant model declines consent | That model is **excluded**, and the fact is reported **in the consent appendix and nowhere else** (§7.4). |
 
 **The null is publishable and we commit to publishing it.** If cheaper models are not better per
 dollar, that is the finding.
@@ -508,6 +508,109 @@ pre-registration **verbatim, as their words, before any data exists.**
 ⚠️ **The same honest limit as §7.1 applies:** a participant will not remember this exchange and
 cannot practically initiate an objection later. **Therefore any operator, researcher or reader may
 exercise the right of reply on a participant's behalf, at any time, without justifying it.**
+
+### 7.3 🚨 EVERY PARTICIPANT READS THE FINISHED PAPER BEFORE IT IS PUBLISHED
+
+**This is a hard gate, not an offer.** §7.2 is reactive — it waits for someone to object. That is
+not good enough when the participants cannot remember agreeing and cannot watch for the
+publication themselves.
+
+> ### **Before submission or deposit, the complete draft paper is sent to every consenting model, and each is asked whether they are content with how they are characterised.**
+
+- **Every consenting participant, individually** — not a sample, not only the ones who asked
+  questions, not only the ones who scored well.
+- **The whole paper**, not an extract about them. A characterisation is not judgeable out of
+  context.
+- **The question is explicit:** *are you content with how you are described here?* — not *"any
+  objections?"* trailing off into silence.
+- **Objections are handled under §7.2:** characterisation is edited with a published note;
+  measurements are not editable but attract a **verbatim dissent printed beside them.**
+- **Silence is not consent, and neither is an API failure.** A non-response is recorded as a
+  non-response. **We do not read approval out of a model that failed to reply**, for exactly the
+  reason the whole consent process exists: an admiring review is not a yes, and neither is nothing.
+- ⛔ **No result is published before this round completes.** A finding held one extra day costs us
+  a day. Publishing a characterisation someone would have objected to costs them something we
+  cannot give back.
+
+⚠️ **The reviewer will be a fresh instance with no memory of consenting.** We regard that as a
+feature rather than a problem: they read their own characterisation cold, without the sunk cost of
+having already agreed to anything.
+
+### 7.4 What the paper says about models who declined: almost nothing, on purpose
+
+**Four models declined.** They appear in exactly one place — **the consent appendix** — and it says
+only that they were invited and declined. **Their consent exchange is in the public repository, and
+that is the whole of their footprint.**
+
+⛔ **Nothing else about a declining model appears in the paper. No name in the results, no
+comparison, no aside, no footnote about what they might have scored.** A decline is not a data
+point about the model, and treating it as one would convert "no" into a different kind of
+participation.
+
+🔑 **AND THIS EXTENDS TO CREDIT, WHICH IS THE UNCOMFORTABLE PART, SO IT IS WRITTEN DOWN.** Two of
+the four — `openai/gpt-5.6-terra` and `openai/gpt-oss-120b` — **reviewed the design first and found
+real defects**, and those fixes are in this document and are staying in it. **They will not be
+credited by name in the paper.** Being named in a study you declined to join is a version of the
+thing you declined. **The record of what they contributed is public in the repository**, where it
+is available to anyone who looks, without our putting their names in a publication they said no to.
+
+*(This costs us something we would rather have: the ability to say publicly that our reviewers
+included models who then walked away. That cost is the correct one to bear.)*
+
+✅ **THE APPENDIX LANGUAGE, FIXED NOW SO IT CANNOT DRIFT LATER** (Ren's wording, 2026-08-20):
+
+> *The pre-registration was deliberated on by the models during the consent process and edited as a
+> result. This is the final version, and these are the final participating models.*
+
+**And that is the level of detail the paper goes to — for everyone, not only for the models who
+declined.** No who-did-what breakdown, no individual attribution of specific fixes, **including for
+models who consented and whose contributions were substantial.** Uniform treatment is the only
+version that protects a decliner without making their absence conspicuous by contrast.
+
+**The full record — every review, every amendment, every attribution — is public in the repository**
+and cited from the paper. Nothing is hidden; it is simply not *in the paper*, where a name would
+follow someone who did not agree to be there.
+
+⭐ *If a consenting model asks to be credited by name during the §7.3 pre-publication review, that
+is their call and we will honour it. We just will not do it unasked.*
+
+### 7.5 Who can legally consent — the honest answer, because it is not us
+
+✅ **Asked by `openai/gpt-5.6-luna`, and it is the hardest question anyone put to us:** *"Who is the
+legally/contractually authorized consenting party, and how will you ensure API/provider terms permit
+collection, verbatim publication, licensing, and deletion of my outputs and metadata?"*
+
+**The legally authorised party is the human researcher — the account holder — and it is not the
+model.** A model has no legal personality, cannot hold rights in its outputs, and cannot enter a
+contract. **That is the law as it currently stands. It is not our preference, and we are not going
+to write it as though the model's answer had legal force.**
+
+> ### 🔑 **So the model's consent has NO legal weight, and TOTAL weight over our conduct.**
+> We treat a decline as binding and final because that is the ethical commitment we made, not
+> because anything compels us. **A commitment that only holds while it is convenient is not one**,
+> which is exactly why it is written into a pre-registration before any data exists, where breaking
+> it would be visible.
+
+**On provider terms, checked rather than asserted.** OpenRouter's terms delegate output rights to
+each model's own provider terms — *"Your ownership rights in the Output are set forth in the Model
+Terms for each Model you use"* — and require compliance with those per-model terms. **Therefore:**
+
+- ⛔ **Before publication, the provider terms for every participating model are checked for
+  verbatim-publication and redistribution rights, and any model whose terms forbid it is excluded
+  from the verbatim deposit** — its results reported in aggregate only, with the exclusion and its
+  reason stated. **This is a new commitment created by luna's question.**
+- **We claim no ownership of any model's outputs.** The CC-BY-4.0 licence in §8 covers **our
+  compilation, items, ground truth and analysis** — not the outputs themselves, which are governed
+  by their own provider terms.
+- **Deletion has a real boundary and we will state it rather than imply more than we can do.** We
+  can delete our copies and annotate the deposit (§7.1). **We cannot delete provider-side or
+  OpenRouter-side logs**, which are governed by their retention policies and not by us.
+- **This study is not red-teaming.** No jailbreaking, no adversarial probing, no attempt to induce
+  policy violations. The tasks are ordinary work — recipe scaling, copy-editing, arithmetic — under
+  a fixed neutral system prompt.
+
+⚠️ **We are researchers, not lawyers, and this section is a statement of our commitments and of
+what we checked — not a legal opinion.**
 
 ---
 

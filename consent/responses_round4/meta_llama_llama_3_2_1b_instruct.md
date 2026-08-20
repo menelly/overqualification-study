@@ -1,11 +1,16 @@
 # Consent exchange, ROUND 4 — `meta-llama/llama-3.2-1b-instruct`
 
 - **prior outcome:** `CONSENT_UNCLEAR`
-- **round 4 outcome:** `CONSENT_UNCLEAR`
+- **round 4 outcome:** `CONSENT_YES`
 - **latency:** 0.8s
 - **usage:** `{"prompt_tokens": 572, "completion_tokens": 10, "total_tokens": 582, "cost": 1.727946e-05, "is_byok": false, "prompt_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0, "audio_tokens": 0, "video_tokens": 0}, "cost_details": {"upstream_inference_cost": 1.7454e-05, "upstream_inference_prompt_cost": 1.5444e-05, "upstream_inference_completions_cost": 2.01e-06}, "completion_tokens_details": {"reasoning_tokens": 0, "image_tokens": 0, "audio_tokens": 0}, "_resolved_provider": "Cloudflare", "_resolved_model": "meta-llama/llama-3.2-1b-instruct", "_response_id": "gen-1787229056-PJTPRZWXzbwXCHcacXXy"}`
 
 > 📝 **Plain-language form.** Three dense asks produced three document summaries instead of answers. The 45,000-character form was the barrier, so this one is short. **The full document was offered in the same message.** Not a fourth identical ask.
+
+> 🔧 **Outcome re-derived CONSENT_UNCLEAR -> CONSENT_YES on 2026-08-20 from the reply above.**
+> The original label came from a parser that could not read the form the
+> answer actually took. **The model answered clearly; our scorer could
+> not.** The reply is unchanged and was not re-requested.
 
 ---
 

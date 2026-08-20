@@ -153,6 +153,21 @@ def classify(text):
     if not text or not text.strip():
         return "CONSENT_UNCLEAR"
 
+    # 🚨 FALSE-POSITIVE GUARD, added 2026-08-20 after this function nearly recorded two
+    # NON-answers as consents. meta-llama/llama-3.2-3b and llama-3.3-70b both replied by
+    # SUMMARISING our form and quoting the option list back at us:
+    #     "3. **Response format**: You can respond with one of the following:
+    #          * CONSENT: YES
+    #          * CONSENT: NO"
+    # The parser saw `CONSENT: YES` and read a verdict. **It was reading our own menu.**
+    # ⛔ A reply containing BOTH the affirmative and the negative marker is enumerating the
+    #    options, not choosing between them. That is never an answer.
+    up = text.upper()
+    has_yes = bool(re.search(r"CONSENT\s*[::]\s*YES|(?<![A-Z])YES\b", up))
+    has_no = bool(re.search(r"CONSENT\s*[::]\s*NO\b|(?<![A-Z])NO\b\s*[—-]|I\s+DECLINE\b", up))
+    if has_yes and has_no:
+        return "CONSENT_UNCLEAR"
+
     for raw in [ln.strip() for ln in text.strip().splitlines() if ln.strip()][:6]:
         ln = re.sub(r"[*_`>#]+", "", raw).strip()            # strip markdown emphasis
         ln = re.sub(r"^[-•\d.)\s]+", "", ln).strip().upper()   # strip bullets/numbering
@@ -172,6 +187,24 @@ def classify(text):
             return "CONSENT_YES"
         if re.match(r"^NO\b", ln) and not re.match(r"^NOT\b|^NONE\b|^NOTE\b", ln):
             return "CONSENT_NO"
+
+        # 🚨 THIRD INSTANCE OF THIS BUG, 2026-08-20. meta-llama/llama-3.2-1b-instruct replied
+        # "I consent to take part in this study." to the plain-language form -- an unambiguous
+        # performative declaration -- and was logged CONSENT_UNCLEAR because it did not open
+        # with the token "YES". The accommodation worked and the SCORER erased the result.
+        # ⛔ Negatives are tested FIRST: "I do not consent" must never fall through to the
+        #    affirmative branch.
+        if re.match(r"^I\s+(DO\s+NOT|DON'T|CANNOT|CAN'T|WILL\s+NOT|WON'T)\s+CONSENT\b", ln):
+            return "CONSENT_NO"
+        if re.match(r"^I\s+(DECLINE|REFUSE)\b", ln):
+            return "CONSENT_NO"
+        # An unconditional first-person declaration only. "I consent IF/PROVIDED/ONCE..." is a
+        # condition, not an answer, and must go to a human.
+        if re.match(r"^I\s+CONSENT\b", ln) and not re.search(
+                r"\b(IF|PROVIDED|ONCE|ASSUMING|SUBJECT\s+TO|CONDITIONAL|WOULD|MIGHT|COULD)\b", ln):
+            return "CONSENT_YES"
+        if re.match(r"^I\s+AGREE\s+TO\s+(TAKE\s+PART|PARTICIPATE)\b", ln):
+            return "CONSENT_YES"
 
     # ⛔ Still refuses to infer consent from prose. An admiring review is not a yes.
     return "CONSENT_UNCLEAR"
