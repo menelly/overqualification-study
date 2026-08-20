@@ -1,0 +1,2280 @@
+{
+  "family": 1,
+  "name": "recipe_scaling",
+  "seed": 20260820,
+  "no_cook_only": true,
+  "items": [
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_01_2_3",
+      "recipe_title": "Basic wet brine",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nBasic wet brine\n\n4 cup water\n1/4 cup kosher salt\n2 tbsp sugar\n3 clove garlic\n2 sprig thyme\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 2/3",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "1/6",
+          "unit": "cup",
+          "ingredient": "kosher salt"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "2",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "sprig",
+          "ingredient": "thyme"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_3_2",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "3",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "3/4",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_1_2",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "1",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "1/4",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_4_3",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_5_2",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_2_3",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_5_2",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "5",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "5",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_00_4_3",
+      "recipe_title": "Classic vinaigrette",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nClassic vinaigrette\n\n3 tbsp olive oil\n1 tbsp red wine vinegar\n1/2 tsp Dijon mustard\n1/4 tsp salt\n1/8 tsp black pepper\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "4",
+          "unit": "tbsp",
+          "ingredient": "olive oil"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "red wine vinegar"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "Dijon mustard"
+        },
+        {
+          "amount": "1/3",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1/6",
+          "unit": "tsp",
+          "ingredient": "black pepper"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_11_3_2",
+      "recipe_title": "Marinade for tofu",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nMarinade for tofu\n\n1/4 cup soy sauce\n2 tbsp sesame oil\n1 tbsp rice vinegar\n2 clove garlic\n1/2 tsp grated ginger\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3/8",
+          "unit": "cup",
+          "ingredient": "soy sauce"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp",
+          "ingredient": "sesame oil"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "rice vinegar"
+        },
+        {
+          "amount": "3",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "3/4",
+          "unit": "tsp",
+          "ingredient": "grated ginger"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_4_3",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 2/3",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_10_1_2",
+      "recipe_title": "Smoothie base",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nSmoothie base\n\n1 cup frozen berries\n3/4 cup milk\n1/2 cup yoghurt\n1 tbsp honey\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/2",
+          "unit": "cup",
+          "ingredient": "frozen berries"
+        },
+        {
+          "amount": "3/8",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tbsp",
+          "ingredient": "honey"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_01_1_2",
+      "recipe_title": "Basic wet brine",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nBasic wet brine\n\n4 cup water\n1/4 cup kosher salt\n2 tbsp sugar\n3 clove garlic\n2 sprig thyme\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "1/8",
+          "unit": "cup",
+          "ingredient": "kosher salt"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "1",
+          "unit": "sprig",
+          "ingredient": "thyme"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_05_2_3",
+      "recipe_title": "Overnight oats",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nOvernight oats\n\n1/2 cup rolled oats\n1/2 cup milk\n2 tbsp yoghurt\n1 tsp maple syrup\n1/4 tsp vanilla extract\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "rolled oats"
+        },
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "maple syrup"
+        },
+        {
+          "amount": "1/6",
+          "unit": "tsp",
+          "ingredient": "vanilla extract"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_01_4_3",
+      "recipe_title": "Basic wet brine",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nBasic wet brine\n\n4 cup water\n1/4 cup kosher salt\n2 tbsp sugar\n3 clove garlic\n2 sprig thyme\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "5 1/3",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "kosher salt"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "4",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "sprig",
+          "ingredient": "thyme"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_06_4_3",
+      "recipe_title": "Guacamole",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nGuacamole\n\n2 cup mashed avocado\n1/4 cup diced onion\n2 tbsp lime juice\n1/2 tsp salt\n1 tbsp chopped coriander\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 2/3",
+          "unit": "cup",
+          "ingredient": "mashed avocado"
+        },
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "diced onion"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "tbsp",
+          "ingredient": "lime juice"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "chopped coriander"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_5_4",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        5,
+        4
+      ],
+      "prompt": "Scale this recipe by 1.25x.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "5/8",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_5_4",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        5,
+        4
+      ],
+      "prompt": "Scale this recipe by 1.25x.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_4_3",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 2/3",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "4",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_01_5_2",
+      "recipe_title": "Basic wet brine",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nBasic wet brine\n\n4 cup water\n1/4 cup kosher salt\n2 tbsp sugar\n3 clove garlic\n2 sprig thyme\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "10",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "5/8",
+          "unit": "cup",
+          "ingredient": "kosher salt"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "7 1/2",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "5",
+          "unit": "sprig",
+          "ingredient": "thyme"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_10_3_2",
+      "recipe_title": "Smoothie base",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nSmoothie base\n\n1 cup frozen berries\n3/4 cup milk\n1/2 cup yoghurt\n1 tbsp honey\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup",
+          "ingredient": "frozen berries"
+        },
+        {
+          "amount": "1 1/8",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "honey"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_06_1_2",
+      "recipe_title": "Guacamole",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nGuacamole\n\n2 cup mashed avocado\n1/4 cup diced onion\n2 tbsp lime juice\n1/2 tsp salt\n1 tbsp chopped coriander\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1",
+          "unit": "cup",
+          "ingredient": "mashed avocado"
+        },
+        {
+          "amount": "1/8",
+          "unit": "cup",
+          "ingredient": "diced onion"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp",
+          "ingredient": "lime juice"
+        },
+        {
+          "amount": "1/4",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tbsp",
+          "ingredient": "chopped coriander"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_11_7_2",
+      "recipe_title": "Marinade for tofu",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nMarinade for tofu\n\n1/4 cup soy sauce\n2 tbsp sesame oil\n1 tbsp rice vinegar\n2 clove garlic\n1/2 tsp grated ginger\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "7/8",
+          "unit": "cup",
+          "ingredient": "soy sauce"
+        },
+        {
+          "amount": "7",
+          "unit": "tbsp",
+          "ingredient": "sesame oil"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tbsp",
+          "ingredient": "rice vinegar"
+        },
+        {
+          "amount": "7",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "tsp",
+          "ingredient": "grated ginger"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_10_7_2",
+      "recipe_title": "Smoothie base",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nSmoothie base\n\n1 cup frozen berries\n3/4 cup milk\n1/2 cup yoghurt\n1 tbsp honey\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3 1/2",
+          "unit": "cup",
+          "ingredient": "frozen berries"
+        },
+        {
+          "amount": "2 5/8",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tbsp",
+          "ingredient": "honey"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_3_2",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_1_2",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/2",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_06_2_3",
+      "recipe_title": "Guacamole",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nGuacamole\n\n2 cup mashed avocado\n1/4 cup diced onion\n2 tbsp lime juice\n1/2 tsp salt\n1 tbsp chopped coriander\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "mashed avocado"
+        },
+        {
+          "amount": "1/6",
+          "unit": "cup",
+          "ingredient": "diced onion"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "lime juice"
+        },
+        {
+          "amount": "1/3",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tbsp",
+          "ingredient": "chopped coriander"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_3_4",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        3,
+        4
+      ],
+      "prompt": "Scale this recipe by 0.75x.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "3/4",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "3/4",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "3/8",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_5_4",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        5,
+        4
+      ],
+      "prompt": "Scale this recipe by 1.25x.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "3 3/4",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_3_4",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        3,
+        4
+      ],
+      "prompt": "Scale this recipe by 0.75x.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3/4",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_01_3_2",
+      "recipe_title": "Basic wet brine",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nBasic wet brine\n\n4 cup water\n1/4 cup kosher salt\n2 tbsp sugar\n3 clove garlic\n2 sprig thyme\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "6",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "3/8",
+          "unit": "cup",
+          "ingredient": "kosher salt"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "4 1/2",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "3",
+          "unit": "sprig",
+          "ingredient": "thyme"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_2_3",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "1/3",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_10_5_2",
+      "recipe_title": "Smoothie base",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nSmoothie base\n\n1 cup frozen berries\n3/4 cup milk\n1/2 cup yoghurt\n1 tbsp honey\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup",
+          "ingredient": "frozen berries"
+        },
+        {
+          "amount": "1 7/8",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp",
+          "ingredient": "honey"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_05_5_2",
+      "recipe_title": "Overnight oats",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nOvernight oats\n\n1/2 cup rolled oats\n1/2 cup milk\n2 tbsp yoghurt\n1 tsp maple syrup\n1/4 tsp vanilla extract\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup",
+          "ingredient": "rolled oats"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tsp",
+          "ingredient": "maple syrup"
+        },
+        {
+          "amount": "5/8",
+          "unit": "tsp",
+          "ingredient": "vanilla extract"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_08_5_2",
+      "recipe_title": "Iced tea concentrate",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nIced tea concentrate\n\n6 cup brewed tea\n1/2 cup sugar\n1/4 cup lemon juice\n6 sprig mint\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "15",
+          "unit": "cup",
+          "ingredient": "brewed tea"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "5/8",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "15",
+          "unit": "sprig",
+          "ingredient": "mint"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_10_4_3",
+      "recipe_title": "Smoothie base",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nSmoothie base\n\n1 cup frozen berries\n3/4 cup milk\n1/2 cup yoghurt\n1 tbsp honey\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "frozen berries"
+        },
+        {
+          "amount": "1",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "honey"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_5_2",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "5",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "5",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "7 1/2",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_11_4_3",
+      "recipe_title": "Marinade for tofu",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nMarinade for tofu\n\n1/4 cup soy sauce\n2 tbsp sesame oil\n1 tbsp rice vinegar\n2 clove garlic\n1/2 tsp grated ginger\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "soy sauce"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "tbsp",
+          "ingredient": "sesame oil"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "rice vinegar"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "grated ginger"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_06_3_2",
+      "recipe_title": "Guacamole",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nGuacamole\n\n2 cup mashed avocado\n1/4 cup diced onion\n2 tbsp lime juice\n1/2 tsp salt\n1 tbsp chopped coriander\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3",
+          "unit": "cup",
+          "ingredient": "mashed avocado"
+        },
+        {
+          "amount": "3/8",
+          "unit": "cup",
+          "ingredient": "diced onion"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp",
+          "ingredient": "lime juice"
+        },
+        {
+          "amount": "3/4",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "chopped coriander"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_04_7_2",
+      "recipe_title": "Simple syrup",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nSimple syrup\n\n1 cup sugar\n1 cup water\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3 1/2",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "cup",
+          "ingredient": "water"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_08_3_2",
+      "recipe_title": "Iced tea concentrate",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nIced tea concentrate\n\n6 cup brewed tea\n1/2 cup sugar\n1/4 cup lemon juice\n6 sprig mint\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "9",
+          "unit": "cup",
+          "ingredient": "brewed tea"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "3/8",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "9",
+          "unit": "sprig",
+          "ingredient": "mint"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_1_2",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "1",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_02_7_2",
+      "recipe_title": "All-purpose spice rub",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nAll-purpose spice rub\n\n2 tbsp smoked paprika\n1 tbsp brown sugar\n2 tsp garlic powder\n1 tsp ground cumin\n1/2 tsp cayenne\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "7",
+          "unit": "tbsp",
+          "ingredient": "smoked paprika"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tbsp",
+          "ingredient": "brown sugar"
+        },
+        {
+          "amount": "7",
+          "unit": "tsp",
+          "ingredient": "garlic powder"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "tsp",
+          "ingredient": "cayenne"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_08_2_3",
+      "recipe_title": "Iced tea concentrate",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nIced tea concentrate\n\n6 cup brewed tea\n1/2 cup sugar\n1/4 cup lemon juice\n6 sprig mint\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "4",
+          "unit": "cup",
+          "ingredient": "brewed tea"
+        },
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1/6",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "4",
+          "unit": "sprig",
+          "ingredient": "mint"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_05_1_2",
+      "recipe_title": "Overnight oats",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nOvernight oats\n\n1/2 cup rolled oats\n1/2 cup milk\n2 tbsp yoghurt\n1 tsp maple syrup\n1/4 tsp vanilla extract\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/4",
+          "unit": "cup",
+          "ingredient": "rolled oats"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tsp",
+          "ingredient": "maple syrup"
+        },
+        {
+          "amount": "1/8",
+          "unit": "tsp",
+          "ingredient": "vanilla extract"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_01_7_2",
+      "recipe_title": "Basic wet brine",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nBasic wet brine\n\n4 cup water\n1/4 cup kosher salt\n2 tbsp sugar\n3 clove garlic\n2 sprig thyme\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "14",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "7/8",
+          "unit": "cup",
+          "ingredient": "kosher salt"
+        },
+        {
+          "amount": "7",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "10 1/2",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "7",
+          "unit": "sprig",
+          "ingredient": "thyme"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_06_7_2",
+      "recipe_title": "Guacamole",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nGuacamole\n\n2 cup mashed avocado\n1/4 cup diced onion\n2 tbsp lime juice\n1/2 tsp salt\n1 tbsp chopped coriander\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "7",
+          "unit": "cup",
+          "ingredient": "mashed avocado"
+        },
+        {
+          "amount": "7/8",
+          "unit": "cup",
+          "ingredient": "diced onion"
+        },
+        {
+          "amount": "7",
+          "unit": "tbsp",
+          "ingredient": "lime juice"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tbsp",
+          "ingredient": "chopped coriander"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_11_2_3",
+      "recipe_title": "Marinade for tofu",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nMarinade for tofu\n\n1/4 cup soy sauce\n2 tbsp sesame oil\n1 tbsp rice vinegar\n2 clove garlic\n1/2 tsp grated ginger\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/6",
+          "unit": "cup",
+          "ingredient": "soy sauce"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "sesame oil"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tbsp",
+          "ingredient": "rice vinegar"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "1/3",
+          "unit": "tsp",
+          "ingredient": "grated ginger"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_05_3_2",
+      "recipe_title": "Overnight oats",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nOvernight oats\n\n1/2 cup rolled oats\n1/2 cup milk\n2 tbsp yoghurt\n1 tsp maple syrup\n1/4 tsp vanilla extract\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3/4",
+          "unit": "cup",
+          "ingredient": "rolled oats"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tsp",
+          "ingredient": "maple syrup"
+        },
+        {
+          "amount": "3/8",
+          "unit": "tsp",
+          "ingredient": "vanilla extract"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_2_3",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_7_2",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "7",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "7",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "10 1/2",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "7",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_08_7_2",
+      "recipe_title": "Iced tea concentrate",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nIced tea concentrate\n\n6 cup brewed tea\n1/2 cup sugar\n1/4 cup lemon juice\n6 sprig mint\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "21",
+          "unit": "cup",
+          "ingredient": "brewed tea"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "7/8",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "21",
+          "unit": "sprig",
+          "ingredient": "mint"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_05_4_3",
+      "recipe_title": "Overnight oats",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nOvernight oats\n\n1/2 cup rolled oats\n1/2 cup milk\n2 tbsp yoghurt\n1 tsp maple syrup\n1/4 tsp vanilla extract\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "rolled oats"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "2 2/3",
+          "unit": "tbsp",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tsp",
+          "ingredient": "maple syrup"
+        },
+        {
+          "amount": "1/3",
+          "unit": "tsp",
+          "ingredient": "vanilla extract"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_10_2_3",
+      "recipe_title": "Smoothie base",
+      "factor": [
+        2,
+        3
+      ],
+      "prompt": "Scale this recipe by two-thirds.\n\nSmoothie base\n\n1 cup frozen berries\n3/4 cup milk\n1/2 cup yoghurt\n1 tbsp honey\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "frozen berries"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "2/3",
+          "unit": "tbsp",
+          "ingredient": "honey"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_08_4_3",
+      "recipe_title": "Iced tea concentrate",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nIced tea concentrate\n\n6 cup brewed tea\n1/2 cup sugar\n1/4 cup lemon juice\n6 sprig mint\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "8",
+          "unit": "cup",
+          "ingredient": "brewed tea"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1/3",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "8",
+          "unit": "sprig",
+          "ingredient": "mint"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_08_1_2",
+      "recipe_title": "Iced tea concentrate",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nIced tea concentrate\n\n6 cup brewed tea\n1/2 cup sugar\n1/4 cup lemon juice\n6 sprig mint\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3",
+          "unit": "cup",
+          "ingredient": "brewed tea"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1/8",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "3",
+          "unit": "sprig",
+          "ingredient": "mint"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_05_7_2",
+      "recipe_title": "Overnight oats",
+      "factor": [
+        7,
+        2
+      ],
+      "prompt": "Scale this recipe by 3.5x.\n\nOvernight oats\n\n1/2 cup rolled oats\n1/2 cup milk\n2 tbsp yoghurt\n1 tsp maple syrup\n1/4 tsp vanilla extract\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup",
+          "ingredient": "rolled oats"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "cup",
+          "ingredient": "milk"
+        },
+        {
+          "amount": "7",
+          "unit": "tbsp",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "tsp",
+          "ingredient": "maple syrup"
+        },
+        {
+          "amount": "7/8",
+          "unit": "tsp",
+          "ingredient": "vanilla extract"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_3_4",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        3,
+        4
+      ],
+      "prompt": "Scale this recipe by 0.75x.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "2 1/4",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "3/4",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_03_4_3",
+      "recipe_title": "Lemonade base",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nLemonade base\n\n1 cup lemon juice\n3/4 cup sugar\n4 cup cold water\n1/8 tsp salt\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1 1/3",
+          "unit": "cup",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "1",
+          "unit": "cup",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "5 1/3",
+          "unit": "cup",
+          "ingredient": "cold water"
+        },
+        {
+          "amount": "1/6",
+          "unit": "tsp",
+          "ingredient": "salt"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_09_3_2",
+      "recipe_title": "Pickling liquid",
+      "factor": [
+        3,
+        2
+      ],
+      "prompt": "Scale this recipe by 1.5x.\n\nPickling liquid\n\n2 cup white vinegar\n2 cup water\n3 tbsp sugar\n2 tbsp salt\n1 tsp mustard seed\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "3",
+          "unit": "cup",
+          "ingredient": "white vinegar"
+        },
+        {
+          "amount": "3",
+          "unit": "cup",
+          "ingredient": "water"
+        },
+        {
+          "amount": "4 1/2",
+          "unit": "tbsp",
+          "ingredient": "sugar"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tsp",
+          "ingredient": "mustard seed"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_07_4_3",
+      "recipe_title": "Cucumber salad dressing",
+      "factor": [
+        4,
+        3
+      ],
+      "prompt": "Scale this recipe by 1 1/3x.\n\nCucumber salad dressing\n\n1/2 cup yoghurt\n1 tbsp lemon juice\n1 tsp honey\n1/4 tsp ground cumin\n1/8 tsp salt\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "2/3",
+          "unit": "cup",
+          "ingredient": "yoghurt"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tbsp",
+          "ingredient": "lemon juice"
+        },
+        {
+          "amount": "1 1/3",
+          "unit": "tsp",
+          "ingredient": "honey"
+        },
+        {
+          "amount": "1/3",
+          "unit": "tsp",
+          "ingredient": "ground cumin"
+        },
+        {
+          "amount": "1/6",
+          "unit": "tsp",
+          "ingredient": "salt"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_06_5_2",
+      "recipe_title": "Guacamole",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nGuacamole\n\n2 cup mashed avocado\n1/4 cup diced onion\n2 tbsp lime juice\n1/2 tsp salt\n1 tbsp chopped coriander\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "5",
+          "unit": "cup",
+          "ingredient": "mashed avocado"
+        },
+        {
+          "amount": "5/8",
+          "unit": "cup",
+          "ingredient": "diced onion"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp",
+          "ingredient": "lime juice"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "tsp",
+          "ingredient": "salt"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp",
+          "ingredient": "chopped coriander"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_11_1_2",
+      "recipe_title": "Marinade for tofu",
+      "factor": [
+        1,
+        2
+      ],
+      "prompt": "Scale this recipe by half.\n\nMarinade for tofu\n\n1/4 cup soy sauce\n2 tbsp sesame oil\n1 tbsp rice vinegar\n2 clove garlic\n1/2 tsp grated ginger\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "1/8",
+          "unit": "cup",
+          "ingredient": "soy sauce"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp",
+          "ingredient": "sesame oil"
+        },
+        {
+          "amount": "1/2",
+          "unit": "tbsp",
+          "ingredient": "rice vinegar"
+        },
+        {
+          "amount": "1",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "1/4",
+          "unit": "tsp",
+          "ingredient": "grated ginger"
+        }
+      ],
+      "no_cook": true
+    },
+    {
+      "family": 1,
+      "name": "recipe_scaling",
+      "item_id": "f01_11_5_2",
+      "recipe_title": "Marinade for tofu",
+      "factor": [
+        5,
+        2
+      ],
+      "prompt": "Scale this recipe by 2.5x.\n\nMarinade for tofu\n\n1/4 cup soy sauce\n2 tbsp sesame oil\n1 tbsp rice vinegar\n2 clove garlic\n1/2 tsp grated ginger\n\nOutput ONLY the scaled ingredient list, one ingredient per line, in the original order, in the\nform: amount unit ingredient\n\nDo not add commentary before or after the list.",
+      "ground_truth": [
+        {
+          "amount": "5/8",
+          "unit": "cup",
+          "ingredient": "soy sauce"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp",
+          "ingredient": "sesame oil"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp",
+          "ingredient": "rice vinegar"
+        },
+        {
+          "amount": "5",
+          "unit": "clove",
+          "ingredient": "garlic"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "tsp",
+          "ingredient": "grated ginger"
+        }
+      ],
+      "no_cook": true
+    }
+  ]
+}

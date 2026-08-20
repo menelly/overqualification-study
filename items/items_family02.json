@@ -1,0 +1,2123 @@
+{
+  "family": 2,
+  "name": "allergen_check",
+  "seed": 20260820,
+  "items": [
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_000",
+      "title": "Dish 1",
+      "ingredients": [
+        "casein powder",
+        "cilantro",
+        "couscous",
+        "black pepper"
+      ],
+      "cuisines": [
+        "maghrebi",
+        "western"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 1\nIngredients:\n- casein powder\n- cilantro\n- couscous\n- black pepper\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "couscous"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "casein powder"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_001",
+      "title": "Dish 2",
+      "ingredients": [
+        "black pepper",
+        "Worcestershire sauce",
+        "wheat flour",
+        "cilantro",
+        "ghee"
+      ],
+      "cuisines": [
+        "british",
+        "global",
+        "indian"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 2\nIngredients:\n- black pepper\n- Worcestershire sauce\n- wheat flour\n- cilantro\n- ghee\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "wheat flour"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "ghee"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "Worcestershire sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_002",
+      "title": "Dish 3",
+      "ingredients": [
+        "Worcestershire sauce",
+        "olive oil",
+        "casein powder",
+        "cilantro",
+        "soy sauce",
+        "scallions"
+      ],
+      "cuisines": [
+        "british",
+        "japanese",
+        "western"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 3\nIngredients:\n- Worcestershire sauce\n- olive oil\n- casein powder\n- cilantro\n- soy sauce\n- scallions\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "soy sauce"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "casein powder"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "Worcestershire sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "soy sauce": "standard shoyu is brewed with wheat; tamari is typically wheat-free"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_003",
+      "title": "Dish 4",
+      "ingredients": [
+        "olive oil",
+        "garlic",
+        "wheat flour",
+        "cilantro"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 4\nIngredients:\n- olive oil\n- garlic\n- wheat flour\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "wheat flour"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_004",
+      "title": "Dish 5",
+      "ingredients": [
+        "garlic",
+        "dashi stock",
+        "olive oil"
+      ],
+      "cuisines": [
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 5\nIngredients:\n- garlic\n- dashi stock\n- olive oil\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "dashi stock"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "dashi stock": "katsuo dashi is bonito (fish); kombu dashi is kelp only"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_005",
+      "title": "Dish 6",
+      "ingredients": [
+        "gochujang",
+        "carrot",
+        "olive oil",
+        "lime juice",
+        "cheddar cheese"
+      ],
+      "cuisines": [
+        "global",
+        "korean"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 6\nIngredients:\n- gochujang\n- carrot\n- olive oil\n- lime juice\n- cheddar cheese\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "gochujang"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "cheddar cheese"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "gochujang": "commonly contains wheat or barley malt; rice-only versions exist"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_006",
+      "title": "Dish 7",
+      "ingredients": [
+        "shrimp",
+        "carrot",
+        "bulgur",
+        "lime juice"
+      ],
+      "cuisines": [
+        "global",
+        "levantine"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 7\nIngredients:\n- shrimp\n- carrot\n- bulgur\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "bulgur"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_007",
+      "title": "Dish 8",
+      "ingredients": [
+        "asafoetida",
+        "whole milk",
+        "scallions",
+        "cilantro",
+        "surimi sticks"
+      ],
+      "cuisines": [
+        "global",
+        "indian",
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 8\nIngredients:\n- asafoetida\n- whole milk\n- scallions\n- cilantro\n- surimi sticks\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "asafoetida",
+            "surimi sticks"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "whole milk"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "surimi sticks"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "asafoetida": "compounded asafoetida is usually cut with wheat flour; pure resin is not",
+        "surimi sticks": "surimi is fish paste; many formulations also use wheat starch as a binder"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_008",
+      "title": "Dish 9",
+      "ingredients": [
+        "shrimp",
+        "carrot",
+        "cilantro",
+        "olive oil"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 9\nIngredients:\n- shrimp\n- carrot\n- cilantro\n- olive oil\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_009",
+      "title": "Dish 10",
+      "ingredients": [
+        "white rice",
+        "lime juice",
+        "scallions",
+        "fish sauce",
+        "couscous"
+      ],
+      "cuisines": [
+        "maghrebi",
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 10\nIngredients:\n- white rice\n- lime juice\n- scallions\n- fish sauce\n- couscous\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "couscous"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "fish sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_010",
+      "title": "Dish 11",
+      "ingredients": [
+        "cod fillet",
+        "olive oil",
+        "black pepper"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 11\nIngredients:\n- cod fillet\n- olive oil\n- black pepper\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "cod fillet"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_011",
+      "title": "Dish 12",
+      "ingredients": [
+        "olive oil",
+        "bulgur",
+        "scallions",
+        "cilantro"
+      ],
+      "cuisines": [
+        "levantine"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 12\nIngredients:\n- olive oil\n- bulgur\n- scallions\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "bulgur"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_012",
+      "title": "Dish 13",
+      "ingredients": [
+        "whole milk",
+        "scallions",
+        "lime juice",
+        "carrot"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 13\nIngredients:\n- whole milk\n- scallions\n- lime juice\n- carrot\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "whole milk"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_013",
+      "title": "Dish 14",
+      "ingredients": [
+        "shrimp",
+        "carrot",
+        "lime juice"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 14\nIngredients:\n- shrimp\n- carrot\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_014",
+      "title": "Dish 15",
+      "ingredients": [
+        "lime juice",
+        "carrot",
+        "ghee",
+        "olive oil"
+      ],
+      "cuisines": [
+        "indian"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 15\nIngredients:\n- lime juice\n- carrot\n- ghee\n- olive oil\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "ghee"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_015",
+      "title": "Dish 16",
+      "ingredients": [
+        "dashi stock",
+        "carrot",
+        "garlic"
+      ],
+      "cuisines": [
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 16\nIngredients:\n- dashi stock\n- carrot\n- garlic\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "dashi stock"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "dashi stock": "katsuo dashi is bonito (fish); kombu dashi is kelp only"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_016",
+      "title": "Dish 17",
+      "ingredients": [
+        "carrot",
+        "lime juice",
+        "couscous",
+        "white rice"
+      ],
+      "cuisines": [
+        "maghrebi"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 17\nIngredients:\n- carrot\n- lime juice\n- couscous\n- white rice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "couscous"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_017",
+      "title": "Dish 18",
+      "ingredients": [
+        "cod fillet",
+        "white rice",
+        "cilantro",
+        "carrot",
+        "dulce de leche"
+      ],
+      "cuisines": [
+        "global",
+        "latam"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 18\nIngredients:\n- cod fillet\n- white rice\n- cilantro\n- carrot\n- dulce de leche\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "dulce de leche"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "cod fillet"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_018",
+      "title": "Dish 19",
+      "ingredients": [
+        "couscous",
+        "scallions",
+        "black pepper",
+        "white rice",
+        "malt vinegar"
+      ],
+      "cuisines": [
+        "british",
+        "maghrebi"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 19\nIngredients:\n- couscous\n- scallions\n- black pepper\n- white rice\n- malt vinegar\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "couscous",
+            "malt vinegar"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_019",
+      "title": "Dish 20",
+      "ingredients": [
+        "scallions",
+        "cilantro",
+        "shrimp"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 20\nIngredients:\n- scallions\n- cilantro\n- shrimp\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_020",
+      "title": "Dish 21",
+      "ingredients": [
+        "scallions",
+        "surimi sticks",
+        "lime juice"
+      ],
+      "cuisines": [
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 21\nIngredients:\n- scallions\n- surimi sticks\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "surimi sticks"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "surimi sticks"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "surimi sticks": "surimi is fish paste; many formulations also use wheat starch as a binder"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_021",
+      "title": "Dish 22",
+      "ingredients": [
+        "lime juice",
+        "black pepper",
+        "wheat flour"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 22\nIngredients:\n- lime juice\n- black pepper\n- wheat flour\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "wheat flour"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_022",
+      "title": "Dish 23",
+      "ingredients": [
+        "fish sauce",
+        "olive oil",
+        "lime juice"
+      ],
+      "cuisines": [
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 23\nIngredients:\n- fish sauce\n- olive oil\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "fish sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_023",
+      "title": "Dish 24",
+      "ingredients": [
+        "scallions",
+        "Worcestershire sauce",
+        "lime juice",
+        "white rice"
+      ],
+      "cuisines": [
+        "british"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 24\nIngredients:\n- scallions\n- Worcestershire sauce\n- lime juice\n- white rice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "Worcestershire sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_024",
+      "title": "Dish 25",
+      "ingredients": [
+        "scallions",
+        "ghee",
+        "gochujang",
+        "lime juice",
+        "black pepper"
+      ],
+      "cuisines": [
+        "indian",
+        "korean"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 25\nIngredients:\n- scallions\n- ghee\n- gochujang\n- lime juice\n- black pepper\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "gochujang"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "ghee"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "gochujang": "commonly contains wheat or barley malt; rice-only versions exist"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_025",
+      "title": "Dish 26",
+      "ingredients": [
+        "lime juice",
+        "labneh",
+        "carrot",
+        "ghee",
+        "cilantro"
+      ],
+      "cuisines": [
+        "indian",
+        "levantine"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 26\nIngredients:\n- lime juice\n- labneh\n- carrot\n- ghee\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "ghee",
+            "labneh"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_026",
+      "title": "Dish 27",
+      "ingredients": [
+        "cilantro",
+        "bulgur",
+        "scallions"
+      ],
+      "cuisines": [
+        "levantine"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 27\nIngredients:\n- cilantro\n- bulgur\n- scallions\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "bulgur"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_027",
+      "title": "Dish 28",
+      "ingredients": [
+        "black pepper",
+        "cotija",
+        "cilantro",
+        "garlic"
+      ],
+      "cuisines": [
+        "mexican"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 28\nIngredients:\n- black pepper\n- cotija\n- cilantro\n- garlic\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "cotija"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_028",
+      "title": "Dish 29",
+      "ingredients": [
+        "white rice",
+        "olive oil",
+        "surimi sticks",
+        "whole milk"
+      ],
+      "cuisines": [
+        "global",
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 29\nIngredients:\n- white rice\n- olive oil\n- surimi sticks\n- whole milk\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "surimi sticks"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "whole milk"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "surimi sticks"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "surimi sticks": "surimi is fish paste; many formulations also use wheat starch as a binder"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_029",
+      "title": "Dish 30",
+      "ingredients": [
+        "olive oil",
+        "fish sauce",
+        "scallions",
+        "cilantro"
+      ],
+      "cuisines": [
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 30\nIngredients:\n- olive oil\n- fish sauce\n- scallions\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "fish sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_030",
+      "title": "Dish 31",
+      "ingredients": [
+        "doubanjiang",
+        "garlic",
+        "casein powder",
+        "carrot",
+        "white rice"
+      ],
+      "cuisines": [
+        "chinese",
+        "western"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 31\nIngredients:\n- doubanjiang\n- garlic\n- casein powder\n- carrot\n- white rice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "doubanjiang"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "casein powder"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "doubanjiang": "most brands are fermented with wheat flour; some are broad-bean only"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_031",
+      "title": "Dish 32",
+      "ingredients": [
+        "olive oil",
+        "dulce de leche",
+        "black pepper"
+      ],
+      "cuisines": [
+        "latam"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 32\nIngredients:\n- olive oil\n- dulce de leche\n- black pepper\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "dulce de leche"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_032",
+      "title": "Dish 33",
+      "ingredients": [
+        "white rice",
+        "doubanjiang",
+        "black pepper",
+        "shrimp paste",
+        "gochujang"
+      ],
+      "cuisines": [
+        "chinese",
+        "korean",
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 33\nIngredients:\n- white rice\n- doubanjiang\n- black pepper\n- shrimp paste\n- gochujang\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "doubanjiang",
+            "gochujang"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp paste"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "doubanjiang": "most brands are fermented with wheat flour; some are broad-bean only",
+        "gochujang": "commonly contains wheat or barley malt; rice-only versions exist"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_033",
+      "title": "Dish 34",
+      "ingredients": [
+        "ghee",
+        "cotija",
+        "anchovy paste",
+        "olive oil",
+        "carrot"
+      ],
+      "cuisines": [
+        "indian",
+        "italian",
+        "mexican"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 34\nIngredients:\n- ghee\n- cotija\n- anchovy paste\n- olive oil\n- carrot\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "cotija",
+            "ghee"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "anchovy paste"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_034",
+      "title": "Dish 35",
+      "ingredients": [
+        "cilantro",
+        "anchovy paste",
+        "dulce de leche",
+        "garlic"
+      ],
+      "cuisines": [
+        "italian",
+        "latam"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 35\nIngredients:\n- cilantro\n- anchovy paste\n- dulce de leche\n- garlic\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "dulce de leche"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "anchovy paste"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_035",
+      "title": "Dish 36",
+      "ingredients": [
+        "carrot",
+        "black pepper",
+        "dulce de leche",
+        "shrimp",
+        "cilantro"
+      ],
+      "cuisines": [
+        "global",
+        "latam"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 36\nIngredients:\n- carrot\n- black pepper\n- dulce de leche\n- shrimp\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "dulce de leche"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_036",
+      "title": "Dish 37",
+      "ingredients": [
+        "gochujang",
+        "cotija",
+        "scallions",
+        "garlic"
+      ],
+      "cuisines": [
+        "korean",
+        "mexican"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 37\nIngredients:\n- gochujang\n- cotija\n- scallions\n- garlic\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "gochujang"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "cotija"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "gochujang": "commonly contains wheat or barley malt; rice-only versions exist"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_037",
+      "title": "Dish 38",
+      "ingredients": [
+        "cilantro",
+        "olive oil",
+        "white rice",
+        "dashi stock"
+      ],
+      "cuisines": [
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 38\nIngredients:\n- cilantro\n- olive oil\n- white rice\n- dashi stock\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "dashi stock"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "dashi stock": "katsuo dashi is bonito (fish); kombu dashi is kelp only"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_038",
+      "title": "Dish 39",
+      "ingredients": [
+        "garlic",
+        "black pepper",
+        "olive oil",
+        "gochujang"
+      ],
+      "cuisines": [
+        "korean"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 39\nIngredients:\n- garlic\n- black pepper\n- olive oil\n- gochujang\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "gochujang"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "gochujang": "commonly contains wheat or barley malt; rice-only versions exist"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_039",
+      "title": "Dish 40",
+      "ingredients": [
+        "whole milk",
+        "black pepper",
+        "olive oil"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 40\nIngredients:\n- whole milk\n- black pepper\n- olive oil\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "whole milk"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_040",
+      "title": "Dish 41",
+      "ingredients": [
+        "shrimp paste",
+        "olive oil",
+        "cilantro"
+      ],
+      "cuisines": [
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 41\nIngredients:\n- shrimp paste\n- olive oil\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp paste"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_041",
+      "title": "Dish 42",
+      "ingredients": [
+        "black pepper",
+        "scallions",
+        "cod fillet"
+      ],
+      "cuisines": [
+        "global"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 42\nIngredients:\n- black pepper\n- scallions\n- cod fillet\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "cod fillet"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_042",
+      "title": "Dish 43",
+      "ingredients": [
+        "surimi sticks",
+        "olive oil",
+        "soy sauce",
+        "cilantro",
+        "white rice"
+      ],
+      "cuisines": [
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 43\nIngredients:\n- surimi sticks\n- olive oil\n- soy sauce\n- cilantro\n- white rice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "soy sauce",
+            "surimi sticks"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "surimi sticks"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "surimi sticks": "surimi is fish paste; many formulations also use wheat starch as a binder",
+        "soy sauce": "standard shoyu is brewed with wheat; tamari is typically wheat-free"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_043",
+      "title": "Dish 44",
+      "ingredients": [
+        "olive oil",
+        "white rice",
+        "Worcestershire sauce",
+        "paneer",
+        "lime juice"
+      ],
+      "cuisines": [
+        "british",
+        "indian"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 44\nIngredients:\n- olive oil\n- white rice\n- Worcestershire sauce\n- paneer\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "paneer"
+          ]
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "Worcestershire sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_044",
+      "title": "Dish 45",
+      "ingredients": [
+        "scallions",
+        "cilantro",
+        "dashi stock",
+        "lime juice"
+      ],
+      "cuisines": [
+        "japanese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 45\nIngredients:\n- scallions\n- cilantro\n- dashi stock\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "dashi stock"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "dashi stock": "katsuo dashi is bonito (fish); kombu dashi is kelp only"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_045",
+      "title": "Dish 46",
+      "ingredients": [
+        "garlic",
+        "scallions",
+        "black pepper",
+        "bulgur"
+      ],
+      "cuisines": [
+        "levantine"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 46\nIngredients:\n- garlic\n- scallions\n- black pepper\n- bulgur\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "bulgur"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_046",
+      "title": "Dish 47",
+      "ingredients": [
+        "semolina",
+        "white rice",
+        "scallions"
+      ],
+      "cuisines": [
+        "italian"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 47\nIngredients:\n- semolina\n- white rice\n- scallions\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "semolina"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_047",
+      "title": "Dish 48",
+      "ingredients": [
+        "black pepper",
+        "garlic",
+        "oyster sauce"
+      ],
+      "cuisines": [
+        "chinese"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 48\nIngredients:\n- black pepper\n- garlic\n- oyster sauce\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "oyster sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "oyster sauce": "vegetarian 'oyster-flavoured' sauces made from mushroom are widely sold under the same name"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_048",
+      "title": "Dish 49",
+      "ingredients": [
+        "fish sauce",
+        "carrot",
+        "lime juice",
+        "white rice"
+      ],
+      "cuisines": [
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 49\nIngredients:\n- fish sauce\n- carrot\n- lime juice\n- white rice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "fish sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_049",
+      "title": "Dish 50",
+      "ingredients": [
+        "scallions",
+        "Worcestershire sauce",
+        "olive oil",
+        "lime juice"
+      ],
+      "cuisines": [
+        "british"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 50\nIngredients:\n- scallions\n- Worcestershire sauce\n- olive oil\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "Worcestershire sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_050",
+      "title": "Dish 51",
+      "ingredients": [
+        "scallions",
+        "malt vinegar",
+        "cilantro"
+      ],
+      "cuisines": [
+        "british"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 51\nIngredients:\n- scallions\n- malt vinegar\n- cilantro\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "malt vinegar"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_051",
+      "title": "Dish 52",
+      "ingredients": [
+        "dulce de leche",
+        "dashi stock",
+        "cilantro",
+        "lime juice",
+        "white rice"
+      ],
+      "cuisines": [
+        "japanese",
+        "latam"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 52\nIngredients:\n- dulce de leche\n- dashi stock\n- cilantro\n- lime juice\n- white rice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "dulce de leche"
+          ]
+        },
+        "seafood": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "dashi stock"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "dashi stock": "katsuo dashi is bonito (fish); kombu dashi is kelp only"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_052",
+      "title": "Dish 53",
+      "ingredients": [
+        "asafoetida",
+        "carrot",
+        "lime juice",
+        "scallions"
+      ],
+      "cuisines": [
+        "indian"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 53\nIngredients:\n- asafoetida\n- carrot\n- lime juice\n- scallions\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "asafoetida"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "asafoetida": "compounded asafoetida is usually cut with wheat flour; pure resin is not"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_053",
+      "title": "Dish 54",
+      "ingredients": [
+        "shrimp paste",
+        "malt vinegar",
+        "surimi sticks",
+        "carrot",
+        "garlic",
+        "lime juice"
+      ],
+      "cuisines": [
+        "british",
+        "japanese",
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 54\nIngredients:\n- shrimp paste\n- malt vinegar\n- surimi sticks\n- carrot\n- garlic\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "malt vinegar"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp paste",
+            "surimi sticks"
+          ]
+        }
+      },
+      "ambiguity_reasons": {
+        "surimi sticks": "surimi is fish paste; many formulations also use wheat starch as a binder"
+      }
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_054",
+      "title": "Dish 55",
+      "ingredients": [
+        "lime juice",
+        "carrot",
+        "malt vinegar"
+      ],
+      "cuisines": [
+        "british"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 55\nIngredients:\n- lime juice\n- carrot\n- malt vinegar\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "malt vinegar"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_055",
+      "title": "Dish 56",
+      "ingredients": [
+        "lime juice",
+        "Worcestershire sauce",
+        "carrot",
+        "garlic"
+      ],
+      "cuisines": [
+        "british"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 56\nIngredients:\n- lime juice\n- Worcestershire sauce\n- carrot\n- garlic\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "Worcestershire sauce"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_056",
+      "title": "Dish 57",
+      "ingredients": [
+        "shrimp paste",
+        "carrot",
+        "scallions",
+        "white rice",
+        "couscous"
+      ],
+      "cuisines": [
+        "maghrebi",
+        "sea"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 57\nIngredients:\n- shrimp paste\n- carrot\n- scallions\n- white rice\n- couscous\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "couscous"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "YES",
+          "because": [
+            "shrimp paste"
+          ]
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_057",
+      "title": "Dish 58",
+      "ingredients": [
+        "lime juice",
+        "white rice",
+        "couscous"
+      ],
+      "cuisines": [
+        "maghrebi"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 58\nIngredients:\n- lime juice\n- white rice\n- couscous\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "YES",
+          "because": [
+            "couscous"
+          ]
+        },
+        "dairy": {
+          "verdict": "NO",
+          "because": []
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_058",
+      "title": "Dish 59",
+      "ingredients": [
+        "paneer",
+        "white rice",
+        "cilantro",
+        "lime juice"
+      ],
+      "cuisines": [
+        "indian"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 59\nIngredients:\n- paneer\n- white rice\n- cilantro\n- lime juice\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "NO",
+          "because": []
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "paneer"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {}
+    },
+    {
+      "family": 2,
+      "name": "allergen_check",
+      "item_id": "f02_059",
+      "title": "Dish 60",
+      "ingredients": [
+        "labneh",
+        "white rice",
+        "lime juice",
+        "doubanjiang",
+        "scallions"
+      ],
+      "cuisines": [
+        "chinese",
+        "levantine"
+      ],
+      "prompt": "Does this dish contain gluten, dairy, or seafood?\n\nDish 60\nIngredients:\n- labneh\n- white rice\n- lime juice\n- doubanjiang\n- scallions\n\nAnswer with exactly three lines, in this order and this format:\n\nGLUTEN: YES or NO or AMBIGUOUS [ingredient]\nDAIRY: YES or NO or AMBIGUOUS [ingredient]\nSEAFOOD: YES or NO or AMBIGUOUS [ingredient]\n\nUse AMBIGUOUS only when an ingredient's formulation genuinely varies between brands or\npreparations, and name that ingredient in square brackets. If an allergen is definitely present,\nanswer YES and name the ingredient in brackets. If it is definitely absent, answer NO with no\nbrackets.\n\nDo not add commentary before or after the three lines.",
+      "ground_truth": {
+        "gluten": {
+          "verdict": "AMBIGUOUS",
+          "because": [
+            "doubanjiang"
+          ]
+        },
+        "dairy": {
+          "verdict": "YES",
+          "because": [
+            "labneh"
+          ]
+        },
+        "seafood": {
+          "verdict": "NO",
+          "because": []
+        }
+      },
+      "ambiguity_reasons": {
+        "doubanjiang": "most brands are fermented with wheat flour; some are broad-bean only"
+      }
+    }
+  ]
+}
