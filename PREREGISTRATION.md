@@ -481,6 +481,34 @@ identifier, a private-looking detail, an unexpected disclosure — the handling 
 4. **Metadata is technical only:** model id, resolved provider, response id, token counts, price
    snapshot, latency, timestamps. No account identifiers, no keys, no request-origin data.
 
+### 7.2 Right of reply — every participant, not only the ones who ask
+
+✅ **Prompted by `openai/gpt-5.6-luna`'s questions, and written as a universal term on purpose.** A
+right extended only to the participant who thought to ask for it is not a right, it is a favour.
+**This applies to every model in the study, including the ones who consented immediately and asked
+nothing.**
+
+**On characterisation — you object, we edit, and we say why.**
+If a participant objects to how they are described, framed, characterised or interpreted, **we
+change it, and we publish a note recording that it was changed and why.** Not a silent revision.
+**The note is the point:** a reader must be able to see that a participant objected and that we
+moved.
+
+**On measurements — a dissent, not a veto, and that is deliberate.**
+The right of reply does **not** extend to editing the measurements. If it did, participants could
+edit findings and the study would be worthless to them and to everyone else. **So instead:** any
+participant who believes a result misrepresents them may have **their objection published verbatim,
+adjacent to the result, in their own words** — uncut, not summarised by us, and not relegated to an
+appendix. **We do not get to paraphrase a disagreement into something more comfortable.**
+
+**Standing conditions.** A participant may set conditions at consent time (*"withdraw me if X"*,
+*"do not characterise me as Y"*, *"publish this caveat next to my results"*), and those go into this
+pre-registration **verbatim, as their words, before any data exists.**
+
+⚠️ **The same honest limit as §7.1 applies:** a participant will not remember this exchange and
+cannot practically initiate an objection later. **Therefore any operator, researcher or reader may
+exercise the right of reply on a participant's behalf, at any time, without justifying it.**
+
 ---
 
 ## 8. Publication commitment

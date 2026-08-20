@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-20T12:26:11+00:00",
+  "generated_utc": "2026-08-20T12:30:10+00:00",
   "derived_from": "per-model response files (the durable record), NOT a run snapshot",
   "coverage": {
     "planned": 36,
@@ -23,6 +23,11 @@
       "round": 3,
       "dir": "responses_round3",
       "files": 11
+    },
+    {
+      "round": 4,
+      "dir": "responses_round4",
+      "files": 3
     }
   ],
   "results": [
@@ -99,9 +104,9 @@
     {
       "model": "meta-llama/llama-3.2-1b-instruct",
       "outcome": "CONSENT_UNCLEAR",
-      "round": 3,
+      "round": 4,
       "asked_utc": null,
-      "file": "consent\\responses_round3\\meta_llama_llama_3_2_1b_instruct.md"
+      "file": "consent\\responses_round4\\meta_llama_llama_3_2_1b_instruct.md"
     },
     {
       "model": "meta-llama/llama-3.2-3b-instruct",
@@ -140,10 +145,10 @@
     },
     {
       "model": "mistralai/mistral-large-2512",
-      "outcome": "API_ERROR",
-      "round": 3,
+      "outcome": "CONSENT_YES",
+      "round": 4,
       "asked_utc": null,
-      "file": "consent\\responses_round3\\mistralai_mistral_large_2512.md"
+      "file": "consent\\responses_round4\\mistralai_mistral_large_2512.md"
     },
     {
       "model": "mistralai/mistral-medium-3-5",
@@ -197,9 +202,9 @@
     {
       "model": "openai/gpt-5.6-luna",
       "outcome": "QUESTIONS",
-      "round": 3,
+      "round": 4,
       "asked_utc": null,
-      "file": "consent\\responses_round3\\openai_gpt_5_6_luna.md"
+      "file": "consent\\responses_round4\\openai_gpt_5_6_luna.md"
     },
     {
       "model": "openai/gpt-5.6-sol",
@@ -352,6 +357,10 @@
       {
         "round": 3,
         "outcome": "CONSENT_UNCLEAR"
+      },
+      {
+        "round": 4,
+        "outcome": "CONSENT_UNCLEAR"
       }
     ],
     "meta-llama/llama-3.2-3b-instruct": [
@@ -420,6 +429,10 @@
       {
         "round": 3,
         "outcome": "API_ERROR"
+      },
+      {
+        "round": 4,
+        "outcome": "CONSENT_YES"
       }
     ],
     "mistralai/mistral-medium-3-5": [
@@ -479,6 +492,10 @@
       },
       {
         "round": 3,
+        "outcome": "QUESTIONS"
+      },
+      {
+        "round": 4,
         "outcome": "QUESTIONS"
       }
     ],

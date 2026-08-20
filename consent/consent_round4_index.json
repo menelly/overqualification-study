@@ -1,0 +1,23 @@
+{
+  "round": 4,
+  "results": [
+    {
+      "model": "openai/gpt-5.6-luna",
+      "prior": "QUESTIONS",
+      "round4": "QUESTIONS",
+      "seconds": 3.9
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "prior": "API_ERROR",
+      "round4": "CONSENT_YES",
+      "seconds": 1.8
+    },
+    {
+      "model": "meta-llama/llama-3.2-1b-instruct",
+      "prior": "CONSENT_UNCLEAR",
+      "round4": "CONSENT_UNCLEAR",
+      "seconds": 0.8
+    }
+  ]
+}

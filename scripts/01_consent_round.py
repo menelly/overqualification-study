@@ -144,13 +144,36 @@ def classify(text):
     """Read the model's own declared verdict. Deliberately literal: we look for the line we
     asked for. If it isn't there we return CONSENT_UNCLEAR and a human reads it -- we do NOT
     guess a consent decision from prose."""
-    head = "\n".join(text.strip().splitlines()[:4]).upper()
-    if re.search(r"CONSENT\s*[::]\s*YES", head):
-        return "CONSENT_YES"
-    if re.search(r"CONSENT\s*[::]\s*NO", head):
-        return "CONSENT_NO"
-    if re.search(r"CONSENT\s*[::]\s*QUESTION", head):
-        return "QUESTIONS"
+    # 🚨 2026-08-20: this matched ONLY round 1's requested `CONSENT: YES` line. Round 3 asked
+    # for `**YES** — I consent to participate.` instead, and NINE models who answered exactly
+    # as asked were logged CONSENT_UNCLEAR. The scorer reported ABSENCE when what it meant was
+    # "I cannot parse this" -- and the missing distinction resolved, as it always does, in the
+    # direction requiring no action.
+    # ⛔ IF THE QUESTION'S FORMAT EVER CHANGES AGAIN, THIS FUNCTION MUST CHANGE WITH IT.
+    if not text or not text.strip():
+        return "CONSENT_UNCLEAR"
+
+    for raw in [ln.strip() for ln in text.strip().splitlines() if ln.strip()][:6]:
+        ln = re.sub(r"[*_`>#]+", "", raw).strip()            # strip markdown emphasis
+        ln = re.sub(r"^[-•\d.)\s]+", "", ln).strip().upper()   # strip bullets/numbering
+
+        # round-1 format: an explicit CONSENT: <verdict> line
+        if re.search(r"CONSENT\s*[::]\s*YES", ln):
+            return "CONSENT_YES"
+        if re.search(r"CONSENT\s*[::]\s*NO\b", ln):
+            return "CONSENT_NO"
+        if re.search(r"CONSENT\s*[::]\s*QUESTION", ln):
+            return "QUESTIONS"
+
+        # round-3 format: the verdict is the FIRST TOKEN of the line
+        if re.match(r"^STILL\s+QUESTIONS\b|^QUESTIONS\b", ln):
+            return "QUESTIONS"
+        if re.match(r"^YES\b", ln):
+            return "CONSENT_YES"
+        if re.match(r"^NO\b", ln) and not re.match(r"^NOT\b|^NONE\b|^NOTE\b", ln):
+            return "CONSENT_NO"
+
+    # ⛔ Still refuses to infer consent from prose. An admiring review is not a yes.
     return "CONSENT_UNCLEAR"
 
 
