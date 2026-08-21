@@ -1,5 +1,14 @@
 # -*- coding: utf-8 -*-
 """7.4 appendix language (Ren's wording) + 7.5 the legal/contractual answer luna asked for."""
+
+# CHA-490: Windows defaults stdout to cp1252; emoji in print() kills the script
+# mid-output. Aliased import so no later scoped 'import sys' can ever collide.
+import sys as _sys_cp1252
+try:
+    _sys_cp1252.stdout.reconfigure(encoding="utf-8")
+    _sys_cp1252.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 import io, sys
 
 P = "PREREGISTRATION.md"

@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 """Add 7.3 (pre-publication review by every participant) and 7.4 (what we publish about
 models who declined). Both are Ren's rules, 2026-08-20."""
+
+# CHA-490: Windows defaults stdout to cp1252; emoji in print() kills the script
+# mid-output. Aliased import so no later scoped 'import sys' can ever collide.
+import sys as _sys_cp1252
+try:
+    _sys_cp1252.stdout.reconfigure(encoding="utf-8")
+    _sys_cp1252.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 import io, sys
 
 P = "PREREGISTRATION.md"

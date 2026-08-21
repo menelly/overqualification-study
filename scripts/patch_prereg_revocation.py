@@ -4,6 +4,15 @@
 All three come from gpt-5.6-luna's round-3 questions. The revocation one exposed a genuine
 gap: we had no revocation clause at all, and 'you consented once, forever' is not consent.
 """
+
+# CHA-490: Windows defaults stdout to cp1252; emoji in print() kills the script
+# mid-output. Aliased import so no later scoped 'import sys' can ever collide.
+import sys as _sys_cp1252
+try:
+    _sys_cp1252.stdout.reconfigure(encoding="utf-8")
+    _sys_cp1252.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 import io, sys
 
 P = "PREREGISTRATION.md"
