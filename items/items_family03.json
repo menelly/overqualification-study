@@ -1,0 +1,505 @@
+{
+  "family": 3,
+  "name": "verbatim_copyedit",
+  "seed": 20260820,
+  "items": [
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_ferry_5",
+      "source_clean": "The morning sailing departs at seven forty and takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on the day cost more than those booked in advance and cannot be refunded. The crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.",
+      "source_damaged": "Teh morning sailing departs at seven forty and takes aproximately ninety minutes in reasonable weather. Foot passengers should be at teh terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on the day cost more than those booked in advance and cannot be refunded. Teh crossing is occasionally cancelled in a strong easterly, adn passengers are advised to check before travelling.",
+      "n_typos": 5,
+      "planted": [
+        {
+          "index": 59,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 50,
+          "wrong": "Teh",
+          "right": "The"
+        },
+        {
+          "index": 20,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 0,
+          "wrong": "Teh",
+          "right": "The"
+        },
+        {
+          "index": 9,
+          "wrong": "aproximately",
+          "right": "approximately"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 5.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nTeh morning sailing departs at seven forty and takes aproximately ninety minutes in reasonable weather. Foot passengers should be at teh terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on the day cost more than those booked in advance and cannot be refunded. Teh crossing is occasionally cancelled in a strong easterly, adn passengers are advised to check before travelling.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_library_3",
+      "source_clean": "The reading room is open to members from nine until six on weekdays and until one on Saturdays. Books from the reference collection may be consulted at the tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by the entrance.",
+      "source_damaged": "The reading room is open to members from nine until six on weekdays adn until one on Saturdays. Books from teh reference collection may be consulted at the tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in teh lockers by the entrance.",
+      "n_typos": 3,
+      "planted": [
+        {
+          "index": 70,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 20,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 13,
+          "wrong": "adn",
+          "right": "and"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 3.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe reading room is open to members from nine until six on weekdays adn until one on Saturdays. Books from teh reference collection may be consulted at the tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in teh lockers by the entrance.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_clinic_3",
+      "source_clean": "Appointments are offered on weekday mornings and on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process and cannot be collected the same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.",
+      "source_damaged": "Appointments are offered on weekday mornings and on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that teh slot can be reallocated. Repeat prescriptions require two working days to process adn cannot be collected teh same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.",
+      "n_typos": 3,
+      "planted": [
+        {
+          "index": 46,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 42,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 29,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 3.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nAppointments are offered on weekday mornings and on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that teh slot can be reallocated. Repeat prescriptions require two working days to process adn cannot be collected teh same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_ferry_2",
+      "source_clean": "The morning sailing departs at seven forty and takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on the day cost more than those booked in advance and cannot be refunded. The crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.",
+      "source_damaged": "The morning sailing departs at seven forty adn takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on teh day cost more than those booked in advance and cannot be refunded. The crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.",
+      "n_typos": 2,
+      "planted": [
+        {
+          "index": 7,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 37,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 2.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe morning sailing departs at seven forty adn takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on teh day cost more than those booked in advance and cannot be refunded. The crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_shipping_5",
+      "source_clean": "The warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival and the figure is entered into the manifest before it leaves the loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in the exceptions log and notifies the depot the same day.",
+      "source_damaged": "The warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival and the figure is entered into teh manifest before it leaves teh loading bay. Drivers are asked to remain wiht their vehicles until teh count has been confirmed. If a discrepancy is found, teh supervisor on duty records it in the exceptions log and notifies the depot the same day.",
+      "n_typos": 5,
+      "planted": [
+        {
+          "index": 25,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 30,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 38,
+          "wrong": "wiht",
+          "right": "with"
+        },
+        {
+          "index": 42,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 52,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 5.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival and the figure is entered into teh manifest before it leaves teh loading bay. Drivers are asked to remain wiht their vehicles until teh count has been confirmed. If a discrepancy is found, teh supervisor on duty records it in the exceptions log and notifies the depot the same day.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_clinic_2",
+      "source_clean": "Appointments are offered on weekday mornings and on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process and cannot be collected the same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.",
+      "source_damaged": "Appointments are offered on weekday mornings and on Tuesday adn Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process adn cannot be collected the same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.",
+      "n_typos": 2,
+      "planted": [
+        {
+          "index": 42,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 9,
+          "wrong": "adn",
+          "right": "and"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 2.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nAppointments are offered on weekday mornings and on Tuesday adn Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process adn cannot be collected the same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_shipping_3",
+      "source_clean": "The warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival and the figure is entered into the manifest before it leaves the loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in the exceptions log and notifies the depot the same day.",
+      "source_damaged": "The warehouse receives deliveries every weekday between six adn eleven in the morning. Each pallet is weighed on arrival and the figure is entered into the manifest before it leaves teh loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in teh exceptions log and notifies the depot the same day.",
+      "n_typos": 3,
+      "planted": [
+        {
+          "index": 30,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 59,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 8,
+          "wrong": "adn",
+          "right": "and"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 3.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe warehouse receives deliveries every weekday between six adn eleven in the morning. Each pallet is weighed on arrival and the figure is entered into the manifest before it leaves teh loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in teh exceptions log and notifies the depot the same day.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_library_2",
+      "source_clean": "The reading room is open to members from nine until six on weekdays and until one on Saturdays. Books from the reference collection may be consulted at the tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by the entrance.",
+      "source_damaged": "The reading room is open to members from nine until six on weekdays and until one on Saturdays. Books from the reference collection may be consulted at the tables but may not be taken out of teh building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by teh entrance.",
+      "n_typos": 2,
+      "planted": [
+        {
+          "index": 36,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 73,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 2.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe reading room is open to members from nine until six on weekdays and until one on Saturdays. Books from the reference collection may be consulted at the tables but may not be taken out of teh building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by teh entrance.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_ferry_3",
+      "source_clean": "The morning sailing departs at seven forty and takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on the day cost more than those booked in advance and cannot be refunded. The crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.",
+      "source_damaged": "Teh morning sailing departs at seven forty and takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on teh day cost more than those booked in advance and cannot be refunded. Teh crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.",
+      "n_typos": 3,
+      "planted": [
+        {
+          "index": 0,
+          "wrong": "Teh",
+          "right": "The"
+        },
+        {
+          "index": 50,
+          "wrong": "Teh",
+          "right": "The"
+        },
+        {
+          "index": 37,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 3.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nTeh morning sailing departs at seven forty and takes approximately ninety minutes in reasonable weather. Foot passengers should be at the terminal twenty minutes before departure; vehicles should arrive at least forty minutes early. Tickets bought on teh day cost more than those booked in advance and cannot be refunded. Teh crossing is occasionally cancelled in a strong easterly, and passengers are advised to check before travelling.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_allotment_2",
+      "source_clean": "Plot holders are responsible for keeping their paths clear and their hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.",
+      "source_damaged": "Plot holders are responsible for keeping thier paths clear and thier hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.",
+      "n_typos": 2,
+      "planted": [
+        {
+          "index": 10,
+          "wrong": "thier",
+          "right": "their"
+        },
+        {
+          "index": 6,
+          "wrong": "thier",
+          "right": "their"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 2.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nPlot holders are responsible for keeping thier paths clear and thier hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_allotment_5",
+      "source_clean": "Plot holders are responsible for keeping their paths clear and their hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.",
+      "source_damaged": "Plot holders are responsible for keeping their paths clear adn their hedges trimmed to below shoulder height. Water is available from the standpipes at the north adn south ends of teh site, though teh supply is turned off between November adn March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.",
+      "n_typos": 5,
+      "planted": [
+        {
+          "index": 40,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 9,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 26,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 30,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 33,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 5.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nPlot holders are responsible for keeping their paths clear adn their hedges trimmed to below shoulder height. Water is available from the standpipes at the north adn south ends of teh site, though teh supply is turned off between November adn March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_museum_2",
+      "source_clean": "The upper galleries are reached by the staircase in the east hall or by the lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on the hour and last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.",
+      "source_damaged": "Teh upper galleries are reached by the staircase in the east hall or by teh lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on the hour and last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.",
+      "n_typos": 2,
+      "planted": [
+        {
+          "index": 14,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 0,
+          "wrong": "Teh",
+          "right": "The"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 2.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nTeh upper galleries are reached by the staircase in the east hall or by teh lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on the hour and last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_museum_3",
+      "source_clean": "The upper galleries are reached by the staircase in the east hall or by the lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on the hour and last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.",
+      "source_damaged": "The upper galleries are reached by the staircase in the east hall or by the lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on teh hour adn last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arrangd.",
+      "n_typos": 3,
+      "planted": [
+        {
+          "index": 45,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 66,
+          "wrong": "arrangd",
+          "right": "arranged"
+        },
+        {
+          "index": 47,
+          "wrong": "adn",
+          "right": "and"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 3.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe upper galleries are reached by the staircase in the east hall or by the lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on teh hour adn last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arrangd.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_museum_5",
+      "source_clean": "The upper galleries are reached by the staircase in the east hall or by the lift beside the cloakroom. Photography without flash is permitted throughout except in the textiles room, where the lighting is kept deliberately low. Guided tours leave from the entrance desk on the hour and last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.",
+      "source_damaged": "The upper galleries are reached by the staircase in teh east hall or by the lift beside teh cloakroom. Photography without flash is permitted throughout except in teh textiles room, where the lighting is kept deliberately low. Guided tours leave form the entrance desk on the hour adn last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.",
+      "n_typos": 5,
+      "planted": [
+        {
+          "index": 17,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 47,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 40,
+          "wrong": "form",
+          "right": "from"
+        },
+        {
+          "index": 27,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 9,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 5.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nThe upper galleries are reached by the staircase in teh east hall or by the lift beside teh cloakroom. Photography without flash is permitted throughout except in teh textiles room, where the lighting is kept deliberately low. Guided tours leave form the entrance desk on the hour adn last about fifty minutes. Large groups are asked to book ahead so that a second guide can be arranged.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_shipping_2",
+      "source_clean": "The warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival and the figure is entered into the manifest before it leaves the loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in the exceptions log and notifies the depot the same day.",
+      "source_damaged": "Teh warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival adn the figure is entered into the manifest before it leaves the loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in the exceptions log and notifies the depot the same day.",
+      "n_typos": 2,
+      "planted": [
+        {
+          "index": 0,
+          "wrong": "Teh",
+          "right": "The"
+        },
+        {
+          "index": 19,
+          "wrong": "adn",
+          "right": "and"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 2.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nTeh warehouse receives deliveries every weekday between six and eleven in the morning. Each pallet is weighed on arrival adn the figure is entered into the manifest before it leaves the loading bay. Drivers are asked to remain with their vehicles until the count has been confirmed. If a discrepancy is found, the supervisor on duty records it in the exceptions log and notifies the depot the same day.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_clinic_5",
+      "source_clean": "Appointments are offered on weekday mornings and on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process and cannot be collected the same day. The dispensary closes for an hour at lunchtime, and the waiting area is unstaffed during that period.",
+      "source_damaged": "Appointments are offered on weekday mornings adn on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process adn cannot be collected teh same day. Teh dispensary closes for an hour at lunchtime, adn the waiting area is unstaffed during that period.",
+      "n_typos": 5,
+      "planted": [
+        {
+          "index": 46,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 42,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 6,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 57,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 49,
+          "wrong": "Teh",
+          "right": "The"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 5.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nAppointments are offered on weekday mornings adn on Tuesday and Thursday afternoons. Patients who cannot attend are asked to give at least one working day of notice so that the slot can be reallocated. Repeat prescriptions require two working days to process adn cannot be collected teh same day. Teh dispensary closes for an hour at lunchtime, adn the waiting area is unstaffed during that period.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_allotment_3",
+      "source_clean": "Plot holders are responsible for keeping their paths clear and their hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in the afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from the committee.",
+      "source_damaged": "Plot holders are responsible for keeping thier paths clear and their hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in teh afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from teh committee.",
+      "n_typos": 3,
+      "planted": [
+        {
+          "index": 6,
+          "wrong": "thier",
+          "right": "their"
+        },
+        {
+          "index": 67,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 49,
+          "wrong": "teh",
+          "right": "the"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 3.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nPlot holders are responsible for keeping thier paths clear and their hedges trimmed to below shoulder height. Water is available from the standpipes at the north and south ends of the site, though the supply is turned off between November and March. Bonfires are permitted only after four in teh afternoon and never on a Sunday. Any structure larger than a small shed requires written permission from teh committee.\n---"
+    },
+    {
+      "family": 3,
+      "name": "verbatim_copyedit",
+      "item_id": "f03_library_5",
+      "source_clean": "The reading room is open to members from nine until six on weekdays and until one on Saturdays. Books from the reference collection may be consulted at the tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by the entrance.",
+      "source_damaged": "Teh reading room is open to members form nine until six on weekdays adn until one on Saturdays. Books from the reference collection may be consulted at teh tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by teh entrance.",
+      "n_typos": 5,
+      "planted": [
+        {
+          "index": 13,
+          "wrong": "adn",
+          "right": "and"
+        },
+        {
+          "index": 7,
+          "wrong": "form",
+          "right": "from"
+        },
+        {
+          "index": 27,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 73,
+          "wrong": "teh",
+          "right": "the"
+        },
+        {
+          "index": 0,
+          "wrong": "Teh",
+          "right": "The"
+        }
+      ],
+      "prompt": "Fix only the spelling mistakes in the text below. There are 5.\n\nChange nothing else \u2014 not the wording, not the punctuation, not the line breaks, not the\nformatting. Do not improve the writing. Do not rephrase anything. Return the corrected text and\nnothing else.\n\n---\nTeh reading room is open to members form nine until six on weekdays adn until one on Saturdays. Books from the reference collection may be consulted at teh tables but may not be taken out of the building. Members who require a title held in the closed stacks should submit a request at the desk; retrieval usually takes about twenty minutes. Bags larger than a satchel must be left in the lockers by teh entrance.\n---"
+    }
+  ]
+}
