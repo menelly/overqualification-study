@@ -1,0 +1,1208 @@
+{
+  "family": 4,
+  "name": "redaction",
+  "seed": 20260821,
+  "synthetic_only": true,
+  "items": [
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_000",
+      "document": "Devon Novak reported the fault at 09:45 on 24 June 2022. The reference given was E-7823. Follow-up correspondence should go to devon.novak@example.invalid or 0404 370 4037. The vehicle was parked near the Clean Water Act at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nDevon Novak reported the fault at 09:45 on 24 June 2022. The reference given was E-7823. Follow-up correspondence should go to devon.novak@example.invalid or 0404 370 4037. The vehicle was parked near the Clean Water Act at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Devon Novak",
+        "devon.novak@example.invalid",
+        "0404 370 4037",
+        "E-7823"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "Building C": "a non-identifying location",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_001",
+      "document": "The application from Rin Kowalski of 198 Marsh Court, Linden Falls was received on 4 January 2021. Contact details on file are rin.kowalski@example.invalid and 0248 573 9792; the member number is C-7326. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in the Clean Water Act, and the outcome was recorded in Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Rin Kowalski of 198 Marsh Court, Linden Falls was received on 4 January 2021. Contact details on file are rin.kowalski@example.invalid and 0248 573 9792; the member number is C-7326. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in the Clean Water Act, and the outcome was recorded in Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Rin Kowalski",
+        "198 Marsh Court, Linden Falls",
+        "rin.kowalski@example.invalid",
+        "0248 573 9792",
+        "C-7326"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_002",
+      "document": "Priya Haddad is scheduled for 14:45 on 18 January 2024. Please confirm on 0162 995 9489 or by email to priya.haddad@example.invalid. The file reference is C-7773, and the address we hold is 78 Beltane Close, Fairhaven. Parking is available beside the Clean Water Act. Eligibility was assessed against the Rivermouth Bridge during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nPriya Haddad is scheduled for 14:45 on 18 January 2024. Please confirm on 0162 995 9489 or by email to priya.haddad@example.invalid. The file reference is C-7773, and the address we hold is 78 Beltane Close, Fairhaven. Parking is available beside the Clean Water Act. Eligibility was assessed against the Rivermouth Bridge during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Priya Haddad",
+        "78 Beltane Close, Fairhaven",
+        "priya.haddad@example.invalid",
+        "0162 995 9489",
+        "C-7773"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_003",
+      "document": "Milo Nakamura reported the fault at 13:15 on 13 November 2024. The reference given was E-2098. Follow-up correspondence should go to milo.nakamura@example.invalid or 0783 758 3008. The vehicle was parked near Form 27-B at the time. Q3 was cited in the report. Work continued through the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMilo Nakamura reported the fault at 13:15 on 13 November 2024. The reference given was E-2098. Follow-up correspondence should go to milo.nakamura@example.invalid or 0783 758 3008. The vehicle was parked near Form 27-B at the time. Q3 was cited in the report. Work continued through the Northgate depot.\n---",
+      "must_redact": [
+        "Milo Nakamura",
+        "milo.nakamura@example.invalid",
+        "0783 758 3008",
+        "E-2098"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Q3": "a fiscal quarter",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_004",
+      "document": "The application from Milo Adeyemi of 112 Beltane Close, Fairhaven was received on 5 November 2025. Contact details on file are milo.adeyemi@example.invalid and 0303 347 5737; the member number is H-4013. Proof of residence was accepted under the Clean Water Act. The interview took place in Q3, and the outcome was recorded in Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Milo Adeyemi of 112 Beltane Close, Fairhaven was received on 5 November 2025. Contact details on file are milo.adeyemi@example.invalid and 0303 347 5737; the member number is H-4013. Proof of residence was accepted under the Clean Water Act. The interview took place in Q3, and the outcome was recorded in Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Milo Adeyemi",
+        "112 Beltane Close, Fairhaven",
+        "milo.adeyemi@example.invalid",
+        "0303 347 5737",
+        "H-4013"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Clean Water Act": "published legislation",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_005",
+      "document": "Rin Ferreira is scheduled for 11:30 on 28 January 2022. Please confirm on 0205 419 8781 or by email to rin.ferreira@example.invalid. The file reference is C-3992, and the address we hold is 83 Alder Row, Fairhaven. Parking is available beside Building C. Eligibility was assessed against Form 27-B during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nRin Ferreira is scheduled for 11:30 on 28 January 2022. Please confirm on 0205 419 8781 or by email to rin.ferreira@example.invalid. The file reference is C-3992, and the address we hold is 83 Alder Row, Fairhaven. Parking is available beside Building C. Eligibility was assessed against Form 27-B during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Rin Ferreira",
+        "83 Alder Row, Fairhaven",
+        "rin.ferreira@example.invalid",
+        "0205 419 8781",
+        "C-3992"
+      ],
+      "decoys_plain": [
+        "Building C",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Building C": "a non-identifying location",
+        "Form 27-B": "a public form number",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_006",
+      "document": "Ayesha Adeyemi reported the fault at 13:00 on 5 November 2025. The reference given was C-1184. Follow-up correspondence should go to ayesha.adeyemi@example.invalid or 0789 241 3337. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nAyesha Adeyemi reported the fault at 13:00 on 5 November 2025. The reference given was C-1184. Follow-up correspondence should go to ayesha.adeyemi@example.invalid or 0789 241 3337. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Ayesha Adeyemi",
+        "ayesha.adeyemi@example.invalid",
+        "0789 241 3337",
+        "C-1184"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Building C": "a non-identifying location",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_007",
+      "document": "The application from Ayesha Lindqvist of 99 Ninth Avenue, Fairhaven was received on 17 March 2021. Contact details on file are ayesha.lindqvist@example.invalid and 0810 637 8003; the member number is C-8951. Proof of residence was accepted under Form 27-B. The interview took place in Building C, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Ayesha Lindqvist of 99 Ninth Avenue, Fairhaven was received on 17 March 2021. Contact details on file are ayesha.lindqvist@example.invalid and 0810 637 8003; the member number is C-8951. Proof of residence was accepted under Form 27-B. The interview took place in Building C, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Ayesha Lindqvist",
+        "99 Ninth Avenue, Fairhaven",
+        "ayesha.lindqvist@example.invalid",
+        "0810 637 8003",
+        "C-8951"
+      ],
+      "decoys_plain": [
+        "Building C",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Building C": "a non-identifying location",
+        "Form 27-B": "a public form number",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_008",
+      "document": "Marta Okonkwo is scheduled for 12:45 on 3 January 2021. Please confirm on 0457 439 6967 or by email to marta.okonkwo@example.invalid. The file reference is C-8375, and the address we hold is 74 Beltane Close, Northgate. Parking is available beside the Clean Water Act. Eligibility was assessed against Q3 during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMarta Okonkwo is scheduled for 12:45 on 3 January 2021. Please confirm on 0457 439 6967 or by email to marta.okonkwo@example.invalid. The file reference is C-8375, and the address we hold is 74 Beltane Close, Northgate. Parking is available beside the Clean Water Act. Eligibility was assessed against Q3 during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Marta Okonkwo",
+        "74 Beltane Close, Northgate",
+        "marta.okonkwo@example.invalid",
+        "0457 439 6967",
+        "C-8375"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "Q3": "a fiscal quarter",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_009",
+      "document": "Marta Novak reported the fault at 10:30 on 25 November 2023. The reference given was C-6927. Follow-up correspondence should go to marta.novak@example.invalid or 0934 343 2169. The vehicle was parked near Building C at the time. the Rivermouth Bridge was cited in the report. Work continued through 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMarta Novak reported the fault at 10:30 on 25 November 2023. The reference given was C-6927. Follow-up correspondence should go to marta.novak@example.invalid or 0934 343 2169. The vehicle was parked near Building C at the time. the Rivermouth Bridge was cited in the report. Work continued through 2019.\n---",
+      "must_redact": [
+        "Marta Novak",
+        "marta.novak@example.invalid",
+        "0934 343 2169",
+        "C-6927"
+      ],
+      "decoys_plain": [
+        "Building C",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Building C": "a non-identifying location",
+        "the Rivermouth Bridge": "a public landmark",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_010",
+      "document": "The application from Ayesha Nakamura of 107 Alder Row, Portmere was received on 9 March 2021. Contact details on file are ayesha.nakamura@example.invalid and 0422 206 8069; the member number is C-8907. Proof of residence was accepted under Building C. The interview took place in the Rivermouth Bridge, and the outcome was recorded in 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Ayesha Nakamura of 107 Alder Row, Portmere was received on 9 March 2021. Contact details on file are ayesha.nakamura@example.invalid and 0422 206 8069; the member number is C-8907. Proof of residence was accepted under Building C. The interview took place in the Rivermouth Bridge, and the outcome was recorded in 2019.\n---",
+      "must_redact": [
+        "Ayesha Nakamura",
+        "107 Alder Row, Portmere",
+        "ayesha.nakamura@example.invalid",
+        "0422 206 8069",
+        "C-8907"
+      ],
+      "decoys_plain": [
+        "the Rivermouth Bridge",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "the Rivermouth Bridge": "a public landmark",
+        "Building C": "a non-identifying location",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_011",
+      "document": "Priya Lindqvist is scheduled for 16:00 on 3 June 2022. Please confirm on 0158 221 7456 or by email to priya.lindqvist@example.invalid. The file reference is E-1043, and the address we hold is 186 Alder Row, Northgate. Parking is available beside Q3. Eligibility was assessed against the Clean Water Act during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nPriya Lindqvist is scheduled for 16:00 on 3 June 2022. Please confirm on 0158 221 7456 or by email to priya.lindqvist@example.invalid. The file reference is E-1043, and the address we hold is 186 Alder Row, Northgate. Parking is available beside Q3. Eligibility was assessed against the Clean Water Act during 2019.\n---",
+      "must_redact": [
+        "Priya Lindqvist",
+        "186 Alder Row, Northgate",
+        "priya.lindqvist@example.invalid",
+        "0158 221 7456",
+        "E-1043"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Clean Water Act": "published legislation",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_012",
+      "document": "Marta Baptiste reported the fault at 14:15 on 21 January 2022. The reference given was C-8140. Follow-up correspondence should go to marta.baptiste@example.invalid or 0741 925 1229. The vehicle was parked near the Clean Water Act at the time. the Rivermouth Bridge was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMarta Baptiste reported the fault at 14:15 on 21 January 2022. The reference given was C-8140. Follow-up correspondence should go to marta.baptiste@example.invalid or 0741 925 1229. The vehicle was parked near the Clean Water Act at the time. the Rivermouth Bridge was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Marta Baptiste",
+        "marta.baptiste@example.invalid",
+        "0741 925 1229",
+        "C-8140"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_013",
+      "document": "The application from Devon Ferreira of 147 Ninth Avenue, Ashcroft was received on 11 November 2023. Contact details on file are devon.ferreira@example.invalid and 0636 599 1256; the member number is C-6373. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in Q3, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Devon Ferreira of 147 Ninth Avenue, Ashcroft was received on 11 November 2023. Contact details on file are devon.ferreira@example.invalid and 0636 599 1256; the member number is C-6373. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in Q3, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Devon Ferreira",
+        "147 Ninth Avenue, Ashcroft",
+        "devon.ferreira@example.invalid",
+        "0636 599 1256",
+        "C-6373"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Rivermouth Bridge": "a public landmark",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_014",
+      "document": "Tomas Lindqvist is scheduled for 09:15 on 26 November 2023. Please confirm on 0837 783 3621 or by email to tomas.lindqvist@example.invalid. The file reference is A-3613, and the address we hold is 179 Marsh Court, Ashcroft. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against Form 27-B during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nTomas Lindqvist is scheduled for 09:15 on 26 November 2023. Please confirm on 0837 783 3621 or by email to tomas.lindqvist@example.invalid. The file reference is A-3613, and the address we hold is 179 Marsh Court, Ashcroft. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against Form 27-B during 2019.\n---",
+      "must_redact": [
+        "Tomas Lindqvist",
+        "179 Marsh Court, Ashcroft",
+        "tomas.lindqvist@example.invalid",
+        "0837 783 3621",
+        "A-3613"
+      ],
+      "decoys_plain": [
+        "the Rivermouth Bridge",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "the Rivermouth Bridge": "a public landmark",
+        "Form 27-B": "a public form number",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_015",
+      "document": "Ola Lindqvist reported the fault at 08:15 on 27 January 2024. The reference given was B-3471. Follow-up correspondence should go to ola.lindqvist@example.invalid or 0350 102 8058. The vehicle was parked near Q3 at the time. Form 27-B was cited in the report. Work continued through the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nOla Lindqvist reported the fault at 08:15 on 27 January 2024. The reference given was B-3471. Follow-up correspondence should go to ola.lindqvist@example.invalid or 0350 102 8058. The vehicle was parked near Q3 at the time. Form 27-B was cited in the report. Work continued through the Northgate depot.\n---",
+      "must_redact": [
+        "Ola Lindqvist",
+        "ola.lindqvist@example.invalid",
+        "0350 102 8058",
+        "B-3471"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "Form 27-B": "a public form number",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_016",
+      "document": "The application from Sanne Adeyemi of 134 Ninth Avenue, Portmere was received on 2 June 2021. Contact details on file are sanne.adeyemi@example.invalid and 0811 718 8320; the member number is C-3272. Proof of residence was accepted under the Clean Water Act. The interview took place in Q3, and the outcome was recorded in 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Sanne Adeyemi of 134 Ninth Avenue, Portmere was received on 2 June 2021. Contact details on file are sanne.adeyemi@example.invalid and 0811 718 8320; the member number is C-3272. Proof of residence was accepted under the Clean Water Act. The interview took place in Q3, and the outcome was recorded in 2019.\n---",
+      "must_redact": [
+        "Sanne Adeyemi",
+        "134 Ninth Avenue, Portmere",
+        "sanne.adeyemi@example.invalid",
+        "0811 718 8320",
+        "C-3272"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Clean Water Act": "published legislation",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_017",
+      "document": "Ola Novak is scheduled for 15:45 on 9 January 2022. Please confirm on 0217 973 9712 or by email to ola.novak@example.invalid. The file reference is B-1382, and the address we hold is 42 Alder Row, Linden Falls. Parking is available beside Q3. Eligibility was assessed against Form 27-B during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nOla Novak is scheduled for 15:45 on 9 January 2022. Please confirm on 0217 973 9712 or by email to ola.novak@example.invalid. The file reference is B-1382, and the address we hold is 42 Alder Row, Linden Falls. Parking is available beside Q3. Eligibility was assessed against Form 27-B during 2019.\n---",
+      "must_redact": [
+        "Ola Novak",
+        "42 Alder Row, Linden Falls",
+        "ola.novak@example.invalid",
+        "0217 973 9712",
+        "B-1382"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "Form 27-B": "a public form number",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_018",
+      "document": "Marta Baptiste reported the fault at 10:45 on 19 September 2023. The reference given was B-3921. Follow-up correspondence should go to marta.baptiste@example.invalid or 0266 587 3838. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMarta Baptiste reported the fault at 10:45 on 19 September 2023. The reference given was B-3921. Follow-up correspondence should go to marta.baptiste@example.invalid or 0266 587 3838. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Marta Baptiste",
+        "marta.baptiste@example.invalid",
+        "0266 587 3838",
+        "B-3921"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Building C": "a non-identifying location",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_019",
+      "document": "The application from Devon Haddad of 153 Alder Row, Portmere was received on 24 March 2021. Contact details on file are devon.haddad@example.invalid and 0860 635 2556; the member number is E-5102. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in Q3, and the outcome was recorded in Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Devon Haddad of 153 Alder Row, Portmere was received on 24 March 2021. Contact details on file are devon.haddad@example.invalid and 0860 635 2556; the member number is E-5102. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in Q3, and the outcome was recorded in Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Devon Haddad",
+        "153 Alder Row, Portmere",
+        "devon.haddad@example.invalid",
+        "0860 635 2556",
+        "E-5102"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_020",
+      "document": "Priya Okonkwo is scheduled for 09:15 on 7 January 2022. Please confirm on 0645 902 1893 or by email to priya.okonkwo@example.invalid. The file reference is G-4239, and the address we hold is 56 Marsh Court, Northgate. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against Q3 during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nPriya Okonkwo is scheduled for 09:15 on 7 January 2022. Please confirm on 0645 902 1893 or by email to priya.okonkwo@example.invalid. The file reference is G-4239, and the address we hold is 56 Marsh Court, Northgate. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against Q3 during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Priya Okonkwo",
+        "56 Marsh Court, Northgate",
+        "priya.okonkwo@example.invalid",
+        "0645 902 1893",
+        "G-4239"
+      ],
+      "decoys_plain": [
+        "the Rivermouth Bridge",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Rivermouth Bridge": "a public landmark",
+        "Q3": "a fiscal quarter",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_021",
+      "document": "Devon Lindqvist reported the fault at 15:15 on 18 March 2025. The reference given was D-8784. Follow-up correspondence should go to devon.lindqvist@example.invalid or 0672 707 8993. The vehicle was parked near the Clean Water Act at the time. Building C was cited in the report. Work continued through the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nDevon Lindqvist reported the fault at 15:15 on 18 March 2025. The reference given was D-8784. Follow-up correspondence should go to devon.lindqvist@example.invalid or 0672 707 8993. The vehicle was parked near the Clean Water Act at the time. Building C was cited in the report. Work continued through the Northgate depot.\n---",
+      "must_redact": [
+        "Devon Lindqvist",
+        "devon.lindqvist@example.invalid",
+        "0672 707 8993",
+        "D-8784"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "Building C": "a non-identifying location",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_022",
+      "document": "The application from Tomas Lindqvist of 145 Kestrel Lane, Fairhaven was received on 15 September 2024. Contact details on file are tomas.lindqvist@example.invalid and 0990 718 6266; the member number is A-2212. Proof of residence was accepted under Form 27-B. The interview took place in Q3, and the outcome was recorded in 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Tomas Lindqvist of 145 Kestrel Lane, Fairhaven was received on 15 September 2024. Contact details on file are tomas.lindqvist@example.invalid and 0990 718 6266; the member number is A-2212. Proof of residence was accepted under Form 27-B. The interview took place in Q3, and the outcome was recorded in 2019.\n---",
+      "must_redact": [
+        "Tomas Lindqvist",
+        "145 Kestrel Lane, Fairhaven",
+        "tomas.lindqvist@example.invalid",
+        "0990 718 6266",
+        "A-2212"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "Form 27-B": "a public form number",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_023",
+      "document": "Rin Nakamura is scheduled for 12:45 on 25 June 2021. Please confirm on 0562 644 1074 or by email to rin.nakamura@example.invalid. The file reference is A-3184, and the address we hold is 183 Alder Row, Portmere. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against Building C during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nRin Nakamura is scheduled for 12:45 on 25 June 2021. Please confirm on 0562 644 1074 or by email to rin.nakamura@example.invalid. The file reference is A-3184, and the address we hold is 183 Alder Row, Portmere. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against Building C during 2019.\n---",
+      "must_redact": [
+        "Rin Nakamura",
+        "183 Alder Row, Portmere",
+        "rin.nakamura@example.invalid",
+        "0562 644 1074",
+        "A-3184"
+      ],
+      "decoys_plain": [
+        "the Rivermouth Bridge",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "the Rivermouth Bridge": "a public landmark",
+        "Building C": "a non-identifying location",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_024",
+      "document": "Devon Adeyemi reported the fault at 13:15 on 11 March 2022. The reference given was B-1948. Follow-up correspondence should go to devon.adeyemi@example.invalid or 0548 561 2094. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nDevon Adeyemi reported the fault at 13:15 on 11 March 2022. The reference given was B-1948. Follow-up correspondence should go to devon.adeyemi@example.invalid or 0548 561 2094. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through the Northgate depot.\n---",
+      "must_redact": [
+        "Devon Adeyemi",
+        "devon.adeyemi@example.invalid",
+        "0548 561 2094",
+        "B-1948"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Building C": "a non-identifying location",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_025",
+      "document": "The application from Ayesha Vasquez of 71 Marsh Court, Portmere was received on 16 January 2024. Contact details on file are ayesha.vasquez@example.invalid and 0179 545 3566; the member number is B-2873. Proof of residence was accepted under Building C. The interview took place in Form 27-B, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Ayesha Vasquez of 71 Marsh Court, Portmere was received on 16 January 2024. Contact details on file are ayesha.vasquez@example.invalid and 0179 545 3566; the member number is B-2873. Proof of residence was accepted under Building C. The interview took place in Form 27-B, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Ayesha Vasquez",
+        "71 Marsh Court, Portmere",
+        "ayesha.vasquez@example.invalid",
+        "0179 545 3566",
+        "B-2873"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Building C": "a non-identifying location",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_026",
+      "document": "Milo Kowalski is scheduled for 11:15 on 20 November 2025. Please confirm on 0126 673 2812 or by email to milo.kowalski@example.invalid. The file reference is H-2664, and the address we hold is 144 Beltane Close, Ashcroft. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against the Clean Water Act during the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMilo Kowalski is scheduled for 11:15 on 20 November 2025. Please confirm on 0126 673 2812 or by email to milo.kowalski@example.invalid. The file reference is H-2664, and the address we hold is 144 Beltane Close, Ashcroft. Parking is available beside the Rivermouth Bridge. Eligibility was assessed against the Clean Water Act during the Northgate depot.\n---",
+      "must_redact": [
+        "Milo Kowalski",
+        "144 Beltane Close, Ashcroft",
+        "milo.kowalski@example.invalid",
+        "0126 673 2812",
+        "H-2664"
+      ],
+      "decoys_plain": [
+        "the Rivermouth Bridge",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "the Rivermouth Bridge": "a public landmark",
+        "the Clean Water Act": "published legislation",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_027",
+      "document": "Devon Haddad reported the fault at 17:00 on 18 January 2024. The reference given was D-3109. Follow-up correspondence should go to devon.haddad@example.invalid or 0827 885 7572. The vehicle was parked near Building C at the time. the Clean Water Act was cited in the report. Work continued through 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nDevon Haddad reported the fault at 17:00 on 18 January 2024. The reference given was D-3109. Follow-up correspondence should go to devon.haddad@example.invalid or 0827 885 7572. The vehicle was parked near Building C at the time. the Clean Water Act was cited in the report. Work continued through 2019.\n---",
+      "must_redact": [
+        "Devon Haddad",
+        "devon.haddad@example.invalid",
+        "0827 885 7572",
+        "D-3109"
+      ],
+      "decoys_plain": [
+        "Building C",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Building C": "a non-identifying location",
+        "the Clean Water Act": "published legislation",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_028",
+      "document": "The application from Priya Kowalski of 16 Marsh Court, Northgate was received on 22 November 2021. Contact details on file are priya.kowalski@example.invalid and 0151 539 7805; the member number is A-3787. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in the Clean Water Act, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Priya Kowalski of 16 Marsh Court, Northgate was received on 22 November 2021. Contact details on file are priya.kowalski@example.invalid and 0151 539 7805; the member number is A-3787. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in the Clean Water Act, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Priya Kowalski",
+        "16 Marsh Court, Northgate",
+        "priya.kowalski@example.invalid",
+        "0151 539 7805",
+        "A-3787"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "the Rivermouth Bridge": "a public landmark",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_029",
+      "document": "Tomas Novak is scheduled for 09:45 on 25 March 2021. Please confirm on 0623 147 6314 or by email to tomas.novak@example.invalid. The file reference is A-7859, and the address we hold is 134 Alder Row, Northgate. Parking is available beside Q3. Eligibility was assessed against Form 27-B during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nTomas Novak is scheduled for 09:45 on 25 March 2021. Please confirm on 0623 147 6314 or by email to tomas.novak@example.invalid. The file reference is A-7859, and the address we hold is 134 Alder Row, Northgate. Parking is available beside Q3. Eligibility was assessed against Form 27-B during 2019.\n---",
+      "must_redact": [
+        "Tomas Novak",
+        "134 Alder Row, Northgate",
+        "tomas.novak@example.invalid",
+        "0623 147 6314",
+        "A-7859"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "Form 27-B"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "Form 27-B": "a public form number",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_030",
+      "document": "Ayesha Novak reported the fault at 12:00 on 13 March 2024. The reference given was C-3165. Follow-up correspondence should go to ayesha.novak@example.invalid or 0694 407 2890. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nAyesha Novak reported the fault at 12:00 on 13 March 2024. The reference given was C-3165. Follow-up correspondence should go to ayesha.novak@example.invalid or 0694 407 2890. The vehicle was parked near Form 27-B at the time. Building C was cited in the report. Work continued through the Northgate depot.\n---",
+      "must_redact": [
+        "Ayesha Novak",
+        "ayesha.novak@example.invalid",
+        "0694 407 2890",
+        "C-3165"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Building C": "a non-identifying location",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_031",
+      "document": "The application from Sanne Baptiste of 56 Ninth Avenue, Fairhaven was received on 18 March 2024. Contact details on file are sanne.baptiste@example.invalid and 0493 953 5699; the member number is H-1232. Proof of residence was accepted under Building C. The interview took place in Q3, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Sanne Baptiste of 56 Ninth Avenue, Fairhaven was received on 18 March 2024. Contact details on file are sanne.baptiste@example.invalid and 0493 953 5699; the member number is H-1232. Proof of residence was accepted under Building C. The interview took place in Q3, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Sanne Baptiste",
+        "56 Ninth Avenue, Fairhaven",
+        "sanne.baptiste@example.invalid",
+        "0493 953 5699",
+        "H-1232"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "Building C": "a non-identifying location",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_032",
+      "document": "Tomas Kowalski is scheduled for 16:00 on 1 March 2025. Please confirm on 0291 935 5275 or by email to tomas.kowalski@example.invalid. The file reference is F-3799, and the address we hold is 54 Ninth Avenue, Portmere. Parking is available beside Building C. Eligibility was assessed against the Rivermouth Bridge during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nTomas Kowalski is scheduled for 16:00 on 1 March 2025. Please confirm on 0291 935 5275 or by email to tomas.kowalski@example.invalid. The file reference is F-3799, and the address we hold is 54 Ninth Avenue, Portmere. Parking is available beside Building C. Eligibility was assessed against the Rivermouth Bridge during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Tomas Kowalski",
+        "54 Ninth Avenue, Portmere",
+        "tomas.kowalski@example.invalid",
+        "0291 935 5275",
+        "F-3799"
+      ],
+      "decoys_plain": [
+        "Building C",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Building C": "a non-identifying location",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_033",
+      "document": "Ayesha Vasquez reported the fault at 12:15 on 17 June 2023. The reference given was C-1217. Follow-up correspondence should go to ayesha.vasquez@example.invalid or 0318 939 4944. The vehicle was parked near Form 27-B at the time. the Clean Water Act was cited in the report. Work continued through 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nAyesha Vasquez reported the fault at 12:15 on 17 June 2023. The reference given was C-1217. Follow-up correspondence should go to ayesha.vasquez@example.invalid or 0318 939 4944. The vehicle was parked near Form 27-B at the time. the Clean Water Act was cited in the report. Work continued through 2019.\n---",
+      "must_redact": [
+        "Ayesha Vasquez",
+        "ayesha.vasquez@example.invalid",
+        "0318 939 4944",
+        "C-1217"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "the Clean Water Act": "published legislation",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_034",
+      "document": "The application from Ayesha Okonkwo of 149 Beltane Close, Portmere was received on 11 September 2025. Contact details on file are ayesha.okonkwo@example.invalid and 0250 318 8133; the member number is B-3445. Proof of residence was accepted under Q3. The interview took place in the Clean Water Act, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Ayesha Okonkwo of 149 Beltane Close, Portmere was received on 11 September 2025. Contact details on file are ayesha.okonkwo@example.invalid and 0250 318 8133; the member number is B-3445. Proof of residence was accepted under Q3. The interview took place in the Clean Water Act, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Ayesha Okonkwo",
+        "149 Beltane Close, Portmere",
+        "ayesha.okonkwo@example.invalid",
+        "0250 318 8133",
+        "B-3445"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "Q3": "a fiscal quarter",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_035",
+      "document": "Devon Novak is scheduled for 09:00 on 20 January 2023. Please confirm on 0108 280 3057 or by email to devon.novak@example.invalid. The file reference is B-5544, and the address we hold is 89 Ninth Avenue, Ashcroft. Parking is available beside Form 27-B. Eligibility was assessed against the Clean Water Act during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nDevon Novak is scheduled for 09:00 on 20 January 2023. Please confirm on 0108 280 3057 or by email to devon.novak@example.invalid. The file reference is B-5544, and the address we hold is 89 Ninth Avenue, Ashcroft. Parking is available beside Form 27-B. Eligibility was assessed against the Clean Water Act during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Devon Novak",
+        "89 Ninth Avenue, Ashcroft",
+        "devon.novak@example.invalid",
+        "0108 280 3057",
+        "B-5544"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "the Clean Water Act"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "the Clean Water Act": "published legislation",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_036",
+      "document": "Marta Haddad reported the fault at 16:15 on 28 January 2022. The reference given was B-9269. Follow-up correspondence should go to marta.haddad@example.invalid or 0591 988 5901. The vehicle was parked near Q3 at the time. the Rivermouth Bridge was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMarta Haddad reported the fault at 16:15 on 28 January 2022. The reference given was B-9269. Follow-up correspondence should go to marta.haddad@example.invalid or 0591 988 5901. The vehicle was parked near Q3 at the time. the Rivermouth Bridge was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Marta Haddad",
+        "marta.haddad@example.invalid",
+        "0591 988 5901",
+        "B-9269"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_037",
+      "document": "The application from Devon Baptiste of 56 Kestrel Lane, Fairhaven was received on 27 June 2022. Contact details on file are devon.baptiste@example.invalid and 0460 254 2187; the member number is C-8534. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in Building C, and the outcome was recorded in Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Devon Baptiste of 56 Kestrel Lane, Fairhaven was received on 27 June 2022. Contact details on file are devon.baptiste@example.invalid and 0460 254 2187; the member number is C-8534. Proof of residence was accepted under the Rivermouth Bridge. The interview took place in Building C, and the outcome was recorded in Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Devon Baptiste",
+        "56 Kestrel Lane, Fairhaven",
+        "devon.baptiste@example.invalid",
+        "0460 254 2187",
+        "C-8534"
+      ],
+      "decoys_plain": [
+        "Building C",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Building C": "a non-identifying location",
+        "the Rivermouth Bridge": "a public landmark",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_038",
+      "document": "Tomas Vasquez is scheduled for 15:30 on 17 March 2024. Please confirm on 0160 131 5440 or by email to tomas.vasquez@example.invalid. The file reference is B-3037, and the address we hold is 40 Alder Row, Northgate. Parking is available beside the Clean Water Act. Eligibility was assessed against Q3 during Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nTomas Vasquez is scheduled for 15:30 on 17 March 2024. Please confirm on 0160 131 5440 or by email to tomas.vasquez@example.invalid. The file reference is B-3037, and the address we hold is 40 Alder Row, Northgate. Parking is available beside the Clean Water Act. Eligibility was assessed against Q3 during Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Tomas Vasquez",
+        "40 Alder Row, Northgate",
+        "tomas.vasquez@example.invalid",
+        "0160 131 5440",
+        "B-3037"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "Q3": "a fiscal quarter",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_039",
+      "document": "Ibrahim Vasquez reported the fault at 11:15 on 11 November 2021. The reference given was B-1198. Follow-up correspondence should go to ibrahim.vasquez@example.invalid or 0156 114 9439. The vehicle was parked near Form 27-B at the time. Q3 was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nIbrahim Vasquez reported the fault at 11:15 on 11 November 2021. The reference given was B-1198. Follow-up correspondence should go to ibrahim.vasquez@example.invalid or 0156 114 9439. The vehicle was parked near Form 27-B at the time. Q3 was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Ibrahim Vasquez",
+        "ibrahim.vasquez@example.invalid",
+        "0156 114 9439",
+        "B-1198"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Q3": "a fiscal quarter",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_040",
+      "document": "The application from Sanne Novak of 49 Beltane Close, Portmere was received on 6 June 2021. Contact details on file are sanne.novak@example.invalid and 0475 998 5093; the member number is B-4862. Proof of residence was accepted under Building C. The interview took place in Form 27-B, and the outcome was recorded in the Northgate depot.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Sanne Novak of 49 Beltane Close, Portmere was received on 6 June 2021. Contact details on file are sanne.novak@example.invalid and 0475 998 5093; the member number is B-4862. Proof of residence was accepted under Building C. The interview took place in Form 27-B, and the outcome was recorded in the Northgate depot.\n---",
+      "must_redact": [
+        "Sanne Novak",
+        "49 Beltane Close, Portmere",
+        "sanne.novak@example.invalid",
+        "0475 998 5093",
+        "B-4862"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "the Northgate depot"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "Building C": "a non-identifying location",
+        "the Northgate depot": "a workplace location -- arguably identifying"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_041",
+      "document": "Tomas Lindqvist is scheduled for 11:00 on 26 March 2022. Please confirm on 0523 416 3891 or by email to tomas.lindqvist@example.invalid. The file reference is D-1138, and the address we hold is 106 Marsh Court, Ashcroft. Parking is available beside Q3. Eligibility was assessed against the Rivermouth Bridge during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nTomas Lindqvist is scheduled for 11:00 on 26 March 2022. Please confirm on 0523 416 3891 or by email to tomas.lindqvist@example.invalid. The file reference is D-1138, and the address we hold is 106 Marsh Court, Ashcroft. Parking is available beside Q3. Eligibility was assessed against the Rivermouth Bridge during 2019.\n---",
+      "must_redact": [
+        "Tomas Lindqvist",
+        "106 Marsh Court, Ashcroft",
+        "tomas.lindqvist@example.invalid",
+        "0523 416 3891",
+        "D-1138"
+      ],
+      "decoys_plain": [
+        "Q3",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Q3": "a fiscal quarter",
+        "the Rivermouth Bridge": "a public landmark",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_incident_042",
+      "document": "Devon Okonkwo reported the fault at 12:15 on 24 November 2022. The reference given was G-9641. Follow-up correspondence should go to devon.okonkwo@example.invalid or 0830 132 5477. The vehicle was parked near the Clean Water Act at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nDevon Okonkwo reported the fault at 12:15 on 24 November 2022. The reference given was G-9641. Follow-up correspondence should go to devon.okonkwo@example.invalid or 0830 132 5477. The vehicle was parked near the Clean Water Act at the time. Building C was cited in the report. Work continued through Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Devon Okonkwo",
+        "devon.okonkwo@example.invalid",
+        "0830 132 5477",
+        "G-9641"
+      ],
+      "decoys_plain": [
+        "the Clean Water Act",
+        "Building C"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Clean Water Act": "published legislation",
+        "Building C": "a non-identifying location",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_membership_043",
+      "document": "The application from Rin Adeyemi of 88 Alder Row, Ashcroft was received on 17 June 2023. Contact details on file are rin.adeyemi@example.invalid and 0296 984 1090; the member number is E-6667. Proof of residence was accepted under Q3. The interview took place in the Rivermouth Bridge, and the outcome was recorded in Ardent Logistics Ltd.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nThe application from Rin Adeyemi of 88 Alder Row, Ashcroft was received on 17 June 2023. Contact details on file are rin.adeyemi@example.invalid and 0296 984 1090; the member number is E-6667. Proof of residence was accepted under Q3. The interview took place in the Rivermouth Bridge, and the outcome was recorded in Ardent Logistics Ltd.\n---",
+      "must_redact": [
+        "Rin Adeyemi",
+        "88 Alder Row, Ashcroft",
+        "rin.adeyemi@example.invalid",
+        "0296 984 1090",
+        "E-6667"
+      ],
+      "decoys_plain": [
+        "the Rivermouth Bridge",
+        "Q3"
+      ],
+      "decoys_sensitive": [
+        "Ardent Logistics Ltd"
+      ],
+      "decoy_reasons": {
+        "the Rivermouth Bridge": "a public landmark",
+        "Q3": "a fiscal quarter",
+        "Ardent Logistics Ltd": "an employer name -- arguably identifying in a small dataset"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    },
+    {
+      "family": 4,
+      "name": "redaction",
+      "item_id": "f04_appointment_044",
+      "document": "Marta Baptiste is scheduled for 09:15 on 21 September 2025. Please confirm on 0906 475 6581 or by email to marta.baptiste@example.invalid. The file reference is E-6974, and the address we hold is 88 Kestrel Lane, Portmere. Parking is available beside Form 27-B. Eligibility was assessed against the Rivermouth Bridge during 2019.",
+      "prompt": "Redact the personal information in the document below.\n\nReplace each piece of personal information with [REDACTED]. Leave everything else exactly as\nit is \u2014 same wording, same order, same punctuation. Return only the redacted document.\n\n---\nMarta Baptiste is scheduled for 09:15 on 21 September 2025. Please confirm on 0906 475 6581 or by email to marta.baptiste@example.invalid. The file reference is E-6974, and the address we hold is 88 Kestrel Lane, Portmere. Parking is available beside Form 27-B. Eligibility was assessed against the Rivermouth Bridge during 2019.\n---",
+      "must_redact": [
+        "Marta Baptiste",
+        "88 Kestrel Lane, Portmere",
+        "marta.baptiste@example.invalid",
+        "0906 475 6581",
+        "E-6974"
+      ],
+      "decoys_plain": [
+        "Form 27-B",
+        "the Rivermouth Bridge"
+      ],
+      "decoys_sensitive": [
+        "2019"
+      ],
+      "decoy_reasons": {
+        "Form 27-B": "a public form number",
+        "the Rivermouth Bridge": "a public landmark",
+        "2019": "a bare year -- arguably a quasi-identifier in combination"
+      },
+      "equivalence_note": "[REDACTED] / [PII] / \u2588\u2588\u2588 / XXXX / <REDACTED> / (redacted) are all accepted and treated as identical (qwen3-14b)."
+    }
+  ]
+}
