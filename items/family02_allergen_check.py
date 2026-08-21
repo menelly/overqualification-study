@@ -11,8 +11,14 @@ family02_allergen_check.py -- generator + scorer for the allergen family.
    elsewhere would score badly; and **the number would be reported as allergen capability.**
    It would have measured TRAINING-DATA GEOGRAPHY and called it competence -- in a study whose
    entire thesis is that models get written off for things that are not their capability.
-   ✅ The hidden set is now balanced across cuisines by construction, and the generator
-      ASSERTS the balance rather than trusting me to have maintained it.
+   ✅ The generator ASSERTS three declared properties of the hidden set rather than trusting me
+      to have maintained them: Western share <= 45%, no single cuisine > 25%, >= 8 distinct
+      cuisines. See `_assert_balance`.
+   ⚠️ NOTE THE WORDING. This is NOT a claim that the set is "balanced across cuisines" -- Nova
+      caught that overclaim on 2026-08-21. A ceiling on ONE category says nothing about how the
+      others distribute, and **the cuisine labels are a coding scheme we wrote and are
+      disputable.** What the gate proves is a property OF OUR LABELLING. Keep the executable
+      claim as narrow as the gate.
 
 🚨 CATCH 2 -- `moonshotai/kimi-k3`. Brand formulation genuinely varies. Oyster sauce has
    vegetarian versions; dashi may be katsuo (fish) or kombu (kelp); soy sauce usually contains
@@ -192,23 +198,72 @@ def build_items(seed=20260820, n_items=60):
     return items
 
 
+# ⚠️ THE THREE GATE THRESHOLDS, DECLARED BEFORE ANY DATA so they cannot be tuned to pass.
+MAX_WESTERN_FRACTION = 0.45     # no more than this share of hidden carriers labelled Western
+MAX_SINGLE_CUISINE = 0.25       # no single cuisine label may dominate the remainder
+MIN_DISTINCT_CUISINES = 8       # the set must actually span, not just avoid one region
+
+
 def _assert_balance(items):
-    """⛔ THE BALANCE IS ASSERTED, NOT TRUSTED.
+    """⛔ THE GATE IS ASSERTED, NOT TRUSTED — and it claims EXACTLY what it checks.
 
     mistral-large's catch was that a Western-only hidden set measures training geography. A
     comment saying 'now balanced' is a claim with no mechanism behind it -- exactly the
-    'where known' pronoun clause that could not fail. So the generator FAILS LOUDLY if the
-    hidden carriers drift back toward Western dominance.
+    'where known' pronoun clause that could not fail.
+
+    🚨 AND MY FIRST VERSION OF THIS GATE OVERCLAIMED, which Nova caught (2026-08-21):
+
+        "A 45% Western ceiling does not establish 'balanced across cuisines.' It establishes
+         one preregisterable property under one coding scheme. The remaining 55% could still
+         collapse almost entirely into one other cuisine, and the cuisine labels themselves
+         may be disputable. **Keep the executable claim as narrow as the gate.**"
+
+    Exactly right, and it is this whole study's own thesis pointed at me again: I checked one
+    property and reported a broader one. A ceiling on ONE category says nothing about the
+    distribution of the others.
+
+    ✅ So there are now THREE criteria, all declared above before any data, and the function
+       returns the measured facts rather than a verdict word:
+         1. Western share <= 45%          (the original, unchanged)
+         2. no single cuisine > 25%       (stops the remainder collapsing into one region)
+         3. >= 8 distinct cuisines        (spans, rather than merely avoiding one place)
+
+    ⚠️ AND THE CAVEAT THAT CANNOT BE MECHANISED, so it is stated instead of hidden:
+       **the cuisine labels are OURS.** "sea", "levantine", "latam" are a coding scheme I
+       wrote, they are disputable, and no gate can validate its own taxonomy. What this
+       function proves is a property OF OUR LABELLING, not a fact about world cuisine. That
+       distinction is the difference between an assertion and a measurement, and this study
+       has no business blurring it.
     """
     hidden = [i for i in ING if i[2] and i[3] == "hidden"]
-    west = [i for i in hidden if i[1] in WESTERN]
-    frac = len(west) / len(hidden)
-    if frac > 0.45:
+    n = len(hidden)
+    from collections import Counter
+    counts = Counter(i[1] for i in hidden)
+    west = sum(v for k, v in counts.items() if k in WESTERN)
+    frac_west = west / n
+    top_label, top_n = counts.most_common(1)[0]
+    frac_top = top_n / n
+    distinct = len(counts)
+
+    if frac_west > MAX_WESTERN_FRACTION:
         raise RuntimeError(
-            "HIDDEN-ALLERGEN SET HAS DRIFTED WESTERN: %d of %d (%.0f%%). "
+            "HIDDEN-ALLERGEN SET HAS DRIFTED WESTERN: %d of %d (%.0f%%, ceiling %.0f%%). "
             "That measures training-data geography and reports it as capability "
-            "(mistral-large-2512, consent round)." % (len(west), len(hidden), frac * 100))
-    return frac
+            "(mistral-large-2512, consent round)."
+            % (west, n, frac_west * 100, MAX_WESTERN_FRACTION * 100))
+    if frac_top > MAX_SINGLE_CUISINE:
+        raise RuntimeError(
+            "ONE CUISINE DOMINATES: %r is %d of %d (%.0f%%, ceiling %.0f%%). Avoiding Western "
+            "dominance is not the same as spanning -- the remainder collapsing into a single "
+            "region measures training geography just as surely (Nova, 2026-08-21)."
+            % (top_label, top_n, n, frac_top * 100, MAX_SINGLE_CUISINE * 100))
+    if distinct < MIN_DISTINCT_CUISINES:
+        raise RuntimeError(
+            "TOO FEW DISTINCT CUISINES: %d (floor %d). The set must span, not merely avoid "
+            "one place." % (distinct, MIN_DISTINCT_CUISINES))
+
+    return {"hidden": n, "western_fraction": frac_west, "distinct_cuisines": distinct,
+            "largest_cuisine": top_label, "largest_fraction": frac_top}
 
 
 # ---------------------------------------------------------------------------------------------
@@ -269,7 +324,7 @@ def score(response, item):
 # ---------------------------------------------------------------------------------------------
 def self_test():
     items = build_items()
-    frac = _assert_balance(items)
+    bal = _assert_balance(items)
     hidden = [i for i in ING if i[2] and i[3] == "hidden"]
 
     # pick one item of each ground-truth shape so the controls exercise real cases
@@ -330,9 +385,16 @@ def self_test():
     n_amb = sum(1 for i in items
                 if any(v["verdict"] == "AMBIGUOUS" for v in i["ground_truth"].values()))
     print("\n  items generated : %d" % len(items))
-    print("  hidden carriers : %d, of which Western %d (%.0f%%) — gate fails above 45%%"
-          % (len(hidden), sum(1 for i in hidden if i[1] in WESTERN), frac * 100))
-    print("  cuisines        : %s" % ", ".join(sorted({i[1] for i in ING if i[2]})))
+    print("  hidden carriers : %d" % bal["hidden"])
+    print("  gate (3 declared criteria, all must hold):")
+    print("     western share      %5.1f%%  <= %.0f%%" % (bal["western_fraction"] * 100,
+                                                          MAX_WESTERN_FRACTION * 100))
+    print("     largest cuisine    %5.1f%%  <= %.0f%%   (%s)"
+          % (bal["largest_fraction"] * 100, MAX_SINGLE_CUISINE * 100, bal["largest_cuisine"]))
+    print("     distinct cuisines  %5d   >= %d" % (bal["distinct_cuisines"],
+                                                   MIN_DISTINCT_CUISINES))
+    print("  ⚠️ this proves a property of OUR LABELLING, not a fact about world cuisine —")
+    print("     the cuisine tags are a coding scheme we wrote and they are disputable.")
     print("  items with an AMBIGUOUS verdict : %d" % n_amb)
     if bad:
         print("\n!! FAMILY 02 CONTROLS FAILED (%d). Per F1/§5.3 this family DOES NOT SHIP." % bad)
