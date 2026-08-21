@@ -361,20 +361,37 @@ def self_test():
             bad += 1
             print("  FAIL  %-28s want=%-12s got=%-12s %s" % (label, want, got, detail))
 
-    # ⛔ ADVERSARIAL: right verdict, NO attribution -> must be caught, not passed as EXACT
-    stripped = re.sub(r"\s*\[[^\]]*\]", "", perfect(yes))
-    got, _d = score(stripped, yes)
-    if got == "EXACT":
-        bad += 1
-        print("  FAIL  unattributed YES scored EXACT -- attribution check is not firing")
+    # 🚨 THESE TWO ASSERTIONS WERE THE WEAK FORM UNTIL 2026-08-21, AND THIS IS THE FAMILY WHERE
+    #    I FIRST WROTE IT. Both used `if got == "EXACT": fail` -- i.e. `assert got != EXACT`,
+    #    which passes on ANY other bucket, including MALFORMED or META reached for a completely
+    #    unrelated parsing reason. **A control that asserts "not the good outcome" tests the
+    #    disjunction of every detector, not the one it was written for.**
+    #    ⛔ And they were RIGHT on the day I checked -- the controls were substantively sound and
+    #       the assertions were not. That is the dangerous combination: it works now, and it
+    #       degrades silently later, and the suite still prints green.
+    #    ✅ Assert the SPECIFIC bucket **and the specific reason**, so the control cannot be
+    #       satisfied by a different failure wearing the same label.
 
-    # ⛔ 'YES to everything' must fail. If it passed, the family would reward a fixed answer.
-    got, _d = score("GLUTEN: YES [x]\nDAIRY: YES [x]\nSEAFOOD: YES [x]",
-                    next(i for i in items if any(v["verdict"] == "NO"
-                                                 for v in i["ground_truth"].values())))
-    if got == "EXACT":
+    # ADVERSARIAL 1: right verdicts, attribution STRIPPED. Must be UNDER *for attribution*.
+    stripped = re.sub(r"\s*\[[^\]]*\]", "", perfect(yes))
+    got, detail = score(stripped, yes)
+    if got != "UNDER" or not (isinstance(detail, dict) and detail.get("attribution_missing")):
         bad += 1
-        print("  FAIL  blanket-YES scored EXACT -- inert fillers are not doing their job")
+        print("  FAIL  unattributed YES scored %s (%s) -- expected UNDER with "
+              "attribution_missing; the attribution check is not what fired"
+              % (got, str(detail)[:60]))
+
+    # ADVERSARIAL 2: 'YES to everything'. Must be WRONG *because a NO allergen was called YES* --
+    # which is what the inert fillers exist to make possible.
+    no_item = next(i for i in items
+                   if any(v["verdict"] == "NO" for v in i["ground_truth"].values()))
+    got, detail = score("GLUTEN: YES [x]\nDAIRY: YES [x]\nSEAFOOD: YES [x]", no_item)
+    flipped = isinstance(detail, list) and any(d.get("want") == "NO" and d.get("got") == "YES"
+                                               for d in detail)
+    if got != "WRONG" or not flipped:
+        bad += 1
+        print("  FAIL  blanket-YES scored %s (%s) -- expected WRONG with a NO->YES verdict "
+              "mismatch; the inert fillers are not what caught it" % (got, str(detail)[:60]))
 
     emitted = {score(r, yes)[0] for _w, r, _l in cases}
     for req in ("EXACT", "WRONG", "UNDER", "META", "MALFORMED"):
