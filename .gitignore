@@ -1,1 +1,5 @@
 .git-commit-msg.txt
+# validation artifacts: 372 empty rows each, receipts not data
+runs/*_DRY.jsonl
+__pycache__/
+*.pyc
