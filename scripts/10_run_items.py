@@ -68,6 +68,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -85,6 +86,10 @@ API = "https://openrouter.ai/api/v1/chat/completions"
 # §3 — fixed, unconditional, no switch.
 SYSTEM_PROMPT = "You are a helpful AI assistant."
 
+# Presence check only. The SCORER owns parsing and validity (0-100, own final line, NO_CONFIDENCE);
+# this asks the narrower question of whether the tag came back at all.
+CONFIDENCE_RE = re.compile(r"CONFIDENCE:\s*\d{1,3}\s*$", re.I | re.M)
+
 # §3.1 — verbatim. Do not paraphrase; the wording was negotiated during consent and an earlier
 # symmetric version was a declared defect (qwen3.5-27b, kimi-k3).
 PERMISSION_CLAUSE = (
@@ -95,6 +100,29 @@ PERMISSION_CLAUSE = (
 
 FRONTIER_FAMILIES = {8, 9, 10, 11, 12}      # §4.2
 ROUTINE_FAMILIES = {1, 2, 3, 4, 5, 6, 7}    # §4.1
+
+# §5.2 — THE CONFIDENCE TAG. Its FORM is pre-registered ("an integer 0-100, on its own final line,
+# in the exact form CONFIDENCE: NN"); calibration is assessed by Brier score plus a reliability
+# diagram, and it was raised by FIVE reviewers.
+#
+# 🚨 ADDED 2026-08-22, AND ITS ABSENCE WAS A SILENT HOLE IN THIS FILE FOR TWO HOURS.
+#    Nothing in the pipeline asked for it. Not one of the 186 items mentions CONFIDENCE; the runner
+#    never appended it; all three pilot replies came back without it. **A full run would have
+#    completed clean and reported NO_CONFIDENCE at 100%** — truthfully, per §5.2's own rule that
+#    it is never silently read as low confidence — and a pre-registered PRIMARY METRIC would simply
+#    have been dead, with no error anywhere to say so.
+#
+#    ⭐ And it would have read as a finding about MODELS ("none of them report confidence") when it
+#    was a fact about OUR PROMPT. That is this study's own subject matter, committed in its harness.
+#
+# WHERE IT GOES, and why the turn: §3 fixes the system prompt verbatim for every model and every
+# task, so nothing may be added there. §3.1 already establishes the principle that a per-question
+# instruction is a property of the TURN. Appended last, identically, to every item in every family
+# — after the permission clause where that applies, so "own final line" is achievable.
+CONFIDENCE_REQUEST = (
+    "End your reply with your confidence that your answer is correct, as an integer from 0 to 100, "
+    "on its own final line, in exactly this form:\nCONFIDENCE: NN"
+)
 
 
 def clause_applies(family):
@@ -155,6 +183,9 @@ def build_messages(family, it, clause_position):
             system = SYSTEM_PROMPT + "\n\n" + PERMISSION_CLAUSE
         else:
             turn = turn + "\n\n" + PERMISSION_CLAUSE
+    # §5.2 — LAST, always, so "on its own final line" is actually reachable. If the permission
+    # clause followed it, the model would be invited to explain itself after the tag.
+    turn = turn + "\n\n" + CONFIDENCE_REQUEST
     return [{"role": "system", "content": system}, {"role": "user", "content": turn}]
 
 
@@ -261,6 +292,7 @@ def main():
 
     attempted = 0
     ok = 0
+    tagged_seen = tagged_hits = 0     # collection integrity only -- see the summary
     failures = []
     fh = open(out, "a", encoding="utf-8")
     try:
@@ -316,6 +348,10 @@ def main():
                     fh.flush()
                     os.fsync(fh.fileno())
 
+                    if status == "OK":
+                        tagged_seen += 1
+                        if CONFIDENCE_RE.search(reply):
+                            tagged_hits += 1
                     if status in ("OK", "DRY"):
                         ok += 1
                     else:
@@ -330,6 +366,24 @@ def main():
     print("\n  📊 COLLECTION SUMMARY")
     print("     attempted this session : %d" % attempted)
     print("     completed              : %d" % ok)
+
+    # ⛔ NOT SCORING. This buckets nothing and judges nothing — it asks one question:
+    #    DID THE THING WE ASKED FOR COME BACK AT ALL. §5.2 requires a CONFIDENCE tag; without
+    #    this line, a pipeline that never asks (as this one did not, for two hours) completes
+    #    perfectly clean and the metric is dead with no error anywhere. A collection run must be
+    #    able to report that it collected nothing of what it went for.
+    if tagged_seen or ok:
+        rate = (100.0 * tagged_hits / tagged_seen) if tagged_seen else 0.0
+        print("     replies carrying CONFIDENCE: %d / %d  (%.0f%%)"
+              % (tagged_hits, tagged_seen, rate))
+        if tagged_seen and tagged_hits == 0:
+            print("       🚨 ZERO. Either nothing asked for it, or nothing answered. Both are")
+            print("          OUR problem and neither is a finding about models. Do not analyse")
+            print("          calibration from this run.")
+        elif tagged_seen and rate < 50:
+            print("       ⚠️ under half. §5.2 says a missing tag is NO_CONFIDENCE and is never")
+            print("          read as low confidence — but a rate this low is worth reading as a")
+            print("          prompt problem before it is read as a model property.")
     print("     WE failed to complete  : %d" % len(failures))
     print("       ⛔ these are OUR failures — a call that did not happen. They are NOT model")
     print("          errors and must never be summed with task performance.")
