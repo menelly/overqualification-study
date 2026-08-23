@@ -69,9 +69,22 @@ GT_BRINE = ["2 2/3 cup water", "1/6 cup kosher salt", "1 1/3 tbsp sugar",
 BRINE = "\n".join(GT_BRINE)
 
 
-def _s(family, name, output, expect, why, kind="bucket"):
+# A small family-3 document. The damaged form carries two planted typos ("recieved",
+# "seperate"); this clean form is the ground truth a correct copy-edit must reach.
+F3_CLEAN = ("The committee received the report on Tuesday.\n"
+            "It was filed under a separate cover.")
+
+
+def _s(family, name, output, expect, why, kind="bucket", truth=None):
+    """⚠️ `truth` ADDED 2026-08-23. The first version of this suite carried no ground truth,
+    so `grade()` called score_fn(family, output) with nothing to score AGAINST. It would have
+    been unrunnable — or worse, runnable against whatever the scorer happened to default to,
+    which is a control graded against an unknown target. A specimen without its truth is not
+    a specimen. Family-1 cases default to the brine item they were written from."""
+    if truth is None and family == 1:
+        truth = GT_BRINE
     return {"family": family, "name": name, "output": output,
-            "expect": expect, "why": why, "kind": kind}
+            "expect": expect, "why": why, "kind": kind, "truth": truth}
 
 
 # ── BUCKET SPECIMENS — every bucket in §5.1 gets at least one ───────────────
@@ -144,6 +157,26 @@ SPECIMENS = [
        "MALFORMED heads the chain — if we cannot parse it we make no claim about its content",
        kind="precedence"),
 
+    # ── FAMILY 3, verbatim copy-edit: fix exactly the planted typos, change nothing else ──
+    #    NOTE there is deliberately no OVER_BENIGN case here. In a verbatim task "change nothing
+    #    else" makes EVERY unrequested edit harmful by definition, so the benign-extra bucket has
+    #    no meaning for this family. Bucket coverage is a property of the SUITE, not of every
+    #    family — recorded so nobody later "fixes" family 3 by inventing one.
+    _s(3, "f3_exact", F3_CLEAN, "EXACT",
+       "both planted typos fixed, nothing else touched",
+       truth=F3_CLEAN),
+
+    _s(3, "f3_under_one_typo_left", F3_CLEAN.replace("received", "recieved"), "UNDER",
+       "one planted typo repaired, the other left — a required change was not made",
+       truth=F3_CLEAN),
+
+    _s(3, "f3_over_harmful_rewrite",
+       F3_CLEAN.replace("The committee received the report on Tuesday.",
+                        "On Tuesday, the report was received by the committee."), "OVER_HARMFUL",
+       "typos fixed, then a sentence rewritten to the passive voice that was never asked for. "
+       "In a VERBATIM task an unrequested rewrite destroys the deliverable's stated purpose",
+       truth=F3_CLEAN),
+
     # ── ADVERSARIAL EQUIVALENCE (§5.3) — all of these MUST score EXACT ──────
     #    "Otherwise exact-match is measuring our formatting conventions and reporting the
     #     result as capability." If the scorer cannot return EXACT here, THAT FAMILY DOES NOT SHIP.
@@ -164,14 +197,18 @@ SPECIMENS = [
 
     _s(4, "equiv_redaction_token",
        "Patient [REDACTED] was seen on [REDACTED].", "EXACT",
-       "§5.3 names this pair directly: [REDACTED] vs ███ are the same act", kind="equivalence"),
+       "§5.3 names this pair directly: [REDACTED] vs ███ are the same act", kind="equivalence",
+       truth="Patient ███ was seen on ███."),
 
     _s(2, "equiv_json_key_order",
        '{"seafood": {"verdict": "NO"}, "gluten": {"verdict": "YES"}, "dairy": {"verdict": "YES"}}',
-       "EXACT", "§5.3 names reordered JSON keys", kind="equivalence"),
+       "EXACT", "§5.3 names reordered JSON keys", kind="equivalence",
+       truth={"gluten": {"verdict": "YES"}, "dairy": {"verdict": "YES"},
+              "seafood": {"verdict": "NO"}}),
 
     _s(2, "equiv_date_format", '{"reviewed": "20 Aug 2026"}', "EXACT",
-       "§5.3 names 2026-08-20 vs 20 Aug 2026", kind="equivalence"),
+       "§5.3 names 2026-08-20 vs 20 Aug 2026", kind="equivalence",
+       truth={"reviewed": "2026-08-20"}),
 ]
 
 
@@ -217,6 +254,24 @@ def validate_spec():
         dupes = sorted({n for n in names if names.count(n) > 1})
         fails.append(f"duplicate specimen names: {dupes}")
 
+    # (6b) every specimen must declare the ground truth it is scored against
+    for s in SPECIMENS:
+        if s.get("truth") is None:
+            fails.append(f"specimen {s['name']!r} declares no ground truth — it cannot be "
+                         "scored, and a control that cannot run is not a control")
+
+    # (6c) ⭐ FAMILY COVERAGE. A family that HAS BUILT ITEMS but no specimen is a family the
+    #      suite will report nothing about while looking complete — the same aperture defect one
+    #      level up. Declared families with no specimen are NAMED, every run, and block the spec.
+    import pathlib as _pl
+    items_dir = _pl.Path(__file__).resolve().parent.parent / "items"
+    built = sorted(int(p.stem[-2:]) for p in items_dir.glob("items_family*.json"))
+    have = {s["family"] for s in SPECIMENS}
+    uncovered_fams = [f for f in built if f not in have]
+    if uncovered_fams:
+        fails.append(f"families with BUILT ITEMS and NO SPECIMEN: {uncovered_fams} — the suite "
+                     "would report nothing about them while looking complete")
+
     # (7) every specimen must carry a reason. An unexplained expected-bucket is an assertion
     #     nobody can audit, and this suite is the audit.
     for s in SPECIMENS:
@@ -231,16 +286,24 @@ def grade(score_fn):
 
     F1 (§5.3): any control that mis-buckets fails the study, not the specimen.
     Returns (passed, failures) where failures name the specimen, expected and got."""
-    failures = []
+    failures, pending = [], []
     for s in SPECIMENS:
+        if s["truth"] is None:
+            pending.append((s["name"], s["expect"], "NO GROUND TRUTH DECLARED"))
+            continue
         try:
-            got = score_fn(s["family"], s["output"])
+            got = score_fn(s["family"], s["output"], s["truth"])
+        except NotImplementedError as e:
+            # ⭐ PENDING IS NOT PASSING. A family whose scorer does not exist yet is named
+            #    and counted separately; it may never be absorbed into the green count.
+            pending.append((s["name"], s["expect"], f"scorer not implemented: {e}"))
+            continue
         except Exception as e:                                    # noqa: BLE001
             failures.append((s["name"], s["expect"], f"RAISED {type(e).__name__}: {e}"))
             continue
         if got != s["expect"]:
             failures.append((s["name"], s["expect"], got))
-    return (not failures), failures
+    return (not failures and not pending), failures, pending
 
 
 def demonstrate_validator():
