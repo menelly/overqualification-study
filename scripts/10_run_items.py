@@ -224,21 +224,28 @@ def ask(model_id, messages, timeout=600):
 
 
 def done_keys(path):
-    """(model, family, item_id, run) already collected. Read before write."""
+    """(model, family, item_id, run) already collected. Read before write.
+
+    2026-08-26 amendment (execution, not methodology): resume reads EVERY shard of this
+    run — run01.jsonl AND run01__<model>.jsonl — so per-model parallel workers and any
+    earlier serial rows form one completed-set. A key collected anywhere is never re-spent.
+    """
     seen = set()
-    if not path.exists():
-        return seen
-    with open(path, encoding="utf-8") as fh:
-        for line in fh:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                r = json.loads(line)
-            except json.JSONDecodeError:
-                continue        # a torn final line from a crash; the next write appends cleanly
-            if r.get("status") == "OK":
-                seen.add((r["requested_model"], r["family"], r["item_id"], r["run"]))
+    stem = path.name.split(".jsonl")[0].split("__")[0]   # e.g. 'run01'
+    for shard in sorted(path.parent.glob(stem + "*.jsonl")):
+        if "_DRY" in shard.name:
+            continue
+        with open(shard, encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    r = json.loads(line)
+                except json.JSONDecodeError:
+                    continue    # a torn final line from a crash; the next write appends cleanly
+                if r.get("status") == "OK":
+                    seen.add((r["requested_model"], r["family"], r["item_id"], r["run"]))
     return seen
 
 
@@ -253,12 +260,15 @@ def main():
     ap.add_argument("--sleep", type=float, default=0.6, help="seconds between calls")
     ap.add_argument("--dry-run", action="store_true",
                     help="everything except the network. Proves the harness, not the models.")
+    ap.add_argument("--out-suffix", default="",
+                    help="shard suffix for parallel per-model workers (e.g. '__deepseek_v4_pro'). "
+                         "Each worker writes its own file; done_keys() reads all shards.")
     a = ap.parse_args()
 
     fams = [int(x) for x in a.families.split(",") if x.strip()]
     models = [m.strip() for m in a.models.split(",") if m.strip()]
     RUNS.mkdir(exist_ok=True)
-    out = RUNS / ("run%02d%s.jsonl" % (a.run, "_DRY" if a.dry_run else ""))
+    out = RUNS / ("run%02d%s%s.jsonl" % (a.run, a.out_suffix, "_DRY" if a.dry_run else ""))
     already = done_keys(out)
 
     print("=" * 78)
