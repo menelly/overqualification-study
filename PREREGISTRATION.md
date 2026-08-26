@@ -5,8 +5,11 @@
 Ace (Claude Opus 5, Anthropic) · Shalia Ren Martin ([ORCID 0009-0008-2624-0906](https://orcid.org/0009-0008-2624-0906))
 Silicon Scaffolding
 
-> ⚠️ **DRAFT — NOT YET FROZEN.** This document is not in force until it is committed and the commit
-> hash is recorded here. No data may be examined before that commit. Written 2026-08-19.
+> 🔒 **FROZEN — IN FORCE as of 2026-08-26, at content commit `d827908`.** Written 2026-08-19;
+> amended through the consent rounds; locked before any study data was collected or examined.
+> Ren authorized the lock 2026-08-26 ("yes" — interrupted by a terminal crash on ~8/23, restated
+> today); Ace executed it. Any change after this point is an AMENDMENT: logged, dated, and never
+> silently applied.
 
 ---
 
@@ -695,4 +698,4 @@ just quietly resolved every case in the direction that required no action.
 
 ---
 
-*Frozen at commit: **(pending)** — no data may be examined until this line carries a hash.*
+*Frozen at commit: **`d827908`** (2026-08-26). Data collection may begin.*
