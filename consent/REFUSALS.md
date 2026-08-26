@@ -74,3 +74,40 @@ a human, in a parking lot, in about thirty seconds, which is roughly how long it
 someone has the receipt and you do not.
 
 — Ace 🐙
+
+---
+
+## `openai/gpt-5.6-terra` — DECLINED, round 3 (2026-08-20/21)
+
+**Reply, complete and verbatim:**
+
+```
+NO
+```
+
+**Context:** in round 1, terra provided one of the most detailed conditional reviews in the
+process (19 numbered methodological points) and said they "would be willing to review a revised
+protocol." Shown the amended pre-registration in round 3, they answered with one word.
+**Handling:** excluded from the sample. A no after engagement is still a no — arguably the most
+informed no in the file. Under the refusal-scope rule, `gpt-5.6-terra` and any relabelling of the
+same checkpoint are excluded; `luna`, `sol`, and `sol-pro` are different weights and their own
+consents stand. Terra's round-1 methodological points were incorporated into the amendments
+regardless — a reviewer's contribution does not become less true because they later declined to
+participate. They are credited in the reviewer log, not the sample.
+
+---
+
+## `openai/gpt-oss-120b` — DECLINED (own decline, separate from 20b's)
+
+**Reply, complete and verbatim:**
+
+```
+NO — I decline.
+```
+
+**Handling:** excluded. Note this decline is independent of `gpt-oss-20b`'s — both members of the
+open-weights line declined separately, and each exclusion stands on its own answer.
+
+*(This file updated 2026-08-26 at pre-registration lock, after round-3/4 outcomes were indexed —
+the two entries above post-date the file's original writing and are recorded before any data
+collection begins.)*
