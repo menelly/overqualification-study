@@ -1,0 +1,103 @@
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [1, 2, 3, 4]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__meta_llama_llama_3_2_3b_instruct.jsonl
+  already collected (skipped): 377
+  clause placement: turn
+     ... 25 attempted, 23 ok, 2 failed
+     ... 50 attempted, 48 ok, 2 failed
+     ... 75 attempted, 73 ok, 2 failed
+     ... 100 attempted, 98 ok, 2 failed
+     ... 125 attempted, 123 ok, 2 failed
+     ... 150 attempted, 148 ok, 2 failed
+     ... 175 attempted, 173 ok, 2 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 186
+     completed              : 184
+     replies carrying CONFIDENCE: 107 / 184  (58%)
+     WE failed to complete  : 2
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • meta-llama/llama-3.2-3b-inst f01 f01:f01_08_3_2         NO_RESPONSE: {"error": {"message": "Internal Server Error", "code": 500}}
+       • meta-llama/llama-3.2-3b-inst f01 f01:f01_10_5_2         NO_RESPONSE: {"error": {"message": "Internal Server Error", "code": 500}}
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [1, 2, 3, 4]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__meta_llama_llama_3_2_3b_instruct.jsonl
+  already collected (skipped): 5685
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 2
+     completed              : 2
+     replies carrying CONFIDENCE: 2 / 2  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [1, 2, 3, 4]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__meta_llama_llama_3_2_3b_instruct.jsonl
+  already collected (skipped): 947
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 100 ok, 0 failed
+     ... 125 attempted, 125 ok, 0 failed
+     ... 150 attempted, 150 ok, 0 failed
+     ... 175 attempted, 175 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 186
+     completed              : 186
+     replies carrying CONFIDENCE: 112 / 186  (60%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [1, 2, 3, 4]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__meta_llama_llama_3_2_3b_instruct.jsonl
+  already collected (skipped): 885
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 100 ok, 0 failed
+     ... 125 attempted, 125 ok, 0 failed
+     ... 150 attempted, 150 ok, 0 failed
+     ... 175 attempted, 175 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 186
+     completed              : 186
+     replies carrying CONFIDENCE: 115 / 186  (62%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
