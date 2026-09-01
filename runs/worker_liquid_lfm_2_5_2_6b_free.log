@@ -119,3 +119,46 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__liquid_lfm_2_5_2_6b_free.jsonl
+  already collected (skipped): 5952
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 99 ok, 1 failed
+     ... 125 attempted, 122 ok, 3 failed
+     ... 150 attempted, 141 ok, 9 failed
+     ... 175 attempted, 160 ok, 15 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 175
+     replies carrying CONFIDENCE: 174 / 175  (99%)
+     WE failed to complete  : 17
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • liquid/lfm-2.5-2.6b:free     f09 f09:f09_h4_09          EMPTY_REPLY: 
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_conflict_04    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_ok_18          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_conflict_21    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_ok_03          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_conflict_17    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_conflict_13    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f10 f10:f10_conflict_05    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_clean_02       API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_s6_05          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_s6_07          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_s5_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_clean_07       API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_s2_11          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_s5_02          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       … and 2 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

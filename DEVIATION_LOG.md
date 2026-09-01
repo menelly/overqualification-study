@@ -118,3 +118,27 @@ Also observed in the pilot and NOT a scorer matter: `mistralai/mistral-nemo` ret
 429s and 5–6 s provider-side timeouts on the long family-9/11 prompts. Those are `OUR_FAILURE`
 rows and are retried by resume; if they persist for a model they are reported as collection
 failures for that endpoint, never as task performance.
+
+---
+
+## D6 — 2026-09-01, ~17:00: an explicit `max_tokens` cap for ONE model, because its provider rejects the pre-registered "no ceiling"
+
+**What happened:** on the frontier families, every one of `moonshotai/kimi-k2`'s 192 run-1 calls
+returned HTTP 400 from the serving provider (Novita): *"max_tokens: 100352 exceeds maximum 98304"*.
+With no `max_tokens` in the request (RUNNER_DESIGN §4b: no artificial ceiling), OpenRouter fills
+in the model's full output allowance, and this provider's hard limit is lower than that. The
+routine families had collected from kimi-k2 without incident (186/186 run-1 rows OK), so the
+failure is specific to the provider serving the longer requests, not to the model.
+
+**Handling:** `10_run_items.py --max-tokens 90000`, used for kimi-k2 only, after the main
+orchestrator finishes (so no two writers touch its shard). The cap is recorded on every row it
+touches (`max_tokens_cap`); every other row carries `null`. A reply that reaches the cap is
+`TRUNCATED` — our failure — and is never scored. The cap sits above every reply observed on the
+routine families: the largest reasoning budget any model spent there was **65,536 tokens**
+(`qwen/qwen3.5-27b`, family 4 — almost certainly its own internal reasoning limit), and 18 of
+18,240 rows exceeded 10,000. *(The first draft of this entry said "under 10,000" from memory; the
+number above is from `results/scored.jsonl`. Same disease, caught on the same day it was written.)*
+
+**Why this is a deviation and not a fix:** the pre-registration's spirit is that WE never decide
+how long a model may think. Here a provider decided, and our choice was a cap below theirs or
+zero rows. We took the rows and are saying so.

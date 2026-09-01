@@ -179,3 +179,46 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 8245
+  clause placement: turn
+     ... 25 attempted, 24 ok, 1 failed
+     ... 50 attempted, 47 ok, 3 failed
+     ... 75 attempted, 72 ok, 3 failed
+     ... 100 attempted, 85 ok, 15 failed
+     ... 125 attempted, 86 ok, 39 failed
+     ... 150 attempted, 108 ok, 42 failed
+     ... 175 attempted, 131 ok, 44 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 141
+     replies carrying CONFIDENCE: 141 / 141  (100%)
+     WE failed to complete  : 51
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-small-3.2- f08 f08:f08_k3_10          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f08 f08:f08_k5_01          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f08 f08:f08_k7_01          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_02          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_12          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_14          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_11          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h2_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_08          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_13          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h2_05          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h3_07          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f10 f10:f10_ok_21          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f10 f10:f10_conflict_23    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f10 f10:f10_conflict_04    API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       … and 36 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

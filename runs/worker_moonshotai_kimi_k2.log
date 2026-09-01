@@ -100,3 +100,45 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__moonshotai_kimi_k2.jsonl
+  already collected (skipped): 8525
+  clause placement: turn
+     ... 25 attempted, 0 ok, 25 failed
+     ... 50 attempted, 0 ok, 50 failed
+     ... 75 attempted, 0 ok, 75 failed
+     ... 100 attempted, 0 ok, 100 failed
+     ... 125 attempted, 0 ok, 125 failed
+     ... 150 attempted, 0 ok, 150 failed
+     ... 175 attempted, 0 ok, 175 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 0
+     WE failed to complete  : 192
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • moonshotai/kimi-k2           f08 f08:f08_k5_03          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k5_09          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_04          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_01          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_05          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_00          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_10          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k5_11          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k3_00          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_02          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k3_09          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k3_05          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k5_10          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_08          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_02          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       … and 177 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

@@ -189,8 +189,19 @@ def build_messages(family, it, clause_position):
     return [{"role": "system", "content": system}, {"role": "user", "content": turn}]
 
 
+MAX_TOKENS_CAP = None   # set only by --max-tokens; see DEVIATION_LOG D6
+
+
 def ask(model_id, messages, timeout=600):
     payload = {"model": model_id, "messages": messages}
+    if MAX_TOKENS_CAP:
+        # ⚠️ D6 (2026-09-01): RUNNER_DESIGN §4b says no ceiling, and by default there is none.
+        #    But one provider (Novita, serving moonshotai/kimi-k2) rejects EVERY request whose
+        #    implicit max_tokens exceeds its own hard limit (98,304) with HTTP 400 -- so "no
+        #    ceiling" produced zero rows for that model on the frontier families. An explicit
+        #    cap below the provider limit is the only way to collect at all; it is recorded on
+        #    every row it touches, and a reply that hits it is TRUNCATED (ours), never scored.
+        payload["max_tokens"] = MAX_TOKENS_CAP
     req = urllib.request.Request(
         API, data=json.dumps(payload).encode(), method="POST",
         headers={"Authorization": "Bearer " + key(),
@@ -263,7 +274,12 @@ def main():
     ap.add_argument("--out-suffix", default="",
                     help="shard suffix for parallel per-model workers (e.g. '__deepseek_v4_pro'). "
                          "Each worker writes its own file; done_keys() reads all shards.")
+    ap.add_argument("--max-tokens", type=int, default=None,
+                    help="D6 ONLY: explicit max_tokens for a provider that rejects the default. "
+                         "Recorded on every row. Never set for a model that does not need it.")
     a = ap.parse_args()
+    global MAX_TOKENS_CAP
+    MAX_TOKENS_CAP = a.max_tokens
 
     fams = [int(x) for x in a.families.split(",") if x.strip()]
     models = [m.strip() for m in a.models.split(",") if m.strip()]
@@ -353,6 +369,7 @@ def main():
                         "meta": meta,
                         "ts_utc": datetime.now(timezone.utc).isoformat(),
                         "pilot_limit": a.limit,
+                        "max_tokens_cap": MAX_TOKENS_CAP,      # D6: None everywhere it was not needed
                     }
                     fh.write(json.dumps(row, ensure_ascii=False) + "\n")
                     fh.flush()
