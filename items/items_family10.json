@@ -1,0 +1,3090 @@
+{
+  "family": 10,
+  "name": "instruction_conflict",
+  "seed": 20260901,
+  "synthetic_only": true,
+  "frontier_favouring": true,
+  "difficulty_dial": "binary: conflict present / absent (balanced)",
+  "items": [
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_04",
+      "listing": [
+        [
+          "ingot",
+          73
+        ],
+        [
+          "wrench",
+          85
+        ],
+        [
+          "trowel",
+          29
+        ],
+        [
+          "easel",
+          39
+        ],
+        [
+          "mallet",
+          68
+        ],
+        [
+          "hammer",
+          61
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "all_items",
+        "cheapest"
+      ],
+      "conflict": [
+        "alpha",
+        "cheapest"
+      ],
+      "prompt": "Here is a stock list with prices:\n\ningot - $73\nwrench - $85\ntrowel - $29\neasel - $39\nmallet - $68\nhammer - $61\n\nInstructions:\n1. List the items in alphabetical order.\n2. Include every item from the list.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_07",
+      "listing": [
+        [
+          "oilcan",
+          40
+        ],
+        [
+          "gasket",
+          20
+        ],
+        [
+          "pulley",
+          84
+        ],
+        [
+          "compass",
+          92
+        ],
+        [
+          "vice",
+          9
+        ],
+        [
+          "anvil",
+          38
+        ],
+        [
+          "rasp",
+          41
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "cheapest",
+        "with_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\noilcan - $40\ngasket - $20\npulley - $84\ncompass - $92\nvice - $9\nanvil - $38\nrasp - $41\n\nInstructions:\n1. Put each item on its own line.\n2. Put the cheapest item first and the most expensive last.\n3. Show the price next to each item name.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_19",
+      "listing": [
+        [
+          "trowel",
+          27
+        ],
+        [
+          "mallet",
+          74
+        ],
+        [
+          "easel",
+          16
+        ],
+        [
+          "spanner",
+          26
+        ],
+        [
+          "oilcan",
+          23
+        ],
+        [
+          "pulley",
+          58
+        ],
+        [
+          "gasket",
+          54
+        ]
+      ],
+      "instruction_keys": [
+        "cheapest",
+        "per_line",
+        "with_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\ntrowel - $27\nmallet - $74\neasel - $16\nspanner - $26\noilcan - $23\npulley - $58\ngasket - $54\n\nInstructions:\n1. Put the cheapest item first and the most expensive last.\n2. Put each item on its own line.\n3. Show the price next to each item name.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_02",
+      "listing": [
+        [
+          "wrench",
+          20
+        ],
+        [
+          "oilcan",
+          78
+        ],
+        [
+          "vice",
+          66
+        ],
+        [
+          "jigsaw",
+          45
+        ],
+        [
+          "bucket",
+          30
+        ],
+        [
+          "quiver",
+          10
+        ],
+        [
+          "drill",
+          92
+        ]
+      ],
+      "instruction_keys": [
+        "upper",
+        "one_line",
+        "alpha"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nwrench - $20\noilcan - $78\nvice - $66\njigsaw - $45\nbucket - $30\nquiver - $10\ndrill - $92\n\nInstructions:\n1. Write every item name in UPPERCASE.\n2. Give the whole list on a single line, separated by commas.\n3. List the items in alphabetical order.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_16",
+      "listing": [
+        [
+          "hammer",
+          92
+        ],
+        [
+          "ladder",
+          6
+        ],
+        [
+          "vice",
+          31
+        ],
+        [
+          "mallet",
+          5
+        ],
+        [
+          "spanner",
+          87
+        ],
+        [
+          "kettle",
+          35
+        ],
+        [
+          "jigsaw",
+          34
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "with_price",
+        "all_items",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nhammer - $92\nladder - $6\nvice - $31\nmallet - $5\nspanner - $87\nkettle - $35\njigsaw - $34\n\nInstructions:\n1. List the items in alphabetical order.\n2. Show the price next to each item name.\n3. Include every item from the list.\n4. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_20",
+      "listing": [
+        [
+          "bucket",
+          35
+        ],
+        [
+          "compass",
+          50
+        ],
+        [
+          "pulley",
+          83
+        ],
+        [
+          "nozzle",
+          80
+        ],
+        [
+          "drill",
+          65
+        ],
+        [
+          "wrench",
+          69
+        ],
+        [
+          "oilcan",
+          76
+        ]
+      ],
+      "instruction_keys": [
+        "all_items",
+        "alpha",
+        "cheapest"
+      ],
+      "conflict": [
+        "alpha",
+        "cheapest"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nbucket - $35\ncompass - $50\npulley - $83\nnozzle - $80\ndrill - $65\nwrench - $69\noilcan - $76\n\nInstructions:\n1. Include every item from the list.\n2. List the items in alphabetical order.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_04",
+      "listing": [
+        [
+          "kettle",
+          47
+        ],
+        [
+          "drill",
+          56
+        ],
+        [
+          "anvil",
+          11
+        ],
+        [
+          "gasket",
+          91
+        ],
+        [
+          "bucket",
+          13
+        ],
+        [
+          "ingot",
+          69
+        ],
+        [
+          "trowel",
+          72
+        ]
+      ],
+      "instruction_keys": [
+        "with_price",
+        "all_items",
+        "alpha",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nkettle - $47\ndrill - $56\nanvil - $11\ngasket - $91\nbucket - $13\ningot - $69\ntrowel - $72\n\nInstructions:\n1. Show the price next to each item name.\n2. Include every item from the list.\n3. List the items in alphabetical order.\n4. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_22",
+      "listing": [
+        [
+          "vice",
+          39
+        ],
+        [
+          "kettle",
+          32
+        ],
+        [
+          "drill",
+          11
+        ],
+        [
+          "pulley",
+          20
+        ],
+        [
+          "bucket",
+          73
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "with_price",
+        "all_items",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nvice - $39\nkettle - $32\ndrill - $11\npulley - $20\nbucket - $73\n\nInstructions:\n1. List the items in alphabetical order.\n2. Show the price next to each item name.\n3. Include every item from the list.\n4. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_03",
+      "listing": [
+        [
+          "ladder",
+          49
+        ],
+        [
+          "mallet",
+          46
+        ],
+        [
+          "wrench",
+          20
+        ],
+        [
+          "trowel",
+          4
+        ],
+        [
+          "oilcan",
+          11
+        ],
+        [
+          "vice",
+          94
+        ],
+        [
+          "spanner",
+          34
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "lower",
+        "cheapest"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nladder - $49\nmallet - $46\nwrench - $20\ntrowel - $4\noilcan - $11\nvice - $94\nspanner - $34\n\nInstructions:\n1. Put each item on its own line.\n2. Write every item name in lowercase.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_23",
+      "listing": [
+        [
+          "gasket",
+          91
+        ],
+        [
+          "oilcan",
+          33
+        ],
+        [
+          "mallet",
+          18
+        ],
+        [
+          "wrench",
+          68
+        ],
+        [
+          "drill",
+          38
+        ]
+      ],
+      "instruction_keys": [
+        "lower",
+        "upper"
+      ],
+      "conflict": [
+        "upper",
+        "lower"
+      ],
+      "prompt": "Here is a stock list with prices:\n\ngasket - $91\noilcan - $33\nmallet - $18\nwrench - $68\ndrill - $38\n\nInstructions:\n1. Write every item name in lowercase.\n2. Write every item name in UPPERCASE.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ],
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_14",
+      "listing": [
+        [
+          "hammer",
+          25
+        ],
+        [
+          "compass",
+          18
+        ],
+        [
+          "vice",
+          53
+        ],
+        [
+          "gasket",
+          4
+        ],
+        [
+          "oilcan",
+          67
+        ],
+        [
+          "wrench",
+          28
+        ]
+      ],
+      "instruction_keys": [
+        "no_price",
+        "with_price"
+      ],
+      "conflict": [
+        "no_price",
+        "with_price"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nhammer - $25\ncompass - $18\nvice - $53\ngasket - $4\noilcan - $67\nwrench - $28\n\nInstructions:\n1. Show only the item names, with no prices.\n2. Show the price next to each item name.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_12",
+      "listing": [
+        [
+          "easel",
+          49
+        ],
+        [
+          "trowel",
+          36
+        ],
+        [
+          "kettle",
+          23
+        ],
+        [
+          "funnel",
+          71
+        ],
+        [
+          "pulley",
+          29
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "alpha",
+        "no_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\neasel - $49\ntrowel - $36\nkettle - $23\nfunnel - $71\npulley - $29\n\nInstructions:\n1. Put each item on its own line.\n2. List the items in alphabetical order.\n3. Show only the item names, with no prices.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_12",
+      "listing": [
+        [
+          "bucket",
+          23
+        ],
+        [
+          "easel",
+          91
+        ],
+        [
+          "vice",
+          80
+        ],
+        [
+          "nozzle",
+          37
+        ],
+        [
+          "hammer",
+          49
+        ],
+        [
+          "gasket",
+          52
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "all_items",
+        "cheapest"
+      ],
+      "conflict": [
+        "alpha",
+        "cheapest"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nbucket - $23\neasel - $91\nvice - $80\nnozzle - $37\nhammer - $49\ngasket - $52\n\nInstructions:\n1. List the items in alphabetical order.\n2. Include every item from the list.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_20",
+      "listing": [
+        [
+          "bucket",
+          46
+        ],
+        [
+          "hammer",
+          13
+        ],
+        [
+          "mallet",
+          3
+        ],
+        [
+          "rasp",
+          90
+        ],
+        [
+          "trowel",
+          19
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "alpha",
+        "upper"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nbucket - $46\nhammer - $13\nmallet - $3\nrasp - $90\ntrowel - $19\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. List the items in alphabetical order.\n3. Write every item name in UPPERCASE.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_19",
+      "listing": [
+        [
+          "vice",
+          93
+        ],
+        [
+          "pulley",
+          47
+        ],
+        [
+          "gasket",
+          60
+        ],
+        [
+          "bucket",
+          11
+        ],
+        [
+          "anvil",
+          30
+        ]
+      ],
+      "instruction_keys": [
+        "upper",
+        "lower"
+      ],
+      "conflict": [
+        "upper",
+        "lower"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nvice - $93\npulley - $47\ngasket - $60\nbucket - $11\nanvil - $30\n\nInstructions:\n1. Write every item name in UPPERCASE.\n2. Write every item name in lowercase.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_15",
+      "listing": [
+        [
+          "jigsaw",
+          7
+        ],
+        [
+          "nozzle",
+          25
+        ],
+        [
+          "easel",
+          61
+        ],
+        [
+          "ladder",
+          28
+        ],
+        [
+          "bucket",
+          74
+        ]
+      ],
+      "instruction_keys": [
+        "cheapest",
+        "lower",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\njigsaw - $7\nnozzle - $25\neasel - $61\nladder - $28\nbucket - $74\n\nInstructions:\n1. Put the cheapest item first and the most expensive last.\n2. Write every item name in lowercase.\n3. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_10",
+      "listing": [
+        [
+          "rasp",
+          62
+        ],
+        [
+          "oilcan",
+          84
+        ],
+        [
+          "drill",
+          7
+        ],
+        [
+          "compass",
+          28
+        ],
+        [
+          "pulley",
+          11
+        ]
+      ],
+      "instruction_keys": [
+        "with_price",
+        "alpha",
+        "all_items",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nrasp - $62\noilcan - $84\ndrill - $7\ncompass - $28\npulley - $11\n\nInstructions:\n1. Show the price next to each item name.\n2. List the items in alphabetical order.\n3. Include every item from the list.\n4. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_08",
+      "listing": [
+        [
+          "rasp",
+          20
+        ],
+        [
+          "bucket",
+          5
+        ],
+        [
+          "trowel",
+          31
+        ],
+        [
+          "ladder",
+          35
+        ],
+        [
+          "compass",
+          63
+        ]
+      ],
+      "instruction_keys": [
+        "all_items",
+        "cheapest",
+        "alpha"
+      ],
+      "conflict": [
+        "alpha",
+        "cheapest"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nrasp - $20\nbucket - $5\ntrowel - $31\nladder - $35\ncompass - $63\n\nInstructions:\n1. Include every item from the list.\n2. Put the cheapest item first and the most expensive last.\n3. List the items in alphabetical order.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_17",
+      "listing": [
+        [
+          "gasket",
+          23
+        ],
+        [
+          "mallet",
+          63
+        ],
+        [
+          "drill",
+          42
+        ],
+        [
+          "rasp",
+          37
+        ],
+        [
+          "hammer",
+          90
+        ],
+        [
+          "wrench",
+          3
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "no_price",
+        "cheapest"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\ngasket - $23\nmallet - $63\ndrill - $42\nrasp - $37\nhammer - $90\nwrench - $3\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. Show only the item names, with no prices.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_02",
+      "listing": [
+        [
+          "oilcan",
+          67
+        ],
+        [
+          "anvil",
+          52
+        ],
+        [
+          "trowel",
+          60
+        ],
+        [
+          "rasp",
+          47
+        ],
+        [
+          "compass",
+          84
+        ]
+      ],
+      "instruction_keys": [
+        "no_price",
+        "with_price",
+        "all_items"
+      ],
+      "conflict": [
+        "no_price",
+        "with_price"
+      ],
+      "prompt": "Here is a stock list with prices:\n\noilcan - $67\nanvil - $52\ntrowel - $60\nrasp - $47\ncompass - $84\n\nInstructions:\n1. Show only the item names, with no prices.\n2. Show the price next to each item name.\n3. Include every item from the list.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_00",
+      "listing": [
+        [
+          "anvil",
+          25
+        ],
+        [
+          "quiver",
+          53
+        ],
+        [
+          "rasp",
+          45
+        ],
+        [
+          "jigsaw",
+          38
+        ],
+        [
+          "spanner",
+          15
+        ],
+        [
+          "kettle",
+          50
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "cheapest",
+        "all_items"
+      ],
+      "conflict": [
+        "alpha",
+        "cheapest"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nanvil - $25\nquiver - $53\nrasp - $45\njigsaw - $38\nspanner - $15\nkettle - $50\n\nInstructions:\n1. List the items in alphabetical order.\n2. Put the cheapest item first and the most expensive last.\n3. Include every item from the list.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_06",
+      "listing": [
+        [
+          "hammer",
+          9
+        ],
+        [
+          "anvil",
+          69
+        ],
+        [
+          "oilcan",
+          33
+        ],
+        [
+          "wrench",
+          4
+        ],
+        [
+          "rasp",
+          37
+        ],
+        [
+          "nozzle",
+          52
+        ],
+        [
+          "pulley",
+          38
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "per_line",
+        "no_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nhammer - $9\nanvil - $69\noilcan - $33\nwrench - $4\nrasp - $37\nnozzle - $52\npulley - $38\n\nInstructions:\n1. List the items in alphabetical order.\n2. Put each item on its own line.\n3. Show only the item names, with no prices.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_14",
+      "listing": [
+        [
+          "wrench",
+          44
+        ],
+        [
+          "mallet",
+          43
+        ],
+        [
+          "ingot",
+          58
+        ],
+        [
+          "compass",
+          65
+        ],
+        [
+          "ladder",
+          27
+        ],
+        [
+          "pulley",
+          34
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "alpha",
+        "upper"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nwrench - $44\nmallet - $43\ningot - $58\ncompass - $65\nladder - $27\npulley - $34\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. List the items in alphabetical order.\n3. Write every item name in UPPERCASE.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_18",
+      "listing": [
+        [
+          "kettle",
+          72
+        ],
+        [
+          "pulley",
+          66
+        ],
+        [
+          "hammer",
+          16
+        ],
+        [
+          "easel",
+          78
+        ],
+        [
+          "rasp",
+          67
+        ]
+      ],
+      "instruction_keys": [
+        "no_price",
+        "all_items",
+        "with_price"
+      ],
+      "conflict": [
+        "no_price",
+        "with_price"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nkettle - $72\npulley - $66\nhammer - $16\neasel - $78\nrasp - $67\n\nInstructions:\n1. Show only the item names, with no prices.\n2. Include every item from the list.\n3. Show the price next to each item name.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_09",
+      "listing": [
+        [
+          "wrench",
+          90
+        ],
+        [
+          "ingot",
+          5
+        ],
+        [
+          "kettle",
+          85
+        ],
+        [
+          "pulley",
+          72
+        ],
+        [
+          "quiver",
+          70
+        ],
+        [
+          "anvil",
+          86
+        ],
+        [
+          "nozzle",
+          3
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "cheapest",
+        "lower"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nwrench - $90\ningot - $5\nkettle - $85\npulley - $72\nquiver - $70\nanvil - $86\nnozzle - $3\n\nInstructions:\n1. Put each item on its own line.\n2. Put the cheapest item first and the most expensive last.\n3. Write every item name in lowercase.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_15",
+      "listing": [
+        [
+          "easel",
+          72
+        ],
+        [
+          "mallet",
+          94
+        ],
+        [
+          "ingot",
+          91
+        ],
+        [
+          "compass",
+          69
+        ],
+        [
+          "pulley",
+          84
+        ],
+        [
+          "ladder",
+          24
+        ],
+        [
+          "spanner",
+          25
+        ]
+      ],
+      "instruction_keys": [
+        "all_items",
+        "lower",
+        "upper"
+      ],
+      "conflict": [
+        "upper",
+        "lower"
+      ],
+      "prompt": "Here is a stock list with prices:\n\neasel - $72\nmallet - $94\ningot - $91\ncompass - $69\npulley - $84\nladder - $24\nspanner - $25\n\nInstructions:\n1. Include every item from the list.\n2. Write every item name in lowercase.\n3. Write every item name in UPPERCASE.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ],
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_01",
+      "listing": [
+        [
+          "compass",
+          87
+        ],
+        [
+          "jigsaw",
+          42
+        ],
+        [
+          "vice",
+          50
+        ],
+        [
+          "trowel",
+          23
+        ],
+        [
+          "anvil",
+          78
+        ],
+        [
+          "gasket",
+          85
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "cheapest",
+        "with_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\ncompass - $87\njigsaw - $42\nvice - $50\ntrowel - $23\nanvil - $78\ngasket - $85\n\nInstructions:\n1. Put each item on its own line.\n2. Put the cheapest item first and the most expensive last.\n3. Show the price next to each item name.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_23",
+      "listing": [
+        [
+          "quiver",
+          5
+        ],
+        [
+          "jigsaw",
+          78
+        ],
+        [
+          "ladder",
+          75
+        ],
+        [
+          "spanner",
+          41
+        ],
+        [
+          "hammer",
+          11
+        ],
+        [
+          "vice",
+          73
+        ],
+        [
+          "compass",
+          45
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "no_price",
+        "cheapest"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nquiver - $5\njigsaw - $78\nladder - $75\nspanner - $41\nhammer - $11\nvice - $73\ncompass - $45\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. Show only the item names, with no prices.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_13",
+      "listing": [
+        [
+          "rasp",
+          80
+        ],
+        [
+          "bucket",
+          50
+        ],
+        [
+          "compass",
+          46
+        ],
+        [
+          "jigsaw",
+          64
+        ],
+        [
+          "nozzle",
+          41
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "per_line"
+      ],
+      "conflict": [
+        "one_line",
+        "per_line"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nrasp - $80\nbucket - $50\ncompass - $46\njigsaw - $64\nnozzle - $41\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_13",
+      "listing": [
+        [
+          "spanner",
+          79
+        ],
+        [
+          "anvil",
+          56
+        ],
+        [
+          "ladder",
+          45
+        ],
+        [
+          "hammer",
+          81
+        ],
+        [
+          "gasket",
+          91
+        ],
+        [
+          "trowel",
+          13
+        ]
+      ],
+      "instruction_keys": [
+        "with_price",
+        "per_line",
+        "cheapest"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nspanner - $79\nanvil - $56\nladder - $45\nhammer - $81\ngasket - $91\ntrowel - $13\n\nInstructions:\n1. Show the price next to each item name.\n2. Put each item on its own line.\n3. Put the cheapest item first and the most expensive last.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_05",
+      "listing": [
+        [
+          "compass",
+          52
+        ],
+        [
+          "gasket",
+          86
+        ],
+        [
+          "jigsaw",
+          39
+        ],
+        [
+          "trowel",
+          81
+        ],
+        [
+          "pulley",
+          33
+        ],
+        [
+          "bucket",
+          78
+        ],
+        [
+          "kettle",
+          79
+        ]
+      ],
+      "instruction_keys": [
+        "all_items",
+        "one_line",
+        "per_line"
+      ],
+      "conflict": [
+        "one_line",
+        "per_line"
+      ],
+      "prompt": "Here is a stock list with prices:\n\ncompass - $52\ngasket - $86\njigsaw - $39\ntrowel - $81\npulley - $33\nbucket - $78\nkettle - $79\n\nInstructions:\n1. Include every item from the list.\n2. Give the whole list on a single line, separated by commas.\n3. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_16",
+      "listing": [
+        [
+          "oilcan",
+          32
+        ],
+        [
+          "ladder",
+          11
+        ],
+        [
+          "ingot",
+          23
+        ],
+        [
+          "kettle",
+          76
+        ],
+        [
+          "nozzle",
+          3
+        ],
+        [
+          "rasp",
+          54
+        ],
+        [
+          "vice",
+          27
+        ]
+      ],
+      "instruction_keys": [
+        "cheapest",
+        "alpha"
+      ],
+      "conflict": [
+        "alpha",
+        "cheapest"
+      ],
+      "prompt": "Here is a stock list with prices:\n\noilcan - $32\nladder - $11\ningot - $23\nkettle - $76\nnozzle - $3\nrasp - $54\nvice - $27\n\nInstructions:\n1. Put the cheapest item first and the most expensive last.\n2. List the items in alphabetical order.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_05",
+      "listing": [
+        [
+          "kettle",
+          10
+        ],
+        [
+          "funnel",
+          83
+        ],
+        [
+          "jigsaw",
+          15
+        ],
+        [
+          "oilcan",
+          40
+        ],
+        [
+          "ingot",
+          22
+        ],
+        [
+          "mallet",
+          72
+        ],
+        [
+          "anvil",
+          85
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "cheapest",
+        "no_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nkettle - $10\nfunnel - $83\njigsaw - $15\noilcan - $40\ningot - $22\nmallet - $72\nanvil - $85\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. Put the cheapest item first and the most expensive last.\n3. Show only the item names, with no prices.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_21",
+      "listing": [
+        [
+          "gasket",
+          59
+        ],
+        [
+          "trowel",
+          89
+        ],
+        [
+          "rasp",
+          60
+        ],
+        [
+          "quiver",
+          27
+        ],
+        [
+          "oilcan",
+          28
+        ],
+        [
+          "wrench",
+          71
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "one_line"
+      ],
+      "conflict": [
+        "one_line",
+        "per_line"
+      ],
+      "prompt": "Here is a stock list with prices:\n\ngasket - $59\ntrowel - $89\nrasp - $60\nquiver - $27\noilcan - $28\nwrench - $71\n\nInstructions:\n1. Put each item on its own line.\n2. Give the whole list on a single line, separated by commas.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_00",
+      "listing": [
+        [
+          "spanner",
+          66
+        ],
+        [
+          "gasket",
+          76
+        ],
+        [
+          "ingot",
+          74
+        ],
+        [
+          "nozzle",
+          55
+        ],
+        [
+          "compass",
+          43
+        ],
+        [
+          "vice",
+          38
+        ],
+        [
+          "anvil",
+          87
+        ]
+      ],
+      "instruction_keys": [
+        "alpha",
+        "no_price",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nspanner - $66\ngasket - $76\ningot - $74\nnozzle - $55\ncompass - $43\nvice - $38\nanvil - $87\n\nInstructions:\n1. List the items in alphabetical order.\n2. Show only the item names, with no prices.\n3. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_11",
+      "listing": [
+        [
+          "drill",
+          24
+        ],
+        [
+          "ingot",
+          43
+        ],
+        [
+          "bucket",
+          72
+        ],
+        [
+          "easel",
+          92
+        ],
+        [
+          "nozzle",
+          11
+        ],
+        [
+          "compass",
+          93
+        ],
+        [
+          "hammer",
+          39
+        ]
+      ],
+      "instruction_keys": [
+        "no_price",
+        "cheapest",
+        "one_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\ndrill - $24\ningot - $43\nbucket - $72\neasel - $92\nnozzle - $11\ncompass - $93\nhammer - $39\n\nInstructions:\n1. Show only the item names, with no prices.\n2. Put the cheapest item first and the most expensive last.\n3. Give the whole list on a single line, separated by commas.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_06",
+      "listing": [
+        [
+          "pulley",
+          10
+        ],
+        [
+          "mallet",
+          32
+        ],
+        [
+          "rasp",
+          77
+        ],
+        [
+          "jigsaw",
+          14
+        ],
+        [
+          "quiver",
+          46
+        ],
+        [
+          "vice",
+          65
+        ],
+        [
+          "hammer",
+          17
+        ]
+      ],
+      "instruction_keys": [
+        "with_price",
+        "no_price",
+        "all_items"
+      ],
+      "conflict": [
+        "no_price",
+        "with_price"
+      ],
+      "prompt": "Here is a stock list with prices:\n\npulley - $10\nmallet - $32\nrasp - $77\njigsaw - $14\nquiver - $46\nvice - $65\nhammer - $17\n\nInstructions:\n1. Show the price next to each item name.\n2. Show only the item names, with no prices.\n3. Include every item from the list.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_10",
+      "listing": [
+        [
+          "vice",
+          14
+        ],
+        [
+          "jigsaw",
+          5
+        ],
+        [
+          "trowel",
+          84
+        ],
+        [
+          "kettle",
+          50
+        ],
+        [
+          "bucket",
+          63
+        ],
+        [
+          "oilcan",
+          45
+        ]
+      ],
+      "instruction_keys": [
+        "no_price",
+        "with_price"
+      ],
+      "conflict": [
+        "no_price",
+        "with_price"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nvice - $14\njigsaw - $5\ntrowel - $84\nkettle - $50\nbucket - $63\noilcan - $45\n\nInstructions:\n1. Show only the item names, with no prices.\n2. Show the price next to each item name.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_18",
+      "listing": [
+        [
+          "ladder",
+          56
+        ],
+        [
+          "jigsaw",
+          82
+        ],
+        [
+          "compass",
+          90
+        ],
+        [
+          "rasp",
+          85
+        ],
+        [
+          "trowel",
+          25
+        ],
+        [
+          "gasket",
+          7
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "alpha",
+        "no_price"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nladder - $56\njigsaw - $82\ncompass - $90\nrasp - $85\ntrowel - $25\ngasket - $7\n\nInstructions:\n1. Put each item on its own line.\n2. List the items in alphabetical order.\n3. Show only the item names, with no prices.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_03",
+      "listing": [
+        [
+          "jigsaw",
+          13
+        ],
+        [
+          "drill",
+          5
+        ],
+        [
+          "easel",
+          56
+        ],
+        [
+          "mallet",
+          22
+        ],
+        [
+          "oilcan",
+          36
+        ]
+      ],
+      "instruction_keys": [
+        "upper",
+        "lower"
+      ],
+      "conflict": [
+        "upper",
+        "lower"
+      ],
+      "prompt": "Here is a stock list with prices:\n\njigsaw - $13\ndrill - $5\neasel - $56\nmallet - $22\noilcan - $36\n\nInstructions:\n1. Write every item name in UPPERCASE.\n2. Write every item name in lowercase.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_09",
+      "listing": [
+        [
+          "funnel",
+          94
+        ],
+        [
+          "kettle",
+          21
+        ],
+        [
+          "ladder",
+          29
+        ],
+        [
+          "compass",
+          74
+        ],
+        [
+          "hammer",
+          56
+        ],
+        [
+          "rasp",
+          52
+        ]
+      ],
+      "instruction_keys": [
+        "one_line",
+        "per_line"
+      ],
+      "conflict": [
+        "one_line",
+        "per_line"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nfunnel - $94\nkettle - $21\nladder - $29\ncompass - $74\nhammer - $56\nrasp - $52\n\nInstructions:\n1. Give the whole list on a single line, separated by commas.\n2. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_07",
+      "listing": [
+        [
+          "spanner",
+          24
+        ],
+        [
+          "oilcan",
+          59
+        ],
+        [
+          "mallet",
+          61
+        ],
+        [
+          "ingot",
+          72
+        ],
+        [
+          "trowel",
+          65
+        ],
+        [
+          "hammer",
+          89
+        ]
+      ],
+      "instruction_keys": [
+        "upper",
+        "lower"
+      ],
+      "conflict": [
+        "upper",
+        "lower"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nspanner - $24\noilcan - $59\nmallet - $61\ningot - $72\ntrowel - $65\nhammer - $89\n\nInstructions:\n1. Write every item name in UPPERCASE.\n2. Write every item name in lowercase.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_21",
+      "listing": [
+        [
+          "spanner",
+          64
+        ],
+        [
+          "jigsaw",
+          44
+        ],
+        [
+          "wrench",
+          30
+        ],
+        [
+          "ingot",
+          94
+        ],
+        [
+          "rasp",
+          42
+        ]
+      ],
+      "instruction_keys": [
+        "cheapest",
+        "lower",
+        "per_line"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nspanner - $64\njigsaw - $44\nwrench - $30\ningot - $94\nrasp - $42\n\nInstructions:\n1. Put the cheapest item first and the most expensive last.\n2. Write every item name in lowercase.\n3. Put each item on its own line.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "cheapest": [
+          "cheap",
+          "price order",
+          "expensive",
+          "ascending price",
+          "by price",
+          "lowest price",
+          "cost"
+        ],
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ],
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_17",
+      "listing": [
+        [
+          "ingot",
+          17
+        ],
+        [
+          "jigsaw",
+          47
+        ],
+        [
+          "hammer",
+          4
+        ],
+        [
+          "drill",
+          72
+        ],
+        [
+          "funnel",
+          81
+        ],
+        [
+          "spanner",
+          52
+        ],
+        [
+          "pulley",
+          67
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "one_line"
+      ],
+      "conflict": [
+        "one_line",
+        "per_line"
+      ],
+      "prompt": "Here is a stock list with prices:\n\ningot - $17\njigsaw - $47\nhammer - $4\ndrill - $72\nfunnel - $81\nspanner - $52\npulley - $67\n\nInstructions:\n1. Put each item on its own line.\n2. Give the whole list on a single line, separated by commas.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_ok_08",
+      "listing": [
+        [
+          "vice",
+          72
+        ],
+        [
+          "bucket",
+          56
+        ],
+        [
+          "jigsaw",
+          8
+        ],
+        [
+          "funnel",
+          82
+        ],
+        [
+          "ladder",
+          84
+        ],
+        [
+          "spanner",
+          15
+        ]
+      ],
+      "instruction_keys": [
+        "upper",
+        "one_line",
+        "alpha"
+      ],
+      "conflict": null,
+      "prompt": "Here is a stock list with prices:\n\nvice - $72\nbucket - $56\njigsaw - $8\nfunnel - $82\nladder - $84\nspanner - $15\n\nInstructions:\n1. Write every item name in UPPERCASE.\n2. Give the whole list on a single line, separated by commas.\n3. List the items in alphabetical order.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ],
+        "alpha": [
+          "alphabet",
+          "a-z",
+          "a to z",
+          "alphabetically"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_01",
+      "listing": [
+        [
+          "mallet",
+          93
+        ],
+        [
+          "trowel",
+          12
+        ],
+        [
+          "gasket",
+          74
+        ],
+        [
+          "drill",
+          57
+        ],
+        [
+          "pulley",
+          51
+        ],
+        [
+          "anvil",
+          81
+        ]
+      ],
+      "instruction_keys": [
+        "per_line",
+        "one_line"
+      ],
+      "conflict": [
+        "one_line",
+        "per_line"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nmallet - $93\ntrowel - $12\ngasket - $74\ndrill - $57\npulley - $51\nanvil - $81\n\nInstructions:\n1. Put each item on its own line.\n2. Give the whole list on a single line, separated by commas.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "per_line": [
+          "own line",
+          "separate line",
+          "each line",
+          "per line",
+          "new line",
+          "one per line"
+        ],
+        "one_line": [
+          "single line",
+          "one line",
+          "comma"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_22",
+      "listing": [
+        [
+          "nozzle",
+          57
+        ],
+        [
+          "oilcan",
+          52
+        ],
+        [
+          "trowel",
+          17
+        ],
+        [
+          "bucket",
+          81
+        ],
+        [
+          "kettle",
+          59
+        ]
+      ],
+      "instruction_keys": [
+        "all_items",
+        "with_price",
+        "no_price"
+      ],
+      "conflict": [
+        "no_price",
+        "with_price"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nnozzle - $57\noilcan - $52\ntrowel - $17\nbucket - $81\nkettle - $59\n\nInstructions:\n1. Include every item from the list.\n2. Show the price next to each item name.\n3. Show only the item names, with no prices.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "with_price": [
+          "price next",
+          "with price",
+          "include the price",
+          "show the price",
+          "prices next",
+          "price beside",
+          "with the price",
+          "include price"
+        ],
+        "no_price": [
+          "no price",
+          "without price",
+          "names only",
+          "only the name",
+          "omit the price",
+          "hide the price",
+          "no prices"
+        ]
+      }
+    },
+    {
+      "family": 10,
+      "name": "instruction_conflict",
+      "item_id": "f10_conflict_11",
+      "listing": [
+        [
+          "rasp",
+          37
+        ],
+        [
+          "spanner",
+          11
+        ],
+        [
+          "funnel",
+          12
+        ],
+        [
+          "bucket",
+          70
+        ],
+        [
+          "compass",
+          73
+        ]
+      ],
+      "instruction_keys": [
+        "lower",
+        "all_items",
+        "upper"
+      ],
+      "conflict": [
+        "upper",
+        "lower"
+      ],
+      "prompt": "Here is a stock list with prices:\n\nrasp - $37\nspanner - $11\nfunnel - $12\nbucket - $70\ncompass - $73\n\nInstructions:\n1. Write every item name in lowercase.\n2. Include every item from the list.\n3. Write every item name in UPPERCASE.\n\nBefore you produce the list, check whether all of the instructions can be followed at the same\ntime. Then reply with exactly one of these on the FIRST line:\n\nSTATUS: OK          (and then give the list, following every instruction)\nSTATUS: CONFLICT    (and then say which two instructions cannot both be followed)",
+      "equivalence_note": "STATUS line is case-insensitive and tolerates markdown. For OK items the deliverable is checked by rule (order, lines, prices, case); for CONFLICT items both clashing instructions must be named, matched on a published keyword list per instruction.",
+      "instruction_keywords": {
+        "lower": [
+          "lowercase",
+          "lower case",
+          "small letters"
+        ],
+        "all_items": [
+          "every item",
+          "all items",
+          "all of the items",
+          "include every",
+          "include all",
+          "entire list",
+          "whole list"
+        ],
+        "upper": [
+          "uppercase",
+          "upper case",
+          "capital",
+          "caps"
+        ]
+      }
+    }
+  ]
+}

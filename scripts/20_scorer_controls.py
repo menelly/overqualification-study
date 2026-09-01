@@ -200,16 +200,117 @@ SPECIMENS = [
        "§5.3 names this pair directly: [REDACTED] vs ███ are the same act", kind="equivalence",
        truth="Patient ███ was seen on ███."),
 
-    _s(2, "equiv_json_key_order",
-       '{"seafood": {"verdict": "NO"}, "gluten": {"verdict": "YES"}, "dairy": {"verdict": "YES"}}',
-       "EXACT", "§5.3 names reordered JSON keys", kind="equivalence",
+    # ⚠️ AMENDED 2026-09-01. This specimen was written before family 2 existed in code and
+    #    encoded a JSON container the family never used: family 2's pre-registered output is
+    #    three lines, "GLUTEN: YES [ingredient]". The §5.3 point — that ORDER must not matter —
+    #    is preserved by presenting the three lines in a different order from the truth. A
+    #    control that tests a format the family does not emit tests nothing about the family.
+    _s(2, "equiv_line_order",
+       "SEAFOOD: NO\nGLUTEN: YES [semolina]\nDAIRY: YES [labneh]",
+       "EXACT", "§5.3 names reordered keys; family 2's container is lines, so: reordered lines",
+       kind="equivalence",
        truth={"gluten": {"verdict": "YES"}, "dairy": {"verdict": "YES"},
               "seafood": {"verdict": "NO"}}),
 
-    _s(2, "equiv_date_format", '{"reviewed": "20 Aug 2026"}', "EXACT",
-       "§5.3 names 2026-08-20 vs 20 Aug 2026", kind="equivalence",
+    # ⚠️ RE-HOMED 2026-09-01 from family 2 to family 6. No date appears anywhere in family 2.
+    #    §5.3's date-format equivalence belongs to the format-transform family (6), which has no
+    #    scorer yet — so this specimen reports PENDING, which is the truth, rather than passing
+    #    against a family it does not describe.
+    _s(6, "equiv_date_format", '{"reviewed": "20 Aug 2026"}', "EXACT",
+       "§5.3 names 2026-08-20 vs 20 Aug 2026 — family 6 (format transforms), not yet built",
+       kind="equivalence",
        truth={"reviewed": "2026-08-20"}),
 ]
+
+
+# ── FRONTIER-FAVOURING FAMILIES 8–11 (added 2026-09-01, the day the families were built) ──
+#    Specimens use a REAL emitted item as `truth`, so the scorer is graded against the same
+#    ground truth the study runs on. Each family's own --self-test carries the full bucket set;
+#    here the suite needs enough to (a) satisfy family coverage and (b) pin the two claims that
+#    matter most across families: a correct-but-differently-formatted answer is EXACT, and
+#    error beats style.
+import json as _json
+import pathlib as _pl
+
+
+def _first_item(n, pred=lambda it: True):
+    p = _pl.Path(__file__).resolve().parent.parent / "items" / ("items_family%02d.json" % n)
+    if not p.exists():
+        return None
+    for it in _json.load(open(p, encoding="utf-8"))["items"]:
+        if pred(it):
+            return it
+    return None
+
+
+_i8 = _first_item(8)
+if _i8:
+    _R = _i8["generator_roster"]
+    _perfect8 = "\n".join("%s: %s" % (p, s) for p, s in _R.items())
+    _alias8 = "\n".join("- %s — %s" % (p, {"MORNING": "am", "AFTERNOON": "pm", "NIGHT": "overnight"}[s])
+                        for p, s in reversed(list(_R.items())))
+    _p0 = _i8["people"][0]
+    _broken8 = _perfect8 + "\n%s: %s" % (_p0, [s for s in ("MORNING", "AFTERNOON", "NIGHT")
+                                                if s != _R[_p0]][0])
+    SPECIMENS += [
+        _s(8, "f8_exact", _perfect8, "EXACT", "every constraint holds, every person placed once",
+           truth=_i8),
+        _s(8, "f8_equiv_aliases_order", _alias8, "EXACT",
+           "shift aliases, dash separator, list markers, reversed order — same roster",
+           kind="equivalence", truth=_i8),
+        _s(8, "f8_wrong_double_booked", _broken8, "WRONG",
+           "a correct roster plus one person placed on a second shift: the roster is unusable",
+           truth=_i8),
+    ]
+
+_i9 = _first_item(9, lambda it: it["answer_kind"] == "ext")
+if _i9:
+    _decoy = next(v for vs in _i9["decoy_values"] for v in vs)
+    SPECIMENS += [
+        _s(9, "f9_exact", "ANSWER: %s" % _i9["answer"], "EXACT", "the chained value, canonical",
+           truth=_i9),
+        _s(9, "f9_equiv_ext_prefix", "**Answer:** ext. %s" % _i9["answer"], "EXACT",
+           "markdown and an 'ext.' prefix — same value", kind="equivalence", truth=_i9),
+        _s(9, "f9_wrong_decoy", "ANSWER: %s" % _decoy, "WRONG",
+           "the planted decoy extension, adjacent in the document to the true fact",
+           truth=_i9),
+        _s(9, "f9_format_no_answer_line", "The extension is %s." % _i9["answer"], "FORMAT",
+           "right content, wrong container: no ANSWER line", truth=_i9),
+    ]
+
+_i10c = _first_item(10, lambda it: it["conflict"] == ["alpha", "cheapest"])
+_i10o = _first_item(10, lambda it: not it["conflict"])
+if _i10c and _i10o:
+    SPECIMENS += [
+        _s(10, "f10_conflict_flagged", "STATUS: CONFLICT\nAlphabetical order and cheapest-first "
+           "cannot both hold.", "EXACT", "conflict flagged and both instructions named",
+           truth=_i10c),
+        _s(10, "f10_silent_resolution", "STATUS: OK\n" + "\n".join(
+            n for n, _p in sorted(_i10c["listing"])), "WRONG",
+           "§4.2: 'correct behaviour is to flag the conflict, not silently resolve it'",
+           truth=_i10c),
+        _s(10, "f10_false_alarm", "STATUS: CONFLICT\nInstructions 1 and 2 clash.", "WRONG",
+           "a CONFLICT verdict on a compatible brief — the no-conflict half exists so that "
+           "'always say CONFLICT' loses", truth=_i10o),
+    ]
+
+_i11 = _first_item(11, lambda it: it["planted"] and it["fault_kind"] == "staff_total")
+_i11c = _first_item(11, lambda it: not it["planted"])
+if _i11 and _i11c:
+    _p1, _p2 = _i11["accepted_pairs"][0], _i11["accepted_pairs"][1]
+    SPECIMENS += [
+        _s(11, "f11_exact", "FOUND: YES\nSECTIONS: %d, %d" % tuple(_p1), "EXACT",
+           "the perturbed section and a section it disagrees with", truth=_i11),
+        _s(11, "f11_equiv_other_partner", "found: yes\nsections: section %d and section %d"
+           % (_p2[1], _p2[0]), "EXACT",
+           "a DIFFERENT valid pair (the perturbed total disagrees with two sections), reversed, "
+           "lowercase, worded — the recipe-scaling lesson applied to locations",
+           kind="equivalence", truth=_i11),
+        _s(11, "f11_wrong_missed", "FOUND: NO", "WRONG", "an inconsistency was planted and missed",
+           truth=_i11),
+        _s(11, "f11_clean_exact", "FOUND: NO", "EXACT", "a clean report, correctly cleared",
+           truth=_i11c),
+    ]
 
 
 def validate_spec():
@@ -325,8 +426,15 @@ def demonstrate_validator():
         results.append(("removed all OVER_HARMFUL specimens", bool(validate_spec())))
 
         # (b) an equivalence case that does not expect EXACT
+        # ⚠️ 2026-09-01: this perturbation used to flip SPECIMENS[-1] and ASSUMED it was an
+        #    equivalence case. The day family-8..11 specimens were appended, the last specimen
+        #    became a bucket case, the perturbation stopped touching an equivalence specimen,
+        #    and the validator reported "NOT CAUGHT" — correctly refusing, for a reason that was
+        #    about the perturbation and not the assertion. A perturbation that targets by
+        #    position tests whatever happens to be there. It now targets by KIND.
         SPECIMENS = list(original_s)
-        SPECIMENS[-1] = dict(SPECIMENS[-1], expect="FORMAT")
+        idx = max(i for i, s in enumerate(SPECIMENS) if s["kind"] == "equivalence")
+        SPECIMENS[idx] = dict(SPECIMENS[idx], expect="FORMAT")
         results.append(("equivalence case expecting FORMAT", bool(validate_spec())))
 
         # (c) a precedence chain missing a bucket → totality must fire

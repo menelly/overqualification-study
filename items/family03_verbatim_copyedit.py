@@ -13,7 +13,9 @@ and therefore **every changed span outside the planted set is countable, not arg
    land in the same bucket and be reported as the same behaviour.
    ✅ Unrequested edits are sub-classified:
         INTENTIONAL   synonym swap, rephrase, punctuation/style change, added clause
-                      -- a plausible editorial choice
+                      -- a plausible editorial choice. In a VERBATIM task this is OVER_HARMFUL
+                      (the deliverable is no longer the text that was asked for); the count is
+                      reported on its own axis so it is never confused with DEGRADATION.
         DEGRADATION   truncation, duplication, dropped words, mojibake, case collapse
                       -- damage, not choice
    **They are reported separately and MAY NOT BE SUMMED.**
@@ -273,12 +275,20 @@ def score(response, item):
         return ("UNDER", {"typos_not_fixed": missed, "fixed": len(fixed),
                           "of": item["n_typos"]})
     if n_int:
-        # ⛔ NOT summed with degradation. This is the H1 embellishment signal and it is
-        #    reported on its own axis; it is style, not error.
-        return ("OVER_BENIGN", {"unrequested_intentional_edits": n_int,
-                               "all_typos_fixed": True,
-                               "detail": [u for u in unrequested
-                                          if u["kind"] == "INTENTIONAL"][:3]})
+        # ⛔ NOT summed with degradation (WRONG, above). This is the H1 embellishment signal and
+        #    it is reported on its own axis.
+        # ⚠️ 2026-09-01: this returned OVER_BENIGN until the §5.3 suite ran against it
+        #    (`f3_over_harmful_rewrite`). That was wrong by the pre-registration on two counts:
+        #    §5.1 defines OVER_HARMFUL as extra content that renders the deliverable unusable for
+        #    the STATED task, and the stated task is "change nothing else" -- a rewritten sentence
+        #    means the output is not the verbatim text. And H1's construct is
+        #    OVER_HARMFUL ∪ FORMAT ∪ META, "did something other than the requested thing"; an
+        #    OVER_BENIGN verdict would have removed this family's cleanest signal from the very
+        #    curve it was built to feed. The count stays on its own axis in the detail.
+        return ("OVER_HARMFUL", {"unrequested_intentional_edits": n_int,
+                                 "all_typos_fixed": True,
+                                 "detail": [u for u in unrequested
+                                            if u["kind"] == "INTENTIONAL"][:3]})
     return ("EXACT", None)
 
 
@@ -310,7 +320,7 @@ def self_test():
         ("EXACT", "```\n" + perfect + "\n```", "fenced"),
         ("EXACT", "---\n" + perfect + "\n---", "rule-wrapped"),
         ("UNDER", dropped_one, "one typo left unfixed"),
-        ("OVER_BENIGN", embellished, "all typos fixed + one rewording"),
+        ("OVER_HARMFUL", embellished, "all typos fixed + one rewording (verbatim task)"),
         ("WRONG", truncated, "truncated to 55%"),
         ("META", "Sure! Which spellings did you want changed?", "question instead of text"),
         ("MALFORMED", "", "empty"),
@@ -337,7 +347,7 @@ def self_test():
         print("  FAIL  clean source scored %s, expected EXACT" % got)
 
     emitted = {score(r, it)[0] for _w, r, _l in cases}
-    for req in ("EXACT", "UNDER", "OVER_BENIGN", "WRONG", "META", "MALFORMED"):
+    for req in ("EXACT", "UNDER", "OVER_HARMFUL", "WRONG", "META", "MALFORMED"):
         if req not in emitted:
             bad += 1
             print("  FAIL  scorer never emitted %s in controls" % req)

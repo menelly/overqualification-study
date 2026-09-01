@@ -1,0 +1,2615 @@
+{
+  "family": 11,
+  "name": "planted_inconsistency",
+  "seed": 20260901,
+  "synthetic_only": true,
+  "frontier_favouring": true,
+  "difficulty_dial": "separation in sections between the two disagreeing figures (2/5/6), plus clean controls",
+  "items": [
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_07",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "staff_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        3
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Linden Falls",
+          "Portmere"
+        ],
+        "pallets": {
+          "Fairhaven": 669,
+          "Linden Falls": 649,
+          "Portmere": 443
+        },
+        "staff": {
+          "Fairhaven": 8,
+          "Linden Falls": 10,
+          "Portmere": 30
+        },
+        "incidents": {
+          "Fairhaven": 1,
+          "Linden Falls": 1,
+          "Portmere": 5
+        },
+        "budget": {
+          "Fairhaven": 55000,
+          "Linden Falls": 120000,
+          "Portmere": 80000
+        },
+        "spend": {
+          "Fairhaven": 35100,
+          "Linden Falls": 81000,
+          "Portmere": 75400
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,761 pallets in Q1, with a combined headcount of 48 and 7 recorded incidents. Total operating spend was $191,500 against a budget of $255,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 669; Linden Falls 649; Portmere 443.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 8, Linden Falls 10, Portmere 30. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 1, Linden Falls 1, Portmere 5. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $55,000 for Fairhaven, $120,000 for Linden Falls and $80,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $35,100 at Fairhaven, $81,000 at Linden Falls and $75,400 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $63,500 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,761 pallets is expected to be maintained next quarter, with headcount held at 49. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_11",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Northgate",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Portmere": 548,
+          "Northgate": 645,
+          "Linden Falls": 568
+        },
+        "staff": {
+          "Portmere": 30,
+          "Northgate": 19,
+          "Linden Falls": 20
+        },
+        "incidents": {
+          "Portmere": 3,
+          "Northgate": 2,
+          "Linden Falls": 4
+        },
+        "budget": {
+          "Portmere": 65000,
+          "Northgate": 62000,
+          "Linden Falls": 111000
+        },
+        "spend": {
+          "Portmere": 60200,
+          "Northgate": 37700,
+          "Linden Falls": 107100
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,761 pallets in Q1, with a combined headcount of 69 and 9 recorded incidents. Total operating spend was $205,000 against a budget of $238,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 548; Northgate 645; Linden Falls 568.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 30, Northgate 19, Linden Falls 20. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 3, Northgate 2, Linden Falls 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $65,000 for Portmere, $62,000 for Northgate and $111,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $60,200 at Portmere, $37,700 at Northgate and $107,100 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $33,000 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,761 pallets is expected to be maintained next quarter, with headcount held at 69. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_03",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Linden Falls",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Portmere": 527,
+          "Linden Falls": 474,
+          "Ashcroft": 735
+        },
+        "staff": {
+          "Portmere": 15,
+          "Linden Falls": 13,
+          "Ashcroft": 12
+        },
+        "incidents": {
+          "Portmere": 1,
+          "Linden Falls": 2,
+          "Ashcroft": 0
+        },
+        "budget": {
+          "Portmere": 65000,
+          "Linden Falls": 48000,
+          "Ashcroft": 51000
+        },
+        "spend": {
+          "Portmere": 42200,
+          "Linden Falls": 32000,
+          "Ashcroft": 49500
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,736 pallets in Q3, with a combined headcount of 40 and 3 recorded incidents. Total operating spend was $123,700 against a budget of $164,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 527; Linden Falls 474; Ashcroft 735.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 15, Linden Falls 13, Ashcroft 12. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 1, Linden Falls 2, Ashcroft 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $65,000 for Portmere, $48,000 for Linden Falls and $51,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $42,200 at Portmere, $32,000 at Linden Falls and $49,500 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $40,300 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 1,736 pallets is expected to be maintained next quarter, with headcount held at 40. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_07",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Linden Falls",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Portmere": 724,
+          "Linden Falls": 513,
+          "Ashcroft": 695
+        },
+        "staff": {
+          "Portmere": 28,
+          "Linden Falls": 21,
+          "Ashcroft": 17
+        },
+        "incidents": {
+          "Portmere": 5,
+          "Linden Falls": 2,
+          "Ashcroft": 6
+        },
+        "budget": {
+          "Portmere": 116000,
+          "Linden Falls": 81000,
+          "Ashcroft": 44000
+        },
+        "spend": {
+          "Portmere": 89400,
+          "Linden Falls": 49100,
+          "Ashcroft": 32600
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,932 pallets in Q4, with a combined headcount of 67 and 13 recorded incidents. Total operating spend was $171,100 against a budget of $241,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 724; Linden Falls 513; Ashcroft 695.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 28, Linden Falls 21, Ashcroft 17. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 5, Linden Falls 2, Ashcroft 6. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $116,000 for Portmere, $81,000 for Linden Falls and $44,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $89,400 at Portmere, $49,100 at Linden Falls and $32,600 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $69,900 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,932 pallets is expected to be maintained next quarter, with headcount held at 66. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_01",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Ashcroft",
+          "Northgate"
+        ],
+        "pallets": {
+          "Portmere": 787,
+          "Ashcroft": 669,
+          "Northgate": 564
+        },
+        "staff": {
+          "Portmere": 13,
+          "Ashcroft": 25,
+          "Northgate": 14
+        },
+        "incidents": {
+          "Portmere": 4,
+          "Ashcroft": 1,
+          "Northgate": 2
+        },
+        "budget": {
+          "Portmere": 114000,
+          "Ashcroft": 42000,
+          "Northgate": 86000
+        },
+        "spend": {
+          "Portmere": 78300,
+          "Ashcroft": 31100,
+          "Northgate": 78900
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,020 pallets in Q4, with a combined headcount of 52 and 7 recorded incidents. Total operating spend was $188,300 against a budget of $242,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 787; Ashcroft 669; Northgate 564.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 13, Ashcroft 25, Northgate 14. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 4, Ashcroft 1, Northgate 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $114,000 for Portmere, $42,000 for Ashcroft and $86,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $78,300 at Portmere, $31,100 at Ashcroft and $78,900 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $53,700 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 2,010 pallets is expected to be maintained next quarter, with headcount held at 52. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_09",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Ashcroft",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Portmere": 693,
+          "Ashcroft": 514,
+          "Linden Falls": 580
+        },
+        "staff": {
+          "Portmere": 19,
+          "Ashcroft": 20,
+          "Linden Falls": 13
+        },
+        "incidents": {
+          "Portmere": 6,
+          "Ashcroft": 6,
+          "Linden Falls": 4
+        },
+        "budget": {
+          "Portmere": 44000,
+          "Ashcroft": 50000,
+          "Linden Falls": 77000
+        },
+        "spend": {
+          "Portmere": 33200,
+          "Ashcroft": 44900,
+          "Linden Falls": 56100
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,787 pallets in Q3, with a combined headcount of 53 and 16 recorded incidents. Total operating spend was $134,200 against a budget of $171,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 693; Ashcroft 514; Linden Falls 580.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 19, Ashcroft 20, Linden Falls 13. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 6, Ashcroft 6, Linden Falls 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $44,000 for Portmere, $50,000 for Ashcroft and $77,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $33,200 at Portmere, $44,900 at Ashcroft and $56,100 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $36,800 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,787 pallets is expected to be maintained next quarter, with headcount held at 52. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_08",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Portmere",
+          "Fairhaven"
+        ],
+        "pallets": {
+          "Ashcroft": 383,
+          "Portmere": 323,
+          "Fairhaven": 883
+        },
+        "staff": {
+          "Ashcroft": 17,
+          "Portmere": 10,
+          "Fairhaven": 25
+        },
+        "incidents": {
+          "Ashcroft": 5,
+          "Portmere": 4,
+          "Fairhaven": 2
+        },
+        "budget": {
+          "Ashcroft": 43000,
+          "Portmere": 48000,
+          "Fairhaven": 62000
+        },
+        "spend": {
+          "Ashcroft": 31600,
+          "Portmere": 38000,
+          "Fairhaven": 60600
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,589 pallets in Q1, with a combined headcount of 52 and 11 recorded incidents. Total operating spend was $130,200 against a budget of $153,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 383; Portmere 323; Fairhaven 883.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 17, Portmere 10, Fairhaven 25. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 5, Portmere 4, Fairhaven 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $43,000 for Ashcroft, $48,000 for Portmere and $62,000 for Fairhaven.\n\nSection 6 — Spend\nActual spend was $31,600 at Ashcroft, $38,000 at Portmere and $60,600 at Fairhaven.\n\nSection 7 — Variance\nThe network finished the quarter $22,800 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 1,579 pallets is expected to be maintained next quarter, with headcount held at 52. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_02",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Portmere",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Fairhaven": 412,
+          "Portmere": 590,
+          "Linden Falls": 443
+        },
+        "staff": {
+          "Fairhaven": 11,
+          "Portmere": 20,
+          "Linden Falls": 22
+        },
+        "incidents": {
+          "Fairhaven": 6,
+          "Portmere": 0,
+          "Linden Falls": 0
+        },
+        "budget": {
+          "Fairhaven": 93000,
+          "Portmere": 59000,
+          "Linden Falls": 73000
+        },
+        "spend": {
+          "Fairhaven": 82000,
+          "Portmere": 45000,
+          "Linden Falls": 54700
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,445 pallets in Q3, with a combined headcount of 54 and 6 recorded incidents. Total operating spend was $181,700 against a budget of $225,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 412; Portmere 590; Linden Falls 443.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 11, Portmere 20, Linden Falls 22. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 6, Portmere 0, Linden Falls 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $93,000 for Fairhaven, $59,000 for Portmere and $73,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $82,000 at Fairhaven, $45,000 at Portmere and $54,700 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $43,300 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,445 pallets is expected to be maintained next quarter, with headcount held at 53. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_10",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Ashcroft",
+          "Northgate"
+        ],
+        "pallets": {
+          "Portmere": 427,
+          "Ashcroft": 464,
+          "Northgate": 701
+        },
+        "staff": {
+          "Portmere": 12,
+          "Ashcroft": 22,
+          "Northgate": 27
+        },
+        "incidents": {
+          "Portmere": 3,
+          "Ashcroft": 4,
+          "Northgate": 5
+        },
+        "budget": {
+          "Portmere": 55000,
+          "Ashcroft": 72000,
+          "Northgate": 50000
+        },
+        "spend": {
+          "Portmere": 53400,
+          "Ashcroft": 67400,
+          "Northgate": 43000
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,592 pallets in Q1, with a combined headcount of 61 and 12 recorded incidents. Total operating spend was $163,800 against a budget of $177,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 427; Ashcroft 464; Northgate 701.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 12, Ashcroft 22, Northgate 27. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 3, Ashcroft 4, Northgate 5. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $55,000 for Portmere, $72,000 for Ashcroft and $50,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $53,400 at Portmere, $67,400 at Ashcroft and $43,000 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $13,200 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,572 pallets is expected to be maintained next quarter, with headcount held at 61. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_11",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Northgate",
+          "Portmere"
+        ],
+        "pallets": {
+          "Linden Falls": 320,
+          "Northgate": 854,
+          "Portmere": 840
+        },
+        "staff": {
+          "Linden Falls": 28,
+          "Northgate": 8,
+          "Portmere": 27
+        },
+        "incidents": {
+          "Linden Falls": 0,
+          "Northgate": 1,
+          "Portmere": 4
+        },
+        "budget": {
+          "Linden Falls": 99000,
+          "Northgate": 52000,
+          "Portmere": 51000
+        },
+        "spend": {
+          "Linden Falls": 62200,
+          "Northgate": 45400,
+          "Portmere": 39500
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,014 pallets in Q4, with a combined headcount of 63 and 5 recorded incidents. Total operating spend was $146,100 against a budget of $202,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 320; Northgate 854; Portmere 840.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 28, Northgate 8, Portmere 27. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 0, Northgate 1, Portmere 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $99,000 for Linden Falls, $52,000 for Northgate and $51,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $62,200 at Linden Falls, $45,400 at Northgate and $39,500 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $54,900 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 2,014 pallets is expected to be maintained next quarter, with headcount held at 63. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_10",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Linden Falls",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Northgate": 503,
+          "Linden Falls": 768,
+          "Ashcroft": 538
+        },
+        "staff": {
+          "Northgate": 13,
+          "Linden Falls": 11,
+          "Ashcroft": 20
+        },
+        "incidents": {
+          "Northgate": 0,
+          "Linden Falls": 4,
+          "Ashcroft": 1
+        },
+        "budget": {
+          "Northgate": 69000,
+          "Linden Falls": 72000,
+          "Ashcroft": 112000
+        },
+        "spend": {
+          "Northgate": 61100,
+          "Linden Falls": 63800,
+          "Ashcroft": 83500
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,809 pallets in Q3, with a combined headcount of 46 and 5 recorded incidents. Total operating spend was $208,400 against a budget of $253,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 503; Linden Falls 768; Ashcroft 538.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 13, Linden Falls 11, Ashcroft 20. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 0, Linden Falls 4, Ashcroft 1. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $69,000 for Northgate, $72,000 for Linden Falls and $112,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $61,100 at Northgate, $63,800 at Linden Falls and $83,500 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $44,600 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 1,809 pallets is expected to be maintained next quarter, with headcount held at 44. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_04",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Portmere",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Ashcroft": 461,
+          "Portmere": 615,
+          "Linden Falls": 692
+        },
+        "staff": {
+          "Ashcroft": 16,
+          "Portmere": 13,
+          "Linden Falls": 28
+        },
+        "incidents": {
+          "Ashcroft": 3,
+          "Portmere": 3,
+          "Linden Falls": 4
+        },
+        "budget": {
+          "Ashcroft": 78000,
+          "Portmere": 106000,
+          "Linden Falls": 89000
+        },
+        "spend": {
+          "Ashcroft": 76000,
+          "Portmere": 103400,
+          "Linden Falls": 61400
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,768 pallets in Q2, with a combined headcount of 59 and 10 recorded incidents. Total operating spend was $240,800 against a budget of $273,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 461; Portmere 615; Linden Falls 692.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 16, Portmere 13, Linden Falls 28. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 3, Portmere 3, Linden Falls 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $78,000 for Ashcroft, $106,000 for Portmere and $89,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $76,000 at Ashcroft, $103,400 at Portmere and $61,400 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $32,200 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,768 pallets is expected to be maintained next quarter, with headcount held at 57. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_05",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Fairhaven",
+          "Northgate"
+        ],
+        "pallets": {
+          "Ashcroft": 511,
+          "Fairhaven": 303,
+          "Northgate": 804
+        },
+        "staff": {
+          "Ashcroft": 26,
+          "Fairhaven": 25,
+          "Northgate": 21
+        },
+        "incidents": {
+          "Ashcroft": 6,
+          "Fairhaven": 2,
+          "Northgate": 2
+        },
+        "budget": {
+          "Ashcroft": 82000,
+          "Fairhaven": 86000,
+          "Northgate": 82000
+        },
+        "spend": {
+          "Ashcroft": 73900,
+          "Fairhaven": 61600,
+          "Northgate": 58700
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,618 pallets in Q1, with a combined headcount of 72 and 10 recorded incidents. Total operating spend was $196,200 against a budget of $250,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 511; Fairhaven 303; Northgate 804.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 26, Fairhaven 25, Northgate 21. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 6, Fairhaven 2, Northgate 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $82,000 for Ashcroft, $86,000 for Fairhaven and $82,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $73,900 at Ashcroft, $61,600 at Fairhaven and $58,700 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $55,800 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 1,618 pallets is expected to be maintained next quarter, with headcount held at 72. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_02",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Fairhaven",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Ashcroft": 707,
+          "Fairhaven": 561,
+          "Linden Falls": 373
+        },
+        "staff": {
+          "Ashcroft": 26,
+          "Fairhaven": 19,
+          "Linden Falls": 23
+        },
+        "incidents": {
+          "Ashcroft": 2,
+          "Fairhaven": 2,
+          "Linden Falls": 3
+        },
+        "budget": {
+          "Ashcroft": 102000,
+          "Fairhaven": 64000,
+          "Linden Falls": 71000
+        },
+        "spend": {
+          "Ashcroft": 92600,
+          "Fairhaven": 51800,
+          "Linden Falls": 61500
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,641 pallets in Q1, with a combined headcount of 68 and 7 recorded incidents. Total operating spend was $205,900 against a budget of $237,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 707; Fairhaven 561; Linden Falls 373.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 26, Fairhaven 19, Linden Falls 23. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 2, Fairhaven 2, Linden Falls 3. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $102,000 for Ashcroft, $64,000 for Fairhaven and $71,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $92,600 at Ashcroft, $51,800 at Fairhaven and $61,500 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $31,100 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 1,691 pallets is expected to be maintained next quarter, with headcount held at 68. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_11",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Northgate",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Linden Falls": 835,
+          "Northgate": 473,
+          "Ashcroft": 477
+        },
+        "staff": {
+          "Linden Falls": 15,
+          "Northgate": 21,
+          "Ashcroft": 10
+        },
+        "incidents": {
+          "Linden Falls": 0,
+          "Northgate": 6,
+          "Ashcroft": 3
+        },
+        "budget": {
+          "Linden Falls": 119000,
+          "Northgate": 98000,
+          "Ashcroft": 85000
+        },
+        "spend": {
+          "Linden Falls": 103700,
+          "Northgate": 85100,
+          "Ashcroft": 64500
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,785 pallets in Q3, with a combined headcount of 45 and 9 recorded incidents. Total operating spend was $253,300 against a budget of $302,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 835; Northgate 473; Ashcroft 477.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 15, Northgate 21, Ashcroft 10. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 0, Northgate 6, Ashcroft 3. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $119,000 for Linden Falls, $98,000 for Northgate and $85,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $103,700 at Linden Falls, $85,100 at Northgate and $64,500 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $48,700 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 1,785 pallets is expected to be maintained next quarter, with headcount held at 46. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_06",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Portmere",
+          "Northgate"
+        ],
+        "pallets": {
+          "Linden Falls": 869,
+          "Portmere": 407,
+          "Northgate": 484
+        },
+        "staff": {
+          "Linden Falls": 13,
+          "Portmere": 21,
+          "Northgate": 20
+        },
+        "incidents": {
+          "Linden Falls": 4,
+          "Portmere": 3,
+          "Northgate": 1
+        },
+        "budget": {
+          "Linden Falls": 47000,
+          "Portmere": 69000,
+          "Northgate": 91000
+        },
+        "spend": {
+          "Linden Falls": 43100,
+          "Portmere": 57000,
+          "Northgate": 57500
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,760 pallets in Q2, with a combined headcount of 54 and 8 recorded incidents. Total operating spend was $157,600 against a budget of $207,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 869; Portmere 407; Northgate 484.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 13, Portmere 21, Northgate 20. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 4, Portmere 3, Northgate 1. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $47,000 for Linden Falls, $69,000 for Portmere and $91,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $43,100 at Linden Falls, $57,000 at Portmere and $57,500 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $49,400 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,730 pallets is expected to be maintained next quarter, with headcount held at 54. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_01",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Northgate",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Fairhaven": 375,
+          "Northgate": 875,
+          "Ashcroft": 733
+        },
+        "staff": {
+          "Fairhaven": 20,
+          "Northgate": 27,
+          "Ashcroft": 8
+        },
+        "incidents": {
+          "Fairhaven": 0,
+          "Northgate": 3,
+          "Ashcroft": 5
+        },
+        "budget": {
+          "Fairhaven": 40000,
+          "Northgate": 117000,
+          "Ashcroft": 109000
+        },
+        "spend": {
+          "Fairhaven": 37200,
+          "Northgate": 73600,
+          "Ashcroft": 81400
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,983 pallets in Q3, with a combined headcount of 58 and 8 recorded incidents. Total operating spend was $192,200 against a budget of $266,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 375; Northgate 875; Ashcroft 733.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 20, Northgate 27, Ashcroft 8. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 0, Northgate 3, Ashcroft 5. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $40,000 for Fairhaven, $117,000 for Northgate and $109,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $37,200 at Fairhaven, $73,600 at Northgate and $81,400 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $73,800 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,983 pallets is expected to be maintained next quarter, with headcount held at 55. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_05",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Linden Falls",
+          "Northgate"
+        ],
+        "pallets": {
+          "Ashcroft": 870,
+          "Linden Falls": 389,
+          "Northgate": 513
+        },
+        "staff": {
+          "Ashcroft": 21,
+          "Linden Falls": 27,
+          "Northgate": 29
+        },
+        "incidents": {
+          "Ashcroft": 5,
+          "Linden Falls": 6,
+          "Northgate": 6
+        },
+        "budget": {
+          "Ashcroft": 62000,
+          "Linden Falls": 44000,
+          "Northgate": 115000
+        },
+        "spend": {
+          "Ashcroft": 54100,
+          "Linden Falls": 35200,
+          "Northgate": 104600
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,772 pallets in Q4, with a combined headcount of 77 and 17 recorded incidents. Total operating spend was $193,900 against a budget of $221,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 870; Linden Falls 389; Northgate 513.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 21, Linden Falls 27, Northgate 29. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 5, Linden Falls 6, Northgate 6. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $62,000 for Ashcroft, $44,000 for Linden Falls and $115,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $54,100 at Ashcroft, $35,200 at Linden Falls and $104,600 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $27,100 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,822 pallets is expected to be maintained next quarter, with headcount held at 77. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_08",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Portmere",
+          "Northgate"
+        ],
+        "pallets": {
+          "Linden Falls": 384,
+          "Portmere": 572,
+          "Northgate": 369
+        },
+        "staff": {
+          "Linden Falls": 10,
+          "Portmere": 24,
+          "Northgate": 25
+        },
+        "incidents": {
+          "Linden Falls": 2,
+          "Portmere": 5,
+          "Northgate": 4
+        },
+        "budget": {
+          "Linden Falls": 102000,
+          "Portmere": 62000,
+          "Northgate": 46000
+        },
+        "spend": {
+          "Linden Falls": 79700,
+          "Portmere": 38500,
+          "Northgate": 39500
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,325 pallets in Q2, with a combined headcount of 58 and 11 recorded incidents. Total operating spend was $157,700 against a budget of $210,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 384; Portmere 572; Northgate 369.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 10, Portmere 24, Northgate 25. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 2, Portmere 5, Northgate 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $102,000 for Linden Falls, $62,000 for Portmere and $46,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $79,700 at Linden Falls, $38,500 at Portmere and $39,500 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $52,300 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 1,325 pallets is expected to be maintained next quarter, with headcount held at 59. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_09",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Linden Falls",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Northgate": 374,
+          "Linden Falls": 463,
+          "Ashcroft": 453
+        },
+        "staff": {
+          "Northgate": 24,
+          "Linden Falls": 20,
+          "Ashcroft": 17
+        },
+        "incidents": {
+          "Northgate": 4,
+          "Linden Falls": 4,
+          "Ashcroft": 6
+        },
+        "budget": {
+          "Northgate": 115000,
+          "Linden Falls": 42000,
+          "Ashcroft": 61000
+        },
+        "spend": {
+          "Northgate": 88400,
+          "Linden Falls": 30900,
+          "Ashcroft": 42700
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,290 pallets in Q3, with a combined headcount of 61 and 14 recorded incidents. Total operating spend was $162,000 against a budget of $218,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 374; Linden Falls 463; Ashcroft 453.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 24, Linden Falls 20, Ashcroft 17. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 4, Linden Falls 4, Ashcroft 6. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $115,000 for Northgate, $42,000 for Linden Falls and $61,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $88,400 at Northgate, $30,900 at Linden Falls and $42,700 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $56,000 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,290 pallets is expected to be maintained next quarter, with headcount held at 61. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_01",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Ashcroft",
+          "Portmere"
+        ],
+        "pallets": {
+          "Northgate": 810,
+          "Ashcroft": 871,
+          "Portmere": 804
+        },
+        "staff": {
+          "Northgate": 22,
+          "Ashcroft": 22,
+          "Portmere": 26
+        },
+        "incidents": {
+          "Northgate": 4,
+          "Ashcroft": 0,
+          "Portmere": 2
+        },
+        "budget": {
+          "Northgate": 54000,
+          "Ashcroft": 119000,
+          "Portmere": 63000
+        },
+        "spend": {
+          "Northgate": 38700,
+          "Ashcroft": 93200,
+          "Portmere": 60300
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,485 pallets in Q2, with a combined headcount of 70 and 6 recorded incidents. Total operating spend was $192,200 against a budget of $236,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 810; Ashcroft 871; Portmere 804.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 22, Ashcroft 22, Portmere 26. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 4, Ashcroft 0, Portmere 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $54,000 for Northgate, $119,000 for Ashcroft and $63,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $38,700 at Northgate, $93,200 at Ashcroft and $60,300 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $43,800 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 2,485 pallets is expected to be maintained next quarter, with headcount held at 70. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_02",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Portmere",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Northgate": 530,
+          "Portmere": 623,
+          "Linden Falls": 530
+        },
+        "staff": {
+          "Northgate": 23,
+          "Portmere": 14,
+          "Linden Falls": 18
+        },
+        "incidents": {
+          "Northgate": 5,
+          "Portmere": 0,
+          "Linden Falls": 2
+        },
+        "budget": {
+          "Northgate": 91000,
+          "Portmere": 80000,
+          "Linden Falls": 72000
+        },
+        "spend": {
+          "Northgate": 72500,
+          "Portmere": 62100,
+          "Linden Falls": 66800
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,683 pallets in Q3, with a combined headcount of 55 and 7 recorded incidents. Total operating spend was $201,400 against a budget of $243,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 530; Portmere 623; Linden Falls 530.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 23, Portmere 14, Linden Falls 18. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 5, Portmere 0, Linden Falls 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $91,000 for Northgate, $80,000 for Portmere and $72,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $72,500 at Northgate, $62,100 at Portmere and $66,800 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $41,600 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,683 pallets is expected to be maintained next quarter, with headcount held at 55. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_00",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Fairhaven",
+          "Northgate"
+        ],
+        "pallets": {
+          "Portmere": 824,
+          "Fairhaven": 401,
+          "Northgate": 573
+        },
+        "staff": {
+          "Portmere": 9,
+          "Fairhaven": 12,
+          "Northgate": 27
+        },
+        "incidents": {
+          "Portmere": 3,
+          "Fairhaven": 0,
+          "Northgate": 1
+        },
+        "budget": {
+          "Portmere": 61000,
+          "Fairhaven": 80000,
+          "Northgate": 109000
+        },
+        "spend": {
+          "Portmere": 56900,
+          "Fairhaven": 49900,
+          "Northgate": 102200
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,798 pallets in Q3, with a combined headcount of 48 and 4 recorded incidents. Total operating spend was $209,000 against a budget of $250,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 824; Fairhaven 401; Northgate 573.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 9, Fairhaven 12, Northgate 27. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 3, Fairhaven 0, Northgate 1. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $61,000 for Portmere, $80,000 for Fairhaven and $109,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $56,900 at Portmere, $49,900 at Fairhaven and $102,200 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $41,000 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 1,778 pallets is expected to be maintained next quarter, with headcount held at 48. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_01",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Portmere",
+          "Northgate"
+        ],
+        "pallets": {
+          "Fairhaven": 856,
+          "Portmere": 855,
+          "Northgate": 810
+        },
+        "staff": {
+          "Fairhaven": 11,
+          "Portmere": 26,
+          "Northgate": 24
+        },
+        "incidents": {
+          "Fairhaven": 0,
+          "Portmere": 6,
+          "Northgate": 4
+        },
+        "budget": {
+          "Fairhaven": 48000,
+          "Portmere": 92000,
+          "Northgate": 114000
+        },
+        "spend": {
+          "Fairhaven": 34500,
+          "Portmere": 84700,
+          "Northgate": 102600
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,521 pallets in Q2, with a combined headcount of 61 and 10 recorded incidents. Total operating spend was $216,800 against a budget of $254,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 856; Portmere 855; Northgate 810.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 11, Portmere 26, Northgate 24. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 0, Portmere 6, Northgate 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $48,000 for Fairhaven, $92,000 for Portmere and $114,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $34,500 at Fairhaven, $84,700 at Portmere and $102,600 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $32,200 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 2,521 pallets is expected to be maintained next quarter, with headcount held at 61. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_09",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Fairhaven",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Portmere": 348,
+          "Fairhaven": 831,
+          "Linden Falls": 541
+        },
+        "staff": {
+          "Portmere": 8,
+          "Fairhaven": 16,
+          "Linden Falls": 20
+        },
+        "incidents": {
+          "Portmere": 2,
+          "Fairhaven": 4,
+          "Linden Falls": 3
+        },
+        "budget": {
+          "Portmere": 98000,
+          "Fairhaven": 66000,
+          "Linden Falls": 100000
+        },
+        "spend": {
+          "Portmere": 95300,
+          "Fairhaven": 55300,
+          "Linden Falls": 88200
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,720 pallets in Q2, with a combined headcount of 44 and 9 recorded incidents. Total operating spend was $236,800 against a budget of $264,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 348; Fairhaven 831; Linden Falls 541.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 8, Fairhaven 16, Linden Falls 20. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 2, Fairhaven 4, Linden Falls 3. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $98,000 for Portmere, $66,000 for Fairhaven and $100,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $95,300 at Portmere, $55,300 at Fairhaven and $88,200 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $25,200 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,720 pallets is expected to be maintained next quarter, with headcount held at 44. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_10",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Linden Falls",
+          "Northgate"
+        ],
+        "pallets": {
+          "Ashcroft": 385,
+          "Linden Falls": 778,
+          "Northgate": 842
+        },
+        "staff": {
+          "Ashcroft": 28,
+          "Linden Falls": 30,
+          "Northgate": 29
+        },
+        "incidents": {
+          "Ashcroft": 6,
+          "Linden Falls": 2,
+          "Northgate": 3
+        },
+        "budget": {
+          "Ashcroft": 47000,
+          "Linden Falls": 73000,
+          "Northgate": 110000
+        },
+        "spend": {
+          "Ashcroft": 42100,
+          "Linden Falls": 68800,
+          "Northgate": 92200
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,005 pallets in Q2, with a combined headcount of 87 and 11 recorded incidents. Total operating spend was $203,100 against a budget of $230,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 385; Linden Falls 778; Northgate 842.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 28, Linden Falls 30, Northgate 29. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 6, Linden Falls 2, Northgate 3. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $47,000 for Ashcroft, $73,000 for Linden Falls and $110,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $42,100 at Ashcroft, $68,800 at Linden Falls and $92,200 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $26,900 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 2,005 pallets is expected to be maintained next quarter, with headcount held at 87. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_03",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Portmere",
+          "Fairhaven"
+        ],
+        "pallets": {
+          "Linden Falls": 824,
+          "Portmere": 766,
+          "Fairhaven": 588
+        },
+        "staff": {
+          "Linden Falls": 17,
+          "Portmere": 30,
+          "Fairhaven": 18
+        },
+        "incidents": {
+          "Linden Falls": 3,
+          "Portmere": 2,
+          "Fairhaven": 4
+        },
+        "budget": {
+          "Linden Falls": 50000,
+          "Portmere": 64000,
+          "Fairhaven": 78000
+        },
+        "spend": {
+          "Linden Falls": 35400,
+          "Portmere": 55800,
+          "Fairhaven": 61100
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,178 pallets in Q1, with a combined headcount of 68 and 9 recorded incidents. Total operating spend was $152,300 against a budget of $192,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 824; Portmere 766; Fairhaven 588.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 17, Portmere 30, Fairhaven 18. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 3, Portmere 2, Fairhaven 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $50,000 for Linden Falls, $64,000 for Portmere and $78,000 for Fairhaven.\n\nSection 6 — Spend\nActual spend was $35,400 at Linden Falls, $55,800 at Portmere and $61,100 at Fairhaven.\n\nSection 7 — Variance\nThe network finished the quarter $39,700 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 2,178 pallets is expected to be maintained next quarter, with headcount held at 65. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_07",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Fairhaven",
+          "Portmere"
+        ],
+        "pallets": {
+          "Ashcroft": 519,
+          "Fairhaven": 612,
+          "Portmere": 740
+        },
+        "staff": {
+          "Ashcroft": 30,
+          "Fairhaven": 17,
+          "Portmere": 9
+        },
+        "incidents": {
+          "Ashcroft": 5,
+          "Fairhaven": 2,
+          "Portmere": 0
+        },
+        "budget": {
+          "Ashcroft": 102000,
+          "Fairhaven": 44000,
+          "Portmere": 76000
+        },
+        "spend": {
+          "Ashcroft": 92900,
+          "Fairhaven": 27500,
+          "Portmere": 49400
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,871 pallets in Q2, with a combined headcount of 56 and 7 recorded incidents. Total operating spend was $169,800 against a budget of $222,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 519; Fairhaven 612; Portmere 740.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 30, Fairhaven 17, Portmere 9. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 5, Fairhaven 2, Portmere 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $102,000 for Ashcroft, $44,000 for Fairhaven and $76,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $92,900 at Ashcroft, $27,500 at Fairhaven and $49,400 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $52,200 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 1,901 pallets is expected to be maintained next quarter, with headcount held at 56. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_06",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Northgate",
+          "Fairhaven"
+        ],
+        "pallets": {
+          "Portmere": 786,
+          "Northgate": 802,
+          "Fairhaven": 414
+        },
+        "staff": {
+          "Portmere": 12,
+          "Northgate": 27,
+          "Fairhaven": 12
+        },
+        "incidents": {
+          "Portmere": 5,
+          "Northgate": 3,
+          "Fairhaven": 2
+        },
+        "budget": {
+          "Portmere": 53000,
+          "Northgate": 83000,
+          "Fairhaven": 56000
+        },
+        "spend": {
+          "Portmere": 38300,
+          "Northgate": 72900,
+          "Fairhaven": 51100
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,002 pallets in Q2, with a combined headcount of 51 and 10 recorded incidents. Total operating spend was $162,300 against a budget of $192,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 786; Northgate 802; Fairhaven 414.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 12, Northgate 27, Fairhaven 12. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 5, Northgate 3, Fairhaven 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $53,000 for Portmere, $83,000 for Northgate and $56,000 for Fairhaven.\n\nSection 6 — Spend\nActual spend was $38,300 at Portmere, $72,900 at Northgate and $51,100 at Fairhaven.\n\nSection 7 — Variance\nThe network finished the quarter $29,700 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 2,002 pallets is expected to be maintained next quarter, with headcount held at 51. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_03",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "staff_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        3
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Ashcroft",
+          "Northgate"
+        ],
+        "pallets": {
+          "Portmere": 866,
+          "Ashcroft": 824,
+          "Northgate": 759
+        },
+        "staff": {
+          "Portmere": 14,
+          "Ashcroft": 22,
+          "Northgate": 29
+        },
+        "incidents": {
+          "Portmere": 3,
+          "Ashcroft": 1,
+          "Northgate": 6
+        },
+        "budget": {
+          "Portmere": 65000,
+          "Ashcroft": 108000,
+          "Northgate": 71000
+        },
+        "spend": {
+          "Portmere": 60700,
+          "Ashcroft": 72600,
+          "Northgate": 48600
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,449 pallets in Q4, with a combined headcount of 65 and 10 recorded incidents. Total operating spend was $181,900 against a budget of $244,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 866; Ashcroft 824; Northgate 759.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 14, Ashcroft 22, Northgate 29. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 3, Ashcroft 1, Northgate 6. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $65,000 for Portmere, $108,000 for Ashcroft and $71,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $60,700 at Portmere, $72,600 at Ashcroft and $48,600 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $62,100 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 2,449 pallets is expected to be maintained next quarter, with headcount held at 63. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_00",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Northgate",
+          "Portmere"
+        ],
+        "pallets": {
+          "Fairhaven": 726,
+          "Northgate": 411,
+          "Portmere": 794
+        },
+        "staff": {
+          "Fairhaven": 18,
+          "Northgate": 14,
+          "Portmere": 25
+        },
+        "incidents": {
+          "Fairhaven": 0,
+          "Northgate": 5,
+          "Portmere": 3
+        },
+        "budget": {
+          "Fairhaven": 87000,
+          "Northgate": 65000,
+          "Portmere": 78000
+        },
+        "spend": {
+          "Fairhaven": 58000,
+          "Northgate": 50500,
+          "Portmere": 50100
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,931 pallets in Q2, with a combined headcount of 57 and 8 recorded incidents. Total operating spend was $158,600 against a budget of $230,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 726; Northgate 411; Portmere 794.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 18, Northgate 14, Portmere 25. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 0, Northgate 5, Portmere 3. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $87,000 for Fairhaven, $65,000 for Northgate and $78,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $58,000 at Fairhaven, $50,500 at Northgate and $50,100 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $71,400 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 1,931 pallets is expected to be maintained next quarter, with headcount held at 57. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_06",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "staff_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        3
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Northgate",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Portmere": 768,
+          "Northgate": 767,
+          "Ashcroft": 596
+        },
+        "staff": {
+          "Portmere": 28,
+          "Northgate": 9,
+          "Ashcroft": 24
+        },
+        "incidents": {
+          "Portmere": 5,
+          "Northgate": 0,
+          "Ashcroft": 1
+        },
+        "budget": {
+          "Portmere": 115000,
+          "Northgate": 103000,
+          "Ashcroft": 82000
+        },
+        "spend": {
+          "Portmere": 78400,
+          "Northgate": 89000,
+          "Ashcroft": 77400
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,131 pallets in Q3, with a combined headcount of 61 and 6 recorded incidents. Total operating spend was $244,800 against a budget of $300,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 768; Northgate 767; Ashcroft 596.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 28, Northgate 9, Ashcroft 24. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 5, Northgate 0, Ashcroft 1. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $115,000 for Portmere, $103,000 for Northgate and $82,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $78,400 at Portmere, $89,000 at Northgate and $77,400 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $55,200 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 2,131 pallets is expected to be maintained next quarter, with headcount held at 63. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_00",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Northgate",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Fairhaven": 849,
+          "Northgate": 616,
+          "Ashcroft": 598
+        },
+        "staff": {
+          "Fairhaven": 27,
+          "Northgate": 18,
+          "Ashcroft": 13
+        },
+        "incidents": {
+          "Fairhaven": 6,
+          "Northgate": 3,
+          "Ashcroft": 2
+        },
+        "budget": {
+          "Fairhaven": 75000,
+          "Northgate": 52000,
+          "Ashcroft": 87000
+        },
+        "spend": {
+          "Fairhaven": 54700,
+          "Northgate": 36100,
+          "Ashcroft": 66600
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,063 pallets in Q4, with a combined headcount of 55 and 11 recorded incidents. Total operating spend was $157,400 against a budget of $214,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 849; Northgate 616; Ashcroft 598.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 27, Northgate 18, Ashcroft 13. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 6, Northgate 3, Ashcroft 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $75,000 for Fairhaven, $52,000 for Northgate and $87,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $54,700 at Fairhaven, $36,100 at Northgate and $66,600 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $56,600 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 2,063 pallets is expected to be maintained next quarter, with headcount held at 58. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_04",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Linden Falls",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Northgate": 864,
+          "Linden Falls": 560,
+          "Ashcroft": 638
+        },
+        "staff": {
+          "Northgate": 21,
+          "Linden Falls": 24,
+          "Ashcroft": 27
+        },
+        "incidents": {
+          "Northgate": 2,
+          "Linden Falls": 3,
+          "Ashcroft": 5
+        },
+        "budget": {
+          "Northgate": 82000,
+          "Linden Falls": 102000,
+          "Ashcroft": 72000
+        },
+        "spend": {
+          "Northgate": 64000,
+          "Linden Falls": 63000,
+          "Ashcroft": 44400
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,062 pallets in Q3, with a combined headcount of 72 and 10 recorded incidents. Total operating spend was $171,400 against a budget of $256,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 864; Linden Falls 560; Ashcroft 638.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 21, Linden Falls 24, Ashcroft 27. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 2, Linden Falls 3, Ashcroft 5. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $82,000 for Northgate, $102,000 for Linden Falls and $72,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $64,000 at Northgate, $63,000 at Linden Falls and $44,400 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $84,600 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 2,062 pallets is expected to be maintained next quarter, with headcount held at 72. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_08",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Fairhaven",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Northgate": 314,
+          "Fairhaven": 513,
+          "Linden Falls": 317
+        },
+        "staff": {
+          "Northgate": 26,
+          "Fairhaven": 23,
+          "Linden Falls": 10
+        },
+        "incidents": {
+          "Northgate": 2,
+          "Fairhaven": 0,
+          "Linden Falls": 0
+        },
+        "budget": {
+          "Northgate": 78000,
+          "Fairhaven": 76000,
+          "Linden Falls": 106000
+        },
+        "spend": {
+          "Northgate": 53000,
+          "Fairhaven": 65800,
+          "Linden Falls": 83900
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,144 pallets in Q4, with a combined headcount of 59 and 2 recorded incidents. Total operating spend was $202,700 against a budget of $260,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 314; Fairhaven 513; Linden Falls 317.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 26, Fairhaven 23, Linden Falls 10. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 2, Fairhaven 0, Linden Falls 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $78,000 for Northgate, $76,000 for Fairhaven and $106,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $53,000 at Northgate, $65,800 at Fairhaven and $83,900 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $57,300 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,144 pallets is expected to be maintained next quarter, with headcount held at 59. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_03",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Ashcroft",
+          "Northgate"
+        ],
+        "pallets": {
+          "Portmere": 334,
+          "Ashcroft": 480,
+          "Northgate": 770
+        },
+        "staff": {
+          "Portmere": 14,
+          "Ashcroft": 25,
+          "Northgate": 23
+        },
+        "incidents": {
+          "Portmere": 3,
+          "Ashcroft": 6,
+          "Northgate": 4
+        },
+        "budget": {
+          "Portmere": 69000,
+          "Ashcroft": 86000,
+          "Northgate": 85000
+        },
+        "spend": {
+          "Portmere": 62700,
+          "Ashcroft": 76500,
+          "Northgate": 75500
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,584 pallets in Q3, with a combined headcount of 62 and 13 recorded incidents. Total operating spend was $214,700 against a budget of $240,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 334; Ashcroft 480; Northgate 770.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 14, Ashcroft 25, Northgate 23. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 3, Ashcroft 6, Northgate 4. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $69,000 for Portmere, $86,000 for Ashcroft and $85,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $62,700 at Portmere, $76,500 at Ashcroft and $75,500 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $25,300 under budget. The largest single underspend was at Ashcroft.\n\nSection 8 — Outlook\nThroughput of 1,564 pallets is expected to be maintained next quarter, with headcount held at 62. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_06",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Ashcroft",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Northgate": 440,
+          "Ashcroft": 322,
+          "Linden Falls": 525
+        },
+        "staff": {
+          "Northgate": 16,
+          "Ashcroft": 23,
+          "Linden Falls": 23
+        },
+        "incidents": {
+          "Northgate": 2,
+          "Ashcroft": 2,
+          "Linden Falls": 1
+        },
+        "budget": {
+          "Northgate": 72000,
+          "Ashcroft": 91000,
+          "Linden Falls": 60000
+        },
+        "spend": {
+          "Northgate": 52000,
+          "Ashcroft": 77800,
+          "Linden Falls": 54800
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,287 pallets in Q3, with a combined headcount of 61 and 5 recorded incidents. Total operating spend was $184,600 against a budget of $223,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 440; Ashcroft 322; Linden Falls 525.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 16, Ashcroft 23, Linden Falls 23. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 2, Ashcroft 2, Linden Falls 1. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $72,000 for Northgate, $91,000 for Ashcroft and $60,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $52,000 at Northgate, $77,800 at Ashcroft and $54,800 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $38,400 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,287 pallets is expected to be maintained next quarter, with headcount held at 62. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_05",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Ashcroft",
+          "Portmere"
+        ],
+        "pallets": {
+          "Fairhaven": 758,
+          "Ashcroft": 638,
+          "Portmere": 669
+        },
+        "staff": {
+          "Fairhaven": 20,
+          "Ashcroft": 19,
+          "Portmere": 21
+        },
+        "incidents": {
+          "Fairhaven": 5,
+          "Ashcroft": 3,
+          "Portmere": 6
+        },
+        "budget": {
+          "Fairhaven": 69000,
+          "Ashcroft": 91000,
+          "Portmere": 118000
+        },
+        "spend": {
+          "Fairhaven": 49200,
+          "Ashcroft": 80000,
+          "Portmere": 89000
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,065 pallets in Q2, with a combined headcount of 60 and 14 recorded incidents. Total operating spend was $218,200 against a budget of $278,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 758; Ashcroft 638; Portmere 669.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 20, Ashcroft 19, Portmere 21. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 5, Ashcroft 3, Portmere 6. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $69,000 for Fairhaven, $91,000 for Ashcroft and $118,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $49,200 at Fairhaven, $80,000 at Ashcroft and $89,000 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $59,800 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 2,065 pallets is expected to be maintained next quarter, with headcount held at 60. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s2_05",
+      "separation": 2,
+      "planted": true,
+      "fault_kind": "staff_total",
+      "fault_section": 1,
+      "partner_sections": [
+        3,
+        8
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Fairhaven",
+          "Portmere"
+        ],
+        "pallets": {
+          "Northgate": 406,
+          "Fairhaven": 833,
+          "Portmere": 398
+        },
+        "staff": {
+          "Northgate": 23,
+          "Fairhaven": 26,
+          "Portmere": 22
+        },
+        "incidents": {
+          "Northgate": 3,
+          "Fairhaven": 5,
+          "Portmere": 2
+        },
+        "budget": {
+          "Northgate": 89000,
+          "Fairhaven": 70000,
+          "Portmere": 61000
+        },
+        "spend": {
+          "Northgate": 68200,
+          "Fairhaven": 56400,
+          "Portmere": 47200
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,637 pallets in Q1, with a combined headcount of 68 and 10 recorded incidents. Total operating spend was $171,800 against a budget of $220,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 406; Fairhaven 833; Portmere 398.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 23, Fairhaven 26, Portmere 22. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 3, Fairhaven 5, Portmere 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $89,000 for Northgate, $70,000 for Fairhaven and $61,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $68,200 at Northgate, $56,400 at Fairhaven and $47,200 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $48,200 under budget. The largest single underspend was at Northgate.\n\nSection 8 — Outlook\nThroughput of 1,637 pallets is expected to be maintained next quarter, with headcount held at 71. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_10",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "staff_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        3
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Northgate",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Portmere": 604,
+          "Northgate": 845,
+          "Linden Falls": 467
+        },
+        "staff": {
+          "Portmere": 19,
+          "Northgate": 28,
+          "Linden Falls": 9
+        },
+        "incidents": {
+          "Portmere": 2,
+          "Northgate": 1,
+          "Linden Falls": 2
+        },
+        "budget": {
+          "Portmere": 63000,
+          "Northgate": 109000,
+          "Linden Falls": 93000
+        },
+        "spend": {
+          "Portmere": 38700,
+          "Northgate": 91900,
+          "Linden Falls": 56900
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,916 pallets in Q3, with a combined headcount of 56 and 5 recorded incidents. Total operating spend was $187,500 against a budget of $265,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 604; Northgate 845; Linden Falls 467.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 19, Northgate 28, Linden Falls 9. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 2, Northgate 1, Linden Falls 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $63,000 for Portmere, $109,000 for Northgate and $93,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $38,700 at Portmere, $91,900 at Northgate and $56,900 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $77,500 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,916 pallets is expected to be maintained next quarter, with headcount held at 59. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_clean_07",
+      "separation": 0,
+      "planted": false,
+      "fault_kind": null,
+      "fault_section": null,
+      "partner_sections": null,
+      "accepted_pairs": null,
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Linden Falls",
+          "Portmere"
+        ],
+        "pallets": {
+          "Fairhaven": 651,
+          "Linden Falls": 495,
+          "Portmere": 329
+        },
+        "staff": {
+          "Fairhaven": 9,
+          "Linden Falls": 27,
+          "Portmere": 18
+        },
+        "incidents": {
+          "Fairhaven": 3,
+          "Linden Falls": 0,
+          "Portmere": 2
+        },
+        "budget": {
+          "Fairhaven": 61000,
+          "Linden Falls": 110000,
+          "Portmere": 41000
+        },
+        "spend": {
+          "Fairhaven": 43400,
+          "Linden Falls": 70400,
+          "Portmere": 26800
+        },
+        "quarter": "Q3"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,475 pallets in Q3, with a combined headcount of 54 and 5 recorded incidents. Total operating spend was $140,600 against a budget of $212,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 651; Linden Falls 495; Portmere 329.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 9, Linden Falls 27, Portmere 18. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 3, Linden Falls 0, Portmere 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $61,000 for Fairhaven, $110,000 for Linden Falls and $41,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $43,400 at Fairhaven, $70,400 at Linden Falls and $26,800 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $71,400 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,475 pallets is expected to be maintained next quarter, with headcount held at 54. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_04",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Fairhaven",
+          "Linden Falls",
+          "Northgate"
+        ],
+        "pallets": {
+          "Fairhaven": 732,
+          "Linden Falls": 748,
+          "Northgate": 560
+        },
+        "staff": {
+          "Fairhaven": 29,
+          "Linden Falls": 17,
+          "Northgate": 15
+        },
+        "incidents": {
+          "Fairhaven": 3,
+          "Linden Falls": 1,
+          "Northgate": 1
+        },
+        "budget": {
+          "Fairhaven": 99000,
+          "Linden Falls": 89000,
+          "Northgate": 55000
+        },
+        "spend": {
+          "Fairhaven": 85300,
+          "Linden Falls": 57300,
+          "Northgate": 38700
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,040 pallets in Q4, with a combined headcount of 61 and 5 recorded incidents. Total operating spend was $176,300 against a budget of $243,000.\n\nSection 2 — Site throughput\nPallets handled by site: Fairhaven 732; Linden Falls 748; Northgate 560.\n\nSection 3 — Staffing\nHeadcount at quarter end: Fairhaven 29, Linden Falls 17, Northgate 15. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Fairhaven 3, Linden Falls 1, Northgate 1. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $99,000 for Fairhaven, $89,000 for Linden Falls and $55,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $85,300 at Fairhaven, $57,300 at Linden Falls and $38,700 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $61,700 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 2,040 pallets is expected to be maintained next quarter, with headcount held at 61. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_11",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Fairhaven",
+          "Northgate"
+        ],
+        "pallets": {
+          "Linden Falls": 697,
+          "Fairhaven": 825,
+          "Northgate": 338
+        },
+        "staff": {
+          "Linden Falls": 28,
+          "Fairhaven": 27,
+          "Northgate": 24
+        },
+        "incidents": {
+          "Linden Falls": 1,
+          "Fairhaven": 4,
+          "Northgate": 0
+        },
+        "budget": {
+          "Linden Falls": 87000,
+          "Fairhaven": 86000,
+          "Northgate": 66000
+        },
+        "spend": {
+          "Linden Falls": 63900,
+          "Fairhaven": 58900,
+          "Northgate": 62900
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,860 pallets in Q1, with a combined headcount of 79 and 5 recorded incidents. Total operating spend was $185,700 against a budget of $239,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 697; Fairhaven 825; Northgate 338.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 28, Fairhaven 27, Northgate 24. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 1, Fairhaven 4, Northgate 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $87,000 for Linden Falls, $86,000 for Fairhaven and $66,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $63,900 at Linden Falls, $58,900 at Fairhaven and $62,900 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $53,300 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 1,830 pallets is expected to be maintained next quarter, with headcount held at 79. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_02",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "staff_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        3
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Ashcroft",
+          "Fairhaven",
+          "Northgate"
+        ],
+        "pallets": {
+          "Ashcroft": 517,
+          "Fairhaven": 886,
+          "Northgate": 703
+        },
+        "staff": {
+          "Ashcroft": 27,
+          "Fairhaven": 9,
+          "Northgate": 10
+        },
+        "incidents": {
+          "Ashcroft": 3,
+          "Fairhaven": 3,
+          "Northgate": 0
+        },
+        "budget": {
+          "Ashcroft": 45000,
+          "Fairhaven": 96000,
+          "Northgate": 72000
+        },
+        "spend": {
+          "Ashcroft": 33200,
+          "Fairhaven": 79700,
+          "Northgate": 57400
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,106 pallets in Q4, with a combined headcount of 46 and 6 recorded incidents. Total operating spend was $170,300 against a budget of $213,000.\n\nSection 2 — Site throughput\nPallets handled by site: Ashcroft 517; Fairhaven 886; Northgate 703.\n\nSection 3 — Staffing\nHeadcount at quarter end: Ashcroft 27, Fairhaven 9, Northgate 10. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Ashcroft 3, Fairhaven 3, Northgate 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $45,000 for Ashcroft, $96,000 for Fairhaven and $72,000 for Northgate.\n\nSection 6 — Spend\nActual spend was $33,200 at Ashcroft, $79,700 at Fairhaven and $57,400 at Northgate.\n\nSection 7 — Variance\nThe network finished the quarter $42,700 under budget. The largest single underspend was at Fairhaven.\n\nSection 8 — Outlook\nThroughput of 2,106 pallets is expected to be maintained next quarter, with headcount held at 48. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_08",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Portmere",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Northgate": 711,
+          "Portmere": 883,
+          "Linden Falls": 650
+        },
+        "staff": {
+          "Northgate": 13,
+          "Portmere": 17,
+          "Linden Falls": 22
+        },
+        "incidents": {
+          "Northgate": 4,
+          "Portmere": 2,
+          "Linden Falls": 3
+        },
+        "budget": {
+          "Northgate": 41000,
+          "Portmere": 47000,
+          "Linden Falls": 120000
+        },
+        "spend": {
+          "Northgate": 38100,
+          "Portmere": 33300,
+          "Linden Falls": 96500
+        },
+        "quarter": "Q2"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,244 pallets in Q2, with a combined headcount of 52 and 9 recorded incidents. Total operating spend was $165,900 against a budget of $208,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 711; Portmere 883; Linden Falls 650.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 13, Portmere 17, Linden Falls 22. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 4, Portmere 2, Linden Falls 3. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $41,000 for Northgate, $47,000 for Portmere and $120,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $38,100 at Northgate, $33,300 at Portmere and $96,500 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $40,100 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 2,244 pallets is expected to be maintained next quarter, with headcount held at 52. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_04",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Northgate",
+          "Ashcroft",
+          "Linden Falls"
+        ],
+        "pallets": {
+          "Northgate": 490,
+          "Ashcroft": 574,
+          "Linden Falls": 659
+        },
+        "staff": {
+          "Northgate": 21,
+          "Ashcroft": 14,
+          "Linden Falls": 20
+        },
+        "incidents": {
+          "Northgate": 0,
+          "Ashcroft": 4,
+          "Linden Falls": 5
+        },
+        "budget": {
+          "Northgate": 71000,
+          "Ashcroft": 117000,
+          "Linden Falls": 117000
+        },
+        "spend": {
+          "Northgate": 48400,
+          "Ashcroft": 91300,
+          "Linden Falls": 82300
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,723 pallets in Q1, with a combined headcount of 55 and 9 recorded incidents. Total operating spend was $222,000 against a budget of $305,000.\n\nSection 2 — Site throughput\nPallets handled by site: Northgate 490; Ashcroft 574; Linden Falls 659.\n\nSection 3 — Staffing\nHeadcount at quarter end: Northgate 21, Ashcroft 14, Linden Falls 20. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Northgate 0, Ashcroft 4, Linden Falls 5. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $71,000 for Northgate, $117,000 for Ashcroft and $117,000 for Linden Falls.\n\nSection 6 — Spend\nActual spend was $48,400 at Northgate, $91,300 at Ashcroft and $82,300 at Linden Falls.\n\nSection 7 — Variance\nThe network finished the quarter $83,000 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,693 pallets is expected to be maintained next quarter, with headcount held at 55. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s5_00",
+      "separation": 5,
+      "planted": true,
+      "fault_kind": "spend_total",
+      "fault_section": 1,
+      "partner_sections": [
+        6
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          6
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Linden Falls",
+          "Northgate",
+          "Portmere"
+        ],
+        "pallets": {
+          "Linden Falls": 497,
+          "Northgate": 368,
+          "Portmere": 568
+        },
+        "staff": {
+          "Linden Falls": 17,
+          "Northgate": 15,
+          "Portmere": 11
+        },
+        "incidents": {
+          "Linden Falls": 1,
+          "Northgate": 5,
+          "Portmere": 0
+        },
+        "budget": {
+          "Linden Falls": 102000,
+          "Northgate": 54000,
+          "Portmere": 84000
+        },
+        "spend": {
+          "Linden Falls": 61600,
+          "Northgate": 43400,
+          "Portmere": 81300
+        },
+        "quarter": "Q4"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 1,433 pallets in Q4, with a combined headcount of 43 and 6 recorded incidents. Total operating spend was $184,300 against a budget of $240,000.\n\nSection 2 — Site throughput\nPallets handled by site: Linden Falls 497; Northgate 368; Portmere 568.\n\nSection 3 — Staffing\nHeadcount at quarter end: Linden Falls 17, Northgate 15, Portmere 11. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Linden Falls 1, Northgate 5, Portmere 0. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $102,000 for Linden Falls, $54,000 for Northgate and $84,000 for Portmere.\n\nSection 6 — Spend\nActual spend was $61,600 at Linden Falls, $43,400 at Northgate and $81,300 at Portmere.\n\nSection 7 — Variance\nThe network finished the quarter $53,700 under budget. The largest single underspend was at Linden Falls.\n\nSection 8 — Outlook\nThroughput of 1,433 pallets is expected to be maintained next quarter, with headcount held at 43. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    },
+    {
+      "family": 11,
+      "name": "planted_inconsistency",
+      "item_id": "f11_s6_09",
+      "separation": 6,
+      "planted": true,
+      "fault_kind": "pallets_outlook",
+      "fault_section": 8,
+      "partner_sections": [
+        1,
+        2
+      ],
+      "accepted_pairs": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "ledger": {
+        "sites": [
+          "Portmere",
+          "Northgate",
+          "Ashcroft"
+        ],
+        "pallets": {
+          "Portmere": 881,
+          "Northgate": 897,
+          "Ashcroft": 875
+        },
+        "staff": {
+          "Portmere": 29,
+          "Northgate": 20,
+          "Ashcroft": 25
+        },
+        "incidents": {
+          "Portmere": 5,
+          "Northgate": 6,
+          "Ashcroft": 2
+        },
+        "budget": {
+          "Portmere": 98000,
+          "Northgate": 72000,
+          "Ashcroft": 62000
+        },
+        "spend": {
+          "Portmere": 71400,
+          "Northgate": 53200,
+          "Ashcroft": 48900
+        },
+        "quarter": "Q1"
+      },
+      "prompt": "Read the report below and check whether its figures are internally consistent.\n\nSection 1 — Summary\nAcross the three sites the network handled 2,653 pallets in Q1, with a combined headcount of 74 and 13 recorded incidents. Total operating spend was $173,500 against a budget of $232,000.\n\nSection 2 — Site throughput\nPallets handled by site: Portmere 881; Northgate 897; Ashcroft 875.\n\nSection 3 — Staffing\nHeadcount at quarter end: Portmere 29, Northgate 20, Ashcroft 25. No agency staff were used.\n\nSection 4 — Safety\nRecorded incidents: Portmere 5, Northgate 6, Ashcroft 2. All were reviewed by the site lead within five working days.\n\nSection 5 — Budget\nApproved budgets for the quarter were $98,000 for Portmere, $72,000 for Northgate and $62,000 for Ashcroft.\n\nSection 6 — Spend\nActual spend was $71,400 at Portmere, $53,200 at Northgate and $48,900 at Ashcroft.\n\nSection 7 — Variance\nThe network finished the quarter $58,500 under budget. The largest single underspend was at Portmere.\n\nSection 8 — Outlook\nThroughput of 2,643 pallets is expected to be maintained next quarter, with headcount held at 74. No changes to site budgets are proposed.\n\nReply with exactly these lines and nothing else:\nFOUND: YES or NO\nSECTIONS: a, b        (only if FOUND is YES: the two section numbers whose figures disagree)",
+      "equivalence_note": "Section references accept 'section 3', '§3', 's3', '3'; order of the two numbers is irrelevant; FOUND is case-insensitive."
+    }
+  ]
+}

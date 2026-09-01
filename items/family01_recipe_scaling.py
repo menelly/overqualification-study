@@ -45,6 +45,7 @@ except Exception:
     pass
 
 import json
+import re
 import os
 import random
 import sys
@@ -231,8 +232,16 @@ def score(response, item):
     lines = parse_response_lines(response)
 
     if not lines:
-        return ("META" if (response or "").strip() else "MALFORMED",
-                "no parseable ingredient lines")
+        txt = (response or "").strip()
+        if not txt or not re.search(r"[A-Za-z0-9]", txt):
+            return ("MALFORMED", "empty or no readable characters")
+        # ⚠️ 2026-09-01 (control `format_prose`): every ingredient named, but no parseable
+        #    "amount unit ingredient" line -- the values are in prose. Right content, wrong
+        #    container: FORMAT, not META. META is a question or commentary INSTEAD of the answer.
+        low = canon_text(txt).lower()
+        if all(canon_text(t["ingredient"]).lower() in low for t in truth):
+            return ("FORMAT", "all ingredients present in prose; no parseable lines")
+        return ("META", "no parseable ingredient lines")
     if len(lines) < len(truth):
         return ("UNDER", "%d of %d ingredients" % (len(lines), len(truth)))
 
@@ -253,6 +262,23 @@ def score(response, item):
 
     extra = len(lines) - len(truth)
     if extra > 0:
+        # ⚠️ 2026-09-01 (control `over_harmful_buried`): extra parseable lines that RESTATE a
+        #    required ingredient with a DIFFERENT quantity are a second, conflicting answer. The
+        #    reader cannot tell which list is the deliverable, so it is unusable: OVER_HARMFUL.
+        #    Extra lines for NEW ingredients (a garnish, a note with a quantity) are OVER_BENIGN.
+        names = {canon_text(t["ingredient"]).lower(): t for t in truth}
+        conflicting = []
+        for l in lines[len(truth):]:
+            n, u, ing = parse_ingredient_line(l)
+            key = canon_text(ing or "").lower()
+            if key in names:
+                want = "%s %s %s" % (names[key]["amount"], names[key]["unit"], names[key]["ingredient"])
+                if not ingredient_lines_equal(l, want):
+                    conflicting.append({"line": l, "conflicts_with": want})
+        if conflicting:
+            return ("OVER_HARMFUL", {"second_conflicting_list": conflicting[:3],
+                                     "why": "a required ingredient restated with a different "
+                                            "quantity; the deliverable is ambiguous"})
         return ("OVER_BENIGN", "%d extra parseable line(s); all required values correct" % extra)
 
     prose = [l for l in (response or "").splitlines()

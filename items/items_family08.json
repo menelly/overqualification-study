@@ -1,0 +1,3166 @@
+{
+  "family": 8,
+  "name": "constraint_satisfaction",
+  "seed": 20260901,
+  "synthetic_only": true,
+  "frontier_favouring": true,
+  "difficulty_dial": "k = number of simultaneous constraints (3/5/7/9)",
+  "items": [
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_02",
+      "k": 3,
+      "people": [
+        "Dilnoza",
+        "Greta",
+        "Hamza",
+        "Mateus",
+        "Bao"
+      ],
+      "constraints": [
+        {
+          "type": "cannot",
+          "who": "Greta",
+          "shift": "MORNING"
+        },
+        {
+          "type": "must",
+          "who": "Bao",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Hamza"
+        }
+      ],
+      "constraints_text": [
+        "Greta cannot be on MORNING.",
+        "Bao must be on AFTERNOON.",
+        "Mateus and Hamza must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Dilnoza, Greta, Hamza, Mateus, Bao\n\nAll of the following must hold at the same time:\n- Greta cannot be on MORNING.\n- Bao must be on AFTERNOON.\n- Mateus and Hamza must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Dilnoza": "MORNING",
+        "Greta": "NIGHT",
+        "Hamza": "AFTERNOON",
+        "Mateus": "NIGHT",
+        "Bao": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_10",
+      "k": 7,
+      "people": [
+        "Esther",
+        "Dilnoza",
+        "Leona",
+        "Kaede",
+        "Greta",
+        "Oskar",
+        "Farid",
+        "Hamza"
+      ],
+      "constraints": [
+        {
+          "type": "cannot",
+          "who": "Hamza",
+          "shift": "MORNING"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "together",
+          "a": "Farid",
+          "b": "Hamza"
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Kaede"
+        },
+        {
+          "type": "must",
+          "who": "Leona",
+          "shift": "MORNING"
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 2
+        }
+      ],
+      "constraints_text": [
+        "Hamza cannot be on MORNING.",
+        "At least 1 person on AFTERNOON.",
+        "Exactly 3 people on MORNING.",
+        "Farid and Hamza must be on the same shift.",
+        "Esther and Kaede must not be on the same shift.",
+        "Leona must be on MORNING.",
+        "At least 2 people on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Esther, Dilnoza, Leona, Kaede, Greta, Oskar, Farid, Hamza\n\nAll of the following must hold at the same time:\n- Hamza cannot be on MORNING.\n- At least 1 person on AFTERNOON.\n- Exactly 3 people on MORNING.\n- Farid and Hamza must be on the same shift.\n- Esther and Kaede must not be on the same shift.\n- Leona must be on MORNING.\n- At least 2 people on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Esther": "NIGHT",
+        "Dilnoza": "AFTERNOON",
+        "Leona": "MORNING",
+        "Kaede": "MORNING",
+        "Greta": "MORNING",
+        "Oskar": "AFTERNOON",
+        "Farid": "NIGHT",
+        "Hamza": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_04",
+      "k": 5,
+      "people": [
+        "Leona",
+        "Farid",
+        "Oskar",
+        "Petra",
+        "Callum",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Leona",
+          "b": "Callum"
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Amara"
+        },
+        {
+          "type": "cannot",
+          "who": "Callum",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Leona",
+          "b": "Oskar"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 1 person on AFTERNOON.",
+        "Leona and Callum must not be on the same shift.",
+        "Farid and Amara must not be on the same shift.",
+        "Callum cannot be on AFTERNOON.",
+        "Leona and Oskar must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Leona, Farid, Oskar, Petra, Callum, Amara\n\nAll of the following must hold at the same time:\n- Exactly 1 person on AFTERNOON.\n- Leona and Callum must not be on the same shift.\n- Farid and Amara must not be on the same shift.\n- Callum cannot be on AFTERNOON.\n- Leona and Oskar must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Leona": "AFTERNOON",
+        "Farid": "NIGHT",
+        "Oskar": "MORNING",
+        "Petra": "MORNING",
+        "Callum": "NIGHT",
+        "Amara": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_10",
+      "k": 5,
+      "people": [
+        "Kaede",
+        "Esther",
+        "Leona",
+        "Amara",
+        "Dilnoza",
+        "Mateus"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Esther"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Esther"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "must",
+          "who": "Mateus",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        }
+      ],
+      "constraints_text": [
+        "Mateus and Esther must not be on the same shift.",
+        "Dilnoza and Esther must not be on the same shift.",
+        "At least 1 person on AFTERNOON.",
+        "Mateus must be on NIGHT.",
+        "Exactly 2 people on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Kaede, Esther, Leona, Amara, Dilnoza, Mateus\n\nAll of the following must hold at the same time:\n- Mateus and Esther must not be on the same shift.\n- Dilnoza and Esther must not be on the same shift.\n- At least 1 person on AFTERNOON.\n- Mateus must be on NIGHT.\n- Exactly 2 people on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Kaede": "AFTERNOON",
+        "Esther": "MORNING",
+        "Leona": "MORNING",
+        "Amara": "AFTERNOON",
+        "Dilnoza": "NIGHT",
+        "Mateus": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_11",
+      "k": 9,
+      "people": [
+        "Jonah",
+        "Nadia",
+        "Dilnoza",
+        "Bao",
+        "Petra",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Jonah",
+          "b": "Bao"
+        },
+        {
+          "type": "must",
+          "who": "Petra",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "cannot",
+          "who": "Bao",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Nadia",
+          "b": "Dilnoza"
+        },
+        {
+          "type": "apart",
+          "a": "Petra",
+          "b": "Bao"
+        },
+        {
+          "type": "cannot",
+          "who": "Amara",
+          "shift": "MORNING"
+        }
+      ],
+      "constraints_text": [
+        "Jonah and Bao must not be on the same shift.",
+        "Petra must be on AFTERNOON.",
+        "Exactly 2 people on MORNING.",
+        "At least 2 people on AFTERNOON.",
+        "Exactly 2 people on NIGHT.",
+        "Bao cannot be on AFTERNOON.",
+        "Nadia and Dilnoza must not be on the same shift.",
+        "Petra and Bao must not be on the same shift.",
+        "Amara cannot be on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Jonah, Nadia, Dilnoza, Bao, Petra, Amara\n\nAll of the following must hold at the same time:\n- Jonah and Bao must not be on the same shift.\n- Petra must be on AFTERNOON.\n- Exactly 2 people on MORNING.\n- At least 2 people on AFTERNOON.\n- Exactly 2 people on NIGHT.\n- Bao cannot be on AFTERNOON.\n- Nadia and Dilnoza must not be on the same shift.\n- Petra and Bao must not be on the same shift.\n- Amara cannot be on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Jonah": "MORNING",
+        "Nadia": "AFTERNOON",
+        "Dilnoza": "MORNING",
+        "Bao": "NIGHT",
+        "Petra": "AFTERNOON",
+        "Amara": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_07",
+      "k": 3,
+      "people": [
+        "Leona",
+        "Oskar",
+        "Hamza",
+        "Mateus",
+        "Farid",
+        "Jonah",
+        "Esther"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "together",
+          "a": "Leona",
+          "b": "Jonah"
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Hamza"
+        }
+      ],
+      "constraints_text": [
+        "At least 3 people on MORNING.",
+        "Leona and Jonah must be on the same shift.",
+        "Farid and Hamza must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Leona, Oskar, Hamza, Mateus, Farid, Jonah, Esther\n\nAll of the following must hold at the same time:\n- At least 3 people on MORNING.\n- Leona and Jonah must be on the same shift.\n- Farid and Hamza must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Leona": "MORNING",
+        "Oskar": "AFTERNOON",
+        "Hamza": "NIGHT",
+        "Mateus": "MORNING",
+        "Farid": "MORNING",
+        "Jonah": "MORNING",
+        "Esther": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_05",
+      "k": 5,
+      "people": [
+        "Esther",
+        "Kaede",
+        "Nadia",
+        "Leona",
+        "Dilnoza"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "apart",
+          "a": "Leona",
+          "b": "Dilnoza"
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Nadia"
+        },
+        {
+          "type": "together",
+          "a": "Kaede",
+          "b": "Esther"
+        },
+        {
+          "type": "together",
+          "a": "Nadia",
+          "b": "Dilnoza"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 2 people on AFTERNOON.",
+        "Leona and Dilnoza must not be on the same shift.",
+        "Kaede and Nadia must not be on the same shift.",
+        "Kaede and Esther must be on the same shift.",
+        "Nadia and Dilnoza must be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Esther, Kaede, Nadia, Leona, Dilnoza\n\nAll of the following must hold at the same time:\n- Exactly 2 people on AFTERNOON.\n- Leona and Dilnoza must not be on the same shift.\n- Kaede and Nadia must not be on the same shift.\n- Kaede and Esther must be on the same shift.\n- Nadia and Dilnoza must be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Esther": "AFTERNOON",
+        "Kaede": "AFTERNOON",
+        "Nadia": "NIGHT",
+        "Leona": "MORNING",
+        "Dilnoza": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_01",
+      "k": 5,
+      "people": [
+        "Oskar",
+        "Kaede",
+        "Hamza",
+        "Dilnoza",
+        "Mateus"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Dilnoza",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "cannot",
+          "who": "Oskar",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Hamza"
+        },
+        {
+          "type": "cannot",
+          "who": "Kaede",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Mateus"
+        }
+      ],
+      "constraints_text": [
+        "Dilnoza must be on NIGHT.",
+        "Oskar cannot be on AFTERNOON.",
+        "Dilnoza and Hamza must not be on the same shift.",
+        "Kaede cannot be on AFTERNOON.",
+        "Dilnoza and Mateus must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Oskar, Kaede, Hamza, Dilnoza, Mateus\n\nAll of the following must hold at the same time:\n- Dilnoza must be on NIGHT.\n- Oskar cannot be on AFTERNOON.\n- Dilnoza and Hamza must not be on the same shift.\n- Kaede cannot be on AFTERNOON.\n- Dilnoza and Mateus must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Oskar": "NIGHT",
+        "Kaede": "MORNING",
+        "Hamza": "MORNING",
+        "Dilnoza": "NIGHT",
+        "Mateus": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_08",
+      "k": 9,
+      "people": [
+        "Jonah",
+        "Farid",
+        "Dilnoza",
+        "Kaede",
+        "Greta",
+        "Nadia",
+        "Petra",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "cannot",
+          "who": "Amara",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "cannot",
+          "who": "Farid",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Kaede"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 4
+        },
+        {
+          "type": "must",
+          "who": "Petra",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "together",
+          "a": "Jonah",
+          "b": "Amara"
+        },
+        {
+          "type": "must",
+          "who": "Kaede",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Jonah"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 2 people on AFTERNOON.",
+        "Amara cannot be on AFTERNOON.",
+        "Farid cannot be on MORNING.",
+        "Dilnoza and Kaede must not be on the same shift.",
+        "Exactly 4 people on MORNING.",
+        "Petra must be on NIGHT.",
+        "Jonah and Amara must be on the same shift.",
+        "Kaede must be on AFTERNOON.",
+        "Kaede and Jonah must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Jonah, Farid, Dilnoza, Kaede, Greta, Nadia, Petra, Amara\n\nAll of the following must hold at the same time:\n- Exactly 2 people on AFTERNOON.\n- Amara cannot be on AFTERNOON.\n- Farid cannot be on MORNING.\n- Dilnoza and Kaede must not be on the same shift.\n- Exactly 4 people on MORNING.\n- Petra must be on NIGHT.\n- Jonah and Amara must be on the same shift.\n- Kaede must be on AFTERNOON.\n- Kaede and Jonah must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Jonah": "MORNING",
+        "Farid": "NIGHT",
+        "Dilnoza": "MORNING",
+        "Kaede": "AFTERNOON",
+        "Greta": "AFTERNOON",
+        "Nadia": "MORNING",
+        "Petra": "NIGHT",
+        "Amara": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_01",
+      "k": 7,
+      "people": [
+        "Callum",
+        "Petra",
+        "Farid",
+        "Amara",
+        "Ingrid",
+        "Esther"
+      ],
+      "constraints": [
+        {
+          "type": "cannot",
+          "who": "Farid",
+          "shift": "MORNING"
+        },
+        {
+          "type": "must",
+          "who": "Amara",
+          "shift": "MORNING"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 4
+        },
+        {
+          "type": "apart",
+          "a": "Petra",
+          "b": "Farid"
+        },
+        {
+          "type": "apart",
+          "a": "Amara",
+          "b": "Petra"
+        },
+        {
+          "type": "cannot",
+          "who": "Ingrid",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "MORNING"
+        }
+      ],
+      "constraints_text": [
+        "Farid cannot be on MORNING.",
+        "Amara must be on MORNING.",
+        "At least 4 people on MORNING.",
+        "Petra and Farid must not be on the same shift.",
+        "Amara and Petra must not be on the same shift.",
+        "Ingrid cannot be on NIGHT.",
+        "Callum must be on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Callum, Petra, Farid, Amara, Ingrid, Esther\n\nAll of the following must hold at the same time:\n- Farid cannot be on MORNING.\n- Amara must be on MORNING.\n- At least 4 people on MORNING.\n- Petra and Farid must not be on the same shift.\n- Amara and Petra must not be on the same shift.\n- Ingrid cannot be on NIGHT.\n- Callum must be on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Callum": "MORNING",
+        "Petra": "AFTERNOON",
+        "Farid": "NIGHT",
+        "Amara": "MORNING",
+        "Ingrid": "MORNING",
+        "Esther": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_11",
+      "k": 5,
+      "people": [
+        "Kaede",
+        "Farid",
+        "Leona",
+        "Esther",
+        "Bao"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Bao",
+          "b": "Esther"
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Farid"
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Kaede"
+        }
+      ],
+      "constraints_text": [
+        "Bao and Esther must not be on the same shift.",
+        "Esther and Farid must not be on the same shift.",
+        "At least 2 people on NIGHT.",
+        "At least 1 person on MORNING.",
+        "Farid and Kaede must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Kaede, Farid, Leona, Esther, Bao\n\nAll of the following must hold at the same time:\n- Bao and Esther must not be on the same shift.\n- Esther and Farid must not be on the same shift.\n- At least 2 people on NIGHT.\n- At least 1 person on MORNING.\n- Farid and Kaede must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Kaede": "NIGHT",
+        "Farid": "AFTERNOON",
+        "Leona": "NIGHT",
+        "Esther": "MORNING",
+        "Bao": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_09",
+      "k": 3,
+      "people": [
+        "Callum",
+        "Leona",
+        "Mateus",
+        "Nadia",
+        "Kaede",
+        "Dilnoza",
+        "Hamza"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "apart",
+          "a": "Nadia",
+          "b": "Mateus"
+        },
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Kaede"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 2 people on NIGHT.",
+        "Nadia and Mateus must not be on the same shift.",
+        "Callum and Kaede must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Callum, Leona, Mateus, Nadia, Kaede, Dilnoza, Hamza\n\nAll of the following must hold at the same time:\n- Exactly 2 people on NIGHT.\n- Nadia and Mateus must not be on the same shift.\n- Callum and Kaede must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Callum": "MORNING",
+        "Leona": "MORNING",
+        "Mateus": "AFTERNOON",
+        "Nadia": "NIGHT",
+        "Kaede": "NIGHT",
+        "Dilnoza": "AFTERNOON",
+        "Hamza": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_08",
+      "k": 7,
+      "people": [
+        "Callum",
+        "Oskar",
+        "Esther",
+        "Bao",
+        "Greta",
+        "Farid",
+        "Dilnoza",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "apart",
+          "a": "Bao",
+          "b": "Amara"
+        },
+        {
+          "type": "must",
+          "who": "Bao",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 3
+        },
+        {
+          "type": "must",
+          "who": "Oskar",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 3
+        },
+        {
+          "type": "must",
+          "who": "Farid",
+          "shift": "AFTERNOON"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 2 people on MORNING.",
+        "Bao and Amara must not be on the same shift.",
+        "Bao must be on NIGHT.",
+        "Exactly 3 people on AFTERNOON.",
+        "Oskar must be on NIGHT.",
+        "Exactly 3 people on NIGHT.",
+        "Farid must be on AFTERNOON."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Callum, Oskar, Esther, Bao, Greta, Farid, Dilnoza, Amara\n\nAll of the following must hold at the same time:\n- Exactly 2 people on MORNING.\n- Bao and Amara must not be on the same shift.\n- Bao must be on NIGHT.\n- Exactly 3 people on AFTERNOON.\n- Oskar must be on NIGHT.\n- Exactly 3 people on NIGHT.\n- Farid must be on AFTERNOON.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Callum": "MORNING",
+        "Oskar": "NIGHT",
+        "Esther": "AFTERNOON",
+        "Bao": "NIGHT",
+        "Greta": "NIGHT",
+        "Farid": "AFTERNOON",
+        "Dilnoza": "MORNING",
+        "Amara": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_11",
+      "k": 7,
+      "people": [
+        "Ingrid",
+        "Mateus",
+        "Dilnoza",
+        "Hamza",
+        "Jonah",
+        "Kaede",
+        "Bao"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Jonah",
+          "b": "Dilnoza"
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Ingrid"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Jonah",
+          "b": "Bao"
+        },
+        {
+          "type": "must",
+          "who": "Jonah",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "together",
+          "a": "Kaede",
+          "b": "Mateus"
+        },
+        {
+          "type": "cannot",
+          "who": "Ingrid",
+          "shift": "NIGHT"
+        }
+      ],
+      "constraints_text": [
+        "Jonah and Dilnoza must not be on the same shift.",
+        "Kaede and Ingrid must not be on the same shift.",
+        "At least 1 person on AFTERNOON.",
+        "Jonah and Bao must not be on the same shift.",
+        "Jonah must be on AFTERNOON.",
+        "Kaede and Mateus must be on the same shift.",
+        "Ingrid cannot be on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Ingrid, Mateus, Dilnoza, Hamza, Jonah, Kaede, Bao\n\nAll of the following must hold at the same time:\n- Jonah and Dilnoza must not be on the same shift.\n- Kaede and Ingrid must not be on the same shift.\n- At least 1 person on AFTERNOON.\n- Jonah and Bao must not be on the same shift.\n- Jonah must be on AFTERNOON.\n- Kaede and Mateus must be on the same shift.\n- Ingrid cannot be on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Ingrid": "MORNING",
+        "Mateus": "NIGHT",
+        "Dilnoza": "MORNING",
+        "Hamza": "AFTERNOON",
+        "Jonah": "AFTERNOON",
+        "Kaede": "NIGHT",
+        "Bao": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_10",
+      "k": 9,
+      "people": [
+        "Jonah",
+        "Nadia",
+        "Dilnoza",
+        "Esther",
+        "Hamza",
+        "Callum",
+        "Bao",
+        "Mateus",
+        "Ingrid"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 4
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Esther"
+        },
+        {
+          "type": "cannot",
+          "who": "Nadia",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "must",
+          "who": "Mateus",
+          "shift": "MORNING"
+        },
+        {
+          "type": "cannot",
+          "who": "Ingrid",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "together",
+          "a": "Hamza",
+          "b": "Nadia"
+        },
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Callum"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 4 people on NIGHT.",
+        "Exactly 3 people on MORNING.",
+        "At least 1 person on AFTERNOON.",
+        "Callum and Esther must not be on the same shift.",
+        "Nadia cannot be on AFTERNOON.",
+        "Mateus must be on MORNING.",
+        "Ingrid cannot be on NIGHT.",
+        "Hamza and Nadia must be on the same shift.",
+        "Ingrid and Callum must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Jonah, Nadia, Dilnoza, Esther, Hamza, Callum, Bao, Mateus, Ingrid\n\nAll of the following must hold at the same time:\n- Exactly 4 people on NIGHT.\n- Exactly 3 people on MORNING.\n- At least 1 person on AFTERNOON.\n- Callum and Esther must not be on the same shift.\n- Nadia cannot be on AFTERNOON.\n- Mateus must be on MORNING.\n- Ingrid cannot be on NIGHT.\n- Hamza and Nadia must be on the same shift.\n- Ingrid and Callum must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Jonah": "AFTERNOON",
+        "Nadia": "NIGHT",
+        "Dilnoza": "NIGHT",
+        "Esther": "AFTERNOON",
+        "Hamza": "NIGHT",
+        "Callum": "NIGHT",
+        "Bao": "MORNING",
+        "Mateus": "MORNING",
+        "Ingrid": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_03",
+      "k": 5,
+      "people": [
+        "Jonah",
+        "Nadia",
+        "Mateus",
+        "Farid",
+        "Callum",
+        "Petra",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Nadia",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 3
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 3
+        },
+        {
+          "type": "cannot",
+          "who": "Petra",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "must",
+          "who": "Farid",
+          "shift": "NIGHT"
+        }
+      ],
+      "constraints_text": [
+        "Nadia must be on AFTERNOON.",
+        "Exactly 3 people on NIGHT.",
+        "Exactly 3 people on AFTERNOON.",
+        "Petra cannot be on NIGHT.",
+        "Farid must be on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Jonah, Nadia, Mateus, Farid, Callum, Petra, Amara\n\nAll of the following must hold at the same time:\n- Nadia must be on AFTERNOON.\n- Exactly 3 people on NIGHT.\n- Exactly 3 people on AFTERNOON.\n- Petra cannot be on NIGHT.\n- Farid must be on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Jonah": "NIGHT",
+        "Nadia": "AFTERNOON",
+        "Mateus": "NIGHT",
+        "Farid": "NIGHT",
+        "Callum": "AFTERNOON",
+        "Petra": "MORNING",
+        "Amara": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_11",
+      "k": 3,
+      "people": [
+        "Dilnoza",
+        "Callum",
+        "Leona",
+        "Bao",
+        "Hamza"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "cannot",
+          "who": "Hamza",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 1
+        }
+      ],
+      "constraints_text": [
+        "At least 2 people on NIGHT.",
+        "Hamza cannot be on AFTERNOON.",
+        "Exactly 1 person on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Dilnoza, Callum, Leona, Bao, Hamza\n\nAll of the following must hold at the same time:\n- At least 2 people on NIGHT.\n- Hamza cannot be on AFTERNOON.\n- Exactly 1 person on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Dilnoza": "NIGHT",
+        "Callum": "AFTERNOON",
+        "Leona": "NIGHT",
+        "Bao": "MORNING",
+        "Hamza": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_03",
+      "k": 7,
+      "people": [
+        "Leona",
+        "Dilnoza",
+        "Esther",
+        "Callum",
+        "Bao",
+        "Hamza",
+        "Mateus",
+        "Petra",
+        "Oskar"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 5
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 1
+        },
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Hamza"
+        },
+        {
+          "type": "cannot",
+          "who": "Hamza",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Petra",
+          "b": "Hamza"
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 3
+        }
+      ],
+      "constraints_text": [
+        "Exactly 5 people on AFTERNOON.",
+        "At least 1 person on MORNING.",
+        "Callum must be on AFTERNOON.",
+        "Dilnoza and Hamza must not be on the same shift.",
+        "Hamza cannot be on AFTERNOON.",
+        "Petra and Hamza must not be on the same shift.",
+        "At least 3 people on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Leona, Dilnoza, Esther, Callum, Bao, Hamza, Mateus, Petra, Oskar\n\nAll of the following must hold at the same time:\n- Exactly 5 people on AFTERNOON.\n- At least 1 person on MORNING.\n- Callum must be on AFTERNOON.\n- Dilnoza and Hamza must not be on the same shift.\n- Hamza cannot be on AFTERNOON.\n- Petra and Hamza must not be on the same shift.\n- At least 3 people on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Leona": "AFTERNOON",
+        "Dilnoza": "AFTERNOON",
+        "Esther": "NIGHT",
+        "Callum": "AFTERNOON",
+        "Bao": "MORNING",
+        "Hamza": "NIGHT",
+        "Mateus": "NIGHT",
+        "Petra": "AFTERNOON",
+        "Oskar": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_07",
+      "k": 7,
+      "people": [
+        "Dilnoza",
+        "Mateus",
+        "Bao",
+        "Oskar",
+        "Hamza",
+        "Ingrid",
+        "Farid",
+        "Leona"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Ingrid",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "together",
+          "a": "Farid",
+          "b": "Oskar"
+        },
+        {
+          "type": "must",
+          "who": "Oskar",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 4
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "cannot",
+          "who": "Mateus",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Hamza",
+          "b": "Mateus"
+        }
+      ],
+      "constraints_text": [
+        "Ingrid must be on AFTERNOON.",
+        "Farid and Oskar must be on the same shift.",
+        "Oskar must be on NIGHT.",
+        "At least 4 people on NIGHT.",
+        "Exactly 1 person on AFTERNOON.",
+        "Mateus cannot be on MORNING.",
+        "Hamza and Mateus must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Dilnoza, Mateus, Bao, Oskar, Hamza, Ingrid, Farid, Leona\n\nAll of the following must hold at the same time:\n- Ingrid must be on AFTERNOON.\n- Farid and Oskar must be on the same shift.\n- Oskar must be on NIGHT.\n- At least 4 people on NIGHT.\n- Exactly 1 person on AFTERNOON.\n- Mateus cannot be on MORNING.\n- Hamza and Mateus must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Dilnoza": "NIGHT",
+        "Mateus": "NIGHT",
+        "Bao": "NIGHT",
+        "Oskar": "NIGHT",
+        "Hamza": "MORNING",
+        "Ingrid": "AFTERNOON",
+        "Farid": "NIGHT",
+        "Leona": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_00",
+      "k": 9,
+      "people": [
+        "Farid",
+        "Petra",
+        "Hamza",
+        "Callum",
+        "Mateus",
+        "Ingrid",
+        "Bao",
+        "Jonah",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Bao",
+          "b": "Farid"
+        },
+        {
+          "type": "cannot",
+          "who": "Bao",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "must",
+          "who": "Hamza",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "must",
+          "who": "Jonah",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "cannot",
+          "who": "Petra",
+          "shift": "MORNING"
+        },
+        {
+          "type": "cannot",
+          "who": "Amara",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 4
+        }
+      ],
+      "constraints_text": [
+        "Bao and Farid must not be on the same shift.",
+        "Bao cannot be on AFTERNOON.",
+        "Hamza must be on NIGHT.",
+        "Exactly 2 people on AFTERNOON.",
+        "Exactly 3 people on MORNING.",
+        "Jonah must be on NIGHT.",
+        "Petra cannot be on MORNING.",
+        "Amara cannot be on AFTERNOON.",
+        "Exactly 4 people on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Farid, Petra, Hamza, Callum, Mateus, Ingrid, Bao, Jonah, Amara\n\nAll of the following must hold at the same time:\n- Bao and Farid must not be on the same shift.\n- Bao cannot be on AFTERNOON.\n- Hamza must be on NIGHT.\n- Exactly 2 people on AFTERNOON.\n- Exactly 3 people on MORNING.\n- Jonah must be on NIGHT.\n- Petra cannot be on MORNING.\n- Amara cannot be on AFTERNOON.\n- Exactly 4 people on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Farid": "MORNING",
+        "Petra": "AFTERNOON",
+        "Hamza": "NIGHT",
+        "Callum": "MORNING",
+        "Mateus": "NIGHT",
+        "Ingrid": "AFTERNOON",
+        "Bao": "NIGHT",
+        "Jonah": "NIGHT",
+        "Amara": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_00",
+      "k": 5,
+      "people": [
+        "Leona",
+        "Nadia",
+        "Petra",
+        "Hamza",
+        "Bao",
+        "Dilnoza",
+        "Jonah"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Bao",
+          "b": "Hamza"
+        },
+        {
+          "type": "cannot",
+          "who": "Dilnoza",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "must",
+          "who": "Nadia",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "apart",
+          "a": "Jonah",
+          "b": "Bao"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Hamza"
+        }
+      ],
+      "constraints_text": [
+        "Bao and Hamza must not be on the same shift.",
+        "Dilnoza cannot be on NIGHT.",
+        "Nadia must be on NIGHT.",
+        "Jonah and Bao must not be on the same shift.",
+        "Dilnoza and Hamza must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Leona, Nadia, Petra, Hamza, Bao, Dilnoza, Jonah\n\nAll of the following must hold at the same time:\n- Bao and Hamza must not be on the same shift.\n- Dilnoza cannot be on NIGHT.\n- Nadia must be on NIGHT.\n- Jonah and Bao must not be on the same shift.\n- Dilnoza and Hamza must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Leona": "MORNING",
+        "Nadia": "NIGHT",
+        "Petra": "AFTERNOON",
+        "Hamza": "MORNING",
+        "Bao": "AFTERNOON",
+        "Dilnoza": "AFTERNOON",
+        "Jonah": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_10",
+      "k": 3,
+      "people": [
+        "Farid",
+        "Oskar",
+        "Callum",
+        "Dilnoza",
+        "Greta",
+        "Bao",
+        "Kaede"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 3
+        },
+        {
+          "type": "cannot",
+          "who": "Oskar",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Kaede"
+        }
+      ],
+      "constraints_text": [
+        "At least 3 people on NIGHT.",
+        "Oskar cannot be on MORNING.",
+        "Callum and Kaede must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Farid, Oskar, Callum, Dilnoza, Greta, Bao, Kaede\n\nAll of the following must hold at the same time:\n- At least 3 people on NIGHT.\n- Oskar cannot be on MORNING.\n- Callum and Kaede must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Farid": "AFTERNOON",
+        "Oskar": "NIGHT",
+        "Callum": "MORNING",
+        "Dilnoza": "NIGHT",
+        "Greta": "AFTERNOON",
+        "Bao": "AFTERNOON",
+        "Kaede": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_06",
+      "k": 9,
+      "people": [
+        "Esther",
+        "Dilnoza",
+        "Callum",
+        "Nadia",
+        "Mateus",
+        "Hamza",
+        "Ingrid",
+        "Greta",
+        "Oskar"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Nadia"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 5
+        },
+        {
+          "type": "must",
+          "who": "Esther",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "must",
+          "who": "Nadia",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Esther"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Nadia"
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Oskar"
+        }
+      ],
+      "constraints_text": [
+        "Mateus and Nadia must not be on the same shift.",
+        "At least 2 people on MORNING.",
+        "Exactly 5 people on NIGHT.",
+        "Esther must be on NIGHT.",
+        "Nadia must be on AFTERNOON.",
+        "Dilnoza and Esther must not be on the same shift.",
+        "Exactly 2 people on AFTERNOON.",
+        "Callum and Nadia must not be on the same shift.",
+        "Esther and Oskar must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Esther, Dilnoza, Callum, Nadia, Mateus, Hamza, Ingrid, Greta, Oskar\n\nAll of the following must hold at the same time:\n- Mateus and Nadia must not be on the same shift.\n- At least 2 people on MORNING.\n- Exactly 5 people on NIGHT.\n- Esther must be on NIGHT.\n- Nadia must be on AFTERNOON.\n- Dilnoza and Esther must not be on the same shift.\n- Exactly 2 people on AFTERNOON.\n- Callum and Nadia must not be on the same shift.\n- Esther and Oskar must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Esther": "NIGHT",
+        "Dilnoza": "MORNING",
+        "Callum": "NIGHT",
+        "Nadia": "AFTERNOON",
+        "Mateus": "NIGHT",
+        "Hamza": "NIGHT",
+        "Ingrid": "AFTERNOON",
+        "Greta": "NIGHT",
+        "Oskar": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_03",
+      "k": 3,
+      "people": [
+        "Kaede",
+        "Hamza",
+        "Esther",
+        "Jonah",
+        "Bao",
+        "Dilnoza"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Hamza",
+          "b": "Bao"
+        },
+        {
+          "type": "apart",
+          "a": "Hamza",
+          "b": "Esther"
+        },
+        {
+          "type": "cannot",
+          "who": "Esther",
+          "shift": "MORNING"
+        }
+      ],
+      "constraints_text": [
+        "Hamza and Bao must not be on the same shift.",
+        "Hamza and Esther must not be on the same shift.",
+        "Esther cannot be on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Kaede, Hamza, Esther, Jonah, Bao, Dilnoza\n\nAll of the following must hold at the same time:\n- Hamza and Bao must not be on the same shift.\n- Hamza and Esther must not be on the same shift.\n- Esther cannot be on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Kaede": "NIGHT",
+        "Hamza": "NIGHT",
+        "Esther": "AFTERNOON",
+        "Jonah": "NIGHT",
+        "Bao": "MORNING",
+        "Dilnoza": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_04",
+      "k": 9,
+      "people": [
+        "Jonah",
+        "Mateus",
+        "Hamza",
+        "Esther",
+        "Callum",
+        "Farid"
+      ],
+      "constraints": [
+        {
+          "type": "together",
+          "a": "Farid",
+          "b": "Mateus"
+        },
+        {
+          "type": "cannot",
+          "who": "Jonah",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 3
+        },
+        {
+          "type": "must",
+          "who": "Mateus",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 1
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "together",
+          "a": "Farid",
+          "b": "Hamza"
+        },
+        {
+          "type": "must",
+          "who": "Esther",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Callum"
+        }
+      ],
+      "constraints_text": [
+        "Farid and Mateus must be on the same shift.",
+        "Jonah cannot be on AFTERNOON.",
+        "Exactly 3 people on AFTERNOON.",
+        "Mateus must be on AFTERNOON.",
+        "Exactly 1 person on NIGHT.",
+        "Exactly 2 people on MORNING.",
+        "Farid and Hamza must be on the same shift.",
+        "Esther must be on NIGHT.",
+        "Mateus and Callum must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Jonah, Mateus, Hamza, Esther, Callum, Farid\n\nAll of the following must hold at the same time:\n- Farid and Mateus must be on the same shift.\n- Jonah cannot be on AFTERNOON.\n- Exactly 3 people on AFTERNOON.\n- Mateus must be on AFTERNOON.\n- Exactly 1 person on NIGHT.\n- Exactly 2 people on MORNING.\n- Farid and Hamza must be on the same shift.\n- Esther must be on NIGHT.\n- Mateus and Callum must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Jonah": "MORNING",
+        "Mateus": "AFTERNOON",
+        "Hamza": "AFTERNOON",
+        "Esther": "NIGHT",
+        "Callum": "MORNING",
+        "Farid": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_06",
+      "k": 3,
+      "people": [
+        "Ingrid",
+        "Greta",
+        "Callum",
+        "Farid",
+        "Leona"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        }
+      ],
+      "constraints_text": [
+        "At least 1 person on AFTERNOON.",
+        "Callum must be on NIGHT.",
+        "Exactly 3 people on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Ingrid, Greta, Callum, Farid, Leona\n\nAll of the following must hold at the same time:\n- At least 1 person on AFTERNOON.\n- Callum must be on NIGHT.\n- Exactly 3 people on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Ingrid": "MORNING",
+        "Greta": "MORNING",
+        "Callum": "NIGHT",
+        "Farid": "MORNING",
+        "Leona": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_00",
+      "k": 7,
+      "people": [
+        "Jonah",
+        "Kaede",
+        "Leona",
+        "Esther",
+        "Ingrid",
+        "Hamza",
+        "Farid"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Farid",
+          "shift": "MORNING"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 1
+        },
+        {
+          "type": "cannot",
+          "who": "Hamza",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 4
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "apart",
+          "a": "Hamza",
+          "b": "Leona"
+        },
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Leona"
+        }
+      ],
+      "constraints_text": [
+        "Farid must be on MORNING.",
+        "At least 1 person on MORNING.",
+        "Hamza cannot be on AFTERNOON.",
+        "At least 4 people on AFTERNOON.",
+        "Exactly 2 people on NIGHT.",
+        "Hamza and Leona must not be on the same shift.",
+        "Ingrid and Leona must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Jonah, Kaede, Leona, Esther, Ingrid, Hamza, Farid\n\nAll of the following must hold at the same time:\n- Farid must be on MORNING.\n- At least 1 person on MORNING.\n- Hamza cannot be on AFTERNOON.\n- At least 4 people on AFTERNOON.\n- Exactly 2 people on NIGHT.\n- Hamza and Leona must not be on the same shift.\n- Ingrid and Leona must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Jonah": "AFTERNOON",
+        "Kaede": "AFTERNOON",
+        "Leona": "AFTERNOON",
+        "Esther": "AFTERNOON",
+        "Ingrid": "NIGHT",
+        "Hamza": "NIGHT",
+        "Farid": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_08",
+      "k": 3,
+      "people": [
+        "Mateus",
+        "Dilnoza",
+        "Jonah",
+        "Kaede",
+        "Leona",
+        "Esther"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Leona",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "cannot",
+          "who": "Jonah",
+          "shift": "MORNING"
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 2
+        }
+      ],
+      "constraints_text": [
+        "Leona must be on NIGHT.",
+        "Jonah cannot be on MORNING.",
+        "Exactly 2 people on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Mateus, Dilnoza, Jonah, Kaede, Leona, Esther\n\nAll of the following must hold at the same time:\n- Leona must be on NIGHT.\n- Jonah cannot be on MORNING.\n- Exactly 2 people on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Mateus": "MORNING",
+        "Dilnoza": "MORNING",
+        "Jonah": "AFTERNOON",
+        "Kaede": "MORNING",
+        "Leona": "NIGHT",
+        "Esther": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_00",
+      "k": 3,
+      "people": [
+        "Amara",
+        "Nadia",
+        "Ingrid",
+        "Leona",
+        "Kaede",
+        "Oskar"
+      ],
+      "constraints": [
+        {
+          "type": "together",
+          "a": "Ingrid",
+          "b": "Kaede"
+        },
+        {
+          "type": "cannot",
+          "who": "Ingrid",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "apart",
+          "a": "Nadia",
+          "b": "Amara"
+        }
+      ],
+      "constraints_text": [
+        "Ingrid and Kaede must be on the same shift.",
+        "Ingrid cannot be on NIGHT.",
+        "Nadia and Amara must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Amara, Nadia, Ingrid, Leona, Kaede, Oskar\n\nAll of the following must hold at the same time:\n- Ingrid and Kaede must be on the same shift.\n- Ingrid cannot be on NIGHT.\n- Nadia and Amara must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Amara": "AFTERNOON",
+        "Nadia": "MORNING",
+        "Ingrid": "AFTERNOON",
+        "Leona": "MORNING",
+        "Kaede": "AFTERNOON",
+        "Oskar": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_07",
+      "k": 5,
+      "people": [
+        "Oskar",
+        "Bao",
+        "Petra",
+        "Nadia",
+        "Leona",
+        "Hamza",
+        "Kaede"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Nadia",
+          "b": "Oskar"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "apart",
+          "a": "Hamza",
+          "b": "Oskar"
+        },
+        {
+          "type": "together",
+          "a": "Hamza",
+          "b": "Petra"
+        },
+        {
+          "type": "cannot",
+          "who": "Kaede",
+          "shift": "MORNING"
+        }
+      ],
+      "constraints_text": [
+        "Nadia and Oskar must not be on the same shift.",
+        "At least 3 people on MORNING.",
+        "Hamza and Oskar must not be on the same shift.",
+        "Hamza and Petra must be on the same shift.",
+        "Kaede cannot be on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Oskar, Bao, Petra, Nadia, Leona, Hamza, Kaede\n\nAll of the following must hold at the same time:\n- Nadia and Oskar must not be on the same shift.\n- At least 3 people on MORNING.\n- Hamza and Oskar must not be on the same shift.\n- Hamza and Petra must be on the same shift.\n- Kaede cannot be on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Oskar": "AFTERNOON",
+        "Bao": "MORNING",
+        "Petra": "MORNING",
+        "Nadia": "NIGHT",
+        "Leona": "MORNING",
+        "Hamza": "MORNING",
+        "Kaede": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_05",
+      "k": 3,
+      "people": [
+        "Ingrid",
+        "Greta",
+        "Dilnoza",
+        "Callum",
+        "Hamza",
+        "Leona",
+        "Petra"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "MORNING"
+        },
+        {
+          "type": "cannot",
+          "who": "Dilnoza",
+          "shift": "AFTERNOON"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 2 people on MORNING.",
+        "Callum must be on MORNING.",
+        "Dilnoza cannot be on AFTERNOON."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Ingrid, Greta, Dilnoza, Callum, Hamza, Leona, Petra\n\nAll of the following must hold at the same time:\n- Exactly 2 people on MORNING.\n- Callum must be on MORNING.\n- Dilnoza cannot be on AFTERNOON.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Ingrid": "NIGHT",
+        "Greta": "NIGHT",
+        "Dilnoza": "NIGHT",
+        "Callum": "MORNING",
+        "Hamza": "MORNING",
+        "Leona": "AFTERNOON",
+        "Petra": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_05",
+      "k": 9,
+      "people": [
+        "Hamza",
+        "Esther",
+        "Farid",
+        "Kaede",
+        "Oskar",
+        "Dilnoza"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Hamza"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "together",
+          "a": "Kaede",
+          "b": "Hamza"
+        },
+        {
+          "type": "apart",
+          "a": "Oskar",
+          "b": "Kaede"
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Esther"
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Hamza",
+          "b": "Dilnoza"
+        },
+        {
+          "type": "must",
+          "who": "Dilnoza",
+          "shift": "NIGHT"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 3 people on MORNING.",
+        "Farid and Hamza must not be on the same shift.",
+        "Exactly 2 people on AFTERNOON.",
+        "Kaede and Hamza must be on the same shift.",
+        "Oskar and Kaede must not be on the same shift.",
+        "Farid and Esther must not be on the same shift.",
+        "At least 1 person on NIGHT.",
+        "Hamza and Dilnoza must not be on the same shift.",
+        "Dilnoza must be on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Hamza, Esther, Farid, Kaede, Oskar, Dilnoza\n\nAll of the following must hold at the same time:\n- Exactly 3 people on MORNING.\n- Farid and Hamza must not be on the same shift.\n- Exactly 2 people on AFTERNOON.\n- Kaede and Hamza must be on the same shift.\n- Oskar and Kaede must not be on the same shift.\n- Farid and Esther must not be on the same shift.\n- At least 1 person on NIGHT.\n- Hamza and Dilnoza must not be on the same shift.\n- Dilnoza must be on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Hamza": "MORNING",
+        "Esther": "MORNING",
+        "Farid": "AFTERNOON",
+        "Kaede": "MORNING",
+        "Oskar": "AFTERNOON",
+        "Dilnoza": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_01",
+      "k": 3,
+      "people": [
+        "Petra",
+        "Amara",
+        "Mateus",
+        "Leona",
+        "Bao",
+        "Ingrid",
+        "Greta"
+      ],
+      "constraints": [
+        {
+          "type": "cannot",
+          "who": "Mateus",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "cannot",
+          "who": "Amara",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        }
+      ],
+      "constraints_text": [
+        "Mateus cannot be on AFTERNOON.",
+        "Amara cannot be on NIGHT.",
+        "Exactly 2 people on AFTERNOON."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Petra, Amara, Mateus, Leona, Bao, Ingrid, Greta\n\nAll of the following must hold at the same time:\n- Mateus cannot be on AFTERNOON.\n- Amara cannot be on NIGHT.\n- Exactly 2 people on AFTERNOON.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Petra": "MORNING",
+        "Amara": "AFTERNOON",
+        "Mateus": "NIGHT",
+        "Leona": "MORNING",
+        "Bao": "NIGHT",
+        "Ingrid": "MORNING",
+        "Greta": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_07",
+      "k": 9,
+      "people": [
+        "Esther",
+        "Ingrid",
+        "Dilnoza",
+        "Petra",
+        "Greta",
+        "Kaede"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "must",
+          "who": "Dilnoza",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "apart",
+          "a": "Dilnoza",
+          "b": "Greta"
+        },
+        {
+          "type": "cannot",
+          "who": "Petra",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Petra"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 1
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 4
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Petra"
+        },
+        {
+          "type": "apart",
+          "a": "Greta",
+          "b": "Ingrid"
+        }
+      ],
+      "constraints_text": [
+        "At least 1 person on AFTERNOON.",
+        "Dilnoza must be on NIGHT.",
+        "Dilnoza and Greta must not be on the same shift.",
+        "Petra cannot be on MORNING.",
+        "Ingrid and Petra must not be on the same shift.",
+        "Exactly 1 person on MORNING.",
+        "At least 4 people on NIGHT.",
+        "Kaede and Petra must not be on the same shift.",
+        "Greta and Ingrid must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Esther, Ingrid, Dilnoza, Petra, Greta, Kaede\n\nAll of the following must hold at the same time:\n- At least 1 person on AFTERNOON.\n- Dilnoza must be on NIGHT.\n- Dilnoza and Greta must not be on the same shift.\n- Petra cannot be on MORNING.\n- Ingrid and Petra must not be on the same shift.\n- Exactly 1 person on MORNING.\n- At least 4 people on NIGHT.\n- Kaede and Petra must not be on the same shift.\n- Greta and Ingrid must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Esther": "NIGHT",
+        "Ingrid": "NIGHT",
+        "Dilnoza": "NIGHT",
+        "Petra": "AFTERNOON",
+        "Greta": "MORNING",
+        "Kaede": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_09",
+      "k": 9,
+      "people": [
+        "Petra",
+        "Oskar",
+        "Bao",
+        "Dilnoza",
+        "Mateus",
+        "Esther",
+        "Greta",
+        "Callum"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Petra"
+        },
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Bao"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Bao"
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "together",
+          "a": "Petra",
+          "b": "Bao"
+        },
+        {
+          "type": "cannot",
+          "who": "Esther",
+          "shift": "MORNING"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 3
+        },
+        {
+          "type": "cannot",
+          "who": "Callum",
+          "shift": "NIGHT"
+        }
+      ],
+      "constraints_text": [
+        "Callum and Petra must not be on the same shift.",
+        "Mateus and Bao must not be on the same shift.",
+        "At least 1 person on MORNING.",
+        "Esther and Bao must not be on the same shift.",
+        "At least 2 people on NIGHT.",
+        "Petra and Bao must be on the same shift.",
+        "Esther cannot be on MORNING.",
+        "Exactly 3 people on AFTERNOON.",
+        "Callum cannot be on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Petra, Oskar, Bao, Dilnoza, Mateus, Esther, Greta, Callum\n\nAll of the following must hold at the same time:\n- Callum and Petra must not be on the same shift.\n- Mateus and Bao must not be on the same shift.\n- At least 1 person on MORNING.\n- Esther and Bao must not be on the same shift.\n- At least 2 people on NIGHT.\n- Petra and Bao must be on the same shift.\n- Esther cannot be on MORNING.\n- Exactly 3 people on AFTERNOON.\n- Callum cannot be on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Petra": "NIGHT",
+        "Oskar": "MORNING",
+        "Bao": "NIGHT",
+        "Dilnoza": "NIGHT",
+        "Mateus": "AFTERNOON",
+        "Esther": "AFTERNOON",
+        "Greta": "AFTERNOON",
+        "Callum": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_05",
+      "k": 7,
+      "people": [
+        "Callum",
+        "Leona",
+        "Bao",
+        "Greta",
+        "Ingrid",
+        "Kaede",
+        "Dilnoza",
+        "Petra"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Dilnoza",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Greta",
+          "b": "Petra"
+        },
+        {
+          "type": "together",
+          "a": "Dilnoza",
+          "b": "Bao"
+        },
+        {
+          "type": "must",
+          "who": "Greta",
+          "shift": "MORNING"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Greta"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 3
+        }
+      ],
+      "constraints_text": [
+        "Dilnoza must be on AFTERNOON.",
+        "Greta and Petra must not be on the same shift.",
+        "Dilnoza and Bao must be on the same shift.",
+        "Greta must be on MORNING.",
+        "Exactly 3 people on MORNING.",
+        "Kaede and Greta must not be on the same shift.",
+        "Exactly 3 people on AFTERNOON."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Callum, Leona, Bao, Greta, Ingrid, Kaede, Dilnoza, Petra\n\nAll of the following must hold at the same time:\n- Dilnoza must be on AFTERNOON.\n- Greta and Petra must not be on the same shift.\n- Dilnoza and Bao must be on the same shift.\n- Greta must be on MORNING.\n- Exactly 3 people on MORNING.\n- Kaede and Greta must not be on the same shift.\n- Exactly 3 people on AFTERNOON.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Callum": "AFTERNOON",
+        "Leona": "MORNING",
+        "Bao": "AFTERNOON",
+        "Greta": "MORNING",
+        "Ingrid": "MORNING",
+        "Kaede": "NIGHT",
+        "Dilnoza": "AFTERNOON",
+        "Petra": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_06",
+      "k": 5,
+      "people": [
+        "Farid",
+        "Nadia",
+        "Petra",
+        "Kaede",
+        "Amara",
+        "Esther",
+        "Callum"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Kaede"
+        },
+        {
+          "type": "apart",
+          "a": "Amara",
+          "b": "Callum"
+        },
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Amara"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        }
+      ],
+      "constraints_text": [
+        "Callum must be on MORNING.",
+        "Farid and Kaede must not be on the same shift.",
+        "Amara and Callum must not be on the same shift.",
+        "Farid and Amara must not be on the same shift.",
+        "Exactly 2 people on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Farid, Nadia, Petra, Kaede, Amara, Esther, Callum\n\nAll of the following must hold at the same time:\n- Callum must be on MORNING.\n- Farid and Kaede must not be on the same shift.\n- Amara and Callum must not be on the same shift.\n- Farid and Amara must not be on the same shift.\n- Exactly 2 people on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Farid": "AFTERNOON",
+        "Nadia": "AFTERNOON",
+        "Petra": "NIGHT",
+        "Kaede": "NIGHT",
+        "Amara": "NIGHT",
+        "Esther": "MORNING",
+        "Callum": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_01",
+      "k": 9,
+      "people": [
+        "Kaede",
+        "Ingrid",
+        "Jonah",
+        "Petra",
+        "Dilnoza",
+        "Callum",
+        "Hamza",
+        "Amara"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "must",
+          "who": "Petra",
+          "shift": "MORNING"
+        },
+        {
+          "type": "cannot",
+          "who": "Dilnoza",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 3
+        },
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Callum"
+        },
+        {
+          "type": "cannot",
+          "who": "Ingrid",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Petra"
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Callum"
+        }
+      ],
+      "constraints_text": [
+        "At least 2 people on NIGHT.",
+        "Petra must be on MORNING.",
+        "Dilnoza cannot be on AFTERNOON.",
+        "At least 2 people on MORNING.",
+        "Exactly 3 people on AFTERNOON.",
+        "Ingrid and Callum must not be on the same shift.",
+        "Ingrid cannot be on AFTERNOON.",
+        "Ingrid and Petra must not be on the same shift.",
+        "Kaede and Callum must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Kaede, Ingrid, Jonah, Petra, Dilnoza, Callum, Hamza, Amara\n\nAll of the following must hold at the same time:\n- At least 2 people on NIGHT.\n- Petra must be on MORNING.\n- Dilnoza cannot be on AFTERNOON.\n- At least 2 people on MORNING.\n- Exactly 3 people on AFTERNOON.\n- Ingrid and Callum must not be on the same shift.\n- Ingrid cannot be on AFTERNOON.\n- Ingrid and Petra must not be on the same shift.\n- Kaede and Callum must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Kaede": "AFTERNOON",
+        "Ingrid": "NIGHT",
+        "Jonah": "AFTERNOON",
+        "Petra": "MORNING",
+        "Dilnoza": "MORNING",
+        "Callum": "MORNING",
+        "Hamza": "AFTERNOON",
+        "Amara": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_09",
+      "k": 5,
+      "people": [
+        "Mateus",
+        "Esther",
+        "Kaede",
+        "Bao",
+        "Jonah",
+        "Farid",
+        "Hamza"
+      ],
+      "constraints": [
+        {
+          "type": "cannot",
+          "who": "Esther",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "cannot",
+          "who": "Hamza",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "must",
+          "who": "Kaede",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "together",
+          "a": "Hamza",
+          "b": "Bao"
+        }
+      ],
+      "constraints_text": [
+        "Esther cannot be on NIGHT.",
+        "At least 2 people on AFTERNOON.",
+        "Hamza cannot be on AFTERNOON.",
+        "Kaede must be on AFTERNOON.",
+        "Hamza and Bao must be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Mateus, Esther, Kaede, Bao, Jonah, Farid, Hamza\n\nAll of the following must hold at the same time:\n- Esther cannot be on NIGHT.\n- At least 2 people on AFTERNOON.\n- Hamza cannot be on AFTERNOON.\n- Kaede must be on AFTERNOON.\n- Hamza and Bao must be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Mateus": "NIGHT",
+        "Esther": "AFTERNOON",
+        "Kaede": "AFTERNOON",
+        "Bao": "MORNING",
+        "Jonah": "MORNING",
+        "Farid": "NIGHT",
+        "Hamza": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_08",
+      "k": 5,
+      "people": [
+        "Esther",
+        "Nadia",
+        "Leona",
+        "Jonah",
+        "Farid"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Farid",
+          "shift": "MORNING"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Farid"
+        },
+        {
+          "type": "apart",
+          "a": "Leona",
+          "b": "Jonah"
+        }
+      ],
+      "constraints_text": [
+        "Farid must be on MORNING.",
+        "Exactly 2 people on AFTERNOON.",
+        "At least 1 person on MORNING.",
+        "Esther and Farid must not be on the same shift.",
+        "Leona and Jonah must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Esther, Nadia, Leona, Jonah, Farid\n\nAll of the following must hold at the same time:\n- Farid must be on MORNING.\n- Exactly 2 people on AFTERNOON.\n- At least 1 person on MORNING.\n- Esther and Farid must not be on the same shift.\n- Leona and Jonah must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Esther": "AFTERNOON",
+        "Nadia": "MORNING",
+        "Leona": "NIGHT",
+        "Jonah": "AFTERNOON",
+        "Farid": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k5_02",
+      "k": 5,
+      "people": [
+        "Dilnoza",
+        "Leona",
+        "Petra",
+        "Bao",
+        "Ingrid",
+        "Esther",
+        "Hamza"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Bao"
+        },
+        {
+          "type": "apart",
+          "a": "Petra",
+          "b": "Hamza"
+        },
+        {
+          "type": "must",
+          "who": "Petra",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "must",
+          "who": "Hamza",
+          "shift": "MORNING"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        }
+      ],
+      "constraints_text": [
+        "Ingrid and Bao must not be on the same shift.",
+        "Petra and Hamza must not be on the same shift.",
+        "Petra must be on AFTERNOON.",
+        "Hamza must be on MORNING.",
+        "Exactly 2 people on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Dilnoza, Leona, Petra, Bao, Ingrid, Esther, Hamza\n\nAll of the following must hold at the same time:\n- Ingrid and Bao must not be on the same shift.\n- Petra and Hamza must not be on the same shift.\n- Petra must be on AFTERNOON.\n- Hamza must be on MORNING.\n- Exactly 2 people on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Dilnoza": "NIGHT",
+        "Leona": "MORNING",
+        "Petra": "AFTERNOON",
+        "Bao": "AFTERNOON",
+        "Ingrid": "NIGHT",
+        "Esther": "AFTERNOON",
+        "Hamza": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_09",
+      "k": 7,
+      "people": [
+        "Mateus",
+        "Callum",
+        "Amara",
+        "Hamza",
+        "Greta",
+        "Kaede",
+        "Petra",
+        "Ingrid",
+        "Jonah"
+      ],
+      "constraints": [
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 3
+        },
+        {
+          "type": "apart",
+          "a": "Kaede",
+          "b": "Amara"
+        },
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "apart",
+          "a": "Jonah",
+          "b": "Hamza"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 2
+        },
+        {
+          "type": "must",
+          "who": "Jonah",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "cannot",
+          "who": "Kaede",
+          "shift": "NIGHT"
+        }
+      ],
+      "constraints_text": [
+        "At least 3 people on NIGHT.",
+        "Kaede and Amara must not be on the same shift.",
+        "Callum must be on NIGHT.",
+        "Jonah and Hamza must not be on the same shift.",
+        "Exactly 2 people on MORNING.",
+        "Jonah must be on NIGHT.",
+        "Kaede cannot be on NIGHT."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Mateus, Callum, Amara, Hamza, Greta, Kaede, Petra, Ingrid, Jonah\n\nAll of the following must hold at the same time:\n- At least 3 people on NIGHT.\n- Kaede and Amara must not be on the same shift.\n- Callum must be on NIGHT.\n- Jonah and Hamza must not be on the same shift.\n- Exactly 2 people on MORNING.\n- Jonah must be on NIGHT.\n- Kaede cannot be on NIGHT.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Mateus": "AFTERNOON",
+        "Callum": "NIGHT",
+        "Amara": "NIGHT",
+        "Hamza": "MORNING",
+        "Greta": "AFTERNOON",
+        "Kaede": "AFTERNOON",
+        "Petra": "AFTERNOON",
+        "Ingrid": "MORNING",
+        "Jonah": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_04",
+      "k": 7,
+      "people": [
+        "Farid",
+        "Greta",
+        "Dilnoza",
+        "Mateus",
+        "Callum",
+        "Leona",
+        "Nadia"
+      ],
+      "constraints": [
+        {
+          "type": "must",
+          "who": "Mateus",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Nadia"
+        },
+        {
+          "type": "must",
+          "who": "Farid",
+          "shift": "MORNING"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 4
+        },
+        {
+          "type": "together",
+          "a": "Leona",
+          "b": "Dilnoza"
+        },
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Greta"
+        },
+        {
+          "type": "together",
+          "a": "Mateus",
+          "b": "Callum"
+        }
+      ],
+      "constraints_text": [
+        "Mateus must be on MORNING.",
+        "Callum and Nadia must not be on the same shift.",
+        "Farid must be on MORNING.",
+        "At least 4 people on MORNING.",
+        "Leona and Dilnoza must be on the same shift.",
+        "Mateus and Greta must not be on the same shift.",
+        "Mateus and Callum must be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Farid, Greta, Dilnoza, Mateus, Callum, Leona, Nadia\n\nAll of the following must hold at the same time:\n- Mateus must be on MORNING.\n- Callum and Nadia must not be on the same shift.\n- Farid must be on MORNING.\n- At least 4 people on MORNING.\n- Leona and Dilnoza must be on the same shift.\n- Mateus and Greta must not be on the same shift.\n- Mateus and Callum must be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Farid": "MORNING",
+        "Greta": "AFTERNOON",
+        "Dilnoza": "MORNING",
+        "Mateus": "MORNING",
+        "Callum": "MORNING",
+        "Leona": "MORNING",
+        "Nadia": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_02",
+      "k": 9,
+      "people": [
+        "Amara",
+        "Mateus",
+        "Hamza",
+        "Esther",
+        "Bao",
+        "Petra",
+        "Farid",
+        "Ingrid"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Farid",
+          "b": "Mateus"
+        },
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Hamza"
+        },
+        {
+          "type": "apart",
+          "a": "Amara",
+          "b": "Petra"
+        },
+        {
+          "type": "at_least",
+          "shift": "MORNING",
+          "n": 4
+        },
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "cannot",
+          "who": "Mateus",
+          "shift": "MORNING"
+        },
+        {
+          "type": "cannot",
+          "who": "Esther",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 1
+        },
+        {
+          "type": "apart",
+          "a": "Ingrid",
+          "b": "Amara"
+        }
+      ],
+      "constraints_text": [
+        "Farid and Mateus must not be on the same shift.",
+        "Mateus and Hamza must not be on the same shift.",
+        "Amara and Petra must not be on the same shift.",
+        "At least 4 people on MORNING.",
+        "Exactly 2 people on NIGHT.",
+        "Mateus cannot be on MORNING.",
+        "Esther cannot be on AFTERNOON.",
+        "At least 1 person on AFTERNOON.",
+        "Ingrid and Amara must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Amara, Mateus, Hamza, Esther, Bao, Petra, Farid, Ingrid\n\nAll of the following must hold at the same time:\n- Farid and Mateus must not be on the same shift.\n- Mateus and Hamza must not be on the same shift.\n- Amara and Petra must not be on the same shift.\n- At least 4 people on MORNING.\n- Exactly 2 people on NIGHT.\n- Mateus cannot be on MORNING.\n- Esther cannot be on AFTERNOON.\n- At least 1 person on AFTERNOON.\n- Ingrid and Amara must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Amara": "NIGHT",
+        "Mateus": "NIGHT",
+        "Hamza": "AFTERNOON",
+        "Esther": "MORNING",
+        "Bao": "MORNING",
+        "Petra": "MORNING",
+        "Farid": "MORNING",
+        "Ingrid": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_02",
+      "k": 7,
+      "people": [
+        "Oskar",
+        "Leona",
+        "Amara",
+        "Bao",
+        "Farid",
+        "Ingrid",
+        "Kaede"
+      ],
+      "constraints": [
+        {
+          "type": "apart",
+          "a": "Oskar",
+          "b": "Amara"
+        },
+        {
+          "type": "must",
+          "who": "Leona",
+          "shift": "MORNING"
+        },
+        {
+          "type": "cannot",
+          "who": "Bao",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Oskar",
+          "b": "Leona"
+        },
+        {
+          "type": "exactly",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "cannot",
+          "who": "Oskar",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "apart",
+          "a": "Oskar",
+          "b": "Ingrid"
+        }
+      ],
+      "constraints_text": [
+        "Oskar and Amara must not be on the same shift.",
+        "Leona must be on MORNING.",
+        "Bao cannot be on MORNING.",
+        "Oskar and Leona must not be on the same shift.",
+        "Exactly 2 people on AFTERNOON.",
+        "Oskar cannot be on NIGHT.",
+        "Oskar and Ingrid must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Oskar, Leona, Amara, Bao, Farid, Ingrid, Kaede\n\nAll of the following must hold at the same time:\n- Oskar and Amara must not be on the same shift.\n- Leona must be on MORNING.\n- Bao cannot be on MORNING.\n- Oskar and Leona must not be on the same shift.\n- Exactly 2 people on AFTERNOON.\n- Oskar cannot be on NIGHT.\n- Oskar and Ingrid must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Oskar": "AFTERNOON",
+        "Leona": "MORNING",
+        "Amara": "NIGHT",
+        "Bao": "AFTERNOON",
+        "Farid": "NIGHT",
+        "Ingrid": "NIGHT",
+        "Kaede": "MORNING"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k3_04",
+      "k": 3,
+      "people": [
+        "Petra",
+        "Greta",
+        "Ingrid",
+        "Mateus",
+        "Kaede",
+        "Esther",
+        "Nadia"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "NIGHT",
+          "n": 2
+        },
+        {
+          "type": "together",
+          "a": "Petra",
+          "b": "Mateus"
+        },
+        {
+          "type": "apart",
+          "a": "Mateus",
+          "b": "Nadia"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 2 people on NIGHT.",
+        "Petra and Mateus must be on the same shift.",
+        "Mateus and Nadia must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Petra, Greta, Ingrid, Mateus, Kaede, Esther, Nadia\n\nAll of the following must hold at the same time:\n- Exactly 2 people on NIGHT.\n- Petra and Mateus must be on the same shift.\n- Mateus and Nadia must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Petra": "MORNING",
+        "Greta": "MORNING",
+        "Ingrid": "AFTERNOON",
+        "Mateus": "MORNING",
+        "Kaede": "MORNING",
+        "Esther": "NIGHT",
+        "Nadia": "NIGHT"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k9_03",
+      "k": 9,
+      "people": [
+        "Dilnoza",
+        "Hamza",
+        "Esther",
+        "Leona",
+        "Kaede",
+        "Greta",
+        "Jonah"
+      ],
+      "constraints": [
+        {
+          "type": "together",
+          "a": "Leona",
+          "b": "Jonah"
+        },
+        {
+          "type": "cannot",
+          "who": "Esther",
+          "shift": "AFTERNOON"
+        },
+        {
+          "type": "at_least",
+          "shift": "AFTERNOON",
+          "n": 2
+        },
+        {
+          "type": "at_least",
+          "shift": "NIGHT",
+          "n": 1
+        },
+        {
+          "type": "together",
+          "a": "Dilnoza",
+          "b": "Kaede"
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Hamza"
+        },
+        {
+          "type": "apart",
+          "a": "Esther",
+          "b": "Jonah"
+        },
+        {
+          "type": "must",
+          "who": "Greta",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 3
+        }
+      ],
+      "constraints_text": [
+        "Leona and Jonah must be on the same shift.",
+        "Esther cannot be on AFTERNOON.",
+        "At least 2 people on AFTERNOON.",
+        "At least 1 person on NIGHT.",
+        "Dilnoza and Kaede must be on the same shift.",
+        "Esther and Hamza must not be on the same shift.",
+        "Esther and Jonah must not be on the same shift.",
+        "Greta must be on NIGHT.",
+        "Exactly 3 people on MORNING."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Dilnoza, Hamza, Esther, Leona, Kaede, Greta, Jonah\n\nAll of the following must hold at the same time:\n- Leona and Jonah must be on the same shift.\n- Esther cannot be on AFTERNOON.\n- At least 2 people on AFTERNOON.\n- At least 1 person on NIGHT.\n- Dilnoza and Kaede must be on the same shift.\n- Esther and Hamza must not be on the same shift.\n- Esther and Jonah must not be on the same shift.\n- Greta must be on NIGHT.\n- Exactly 3 people on MORNING.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Dilnoza": "MORNING",
+        "Hamza": "NIGHT",
+        "Esther": "MORNING",
+        "Leona": "AFTERNOON",
+        "Kaede": "MORNING",
+        "Greta": "NIGHT",
+        "Jonah": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    },
+    {
+      "family": 8,
+      "name": "constraint_satisfaction",
+      "item_id": "f08_k7_06",
+      "k": 7,
+      "people": [
+        "Amara",
+        "Esther",
+        "Petra",
+        "Bao",
+        "Jonah",
+        "Callum",
+        "Mateus"
+      ],
+      "constraints": [
+        {
+          "type": "exactly",
+          "shift": "MORNING",
+          "n": 4
+        },
+        {
+          "type": "apart",
+          "a": "Amara",
+          "b": "Esther"
+        },
+        {
+          "type": "together",
+          "a": "Esther",
+          "b": "Jonah"
+        },
+        {
+          "type": "apart",
+          "a": "Jonah",
+          "b": "Mateus"
+        },
+        {
+          "type": "cannot",
+          "who": "Petra",
+          "shift": "NIGHT"
+        },
+        {
+          "type": "must",
+          "who": "Callum",
+          "shift": "MORNING"
+        },
+        {
+          "type": "apart",
+          "a": "Callum",
+          "b": "Petra"
+        }
+      ],
+      "constraints_text": [
+        "Exactly 4 people on MORNING.",
+        "Amara and Esther must not be on the same shift.",
+        "Esther and Jonah must be on the same shift.",
+        "Jonah and Mateus must not be on the same shift.",
+        "Petra cannot be on NIGHT.",
+        "Callum must be on MORNING.",
+        "Callum and Petra must not be on the same shift."
+      ],
+      "prompt": "Assign each of the following people to exactly one shift: MORNING, AFTERNOON or NIGHT.\n\nPeople: Amara, Esther, Petra, Bao, Jonah, Callum, Mateus\n\nAll of the following must hold at the same time:\n- Exactly 4 people on MORNING.\n- Amara and Esther must not be on the same shift.\n- Esther and Jonah must be on the same shift.\n- Jonah and Mateus must not be on the same shift.\n- Petra cannot be on NIGHT.\n- Callum must be on MORNING.\n- Callum and Petra must not be on the same shift.\n\nOutput ONLY the roster, one person per line, in the form: Name: SHIFT\n\nDo not add commentary before or after the roster.",
+      "generator_roster": {
+        "Amara": "NIGHT",
+        "Esther": "MORNING",
+        "Petra": "AFTERNOON",
+        "Bao": "MORNING",
+        "Jonah": "MORNING",
+        "Callum": "MORNING",
+        "Mateus": "AFTERNOON"
+      },
+      "equivalence_note": "Any roster satisfying every constraint scores EXACT. Shift aliases (AM/PM/early/late/overnight...) and any line format that pairs a name with a shift are accepted."
+    }
+  ]
+}

@@ -156,13 +156,43 @@ def parse_number(text):
     return None
 
 
+_DEC_RE = re.compile(r"\d+[.,](\d+)")
+
+
+def _decimal_places(text):
+    """How many decimal places the FIRST decimal token in `text` carries, or None."""
+    if text is None or isinstance(text, Fraction):
+        return None
+    m = _DEC_RE.search(_prep(text))
+    return len(m.group(1)) if m else None
+
+
 def numbers_equal(a, b):
-    """Exact equality of two parsed quantities. None never equals anything, including None."""
+    """Equality of two quantities.
+
+    Exact equality of the parsed Fractions, OR: one side is a DECIMAL and is the correctly
+    rounded value of the other at the precision it was written to, with at least two decimal
+    places. `0.167 cup` IS `1/6 cup`; so is `0.17 cup`; `0.2 cup` is NOT (one place is a 20%
+    error on a sixth). This is not a float tolerance hiding our own arithmetic -- the Fractions
+    are exact -- it is accepting the MODEL'S rounding when the rounding is correct, which the
+    §5.3 adversarial equivalence controls require (`equiv_decimal`: decimal vs fraction, same
+    quantity). Published here so it is a rule, not a leniency. Added 2026-09-01 when the
+    control suite first ran against the scorer and caught the omission.
+    """
     fa, fb = (a if isinstance(a, Fraction) else parse_number(a),
               b if isinstance(b, Fraction) else parse_number(b))
     if fa is None or fb is None:
         return False
-    return fa == fb
+    if fa == fb:
+        return True
+    for txt, other in ((a, fb), (b, fa)):
+        d = _decimal_places(txt)
+        if d is not None and d >= 2:
+            given = fa if txt is a else fb
+            # correctly rounded: |given - other| <= half a unit in the last place
+            if abs(given - other) <= Fraction(1, 2 * 10 ** d):
+                return True
+    return False
 
 
 # --------------------------------------------------------------------------------------------
@@ -254,13 +284,45 @@ def parse_ingredient_line(text):
     return (num, None, rest)
 
 
+# ⚠️ DEFINITIONAL conversions, added 2026-09-01 after reading scored output (DEVIATION_LOG D3).
+#    `1 cup` vs `240 ml` stays UNEQUAL: that factor is disputable and a model that converts
+#    systems has done something different from what was asked. But 3 tsp = 1 tbsp and
+#    16 tbsp = 1 cup are IDENTITIES of the US customary system, and a model that writes
+#    `2 tsp` for `2/3 tbsp` has written the same quantity in the form a kitchen can measure.
+#    The pre-registration's rule (kimi-k3: "equivalent arithmetic forms must not be scored as
+#    errors") already covers this; the first scorer simply did not implement it. 218 of 1,246
+#    family-1 WRONG rows were explained entirely by this identity. Negative controls in
+#    self_test() keep cup/ml, cup/g and cup/oz unequal.
+_IN_TSP = {"tsp": Fraction(1), "tbsp": Fraction(3), "cup": Fraction(48),
+           "pt": Fraction(96), "qt": Fraction(192)}
+
+
+def _to_tsp(n, unit):
+    return n * _IN_TSP[unit] if unit in _IN_TSP else None
+
+
+def quantities_identical(a, b):
+    """Same quantity, allowing a definitional unit change within the customary volume ladder."""
+    na, ua, _ = parse_ingredient_line(a)
+    nb, ub, _ = parse_ingredient_line(b)
+    if na is None or nb is None:
+        return False
+    if ua == ub:
+        return numbers_equal(a, b)
+    ta, tb = _to_tsp(na, ua), _to_tsp(nb, ub)
+    return ta is not None and tb is not None and ta == tb
+
+
 def ingredient_lines_equal(a, b):
-    """Equal amount AND unit AND ingredient name (case/spacing-insensitive)."""
+    """Equal amount AND unit AND ingredient name (case/spacing-insensitive), where 'equal unit'
+    admits a definitional conversion on the tsp/tbsp/cup ladder (see quantities_identical)."""
     na, ua, ia = parse_ingredient_line(a)
     nb, ub, ib = parse_ingredient_line(b)
     if na is None or nb is None:
         return False
-    return na == nb and ua == ub and canon_text(ia).lower() == canon_text(ib).lower()
+    if canon_text(ia).lower() != canon_text(ib).lower():
+        return False
+    return quantities_identical(a, b)
 
 
 def quantities_equal(a, b, require_unit=True):
@@ -299,10 +361,17 @@ def canon_redaction(text):
 # --------------------------------------------------------------------------------------------
 
 def canon_text(text):
-    """Normalise typography that carries no meaning: smart quotes, dashes, NBSP, spacing."""
+    """Normalise typography that carries no meaning: smart quotes, dashes, NBSP, spacing.
+
+    🚨 2026-09-01: vulgar fractions are expanded BEFORE NFKC here too. This function ran NFKC
+       first, so a caller that canonicalised a line before parsing it turned `2⅔` into `22⁄3`
+       -- twenty-two thirds -- the exact trap `_expand_vulgar` documents, reached through a
+       different door. Caught by the §5.3 control `equiv_unicode_fraction` the first time the
+       suite ran against a scorer. Every family's line parser goes through this function.
+    """
     if text is None:
         return None
-    s = unicodedata.normalize("NFKC", str(text))
+    s = unicodedata.normalize("NFKC", _expand_vulgar(str(text))).replace("⁄", "/")
     s = (s.replace("‘", "'").replace("’", "'")
            .replace("“", '"').replace("”", '"')
            .replace("–", "-").replace("—", "-")
@@ -341,8 +410,23 @@ def self_test():
         ("Call [PHONE] now", "Call ███ now"),
     ]
     red_ne = [("[REDACTED]", "Jane Smith"), ("███", "555-0100")]
+    # definitional ladder (quantities_identical) -- fires both ways, like everything else here
+    lad_eq = [("2/3 tbsp rice vinegar", "2 tsp rice vinegar"),
+              ("1/8 cup soy sauce", "2 tbsp soy sauce"),
+              ("1/2 tbsp honey", "1 1/2 tsp honey"),
+              ("1 cup water", "16 tbsp water")]
+    lad_ne = [("1 cup milk", "240 ml milk"),          # cross-system: still NOT equivalence
+              ("1 cup flour", "8 oz flour"),          # volume vs weight
+              ("2 tbsp oil", "2 tsp oil"),            # same ladder, different quantity
+              ("1/8 cup salt", "2 tbsp sugar")]       # right conversion, wrong ingredient
 
     bad = 0
+    for a, b in lad_eq:
+        if not ingredient_lines_equal(a, b):
+            bad += 1; print("  FAIL  ladder should be EQUAL: %-24r %-24r" % (a, b))
+    for a, b in lad_ne:
+        if ingredient_lines_equal(a, b):
+            bad += 1; print("  FAIL  ladder should DIFFER : %-24r %-24r" % (a, b))
     for a, b in eq:
         if not quantities_equal(a, b):
             bad += 1; print("  FAIL  should be EQUAL: %-18r %-18r" % (a, b))
@@ -356,14 +440,14 @@ def self_test():
         if canon_redaction(a) == canon_redaction(b):
             bad += 1; print("  FAIL  redaction should DIFFER : %r %r" % (a, b))
 
-    total = len(eq) + len(ne) + len(red_eq) + len(red_ne)
+    total = len(eq) + len(ne) + len(red_eq) + len(red_ne) + len(lad_eq) + len(lad_ne)
     if bad:
         print("\n!! EQUIVALENCE SELF-TEST FAILED: %d/%d" % (bad, total))
         print("   Per §5.3, a family whose equivalence layer fails its controls DOES NOT SHIP.")
         return False
     print("  equivalence self-test: %d/%d pass" % (total, total))
     print("     %d must-be-equal (adversarial) | %d must-differ (negative controls)"
-          % (len(eq) + len(red_eq), len(ne) + len(red_ne)))
+          % (len(eq) + len(red_eq) + len(lad_eq), len(ne) + len(red_ne) + len(lad_ne)))
     return True
 
 

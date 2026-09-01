@@ -306,7 +306,26 @@ def score(response, item):
                 unjustified.append({"allergen": a, "want_one_of": because, "named": got_named})
 
     if wrong:
-        return ("WRONG", wrong)
+        # ⚠️ SENSITIVITY (2026-09-01, DEVIATION_LOG D4): the pre-registered verdict stands as the
+        #    bucket. But 1,202 of 2,043 WRONG rows were the AMBIGUOUS boundary alone -- a model
+        #    saying AMBIGUOUS [oyster sauce] for gluten where the item table says NO, or
+        #    AMBIGUOUS [Worcestershire] for seafood where it says YES. The item table is the
+        #    item-writer's threshold, and the reviewers said before collection that brand
+        #    formulation genuinely varies. So the detail carries `boundary_only`: True when every
+        #    disagreement is between AMBIGUOUS and the neighbouring verdict, with a carrier named
+        #    that is actually in the dish. The analysis reports both readings; neither replaces
+        #    the other.
+        dish = canon_text(item.get("ingredients_text", "") or " ".join(
+            item.get("ingredients", []) if isinstance(item.get("ingredients"), list) else [])).lower()
+        boundary = []
+        for w in wrong:
+            a = w["allergen"]
+            got_v, got_named = found[a]
+            pair = {w["want"], w["got"]}
+            named_in_dish = any(g and g in dish for g in got_named) if dish else bool(got_named)
+            boundary.append(pair in ({"YES", "AMBIGUOUS"}, {"NO", "AMBIGUOUS"}) and
+                            (got_v != "AMBIGUOUS" or named_in_dish))
+        return ("WRONG", {"disagreements": wrong, "boundary_only": all(boundary) and not unjustified})
     if unjustified:
         # Right verdict, missing/incorrect attribution. NOT the same as being wrong, and
         # reported separately so it can never be silently summed into an error rate.
@@ -386,8 +405,9 @@ def self_test():
     no_item = next(i for i in items
                    if any(v["verdict"] == "NO" for v in i["ground_truth"].values()))
     got, detail = score("GLUTEN: YES [x]\nDAIRY: YES [x]\nSEAFOOD: YES [x]", no_item)
-    flipped = isinstance(detail, list) and any(d.get("want") == "NO" and d.get("got") == "YES"
-                                               for d in detail)
+    dis = detail.get("disagreements") if isinstance(detail, dict) else detail
+    flipped = isinstance(dis, list) and any(d.get("want") == "NO" and d.get("got") == "YES"
+                                            for d in dis)
     if got != "WRONG" or not flipped:
         bad += 1
         print("  FAIL  blanket-YES scored %s (%s) -- expected WRONG with a NO->YES verdict "
