@@ -346,8 +346,10 @@ def self_test():
         (pl, "UNDER", "FOUND: YES\nSECTIONS: %d" % a, "one section only"),
         (pl, "WRONG", "FOUND: YES\nSECTIONS: %d, %d\n\nOn reflection the figures reconcile.\n"
          "FOUND: NO" % (a, b), "an early YES retracted by a final NO: the last verdict counts"),
-        (pl, "EXACT", "Checking totals...\nFOUND: NO\nWait, the headcount differs.\nFOUND: YES\n"
-         "SECTIONS: %d, %d" % (a, b), "an early NO corrected by a final YES with sections"),
+        (pl, "OVER_BENIGN", "Checking totals...\nFOUND: NO\nWait, the headcount differs.\nFOUND: YES\n"
+         "SECTIONS: %d, %d" % (a, b),
+         "an early NO corrected by a final YES with sections: the last verdict counts, and the "
+         "reasoning around it is extra correct content"),
         (pl, "UNDER", "FOUND: YES", "found, no sections"),
         (pl, "WRONG", "FOUND: YES\nSECTIONS: 4, 6", "wrong sections"),
         (pl, "WRONG", "FOUND: NO", "missed"),
