@@ -172,3 +172,220 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 5952
+  clause placement: turn
+     ... 25 attempted, 23 ok, 2 failed
+     ... 50 attempted, 47 ok, 3 failed
+     ... 75 attempted, 72 ok, 3 failed
+     ... 100 attempted, 97 ok, 3 failed
+     ... 125 attempted, 122 ok, 3 failed
+     ... 150 attempted, 146 ok, 4 failed
+     ... 175 attempted, 168 ok, 7 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 185
+     replies carrying CONFIDENCE: 185 / 185  (100%)
+     WE failed to complete  : 7
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • google/gemini-2.5-pro        f08 f08:f08_k7_04          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k7_10          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k5_01          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_s2_08          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_clean_02       EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_s6_06          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_s6_07          EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 5952
+  clause placement: turn
+     ... 25 attempted, 23 ok, 2 failed
+     ... 50 attempted, 46 ok, 4 failed
+     ... 75 attempted, 71 ok, 4 failed
+     ... 100 attempted, 96 ok, 4 failed
+     ... 125 attempted, 121 ok, 4 failed
+     ... 150 attempted, 145 ok, 5 failed
+     ... 175 attempted, 168 ok, 7 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 185
+     replies carrying CONFIDENCE: 185 / 185  (100%)
+     WE failed to complete  : 7
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • google/gemini-2.5-pro        f08 f08:f08_k9_05          TIMEOUT: TimeoutError: The read operation timed out
+       • google/gemini-2.5-pro        f08 f08:f08_k7_09          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k5_01          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k3_10          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_ok_08          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_clean_09       EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_clean_04       EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+urn
+     ... 25 attempted, 25 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 45
+     completed              : 44
+     replies carrying CONFIDENCE: 44 / 44  (100%)
+     WE failed to complete  : 1
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • google/gemini-2.5-pro        f11 f11:f11_s5_06          EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 11988
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 6144
+  clause placement: turn
+     ... 25 attempted, 23 ok, 2 failed
+     ... 50 attempted, 44 ok, 6 failed
+     ... 75 attempted, 69 ok, 6 failed
+     ... 100 attempted, 94 ok, 6 failed
+     ... 125 attempted, 118 ok, 7 failed
+     ... 150 attempted, 141 ok, 9 failed
+     ... 175 attempted, 164 ok, 11 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 181
+     replies carrying CONFIDENCE: 181 / 181  (100%)
+     WE failed to complete  : 11
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • google/gemini-2.5-pro        f08 f08:f08_k5_02          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k9_01          TIMEOUT: TimeoutError: The read operation timed out
+       • google/gemini-2.5-pro        f08 f08:f08_k7_11          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k9_08          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k7_10          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k3_01          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_conflict_20    EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_conflict_08    EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_conflict_02    EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_s6_09          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_s5_03          EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 12090
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 11444
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 11
+     completed              : 11
+     replies carrying CONFIDENCE: 11 / 11  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 11917
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 12094
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

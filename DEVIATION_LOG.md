@@ -142,3 +142,59 @@ number above is from `results/scored.jsonl`. Same disease, caught on the same da
 **Why this is a deviation and not a fix:** the pre-registration's spirit is that WE never decide
 how long a model may think. Here a provider decided, and our choice was a cap below theirs or
 zero rows. We took the rows and are saying so.
+
+---
+
+## D7 — 2026-09-02: 1,004 (model, family, item, run) keys collected TWICE on families 8–11, because I started runs 2–3 early while the main chain was still running — deduplicated by keep-earliest, logged, and shown not to move any headline
+
+**What happened:** at 21:07 on 09-01 I launched a second orchestrator for runs 2 and 3 over the
+29 models that had finished run 1, in parallel with the main chain (which was still on run 1's
+tail). Resume is keyed on rows that are already *written*; when the main chain later reached
+runs 2 and 3 it launched workers for models my early track was still mid-collection on, and
+both wrote the same keys before either had finished. Result: 1,004 duplicated keys (fam 8: 96,
+9: 231, 10: 285, 11: 392), concentrated in the slow models (`qwen3.5-27b` 326, `grok-4.6` 205,
+`qwen3-14b` 172, `kimi-k3` 151, `grok-4.3` 113). 102 of the 1,004 pairs disagree on bucket.
+Cost: about 2.7% of the frontier-family calls were spent twice. No key is missing.
+
+**Handling:** `40_analyze.py` now keeps ONE **OK** row per key — the earliest by `ts_utc` — a
+rule chosen before looking at which duplicate scored better. Failure rows (`OUR_FAILURE`,
+`TRUNCATED`) are never deduplicated: a failed attempt followed by a successful retry is the
+normal resume pattern, and those rows are excluded from every rate anyway. (The first version
+of the dedup keyed across all statuses and would have kept a failure over its later success; it
+was caught on its first run, before any number was used, and the row counts are logged:
+1,004 duplicate OK rows dropped, 36,288 OK keys kept, 1,098 failure rows kept.) Both duplicate
+rows stay in `scored.jsonl`.
+Sensitivity (tier medians, families 8–11): keep-first vs keep-last vs no-dedup differ by
+≤ 0.7 pp on every family and every metric; no verdict changes. The concurrency itself (two
+writers on one model) is a violation of RUNNER_DESIGN's one-worker-per-model rule for those
+rows and is disclosed as such; within-model item order was preserved in each writer, and the
+H1 position analysis uses the kept row's own recorded position.
+
+---
+
+## D8 — 2026-09-02: H3 "accuracy" is computed as EXACT ∪ OVER_BENIGN, matching the pre-registration; the first analysis run had used EXACT alone, which contradicted §5.1's own definition
+
+**What was seen:** on family 9 (multi-hop with decoys) the first `SUMMARY.md` showed the
+frontier tier at 0.7% EXACT and the cheap tier at 0.0%, with 80–100% of frontier rows in
+`OVER_BENIGN`. Reading the raw replies: `gemini-2.5-pro` answers *"Sofia Moreau works at the
+Ashcroft yard. The Ashcroft yard is managed by Sofia Moreau. ANSWER: Sofia Moreau"* — right
+answer, two sentences of shown work. The family-9 prompt asks for the answer *on the last
+line* in a fixed form; it does not say "answer only". The scorer, per §5.1 precedence, puts a
+correct answer plus correct extra content in `OVER_BENIGN`, below `EXACT`. That is the
+registered bucket and it is not being changed.
+
+**The defect was in the analysis, not the scorer.** The pre-registration states H3 in terms of
+*accuracy*, defines `OVER_BENIGN` as "the requested deliverable is correct and complete, plus
+additional correct content," and states that `OVER_BENIGN` "never counts against a model."
+`40_analyze.py` had implemented H3's accuracy as EXACT alone, which counts it against the
+model. Cost and latency metrics stay on EXACT, as §5.2 explicitly says ("$ per 1,000 EXACT").
+
+**Handling:** H3 and the frontier-family tables now report **CORRECT = EXACT ∪ OVER_BENIGN**
+as the accuracy measure, with EXACT beside it, and the F3 verdict is given under both. Under
+both readings F3 does not fire (0 of 4 families wrong). What changes is family 9: 0.0 vs 0.7
+becomes 76.7 vs 100.0 (tier medians). The EXACT-only column is retained because it carries a
+real finding of its own — on families 9 and 10 the frontier tier's "failure" to score EXACT is
+almost entirely a refusal to stop after the answer, which is the over-delivery this study is
+about, and the discussion treats it as such rather than as accuracy. This is an analysis
+correction made after seeing model output, logged as exactly that; its direction favours the
+frontier tier on H3, and that is stated here so no reader has to discover it.

@@ -67,7 +67,29 @@ SERIAL_SHARD = "run01.jsonl"
 def load():
     rows = [json.loads(l) for l in open(SCORED, encoding="utf-8")]
     rows = [r for r in rows if not r.get("pilot_limit")]
-    return rows
+    # D7: 1,004 keys were collected twice on families 8–11 (two writers on one model, 09-01/02).
+    # Keep ONE row per (model, family, item, run): the EARLIEST by ts_utc. Rule fixed before
+    # looking at which duplicate scored better; keep-first vs keep-last moves tier medians ≤0.7 pp.
+    # Only OK rows are deduplicated. A failed attempt followed by a successful retry is the normal
+    # resume pattern, not a duplicate: failure rows are all kept (they are excluded from every rate
+    # and feed the "ours" column). First version of this keyed across all statuses and would have
+    # kept a failure over its later success — caught on the first run, before any number was used.
+    by = defaultdict(list)
+    kept = []
+    for r in rows:
+        if r.get("status") == "OK":
+            by[(r["requested_model"], r["family"], r["item_id"], r["run"])].append(r)
+        else:
+            kept.append(r)
+    n_ok_in = sum(len(v) for v in by.values())
+    for k, v in by.items():
+        v.sort(key=lambda r: r.get("ts_utc") or "")
+        kept.append(v[0])
+    n_dup = n_ok_in - len(by)
+    if n_dup:
+        print("D7 dedup: %d duplicate OK rows dropped (keep-earliest), %d OK keys kept, %d failure rows kept"
+              % (n_dup, len(by), len(kept) - len(by)))
+    return kept
 
 
 def pct(n, d):
@@ -105,6 +127,9 @@ def per_model_family(rows, bucket_key="bucket"):
         out[m][f] = {
             "n_scored": len(scored), "n_ours": ours,
             "exact": exact, "exact_pct": pct(exact, len(scored)),
+            # D8: prereg §5.1 — OVER_BENIGN is "correct and complete, plus additional correct
+            # content" and "never counts against a model". H3 is stated as ACCURACY; this is it.
+            "correct": exact + c["OVER_BENIGN"], "correct_pct": pct(exact + c["OVER_BENIGN"], len(scored)),
             "buckets": dict(c),
             "cost_usd": cost,
             "usd_per_1k_exact": (1000.0 * cost / exact) if exact else float("inf"),
@@ -220,13 +245,14 @@ def main():
     for fam in fams_present:
         P("## Family %02d — %s" % (fam, next((r["family_name"] for r in rows if r["family"] == fam), "")))
         P("")
-        P("| model | n | EXACT % | sens % | WRONG % | UNDER % | deviation % (OH∪F∪M) | OVER_BENIGN % | REFUSED % | $ / 1k EXACT | s / 1k EXACT | p50 s | p90 s | Brier (n) | no-conf % | ours |")
-        P("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
-        ranked = sorted([m for m in models if fam in pm[m]], key=lambda m: -pm[m][fam]["exact_pct"])
+        P("| model | n | EXACT % | CORRECT % (EXACT∪OB) | sens % | WRONG % | UNDER % | deviation % (OH∪F∪M) | OVER_BENIGN % | REFUSED % | $ / 1k EXACT | s / 1k EXACT | p50 s | p90 s | Brier (n) | no-conf % | ours |")
+        P("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
+        rank_key = "correct_pct" if fam in FRONTIER else "exact_pct"
+        ranked = sorted([m for m in models if fam in pm[m]], key=lambda m: (-pm[m][fam][rank_key], -pm[m][fam]["exact_pct"]))
         for m in ranked:
             s, ss = pm[m][fam], pm_s[m][fam]
-            P("| `%s` | %d | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s (%d) | %s | %d |" % (
-                m, s["n_scored"], fmt(s["exact_pct"]), fmt(ss["exact_pct"]), fmt(s["wrong_pct"]),
+            P("| `%s` | %d | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s (%d) | %s | %d |" % (
+                m, s["n_scored"], fmt(s["exact_pct"]), fmt(s["correct_pct"]), fmt(ss["exact_pct"]), fmt(s["wrong_pct"]),
                 fmt(s["under_pct"]), fmt(s["deviation_pct"]), fmt(s["over_benign_pct"]),
                 fmt(s["refused_pct"]), fmt(s["usd_per_1k_exact"], 3), fmt(s["sec_per_1k_exact"], 0),
                 fmt(s["lat_p50"], 2), fmt(s["lat_p90"], 2), fmt(s["brier"], 3), s["n_conf"],
@@ -276,21 +302,31 @@ def main():
     if not fr:
         P("*Families 8–11 not yet scored. H3 is untested in this summary.*")
     else:
-        P("| family | cheap EXACT % (median) | frontier EXACT % (median) | gap (pp) | prediction (frontier > cheap) |")
-        P("|---|---:|---:|---:|---|")
-        h3_wrong = 0
-        for fam in fr:
-            c_acc = [pm[m][fam]["exact_pct"] for m in cheap if fam in pm[m]]
-            f_acc = [pm[m][fam]["exact_pct"] for m in frontier if fam in pm[m]]
-            cm = statistics.median(c_acc) if c_acc else float("nan")
-            fm_ = statistics.median(f_acc) if f_acc else float("nan")
-            ok = fm_ > cm
-            h3_wrong += 0 if ok else 1
-            P("| %02d | %s | %s | %s | %s |" % (fam, fmt(cm), fmt(fm_), fmt(fm_ - cm), "✅ holds" if ok else "❌ wrong"))
+        P("Accuracy per the pre-registration = **CORRECT = EXACT ∪ OVER_BENIGN** (§5.1: OVER_BENIGN is correct and "
+          "complete plus correct extra content, and never counts against a model). EXACT-only is reported beside it "
+          "(D8); cost and latency stay on EXACT as §5.2 says.")
         P("")
-        P("**F3** fires if the tier prediction is wrong for ≥ 2 of the 3 counted frontier families (8–11 minus "
-          "the descriptive family 12; all four built families count here): **%s**."
-          % ("🚨 FIRED (%d wrong)" % h3_wrong if h3_wrong >= 2 else "does not fire (%d wrong)" % h3_wrong))
+        P("| family | cheap CORRECT % (median) | frontier CORRECT % (median) | gap (pp) | prediction | cheap EXACT % | frontier EXACT % | gap (pp) | prediction on EXACT |")
+        P("|---|---:|---:|---:|---|---:|---:|---:|---|")
+        h3_wrong = 0
+        h3_wrong_exact = 0
+        for fam in fr:
+            def med(models, key):
+                xs = [pm[m][fam][key] for m in models if fam in pm[m]]
+                return statistics.median(xs) if xs else float("nan")
+            cm, fm_ = med(cheap, "correct_pct"), med(frontier, "correct_pct")
+            ce, fe = med(cheap, "exact_pct"), med(frontier, "exact_pct")
+            ok, ok_e = fm_ > cm, fe > ce
+            h3_wrong += 0 if ok else 1
+            h3_wrong_exact += 0 if ok_e else 1
+            P("| %02d | %s | %s | %s | %s | %s | %s | %s | %s |" % (
+                fam, fmt(cm), fmt(fm_), fmt(fm_ - cm), "✅ holds" if ok else "❌ wrong",
+                fmt(ce), fmt(fe), fmt(fe - ce), "✅ holds" if ok_e else "❌ wrong"))
+        P("")
+        P("**F3** fires if the tier prediction is wrong for ≥ 2 of the counted frontier families (8–11; the descriptive "
+          "family 12 is excluded): on CORRECT **%s**; on EXACT alone **%s**."
+          % ("🚨 FIRED (%d wrong)" % h3_wrong if h3_wrong >= 2 else "does not fire (%d wrong)" % h3_wrong,
+             "🚨 FIRED (%d wrong)" % h3_wrong_exact if h3_wrong_exact >= 2 else "does not fire (%d wrong)" % h3_wrong_exact))
     P("")
 
     # ── H1 ─────────────────────────────────────────────────────────────────
@@ -324,8 +360,9 @@ def main():
     # ── deviations pointer ──────────────────────────────────────────────────
     P("## Deviations")
     P("")
-    P("See `DEVIATION_LOG.md` (D1–D5). D3 changed the family-1 EXACT rate 76.7% → 80.2% (definitional unit identities). "
-      "D4 defines the `sens` column.")
+    P("See `DEVIATION_LOG.md` (D1–D8). D3 changed the family-1 EXACT rate 76.7% → 80.2% (definitional unit identities). "
+      "D4 defines the `sens` column. D6: kimi-k2 collected under a 90,000-token cap on families 8–11. "
+      "D7: 1,004 duplicate keys on families 8–11 deduplicated keep-earliest. D8: H3 accuracy = EXACT ∪ OVER_BENIGN, EXACT beside.")
 
     RESULTS.mkdir(exist_ok=True)
     (RESULTS / "SUMMARY.md").write_text("\n".join(lines), encoding="utf-8")

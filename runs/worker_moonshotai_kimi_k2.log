@@ -142,3 +142,136 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__moonshotai_kimi_k2.jsonl
+  already collected (skipped): 11946
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 22
+     completed              : 0
+     WE failed to complete  : 22
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • moonshotai/kimi-k2           f08 f08:f08_k9_00          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s6_11          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s6_09          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s6_03          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s6_04          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s2_05          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s5_06          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s2_01          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s2_04          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s2_11          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_clean_01       API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s5_02          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_clean_06       API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_clean_09       API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f11 f11:f11_s6_05          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       … and 7 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__moonshotai_kimi_k2.jsonl
+  already collected (skipped): 10624
+  clause placement: turn
+     ... 25 attempted, 0 ok, 25 failed
+     ... 50 attempted, 0 ok, 50 failed
+     ... 75 attempted, 0 ok, 75 failed
+     ... 100 attempted, 0 ok, 100 failed
+     ... 125 attempted, 0 ok, 125 failed
+     ... 150 attempted, 0 ok, 150 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 157
+     completed              : 0
+     WE failed to complete  : 157
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • moonshotai/kimi-k2           f08 f08:f08_k9_09          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k3_10          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k5_02          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_09          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_06          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_08          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_11          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k3_03          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k3_01          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k5_08          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k7_02          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_03          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f08 f08:f08_k9_08          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f09 f09:f09_h3_01          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       • moonshotai/kimi-k2           f09 f09:f09_h4_04          API_ERROR: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"message\":\"max_tokens: 100352 
+       … and 142 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__moonshotai_kimi_k2.jsonl
+  already collected (skipped): 12090
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__moonshotai_kimi_k2.jsonl
+  already collected (skipped): 11446
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__moonshotai_kimi_k2.jsonl
+  already collected (skipped): 12094
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

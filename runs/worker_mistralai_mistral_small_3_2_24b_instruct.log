@@ -222,3 +222,210 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 8560
+  clause placement: turn
+     ... 25 attempted, 22 ok, 3 failed
+     ... 50 attempted, 47 ok, 3 failed
+     ... 75 attempted, 72 ok, 3 failed
+     ... 100 attempted, 97 ok, 3 failed
+     ... 125 attempted, 122 ok, 3 failed
+     ... 150 attempted, 147 ok, 3 failed
+     ... 175 attempted, 172 ok, 3 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 189
+     replies carrying CONFIDENCE: 189 / 189  (100%)
+     WE failed to complete  : 3
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-small-3.2- f08 f08:f08_k7_11          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f08 f08:f08_k5_09          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f08 f08:f08_k3_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 11946
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 51
+     completed              : 51
+     replies carrying CONFIDENCE: 51 / 51  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 10624
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 3
+     completed              : 3
+     replies carrying CONFIDENCE: 3 / 3  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 11988
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 9020
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 48 ok, 2 failed
+     ... 75 attempted, 68 ok, 7 failed
+     ... 100 attempted, 93 ok, 7 failed
+     ... 125 attempted, 118 ok, 7 failed
+     ... 150 attempted, 143 ok, 7 failed
+     ... 175 attempted, 168 ok, 7 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 185
+     replies carrying CONFIDENCE: 185 / 185  (100%)
+     WE failed to complete  : 7
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-small-3.2- f08 f08:f08_k3_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f08 f08:f08_k7_11          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h2_03          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_03          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_05          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_13          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h3_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 12090
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 11446
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 7
+     completed              : 3
+     replies carrying CONFIDENCE: 3 / 3  (100%)
+     WE failed to complete  : 4
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-small-3.2- f08 f08:f08_k3_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h2_03          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h4_05          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+       • mistralai/mistral-small-3.2- f09 f09:f09_h3_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-small-3.2-24b-in
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 11917
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 4
+     completed              : 4
+     replies carrying CONFIDENCE: 4 / 4  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_small_3_2_24b_instruct.jsonl
+  already collected (skipped): 12094
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

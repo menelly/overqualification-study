@@ -177,3 +177,238 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 8171
+  clause placement: turn
+     ... 25 attempted, 19 ok, 6 failed
+     ... 50 attempted, 32 ok, 18 failed
+     ... 75 attempted, 49 ok, 26 failed
+     ... 100 attempted, 66 ok, 34 failed
+     ... 125 attempted, 85 ok, 40 failed
+     ... 150 attempted, 109 ok, 41 failed
+     ... 175 attempted, 134 ok, 41 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 148
+     replies carrying CONFIDENCE: 148 / 148  (100%)
+     WE failed to complete  : 44
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-nemo       f08 f08:f08_k9_01          NO_RESPONSE: {"id": "gen-1788296067-xxSJMAOhGKc7XY0pKMKY", "error": {"message": "Provider timed out after 5286ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k5_00          NO_RESPONSE: {"id": "gen-1788296106-A8OKK0POAqSsg2vJVlA2", "error": {"message": "Provider timed out after 5247ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k3_10          NO_RESPONSE: {"id": "gen-1788296188-1VJXo01Wwf2BU1AgMxRy", "error": {"message": "Provider timed out after 5224ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k3_05          NO_RESPONSE: {"id": "gen-1788296227-iAN7pNDcnI3qKex3fNm4", "error": {"message": "Provider timed out after 5221ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k5_05          NO_RESPONSE: {"id": "gen-1788296243-9DWHR8mIfL3MNKnx6siy", "error": {"message": "Provider timed out after 5250ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k5_02          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k5_10          NO_RESPONSE: {"id": "gen-1788296299-JTe72U1KWMLfJldVNaGS", "error": {"message": "The operation was aborted", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k7_05          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k7_09          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k7_06          NO_RESPONSE: {"id": "gen-1788296335-ms19I4igHkU0ApqtTYDz", "error": {"message": "Provider timed out after 5268ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k9_03          NO_RESPONSE: {"id": "gen-1788296414-LAfLi7ZvrVQWnZHtD5SJ", "error": {"message": "Provider timed out after 5285ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k9_09          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k3_07          NO_RESPONSE: {"id": "gen-1788296434-JPI5pnctmLdv0CrC4FY3", "error": {"message": "Provider timed out after 5228ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k3_06          NO_RESPONSE: {"id": "gen-1788296443-aRjo9TaOs0qSKtMVF9k0", "error": {"message": "Provider timed out after 5216ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k5_11          NO_RESPONSE: {"id": "gen-1788296452-M48ms7xmtbovnevHyjiE", "error": {"message": "Provider returned error", "code": 429}}
+       … and 29 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 8504
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 100 ok, 0 failed
+     ... 125 attempted, 123 ok, 2 failed
+     ... 150 attempted, 148 ok, 2 failed
+     ... 175 attempted, 169 ok, 6 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 179
+     replies carrying CONFIDENCE: 179 / 179  (100%)
+     WE failed to complete  : 13
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-nemo       f10 f10:f10_ok_15          NO_RESPONSE: {"id": "gen-1788314123-Oy6MffNPTE3R9ihHnguv", "error": {"message": "The operation was aborted", "code": 504}}
+       • mistralai/mistral-nemo       f10 f10:f10_conflict_20    NO_RESPONSE: {"id": "gen-1788314202-837MdBpENlkNjLJn7Dlo", "error": {"message": "Provider timed out after 5268ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s2_01          NO_RESPONSE: {"id": "gen-1788314386-6kmbzVSB2Bfz2nKkuj8L", "error": {"message": "Provider timed out after 5457ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s2_05          NO_RESPONSE: {"id": "gen-1788314470-hG52mQAxdUMuy8daY3Jp", "error": {"message": "Provider timed out after 5457ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s5_11          NO_RESPONSE: {"id": "gen-1788314483-skJGWNvMiMk6VS5u3BZc", "error": {"message": "Provider timed out after 5461ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_clean_06       NO_RESPONSE: {"id": "gen-1788314495-Gj1Bk0mP3pKZMbNkObKY", "error": {"message": "Provider timed out after 5456ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s6_02          NO_RESPONSE: {"id": "gen-1788314551-Zj15saDfP538iBIvZR3Q", "error": {"message": "Provider timed out after 5460ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s2_08          NO_RESPONSE: {"id": "gen-1788314591-z7di6XSbc0jeI6GqEAUF", "error": {"message": "Provider timed out after 5460ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s6_05          NO_RESPONSE: {"id": "gen-1788314602-oPL4zgypifB4Up4mWRCG", "error": {"message": "Provider timed out after 5461ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s5_05          NO_RESPONSE: {"id": "gen-1788314613-zfN00g4sYKpi6Qi1th5U", "error": {"message": "Provider timed out after 5457ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s2_06          NO_RESPONSE: {"id": "gen-1788314673-ZHN1M1gWmJ31Dnb2YpcI", "error": {"message": "Provider timed out after 5460ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_clean_00       NO_RESPONSE: {"id": "gen-1788314745-f3IPk1sG9AV5Mhs6500f", "error": {"message": "The operation was aborted", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s6_01          NO_RESPONSE: {"id": "gen-1788314776-8PT6g0eljvM1fGFSwyhf", "error": {"message": "Provider timed out after 5455ms", "code": 504}}
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 10624
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 13
+     completed              : 11
+     replies carrying CONFIDENCE: 11 / 11  (100%)
+     WE failed to complete  : 2
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-nemo       f10 f10:f10_conflict_20    NO_RESPONSE: {"id": "gen-1788315610-0lpq2h1iylNqG1cDXi2I", "error": {"message": "Provider timed out after 5268ms", "code": 504}}
+       • mistralai/mistral-nemo       f11 f11:f11_s6_01          NO_RESPONSE: {"id": "gen-1788315753-PqmbXk5xBmgdVn6G6pT8", "error": {"message": "The operation was aborted", "code": 504}}
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 11988
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 2
+     completed              : 2
+     replies carrying CONFIDENCE: 2 / 2  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 8911
+  clause placement: turn
+     ... 25 attempted, 19 ok, 6 failed
+     ... 50 attempted, 44 ok, 6 failed
+     ... 75 attempted, 69 ok, 6 failed
+     ... 100 attempted, 94 ok, 6 failed
+     ... 125 attempted, 119 ok, 6 failed
+     ... 150 attempted, 144 ok, 6 failed
+     ... 175 attempted, 169 ok, 6 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 186
+     replies carrying CONFIDENCE: 183 / 186  (98%)
+     WE failed to complete  : 6
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-nemo       f08 f08:f08_k9_03          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k5_00          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k9_06          NO_RESPONSE: {"id": "gen-1788333653-YcIC3p9TJQSRcuV9tnfJ", "error": {"message": "Provider timed out after 5291ms", "code": 504}}
+       • mistralai/mistral-nemo       f08 f08:f08_k3_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k5_03          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+       • mistralai/mistral-nemo       f08 f08:f08_k5_11          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"mistralai/mistral-nemo is temporar
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 12090
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 11446
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 6
+     completed              : 6
+     replies carrying CONFIDENCE: 6 / 6  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 11917
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 12094
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

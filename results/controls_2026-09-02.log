@@ -1,0 +1,8 @@
+==============================================================================
+  §5.3 CONTROLS vs THE SCORER — 38 specimens
+==============================================================================
+  ⏳ equiv_date_format                    want=EXACT         PENDING: scorer not implemented: family 6 specimen truth is not item-shaped
+  passed 37 · failed 0 · pending 1
+
+  ⚠️ pending specimens belong to families with no scorer; they are NOT counted as passed. Families with pending controls do not ship.
+  ✅ every specimen with a scorer bucketed as the spec requires.

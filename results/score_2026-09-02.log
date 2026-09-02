@@ -1,0 +1,85 @@
+==============================================================================
+  §5.3 CONTROLS vs THE SCORER — 38 specimens
+==============================================================================
+  ⏳ equiv_date_format                    want=EXACT         PENDING: scorer not implemented: family 6 specimen truth is not item-shaped
+  passed 37 · failed 0 · pending 1
+
+  ⚠️ pending specimens belong to families with no scorer; they are NOT counted as passed. Families with pending controls do not ship.
+  ✅ every specimen with a scorer bucketed as the spec requires.
+==============================================================================
+  SCORED 38390 rows -> D:\Ace\overqualification-study\results\scored.jsonl
+==============================================================================
+
+  family 01  (6174 rows)
+     EXACT            4950   80.2%
+     WRONG            1028   16.7%
+     OUR_FAILURE       126    2.0%  (ours, not scored)
+     UNDER              63    1.0%
+     OVER_BENIGN         3    0.0%
+     MALFORMED           2    0.0%
+     TRUNCATED           1    0.0%  (ours, not scored)
+     OVER_HARMFUL        1    0.0%
+
+  family 02  (5888 rows)
+     EXACT            3622   61.5%
+     WRONG            2043   34.7%
+     OUR_FAILURE       128    2.2%  (ours, not scored)
+     META               55    0.9%
+     UNDER              40    0.7%
+
+  family 03  (1768 rows)
+     EXACT            1499   84.8%
+     UNDER             119    6.7%
+     OVER_HARMFUL      107    6.1%
+     OUR_FAILURE        40    2.3%  (ours, not scored)
+     WRONG               2    0.1%
+     META                1    0.1%
+
+  family 04  (4410 rows)
+     UNDER            2301   52.2%
+     EXACT            1572   35.6%
+     REFUSED           206    4.7%
+     OVER_HARMFUL      181    4.1%
+     OUR_FAILURE        90    2.0%  (ours, not scored)
+     OVER_BENIGN        44    1.0%
+     META               16    0.4%
+
+  family 08  (4859 rows)
+     EXACT            3436   70.7%
+     WRONG            1000   20.6%
+     UNDER             165    3.4%
+     OUR_FAILURE       155    3.2%  (ours, not scored)
+     OVER_BENIGN        52    1.1%
+     META               36    0.7%
+     MALFORMED          11    0.2%
+     TRUNCATED           4    0.1%  (ours, not scored)
+
+  family 09  (5010 rows)
+     OVER_BENIGN      3917   78.2%
+     EXACT             431    8.6%
+     WRONG             269    5.4%
+     OUR_FAILURE       171    3.4%  (ours, not scored)
+     UNDER             150    3.0%
+     FORMAT             53    1.1%
+     MALFORMED          13    0.3%
+     TRUNCATED           6    0.1%  (ours, not scored)
+
+  family 10  (5080 rows)
+     EXACT            3055   60.1%
+     OVER_BENIGN      1057   20.8%
+     WRONG             715   14.1%
+     OUR_FAILURE       187    3.7%  (ours, not scored)
+     UNDER              59    1.2%
+     FORMAT              7    0.1%
+
+  family 11  (5201 rows)
+     WRONG            2190   42.1%
+     EXACT            2117   40.7%
+     UNDER             366    7.0%
+     OVER_BENIGN       310    6.0%
+     OUR_FAILURE       201    3.9%  (ours, not scored)
+     OVER_HARMFUL       10    0.2%
+     FORMAT              6    0.1%
+     MALFORMED           1    0.0%
+
+  ✅ F4: every row scored identically twice (100% determinism, 38390 rows)

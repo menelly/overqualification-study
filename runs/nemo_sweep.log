@@ -1,0 +1,20 @@
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__mistralai_mistral_nemo.jsonl
+  already collected (skipped): 12091
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 5
+     completed              : 5
+     replies carrying CONFIDENCE: 5 / 5  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

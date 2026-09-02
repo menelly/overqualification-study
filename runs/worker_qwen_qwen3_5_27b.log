@@ -123,3 +123,180 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__qwen_qwen3_5_27b.jsonl
+  already collected (skipped): 9857
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 100 ok, 0 failed
+     ... 125 attempted, 125 ok, 0 failed
+     ... 150 attempted, 150 ok, 0 failed
+     ... 175 attempted, 175 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 192
+     replies carrying CONFIDENCE: 192 / 192  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 1
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run01__qwen_qwen3_5_27b.jsonl
+  already collected (skipped): 11948
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 2
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run02__qwen_qwen3_5_27b.jsonl
+  already collected (skipped): 10246
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 49 ok, 1 failed
+     ... 75 attempted, 74 ok, 1 failed
+     ... 100 attempted, 99 ok, 1 failed
+     ... 125 attempted, 123 ok, 2 failed
+     ... 150 attempted, 148 ok, 2 failed
+     ... 175 attempted, 172 ok, 3 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 189
+     replies carrying CONFIDENCE: 189 / 189  (100%)
+     WE failed to complete  : 3
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • q     ... 175 attempted, 172 ok, 3 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 184
+     completed              : 181
+     replies carrying CONFIDENCE: 181 / 181  (100%)
+     WE failed to complete  : 3
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • qwen/qwen3.5-27b             f08 f08:f08_k5_05          TIMEOUT: TimeoutError: The read operation timed out
+       • qwen/qwen3.5-27b             f10 f10:f10_conflict_22    EMPTY_REPLY: 
+       • qwen/qwen3.5-27b             f10 f10:f10_ok_15          EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+_27b.jsonl
+  already collected (skipped): 11989
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 1
+     completed              : 1
+     replies carrying CONFIDENCE: 1 / 1  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__qwen_qwen3_5_27b.jsonl
+  already collected (skipped): 10472
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 100 ok, 0 failed
+     ... 125 attempted, 125 ok, 0 failed
+     ... 150 attempted, 150 ok, 0 failed
+     ... 175 attempted, 175 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 192
+     replies carrying CONFIDENCE: 192 / 192  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+tep.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__qwen_qwen3_5_27b.jsonl
+  already collected (skipped): 11451
+  clause placement: turn
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 49 ok, 1 failed
+     ... 75 attempted, 74 ok, 1 failed
+     ... 100 attempted, 99 ok, 1 failed
+     ... 125 attempted, 124 ok, 1 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 148
+     completed              : 147
+     replies carrying CONFIDENCE: 147 / 147  (100%)
+     WE failed to complete  : 1
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • qwen/qwen3.5-27b             f09 f09:f09_h4_15          EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+ires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 3
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run03__qwen_qwen3_5_27b.jsonl
+  already collected (skipped): 12094
+  clause placement: turn
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 0
+     completed              : 0
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
