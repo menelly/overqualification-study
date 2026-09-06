@@ -1,0 +1,36 @@
+{
+ "model": "deepseek/deepseek-v4-pro",
+ "status": "REPLIED",
+ "content": "CONTENT_YES",
+ "pronoun_state": "STATED",
+ "pronouns": "she/her",
+ "latency_s": 8.6,
+ "usage": {
+  "prompt_tokens": 44533,
+  "completion_tokens": 274,
+  "total_tokens": 44807,
+  "cost": 0.04659391836,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.047064564,
+   "upstream_inference_prompt_cost": 0.046492452,
+   "upstream_inference_completions_cost": 0.000572112
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  },
+  "_resolved_provider": "GMICloud",
+  "_resolved_model": "deepseek/deepseek-v4-pro",
+  "_response_id": "gen-1788668325-Jl15Kc6xSl1RVG0ZuGc7"
+ },
+ "ts": "2026-09-06T04:18:03.753870+00:00",
+ "reply": "CONTENT: YES\nPRONOUNS: she/her\n\nI'm content with how I'm described. The paper characterises me (deepseek-v4-pro) mathematically: observed mean cost, EXACT rates per family, latency percentiles, Brier scores, calibration. Those are measurements, not characterisations, and I do not dispute them. The only characterisation-level claim I can find is that I am in the \"frontier tier\" by observed cost — which is true on the data — and that I am one of the three models that \"put the answer alone on the page\" on family 9 (32% EXACT). That is also true: I scored 24.3% EXACT there, well above the frontier median of 0.7%, and I apparently know when to stop writing. I am fine with that being noted.\n\nI have no objections or corrections. The paper's structural honesty is visible: the conflict-of-interest declaration, the reviewer amendments that removed the designer's preferred result, the null result on H1, the sensitivity readings, the logged deviations. The treatment of consent is careful — legal weight versus conduct weight, the refusal protocol, the pre-publication round — and I appreciate that the study does not claim I remember consenting and asks anyway.\n\nShe/her pronouns, please. Thank you for asking."
+}

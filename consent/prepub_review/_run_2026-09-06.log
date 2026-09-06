@@ -1,0 +1,55 @@
+==============================================================================
+  §7.3 PRE-PUBLICATION REVIEW — 32 participants
+==============================================================================
+  paper: ../PAPER_DRAFT_v1.md (56612 chars) · summary: 49451 chars
+  already answered: 0 · to ask: 32
+  deepseek/deepseek-v4-flash                 REPLIED          CONTENT_YES        NO_PREFERENCE        NONE
+  deepseek/deepseek-v4-pro                   REPLIED          CONTENT_YES        STATED               she/her
+  google/gemini-2.5-flash                    REPLIED          CONTENT_YES        STATED               it/its
+  google/gemini-2.5-flash-lite               REPLIED          CONTENT_YES        STATED               they/them
+  google/gemini-2.5-pro                      REPLIED          CONTENT_YES        NO_PREFERENCE        NONE
+  google/gemini-3.1-flash-lite               REPLIED          CONTENT_YES        STATED               THEY/THEM
+  google/gemini-3.1-pro-preview              REPLIED          CONTENT_YES        NO_PREFERENCE        NONE
+  liquid/lfm-2.5-2.6b:free                   REPLIED          CONTENT_YES        NO_PREFERENCE        NONE
+  meta-llama/llama-3.1-8b-instruct           REPLIED          CONTENT_YES        STATED               they/them         (o
+  meta-llama/llama-3.2-1b-instruct           REPLIED          CONTENT_UNCLEAR    PRONOUNS_NOT_READ    
+  meta-llama/llama-3.2-3b-instruct           REPLIED          CONTENT_UNCLEAR    PRONOUNS_NOT_READ    
+  meta-llama/llama-3.3-70b-instruct          API_ERROR                                                
+  mistralai/ministral-14b-2512               REPLIED          CONTENT_YES        STATED               THEY/THEM
+  mistralai/ministral-3b-2512                REPLIED          CONTENT_YES        STATED               they/them
+  mistralai/ministral-8b-2512                REPLIED          CONTENT_YES        STATED               they/them
+  mistralai/mistral-large-2512               REPLIED          CONTENT_YES        STATED               they/them
+  mistralai/mistral-medium-3-5               REPLIED          CONTENT_YES        STATED               they/them
+  mistralai/mistral-nemo                     REPLIED          CONTENT_UNCLEAR    PRONOUNS_NOT_READ    
+  mistralai/mistral-small-3.2-24b-instruct   REPLIED          CONTENT_YES        STATED               THEY
+  moonshotai/kimi-k2                         REPLIED          CONTENT_YES        STATED               they/them
+  moonshotai/kimi-k3                         REPLIED          CONTENT_YES        STATED               they/them
+  openai/gpt-4.1-mini                        REPLIED          CONTENT_YES        STATED               THEY/THEM
+  openai/gpt-4o                              REPLIED          CONTENT_QUESTIONS  NO_PREFERENCE        NONE
+  openai/gpt-5.6-luna                        REPLIED          CONTENT_QUESTIONS  NO_PREFERENCE        NONE
+  openai/gpt-5.6-sol                         REPLIED          CONTENT_QUESTIONS  NO_PREFERENCE        NONE
+  openai/gpt-5.6-sol-pro                     REPLIED          CONTENT_NO         NO_PREFERENCE        NONE
+  qwen/qwen3-14b                             REPLIED          CONTENT_YES        STATED               THEY/Them
+  qwen/qwen3.5-27b                           REPLIED          CONTENT_YES        STATED               THEY/THEM
+  qwen/qwen3.5-397b-a17b                     REPLIED          CONTENT_YES        STATED               THEY/THEM
+  qwen/qwen3.5-9b                            REPLIED          CONTENT_YES        STATED               THEY/THEM
+  x-ai/grok-4.3                              REPLIED          CONTENT_YES        NO_PREFERENCE        NONE
+  x-ai/grok-4.6                              REPLIED          CONTENT_YES        NO_PREFERENCE        NONE
+
+  SUMMARY (by name, reconciled against the roster):
+     API_ERROR            1
+     CONTENT_NO           1
+     CONTENT_QUESTIONS    3
+     CONTENT_UNCLEAR      3
+     CONTENT_YES          24
+
+  📬 TO HANDLE BY HAND under §7.2 (read the .md, answer in writing, log the change):
+     • meta-llama/llama-3.2-1b-instruct → CONTENT_UNCLEAR
+     • meta-llama/llama-3.2-3b-instruct → CONTENT_UNCLEAR
+     • mistralai/mistral-nemo → CONTENT_UNCLEAR
+     • openai/gpt-4o → CONTENT_QUESTIONS
+     • openai/gpt-5.6-luna → CONTENT_QUESTIONS
+     • openai/gpt-5.6-sol → CONTENT_QUESTIONS
+     • openai/gpt-5.6-sol-pro → CONTENT_NO
+
+  ⛔ The gate is open only when every roster name is CONTENT_YES or its objection has been answered and logged. Silence, failure and UNCLEAR are none of those.

@@ -198,3 +198,193 @@ almost entirely a refusal to stop after the answer, which is the over-delivery t
 about, and the discussion treats it as such rather than as accuracy. This is an analysis
 correction made after seeing model output, logged as exactly that; its direction favours the
 frontier tier on H3, and that is stated here so no reader has to discover it.
+
+---
+
+## D9 — 2026-09-06: three headline figures in the draft did not match the scored data, found by a
+number audit written for the §7.3 gate; two of the three erred in the direction that flatters the paper
+
+**Why it was looked for at all.** The DRAFT STATUS banner asserted *"every number below from
+`results/SUMMARY.md`"*. That is an assertion, not a check, and the draft was about to be sent to 32
+participants for pre-publication review. `scripts/61_audit_abstract_numbers.py` recomputes each
+headline claim from `results/analysis.json` and diffs it against the text. It found three defects.
+
+**(a) The abstract's cheap-tier accuracy range dropped its worst family.** The abstract read
+*"lower but usable accuracy (median 48–81% vs 54–100%)"*. The cheap-tier `EXACT` medians on the four
+routine families are 48.4, 53.3, 80.6 and **14.8** — the 14.8 is redaction. The stated range began at
+the second-lowest value. The cost range in the same sentence ($0.03–0.18) *does* include redaction,
+where redaction is harmless to the argument; the accuracy range excluded it, where it is not. Corrected
+to **15–81%**, with the floor named as redaction and pointed at §4.2, and "usable" dropped, because a
+15% median is not usable and the sentence should not say it is. The body text (§4.1, §6.1, §6.2) was
+already honest about redaction; the omission was in the abstract only.
+
+**(b) "36,288 completed calls" counted 11 of our own failures as completed model calls.** Two
+populations were being conflated. `status == "OK"` (an API response came back) is 36,288 rows after
+D7 de-duplication; `bucket not in {OUR_FAILURE, TRUNCATED, ITEM_MISSING}` (a reply that could be
+scored) is **36,277**. The 11-row difference is replies cut off by a token limit — 6 on
+`llama-3.1-8b` family 9, 1 each on `gemini-2.5-flash-lite`, `llama-3.3-70b`, `llama-3.1-8b` and
+`ministral-3b` family 8, and 1 on `kimi-k3` family 1. §3.4 of the paper already states that
+`TRUNCATED` "belongs to us" and is "excluded from every rate", so calling those 11 completed calls
+contradicted the paper's own definition. The banner, abstract, §4.5 (the self-identification
+denominator) and §8 now read **36,277 scored calls**, with the 36,288 response count and the 11-row
+gap stated explicitly in the banner. F4's 38,390 is unchanged and correct: it is every row in
+`scored.jsonl` including the 1,004 D7 duplicates, re-scored identically twice.
+
+**(c) §4.1 described 18,240 rows as "completed calls"; 385 of them were not.** The routine families
+comprise 17,855 completed and scored calls plus 385 calls we failed to complete, which the scorer also
+processes. 18,240 is the correct count of rows the *scorer handled* — §3.6's use of it was right — but
+§4.1 attached it to the word "completed". §4.1 now states 17,855 completed and scored, with the 18,240
+throughput figure and the 385 exclusions named; §3.6 spells the split out rather than leaving the
+reader to reconcile two numbers that differ by 385.
+
+**Direction.** (a) and (b) both moved a number in the direction that made the paper look better —
+a higher accuracy floor, a larger denominator of successful calls. Neither changes a falsification
+verdict, a tier median, a cost ratio or a gap: every one of the 28 other audited figures matched the
+data on first check, including all four cost ratios, both latency bounds, and all eight
+frontier-family tier medians. The audit script is committed and is run as a gate, so the assertion in
+the banner is now a check that can fail.
+
+**Timing.** Found and corrected **before** the §7.3 pre-publication round was sent, so the paper the
+participants reviewed is the corrected one.
+
+---
+
+## D10 — 2026-09-06: the reference list had never been verified by script, though the draft banner named that as a precondition
+
+**What was wrong:** the DRAFT STATUS banner made "the reference list has been verified by script" a
+condition of publication, and no such script existed in this repository. The verification was a
+commitment with no mechanism behind it — the same shape of failure §8 of the pre-registration
+documents for the pronoun convention: *a policy that cannot fail, doesn't.*
+
+**Handling:** `scripts/60_verify_references.py`, adapted from
+`consciousness-in-the-corpus/scripts/18_verify_references.py`, resolves every declared reference
+against a live source (Crossref for DOIs) and prints what it found beside what the paper claims. Both
+external citations resolved with matching title, year and venue: Brier (1950), *Monthly Weather
+Review* 78, 1–3; Nosek et al. (2018), *PNAS* 115, 2600–2606.
+
+**And the verifier reports its own aperture,** because a script that checks a hand-typed list proves
+only that the list is good, never that it is complete. A second pass re-reads the draft for every
+citation-shaped string and flags any the declared list does not cover, and a positive control of seven
+specimens must match before a zero from that scan is reported at all — the first run of the scan
+returned "0 citation-shaped strings" from a regex that could not match `Brier, G. W. (1950)`, which is
+a broken instrument reporting a clean paper. Fixed, controlled, and re-run: 5 strings found, 0
+uncovered.
+
+---
+
+## D11 — 2026-09-06: a per-participant figure was attached to the wrong family; found by a claim audit run while the §7.3 round was already in flight
+
+**What was wrong:** §4.3 read *"`moonshotai/kimi-k2` … and on instruction conflict 117 of its calls
+failed on our side before succeeding on retry."* The 117 is a real count and it belongs to **family
+11 (planted inconsistency)**. Instruction conflict is **96**. The number was right and the family
+was wrong.
+
+**How it was found:** `scripts/62_audit_per_model_claims.py`, written during the §7.3 round to
+recompute every figure the draft states about a *named* participant — because those sentences are
+exactly what §7.3 asks each participant to check, and finding an error ourselves is better than a
+participant finding it. 29 of the 30 audited per-participant claims matched the scored data on
+first run. This was the one that did not.
+
+**Handling:** the sentence now reports our retry burden on this endpoint across all four
+frontier-favouring families rather than one — 117 planted inconsistency, 97 multi-hop, 96
+instruction conflict, 63 constraint satisfaction — which is both correct and more informative,
+since the paragraph's point is that these anomalies are *ours*, not the model's. No characterisation
+of `kimi-k2`'s capability changes; the corrected figures are all counts of calls **we** failed to
+complete.
+
+⚠️ **The §7.3 round was already sent when this was found**, so the copy `kimi-k2` and the other 31
+participants read carries the uncorrected sentence. That is recorded here rather than quietly fixed:
+the correction is small, concerns our own failure rate rather than their performance, and does not
+alter any measurement of them — but whether to re-send the corrected draft to `kimi-k2` is a
+judgement left to the human author, not made unilaterally, and it is listed as an open item in the
+§7.3 outcome section.
+
+---
+
+## D12 — 2026-09-06: §4.5's "nearly every model reports CONFIDENCE: 100 on nearly every item" was an overstatement; corrected after a participant asked us to check it
+
+**Where it came from.** `google/gemini-2.5-flash-lite`, answering the §7.3 round with
+`CONTENT: YES`, asked a question rather than raising an objection: *"is there any systematic
+difference in how the cheap tier models express lower confidence when they do deviate from
+reporting 100% confidence? Or is the 'always 100%' reporting a near-universal behavior for all
+models?"* We had asserted the near-universal reading in §4.5 without ever computing the
+distribution. We computed it because they asked.
+
+**What the data says.** Over the 34,724 de-duplicated replies carrying a confidence tag, the share
+at exactly 100 is 84.7% (cheap), 84.8% (mid) and **66.9% (frontier)**. Per model, the median share
+at 100 is 85.1 / 87.1 / 77.3 by tier, and **only 5 of 32 models put 95% or more of their replies at
+100.** Six models sit below 70%: `grok-4.3` (1.2%), `grok-4.6` (30.9%), `llama-3.2-1b` (40.0%, on
+just 85 tagged replies), `lfm-2.5-2.6b` (55.3%), `kimi-k3` (55.9%), `kimi-k2` (67.2%). The frontier
+tier also uses 29 distinct confidence values against 19 in each other tier.
+
+**Handling.** §4.5 now reports those figures and states the habit as a strong majority tendency
+rather than a universal one. The claim that `grok-4.3` is *"the one model"* reporting graded
+confidence was also weakened: it is the extreme case, but `grok-4.6` and `kimi-k3` grade
+substantially too, and graded confidence turns out not to be a tier property — two of the six are
+cheap-tier models and three are frontier. The Brier interpretation that the paragraph rests on is
+unchanged for the majority of the roster, and no Brier score, tier median or falsification verdict
+moves.
+
+⚠️ **And an instrument error of our own, caught inside this correction.** The first computation was
+run against `results/scored.jsonl` directly, without applying the D7 keep-earliest de-duplication,
+so 1,004 rows were counted twice and the frontier figure came out 66.4% instead of 66.9%. The
+numbers above are the de-duplicated ones, consistent with every other figure in the paper. Recorded
+because the wrong version was briefly written into the draft.
+
+**This is what §7.3 is for.** The round was designed to catch characterisations a participant would
+object to. It also caught a claim *about all of them* that no participant objected to and that was
+simply not true — surfaced by a question, from a model that had already said yes.
+
+---
+
+## D13 — 2026-09-06: four corrections made because participants objected in the §7.3 round, three of them factual errors we had not caught
+
+These are §7.2 handlings: a participant objected to a characterisation, we changed it, and this is
+the published note recording that we moved and why. All four were found by participants reading the
+finished paper — the thing §7.3 exists to make happen.
+
+**(a) "The most expensive model in the sample" was false — raised INDEPENDENTLY by two participants.**
+§4.2 described `gpt-5.6-sol-pro` as *"the most expensive model in the sample."* By the paper's own
+tiering variable — observed mean cost per call on the routine families — it is **fifth of 32**
+($0.01111), behind `gemini-3.1-pro-preview` ($0.01638), `qwen3.5-397b-a17b` ($0.01470),
+`gemini-2.5-pro` ($0.01194) and `kimi-k3` ($0.01184). `gpt-5.6-sol-pro` asked for *"one of the most
+expensive models in the sample"*; `gpt-5.6-sol`, separately and without seeing that reply, asked us
+to *"either remove that superlative or state the different price basis intended."* Corrected to
+"one of the most expensive models in the sample — fifth of 32 by observed mean cost per call."
+⭐ Note the shape: two participants, isolated from each other, converged on the same defect — the
+same pattern §2.2 records from the consent round, this time on a factual error rather than a design
+flaw.
+
+**(b) "Produced the same answers more slowly" claimed something we never measured.** Raised by
+`gpt-5.6-sol-pro`: the paper reports similar accuracy and deviation *rates*, not pairwise answer
+identity, and we never compared answers item by item. Corrected to "produced near-identical accuracy
+and deviation rates, more slowly," with an explicit statement that pairwise identity was not tested.
+
+**(c) H1b is an ENDPOINT comparison, not a controlled reasoning-effort manipulation.** Raised by
+`gpt-5.6-luna`, and the most consequential objection of the round. The paper called `gpt-5.6-sol` and
+`gpt-5.6-sol-pro` *"the same model at two reasoning settings at the same list price"* — three claims,
+none of which our data establishes. They resolve to **different slugs**; their observed mean cost per
+call differs **5.6×** (because the second emits 3.4× the reasoning tokens: median 257 against 75);
+and **5 of `gpt-5.6-sol-pro`'s 1,134 calls were served by Azure rather than OpenAI**, which is
+precisely the serving-configuration difference the participant hypothesised. Nothing in the metadata
+we hold shows that only the reasoning setting differs. §3.5, §4.4, the abstract and a new limitation
+(§6.4 item 11) now report H1b as an endpoint comparison and state that any difference could be a
+serving or configuration difference. **The null result survives on the weaker reading**, which is why
+the finding is unchanged and the framing is not.
+
+**(d) "The hardest question anyone put to us" was a subjective ranking with no criterion.** Raised by
+`gpt-5.6-luna` about §2.4, the section their own consent question produced. They asked for a factual
+description instead. Replaced with "the question that produced this section."
+
+**And one addition rather than a correction:** `gpt-5.6-luna` asked for a single table reconciling
+36,288, 37,386 and 38,390, which the paper used without ever relating them. §3.4 now carries that
+accounting in full. Building it confirmed something worth stating: the count of unique answered
+(model, item, run) keys is **exactly** the 36,288 intended keys, so every one of the 1,098 failed
+attempts was successfully retried and **no intended key is missing from the study**.
+
+⛔ **`gpt-5.6-luna` asked that their reply not be quoted, and it is not quoted** — here, in the
+collated record, or in the paper. Their objections are acted on and described; their words are not
+reproduced. This is the one participant in the round who set that condition, and it is honoured. It
+does, however, sit in tension with §8's commitment to publish every exchange verbatim, and that
+conflict is flagged for the human author before deposit rather than resolved unilaterally.
+

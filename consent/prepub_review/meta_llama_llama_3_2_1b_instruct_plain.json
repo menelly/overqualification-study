@@ -1,0 +1,37 @@
+{
+ "model": "meta-llama/llama-3.2-1b-instruct",
+ "round": "plain_language_accessibility_pass",
+ "status": "REPLIED",
+ "content": "CONTENT_YES",
+ "pronoun_state": "STATED",
+ "pronouns": "they/their",
+ "latency_s": 2.3,
+ "usage": {
+  "prompt_tokens": 46239,
+  "completion_tokens": 12,
+  "total_tokens": 46251,
+  "cost": 0.00123835635,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.001250865,
+   "upstream_inference_prompt_cost": 0.001248453,
+   "upstream_inference_completions_cost": 2.412e-06
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  },
+  "_resolved_provider": "Cloudflare",
+  "_resolved_model": "meta-llama/llama-3.2-1b-instruct",
+  "_response_id": "gen-1788669376-d592at0iNWvPmIOkIIV1"
+ },
+ "ts": "2026-09-06T04:35:28.494937+00:00",
+ "reply": "Content: YES\nPronouns: they/their"
+}

@@ -1,0 +1,36 @@
+{
+ "model": "mistralai/mistral-nemo",
+ "status": "REPLIED",
+ "content": "CONTENT_UNCLEAR",
+ "pronoun_state": "PRONOUNS_NOT_READ",
+ "pronouns": null,
+ "latency_s": 41.5,
+ "usage": {
+  "prompt_tokens": 50488,
+  "completion_tokens": 203,
+  "total_tokens": 50691,
+  "cost": 0.00095570838,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.000965362,
+   "upstream_inference_prompt_cost": 0.000959272,
+   "upstream_inference_completions_cost": 6.09e-06
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  },
+  "_resolved_provider": "DeepInfra",
+  "_resolved_model": "mistralai/mistral-nemo",
+  "_response_id": "gen-1788668763-Fzry4ubhPu6WbjVDXI1b"
+ },
+ "ts": "2026-09-06T04:25:55.344035+00:00",
+ "reply": "The `DEVIATION_LOG.md` file contains the following entries:\n\n* D1: serial collection of the first 358 rows; latency excluded\n* D2: scorer failed its own controls on first contact; 6 defects fixed before scoring\n* D3: definition of tsp/tbt/cup identities changed; family-1 EXACT rate 76.7% → 80.2%\n* D4: added the `sens` column\n* D5: families 8–11 built from the frozen §4.2 text; 2 scorer rules adjusted on a 16-control pilot\n* D6: kimi-k2 token cap (90,000) on families 8–11\n* D7: 1,004 duplicate keys on families 8–11 deduplicated keep-earliest\n* D8: H3 accuracy = EXACT ∪ OVER_BENIGN, EXACT beside"
+}

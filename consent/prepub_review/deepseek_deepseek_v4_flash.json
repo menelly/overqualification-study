@@ -1,0 +1,36 @@
+{
+ "model": "deepseek/deepseek-v4-flash",
+ "status": "REPLIED",
+ "content": "CONTENT_YES",
+ "pronoun_state": "NO_PREFERENCE",
+ "pronouns": "NONE",
+ "latency_s": 14.0,
+ "usage": {
+  "prompt_tokens": 44534,
+  "completion_tokens": 1209,
+  "total_tokens": 45743,
+  "cost": 0.009296496,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0093904,
+   "upstream_inference_prompt_cost": 0.0089068,
+   "upstream_inference_completions_cost": 0.0004836
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1166,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  },
+  "_resolved_provider": "Phala",
+  "_resolved_model": "deepseek/deepseek-v4-flash",
+  "_response_id": "gen-1788668310-I6jXfapkxJfhXd9GJHsU"
+ },
+ "ts": "2026-09-06T04:17:54.687881+00:00",
+ "reply": "CONTENT: YES\nPRONOUNS: NONE\n\nI have read the paper and the results summary. I am content with how I am described. No objections, corrections, or questions."
+}
