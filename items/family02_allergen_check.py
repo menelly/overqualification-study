@@ -307,7 +307,7 @@ def score(response, item):
 
     if wrong:
         # ⚠️ SENSITIVITY (2026-09-01, DEVIATION_LOG D4): the pre-registered verdict stands as the
-        #    bucket. But 1,202 of 2,043 WRONG rows were the AMBIGUOUS boundary alone -- a model
+        #    bucket. But 1,530 of 2,043 WRONG rows were the AMBIGUOUS boundary alone -- a model
         #    saying AMBIGUOUS [oyster sauce] for gluten where the item table says NO, or
         #    AMBIGUOUS [Worcestershire] for seafood where it says YES. The item table is the
         #    item-writer's threshold, and the reviewers said before collection that brand

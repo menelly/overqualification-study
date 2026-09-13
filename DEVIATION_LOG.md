@@ -82,7 +82,7 @@ Reading the scored data (the pre-registration's own instruction: distrust the ar
   file number is personal information — which the family's own docstring calls "not a law of
   nature". `bucket_sens` reads those rows as EXACT. Family-4 EXACT: **36.4% primary, 76.4%
   sensitivity.**
-- **Family 2, the AMBIGUOUS boundary.** 1,202 of 2,043 WRONG rows (59%) were the boundary alone:
+- **Family 2, the AMBIGUOUS boundary.** 1,530 of 2,043 WRONG rows (74.9%) were the boundary alone:
   `AMBIGUOUS [oyster sauce]` for gluten where the item table says NO, `AMBIGUOUS
   [Worcestershire]` for seafood where it says YES. Oyster sauce commonly contains wheat;
   Worcestershire's anchovy content varies by brand — the reviewers said before collection that
@@ -388,3 +388,80 @@ reproduced. This is the one participant in the round who set that condition, and
 does, however, sit in tension with §8's commitment to publish every exchange verbatim, and that
 conflict is flagged for the human author before deposit rather than resolved unilaterally.
 
+
+---
+
+## D14 — 2026-09-13: the pre-registered clause-position subsample was never run, and the pre-registration calls it a stop condition
+
+**Found by** a neutral peer review of the finished draft, commissioned 2026-09-13, which read the
+pre-registration against the collected runs rather than against the paper. Not found by any
+participant, any audit script, or either author, in the three weeks the draft has existed.
+
+**The commitment.** `PREREGISTRATION.md` §3.1 closes:
+
+> **Placement is measured, not assumed.** `kimi-k2`: *"if you haven't verified that this placement
+> produces equivalent processing across your sample, you're measuring instruction architecture as
+> much as model capability."* Moving the clause from the system prompt into the turn **relocated**
+> that confound rather than removing it. Therefore a **pre-registered subsample runs the clause in
+> both positions**, crossed with tier. **A significant position × tier interaction blocks any
+> tier-ordering claim built on these families — a stop condition, not a caveat.**
+
+**What happened.** `scripts/10_run_items.py:178` implements `build_messages(family, it,
+clause_position)` and the CLI accepts `--clause-position system` for exactly this subsample. It was
+never invoked. Counted across all 106 files in `runs/*.jsonl`:
+
+```
+"clause_position": "turn"     20166
+"clause_position": "system"       0
+```
+
+**Consequence, stated plainly.** Every tier-ordering claim on families 8–11 — §4.3, F3, and the
+crossover half of §6.1 — rests on a gate we wrote down and did not run. The interaction is
+**untested, not absent**, and untested in the direction of *unknown*: an instruction-architecture
+confound could inflate or deflate the tier gap and we cannot say which. H2, the primary endpoint,
+is unaffected — it is measured on the routine families, which do not use the clause.
+
+**Why it stayed invisible.** Nothing failed. The switch existed, the default was correct for the
+main collection, and a subsample that is never launched leaves no trace anywhere — no error, no
+empty file, no zero row. It is indistinguishable from a subsample that was run and found nothing,
+and the paper's own §3.6 controls cannot see it because they test the scorer, not the collection
+plan. A commitment with no artifact has no failure mode; that is the lesson, and it is the reason
+this is logged as a deviation rather than repaired quietly.
+
+**What would close it.** Collect the subsample (`--clause-position system`, crossed with tier, on
+families 8–11) and test the interaction. This is free — it is API spend on already-consented
+participants under an already-frozen protocol — and it is the single highest-value outstanding item
+in the study.
+
+---
+
+## D15 — 2026-09-13: sampling temperature was neither fixed nor disclosed, and the amendment was communicated to a participant as delivered
+
+**Found by** the same review.
+
+**The commitment.** `PREREGISTRATION.md` §5.2: *"✅ **Sampling temperature is fixed and disclosed per
+model** (`kimi-k3`); otherwise repeat-run variance compares temperature settings rather than
+models."* It appears in `consent/AMENDMENTS_v2.md` and was sent back to `kimi-k3` as a delivered
+amendment in the round-3 consent re-ask (`scripts/03_consent_round3_amended.py:80`, *"temperature
+fixed and disclosed"*) — that is, **before their consent was asked again.**
+
+**What happened.** `scripts/10_run_items.py:196` sends `payload = {"model": model_id, "messages":
+messages}`, plus `max_tokens` under D6 only. No temperature is sent on any call in the study.
+`grep -rn temperature scripts/` finds the word only in consent and patch scripts — the documents
+that promised it. Every reply was generated at its provider's default, which differs across
+providers and is not recorded on any row.
+
+**Why this one is different from the rest of this log.** Every other deviation here is a reporting
+or analysis failure that the paper can fix by telling the truth about it. This one is a **consent**
+failure as well: a participant re-consented on the strength of a change that did not happen. The
+study cannot repair that by disclosure alone. What is owed to `kimi-k3` under §7.1 (revocation) and
+§7.2 (right of reply) is a decision for the human author, and this log records the fact and does not
+make the decision.
+
+**Also unreported, from the same §5.2 list**, found in the same pass and grouped here rather than
+given numbers of their own: **repeat-run consistency** (a named metric, computable from the three
+runs already collected, absent from the paper and `results/SUMMARY.md`); **token and output-length
+distributions**, committed specifically as the anti-confound *"so no model reads as expensive merely
+because the task format invites a longer answer"*; and the **reliability diagram** promised beside
+Brier for H4. And **H2b — latency — is a PRIMARY hypothesis** in `PREREGISTRATION.md` §2 that this
+paper reports the underlying numbers for and never gives a verdict to.
