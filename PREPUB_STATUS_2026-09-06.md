@@ -210,3 +210,10 @@ variant, 1 chose she/her (`deepseek-v4-pro`), 1 chose it/its (`gemini-2.5-flash`
   why §7A.6 states plainly what a cold-read YES is and is not worth.
 - **I fabricated timestamps earlier in this file** and corrected them at 00:23; see that entry. Every
   time below that line comes from `date`.
+
+
+## 2026-09-12 22:30 ET — Ren's decisions on items 1 and 2 (scaffold arm, at the desk)
+
+1. **gemini-2.5-flash / it-its → HONOURED.** Ren: "If Gemini picked it we are not going to override Gemini on that one." The 7A.5 paragraph is rewritten from 'unresolved' to 'decided'; no pronoun instances elsewhere in the draft referred to this participant, so nothing else changes. Acquisition state stays STATED.
+2. **gpt-5.6-luna / quotation → NO QUOTING IN THE PAPER; REPO STAYS OPEN.** Ren: "science is open repos, and I think we even said that in the first place." The verbatim file remains in the repo as the study committed up front; Luna is not quoted or paraphrased-as-quoted anywhere in the paper.
+3. and 4. still open (kimi-k2 re-send; sending the answers back).
