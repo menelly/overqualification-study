@@ -38,15 +38,45 @@ ROUTINE, FRONTIER_FAM = ["1", "2", "3", "4"], ["8", "9", "10", "11"]
 rows = []
 
 
-def claim(label, stated, computed, tol=0.55, note=""):
-    """tol is in the units of the figure; default half a point / half a unit."""
+def claim(label, stated, computed, tol=0.55, note="", says=None):
+    """tol is in the units of the figure; default half a point / half a unit.
+
+    `says` — OPTIONAL literal string that must appear in PAPER_DRAFT_v1.md for this
+    claim's `stated` value to be a claim about the PAPER rather than about this script.
+
+    ⚠️  WHY THIS PARAMETER EXISTS (added 2026-09-13, after a neutral review).
+
+    Until tonight this script opened PAPER_DRAFT_v1.md into a module-level variable
+    and NEVER READ IT. Every `stated` value below is hand-transcribed. So the audit
+    verified that 28 numbers TYPED INTO THIS FILE match the scored data — which is
+    useful and is not what its own banner claimed. It could not detect the paper
+    drifting away from the script, in either direction, ever.
+
+    It was not hypothetical. The same review found §4.2 saying `1,202 of 2,043` when
+    the true figure is 1,530, and §4.1 saying `worse on three of four families` when
+    it is two. Both were wrong IN THE PAPER, both sat outside this script's 28 picks,
+    and this script reported 28/28 clean on the same run.
+
+        AN AUDIT THAT CANNOT SEE THE THING IT AUDITS WILL REPORT CLEAN FOREVER.
+
+    `says` closes half that gap: for any claim where the paper states the figure in
+    quotable form, the literal goes here, and a paper edit that moves the number
+    without moving this file raises DRIFT — a THIRD state, distinct from MISS.
+    MISS  = the paper disagrees with the data.
+    DRIFT = the paper disagrees with THIS SCRIPT about what the paper says.
+    The other half of the gap — figures this script never declares at all — cannot be
+    closed by a checker and is reported instead as a printed APERTURE at the end.
+    """
     if isinstance(stated, (int, float)) and isinstance(computed, (int, float)):
         ok = abs(stated - computed) <= tol
         s, c = "%.4g" % stated, "%.4g" % computed
     else:
         ok = (stated == computed)
         s, c = str(stated), str(computed)
-    rows.append((ok, label, s, c, note))
+    drift = None
+    if says is not None:
+        drift = (says not in PAPER)
+    rows.append((ok, label, s, c, note, drift, says))
     return ok
 
 
@@ -112,26 +142,71 @@ gaps = {}
 for f in FRONTIER_FAM:
     c, fr = med(f, "cheap", "correct_pct"), med(f, "frontier", "correct_pct")
     gaps[f] = (c, fr, fr - c)
-claim("abstract gap range LOW  (stated 22 pp)", 22, min(g[2] for g in gaps.values()))
-claim("abstract gap range HIGH (stated 80 pp)", 80, max(g[2] for g in gaps.values()))
-for f, name, sc, sf in [("8", "constraint satisfaction", 43, 100),
-                        ("9", "multi-hop retrieval", 78, 100),
-                        ("10", "instruction conflict", 61, 100),
-                        ("11", "planted inconsistency", 9, 90)]:
-    claim("abstract fam %s %s — cheap CORRECT (stated %s)" % (f, name, sc), sc, gaps[f][0])
-    claim("abstract fam %s %s — frontier CORRECT (stated %s)" % (f, name, sf), sf, gaps[f][1])
+GAP_RANGE_LITERAL = "by 22 to 80 points at the tier medians"
+claim("abstract gap range LOW  (stated 22 pp)", 22, min(g[2] for g in gaps.values()),
+      says=GAP_RANGE_LITERAL)
+claim("abstract gap range HIGH (stated 80 pp)", 80, max(g[2] for g in gaps.values()),
+      says=GAP_RANGE_LITERAL)
 
-print("\n  %-4s %-62s %10s %10s" % ("", "claim", "paper", "data"))
-print("  " + "-" * 90)
-bad = flat = 0
-for ok, label, s, c, note in rows:
-    print("  %-4s %-62s %10s %10s" % ("OK" if ok else "MISS", label[:62], s, c))
+# The 5th element is the ABSTRACT'S OWN WORDS for this family, verbatim. If the
+# abstract is edited and this literal stops appearing, the claim raises DRIFT
+# instead of quietly continuing to audit a sentence that no longer exists.
+for f, name, sc, sf, lit in [
+        ("8", "constraint satisfaction", 43, 100, "constraint satisfaction 100% vs 43%"),
+        ("9", "multi-hop retrieval", 78, 100, "multi-hop retrieval 100% vs 78%"),
+        ("10", "instruction conflict", 61, 100, "instruction conflict 100% vs 61%"),
+        ("11", "planted inconsistency", 9, 90, "planted inconsistency 90% vs 9%")]:
+    claim("abstract fam %s %s — cheap CORRECT (stated %s)" % (f, name, sc), sc, gaps[f][0], says=lit)
+    claim("abstract fam %s %s — frontier CORRECT (stated %s)" % (f, name, sf), sf, gaps[f][1], says=lit)
+
+print("\n  %-6s %-60s %10s %10s" % ("", "claim", "paper", "data"))
+print("  " + "-" * 92)
+bad = drifted = unlinked = 0
+for ok, label, s, c, note, drift, says in rows:
+    state = "OK" if ok else "MISS"
+    if drift:
+        state = "DRIFT"
+    print("  %-6s %-60s %10s %10s" % (state, label[:60], s, c))
     if note and not ok:
-        print("       └─ %s" % note)
+        print("         └─ %s" % note)
+    if drift:
+        print("         └─ the paper does not contain %r — this script and the draft" % says)
+        print("            disagree about what the draft SAYS. Fix whichever is stale.")
     if not ok:
         bad += 1
+    if drift:
+        drifted += 1
+    if says is None:
+        unlinked += 1
 
-print("\n  %d of %d checked figures match the scored data; %d MISS." % (len(rows) - bad, len(rows), bad))
+print("\n  %d of %d checked figures match the scored data; %d MISS; %d DRIFT."
+      % (len(rows) - bad, len(rows), bad, drifted))
+
+# ---------------------------------------------------------------------------
+# APERTURE, PRINTED. Added 2026-09-13. This block exists so the number above can
+# never again be read as a completeness claim about the paper.
+# ---------------------------------------------------------------------------
+abstract = PAPER.split("## Abstract", 1)[-1].split("## Contents", 1)[0]
+abs_nums = set(re.findall(r"\d[\d,]*\.?\d*\s*(?:%|×|x\b|pp\b)?", abstract))
+abs_nums = {n.strip() for n in abs_nums if any(ch.isdigit() for ch in n)}
+print("\n  " + "=" * 92)
+print("  APERTURE — what this script can and cannot see, printed so the count above stays honest")
+print("  " + "=" * 92)
+print("    • It checks %d figures, %d of which are LINKED to a literal in the draft"
+      % (len(rows), len(rows) - unlinked))
+print("      via `says=`. The other %d are hand-transcribed only: for those, a paper" % unlinked)
+print("      edit that changes the number is INVISIBLE here.")
+print("    • The abstract alone contains ~%d numeric tokens. Everything in the paper" % len(abs_nums))
+print("      outside this script's declared list is UNAUDITED, and reads here as silence.")
+print("    • ⚠️  '%d of %d match' is a claim about %d figures. It is NOT, and has never"
+      % (len(rows) - bad, len(rows), len(rows)))
+print("      been, a claim that the paper's numbers are correct. Two real errors")
+print("      (§4.2's 1,202 and §4.1's 'three of four') sat outside this aperture on a")
+print("      run that printed 28 of 28 clean.")
+print("    • A DRIFT is not a data error. It means the draft and this file disagree")
+print("      about what the draft says — usually because the paper was edited and this")
+print("      script was not. Fix the stale one; do not silence the check.")
+print("  " + "=" * 92)
 print("\n  Reference for the ranges actually in the data:")
 print("    routine cheap EXACT %%  : %s" % ", ".join("f%s=%.1f" % (f, H2[f]["cheap_exact_pct"]) for f in ROUTINE))
 print("    routine frontier EXACT%%: %s" % ", ".join("f%s=%.1f" % (f, H2[f]["frontier_exact_pct"]) for f in ROUTINE))
@@ -139,4 +214,9 @@ print("    routine cost ratio     : %s" % ", ".join("f%s=%.0fx" % (f, r) for f, 
 print("    routine p50 latency x  : %s" % ", ".join("f%s=%.1fx" % (f, r) for f, r in zip(ROUTINE, lat_ratio)))
 print("    frontier-fam CORRECT   : %s" % ", ".join("f%s cheap=%.1f front=%.1f gap=%.1f"
                                                      % (f, *gaps[f]) for f in FRONTIER_FAM))
-sys.exit(1 if bad else 0)
+# Exit 1 on a data mismatch, 4 on DRIFT alone. DRIFT must NOT be silent: a check
+# that reports a problem and still exits 0 is a check that cannot fail, which is the
+# whole family of defect this file was repaired for on 2026-09-13.
+if bad:
+    sys.exit(1)
+sys.exit(4 if drifted else 0)
