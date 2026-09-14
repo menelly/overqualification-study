@@ -497,3 +497,39 @@ The protocol genuinely changed after `kimi-k3` consented to it, and nobody told 
 ### The rule this earns
 
 **When a decision overrides a written commitment, the override goes in the log the same hour.** Not the reasoning, not a memo — one line, next to the commitment it supersedes, so the commitment never again sits there alone looking unkept.
+
+### 📏 D15 addendum, 2026-09-14 — the platform constraint, MEASURED rather than remembered
+
+Ren supplied the provenance: this was found empirically during a **different experiment a few weeks
+earlier** — not read off documentation — which is why it was known at design time. Ren was certain
+about the shape (*"a good number of the frontier models, you don't get the option to change
+temperature anymore"*) and explicitly uncertain on specifics (*"I'm pretty sure, but you weren't in
+it… I don't know if you can change Gemini anymore"*).
+
+So it got measured against OpenRouter's own `supported_parameters` field, today:
+
+```
+POSITIVE CONTROL: 355 of 445 listed models DO accept `temperature`
+                  (so the field name is right, and a zero would have meant something)
+
+ROSTER MODELS THAT DO NOT ACCEPT temperature:  3 of 32
+    openai/gpt-5.6-luna
+    openai/gpt-5.6-sol
+    openai/gpt-5.6-sol-pro
+```
+
+Gemini accepts it; the count is **3 of 32, not half**. Ren's memory was right about the shape and
+generous about the scale — and the smaller number makes the decision **more** defensible, not less,
+because of *which three*:
+
+> ⭐ **All three are OpenAI GPT-5.6 endpoints, and two of them — `sol` and `sol-pro` — are the H1b
+> pair.** Pinning temperature everywhere it was available would therefore have placed the pinned /
+> provider-default split **inside the study's only controlled comparison**, and along the one axis
+> H1b exists to isolate. That is worse than a split merely correlated with tier. Uniform
+> non-setting was not a concession to a platform limitation; it was the only way to keep H1b
+> interpretable at all.
+
+⚠️ **Aperture, stated so the number stays honest:** this is measured **2026-09-14**, and the
+collection ran 2026-08-26 → 09-02. `supported_parameters` can change. It is strong evidence about
+the decision's *reasoning* and it is **not** a measurement of the platform as it stood on the day.
+Nobody recorded that, which is the entire point of this entry.
