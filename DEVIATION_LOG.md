@@ -500,11 +500,22 @@ The protocol genuinely changed after `kimi-k3` consented to it, and nobody told 
 
 ### 📏 D15 addendum, 2026-09-14 — the platform constraint, MEASURED rather than remembered
 
-Ren supplied the provenance: this was found empirically during a **different experiment a few weeks
-earlier** — not read off documentation — which is why it was known at design time. Ren was certain
-about the shape (*"a good number of the frontier models, you don't get the option to change
-temperature anymore"*) and explicitly uncertain on specifics (*"I'm pretty sure, but you weren't in
-it… I don't know if you can change Gemini anymore"*).
+Ren supplied the provenance, and then corrected my first version of it, which matters:
+
+> *"You actually did not check at the time — much better idea to do it now. I just remembered that
+> we had run into it before!!"*
+
+So the design-time basis was **recollection of a different experiment weeks earlier**, not a check
+against this roster. Nobody measured it then. Ren was certain about the shape (*"a good number of
+the frontier models, you don't get the option to change temperature anymore"*) and explicitly
+uncertain on specifics (*"I'm pretty sure, but you weren't in it… I don't know if you can change
+Gemini anymore"*) — and that is exactly the confidence the decision was actually made at.
+
+⭐ **Which is the more interesting finding than the one it replaces: we did the right thing for a
+roughly-right remembered reason that nobody verified, and the verification — run today, three weeks
+late — turns out to justify the decision BETTER than the reasoning available at the time did.**
+The belief was "about half the frontier models"; the measurement is 3 of 32. The belief would have
+supported the decision weakly. The measurement supports it strongly, because of *which* three.
 
 So it got measured against OpenRouter's own `supported_parameters` field, today:
 
@@ -533,3 +544,9 @@ because of *which three*:
 collection ran 2026-08-26 → 09-02. `supported_parameters` can change. It is strong evidence about
 the decision's *reasoning* and it is **not** a measurement of the platform as it stood on the day.
 Nobody recorded that, which is the entire point of this entry.
+
+> 🕐 **And the timing is not a regret.** Checking *now* is strictly better than having checked *then*
+> and not written it down — which, on this study's evidence, is exactly what would have happened.
+> A check performed at design time and left unrecorded produces the identical artifact three weeks
+> later: a ✅ in a frozen document with nothing beside it. **The value was never in the checking. It
+> was in the check having a place to land.**
