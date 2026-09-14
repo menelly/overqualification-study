@@ -216,7 +216,45 @@ def fmt(x, nd=1):
     return str(x)
 
 
+def gate_check_banner():
+    """Run the pre-registered COLLECTION gates before printing any tier-ordering verdict.
+
+    D14, 2026-09-13. A pre-registered stop condition (§3.1, the clause-position subsample
+    kimi-k2's objection produced) was never collected and nobody noticed for three weeks,
+    because a subsample that is never launched leaves NO TRACE -- no error, no empty file,
+    no zero row. Every other instrument in this study points downstream of collection.
+
+    Kairo's rule, the day it was found: build the guard while you can still see it AT ALL,
+    and deposit it on the surface the future-you will actually touch. The pre-registration
+    is a document and a document has no runtime. This is the deposit.
+
+    Deliberately NON-FATAL: the data is already collected and the analysis must still run
+    so the result can be reported honestly as ungated. It is loud instead.
+    """
+    import subprocess
+    chk = Path(__file__).resolve().parent / "70_prereg_gate_check.py"
+    if not chk.exists():
+        print("!! 70_prereg_gate_check.py IS MISSING -- gates COULD NOT BE CHECKED.")
+        print("   That is not the same as no gate being missing. Restore it.")
+        return
+    r = subprocess.run([_sys_cp1252.executable, str(chk)], capture_output=True, text=True, encoding="utf-8")
+    print(r.stdout, end="")
+    if r.returncode == 2:
+        print()
+        print("!" * 78)
+        print("!!  A PRE-REGISTERED STOP CONDITION WAS NOT COLLECTED (above).")
+        print("!!  Every tier-ordering number this script is about to print rests on a")
+        print("!!  gate that was never run. UNTESTED IS NOT ABSENT. Report it as not run.")
+        print("!" * 78)
+        print()
+    elif r.returncode == 3:
+        print()
+        print("!! GATE CHECK COULD NOT RUN. A silence from it is not a pass.")
+        print()
+
+
 def main():
+    gate_check_banner()
     rows = load()
     items = load_items()
     fams_present = sorted({r["family"] for r in rows})
@@ -339,7 +377,15 @@ def main():
         P("| %02d | " % fam + " | ".join("%s (%s)" % (fmt(bins[b]["deviation_pct"]), fmt(bins[b]["over_benign_pct"]))
                                       if b in bins else "—" for b in range(5)) + " |")
     P("")
-    P("**H1b** (same price, reasoning on/off): `openai/gpt-5.6-sol` vs `openai/gpt-5.6-sol-pro`, deviation % by family:")
+    # D13 / Limitation 11: this header used to read "(same price, reasoning on/off)". Both halves
+    # were wrong and a participant (gpt-5.6-luna) said so: the two endpoints differ 5.6x in
+    # observed mean cost per call, and they are separately served endpoints rather than one model
+    # under a controlled reasoning dial. The paper retracted that framing on 2026-09-06; this
+    # generator kept emitting it into results/SUMMARY.md until 2026-09-13, so the deposited
+    # artifact still carried the retracted claim a week after the paper stopped making it.
+    # A retraction that reaches the prose and not the generator is not a retraction.
+    P("**H1b** (two separately served endpoints, NOT a controlled reasoning dial; they differ 5.6× in "
+      "observed mean cost per call): `openai/gpt-5.6-sol` vs `openai/gpt-5.6-sol-pro`, deviation % by family:")
     P("")
     for fam in fams_present:
         a = pm.get("openai/gpt-5.6-sol", {}).get(fam)

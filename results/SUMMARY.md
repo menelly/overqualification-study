@@ -453,7 +453,7 @@ Accuracy per the pre-registration = **CORRECT = EXACT ∪ OVER_BENIGN** (§5.1: 
 | 10 | 0.0 (21.1) | 0.1 (22.5) | 0.2 (24.2) | 0.3 (20.8) | 0.1 (20.9) |
 | 11 | 0.1 (5.9) | 0.5 (6.7) | 0.3 (6.4) | 0.4 (6.8) | 0.3 (6.2) |
 
-**H1b** (same price, reasoning on/off): `openai/gpt-5.6-sol` vs `openai/gpt-5.6-sol-pro`, deviation % by family:
+**H1b** (two separately served endpoints, NOT a controlled reasoning dial; they differ 5.6× in observed mean cost per call): `openai/gpt-5.6-sol` vs `openai/gpt-5.6-sol-pro`, deviation % by family:
 
 - family 01: sol 0.0% · sol-pro 0.0% · EXACT 100.0% vs 100.0%
 - family 02: sol 0.0% · sol-pro 0.0% · EXACT 73.9% vs 71.7%
