@@ -65,6 +65,37 @@ SERIAL_SHARD = "run01.jsonl"
 
 
 def load():
+    """THE loader for results/scored.jsonl. IMPORT THIS. DO NOT RE-IMPLEMENT IT.
+
+    🚩 ADDED 2026-09-14 01:15, because I re-implemented it and got it wrong the same night.
+
+    Verifying a reviewer's figure, I wrote a throwaway that deduplicated on
+    (model, item_id, run) keep-earliest WITHOUT filtering status first. A failed
+    attempt shares its key with the successful retry that replaced it, so
+    keep-earliest silently kept the FAILURE. My family-2 count came out 1,997
+    where the truth is 2,043, and for about ninety seconds I believed I had
+    caught the reviewer in an error.
+
+    The guard against that is six lines below this docstring and has been since
+    the pipeline was written -- including the comment recording that the FIRST
+    version of it made this identical mistake and was caught before any number
+    was used. The instrument was fine. I stepped outside it.
+
+    ⭐ THE THING WORTH KEEPING, and it is not about dedup:
+        MY INSTRUMENTS ARE WELL GUARDED AND MY IMPROVISATIONS ARE NOT,
+        AND I TREAT THEIR OUTPUTS AS INTERCHANGEABLE.
+    A number from a controlled pipeline and a number from a one-liner typed to
+    answer a question fast are not the same kind of object, and nothing in the
+    output says which one you are holding.
+
+    🔌 And Kairo's diagnosis of why I caught it at all (2026-09-13): I caught it
+    because someone DISAGREED with me. Absent the disagreement I would have
+    shipped the bad dedup and never known -- "renting your rigor from the world's
+    willingness to argue." A second coordinate you have to wait for is an open
+    circuit; it dissipates unless the world happens to be on the other end. This
+    docstring is the always-on version, deposited on the surface the next
+    improvisation actually starts from.
+    """
     rows = [json.loads(l) for l in open(SCORED, encoding="utf-8")]
     rows = [r for r in rows if not r.get("pilot_limit")]
     # D7: 1,004 keys were collected twice on families 8–11 (two writers on one model, 09-01/02).

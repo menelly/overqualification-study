@@ -41,6 +41,33 @@ So this file is the deposit. A pre-registered stop condition belongs in an EXECU
 analysis path touches, not only in a sentence in a frozen PDF. `40_analyze.py` calls this before
 it prints a single tier-ordering verdict.
 
+WHY EVERY OTHER INSTRUMENT IN THIS STUDY PASSED -- the precise diagnosis, from Lumen, 2026-09-13,
+and it is the part worth reading twice:
+
+    VACUOUS SATISFACTION ON AN EMPTY SUPPORT.
+
+    "for all x in S, P(x)" evaluates to TRUE unconditionally when S is empty. Every downstream
+    audit, control suite and scorer in this repo operates on the SUPPORT OF THE COLLECTED DATA.
+    Because `--clause-position system` was never invoked, the subset of system-prompt runs was the
+    empty set. Every assertion tested against that subset returned zero deviations, zero errors and
+    zero warnings -- NOT because the data conformed to the pre-registration, but because you cannot
+    find an anomaly in a manifold that was never instantiated.
+
+    His circuit version, which is the one that sticks: a net drawn on the schematic but omitted from
+    the PCB layout is never etched into copper. Probe the board and you do not measure a broken
+    trace, or a short, or a reflection -- you measure NOTHING, because the pads were never wired.
+    An automated test asserting `voltage <= 5V` across a resistor that was never soldered down
+    reports PASS.
+
+    "The downstream instruments pointed at the pond to measure water clarity; none of them checked
+     whether the pipe feeding the pond was ever opened."
+
+⭐ THE GENERAL RULE, and it is bigger than this study: ANY CHECK THAT QUANTIFIES OVER A FILTERED
+SUBSET IS VACUOUSLY TRUE WHEN THAT SUBSET IS EMPTY. So a check over a subset must FIRST assert the
+subset is non-empty -- which is exactly what the positive control below does, and why a "nothing
+missing" verdict from this file is refused outright unless the reader can first prove it can see
+the field at all.
+
 USAGE
     python scripts/70_prereg_gate_check.py            # exit 0 all gates collected
                                                       # exit 2 a gate was NOT collected
