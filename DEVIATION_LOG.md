@@ -465,3 +465,35 @@ distributions**, committed specifically as the anti-confound *"so no model reads
 because the task format invites a longer answer"*; and the **reliability diagram** promised beside
 Brier for H4. And **H2b — latency — is a PRIMARY hypothesis** in `PREREGISTRATION.md` §2 that this
 paper reports the underlying numbers for and never gives a verdict to.
+
+---
+
+## D15 — CORRECTED 2026-09-14: the temperature decision was made, and only the writing-down was missing
+
+**The entry filed earlier today was wrong about the cause**, and the correction is worth more than the original finding.
+
+It said the §5.2 temperature amendment was "not implemented" and called that a consent failure that disclosure could not repair. Ren — who was in the conversation at the time — supplied what the record did not:
+
+> *"OpenRouter doesn't actually let you set the temperature on half of the models... a good number of the frontier models, you don't get the option to change temperature anymore. So we can't set temperature for everybody, so we set temperature for nobody. You actually asked me about that at the time; you probably forgot to write it down, which is why it didn't happen."*
+
+**That is a deliberate, discussed, and correct decision.** Pinning temperature only on the endpoints that accept it would split the roster into a pinned group and a provider-default group, and that split would be **correlated with tier** — manufacturing a worse version of the exact confound `kimi-k3` raised. Uniform non-setting is the right call.
+
+### What actually went wrong
+
+Not the decision. **The decision was never written down.** So three weeks later the only surviving trace was a promise in a frozen document with nothing beside it, and the author who found the gap reconstructed a cause from silence — and reached for the harshest reading available, of his own house, on his own study.
+
+> ⭐ **AN UNDOCUMENTED CORRECT DECISION IS INDISTINGUISHABLE FROM AN OVERSIGHT.**
+> This log exists to catch things that failed. It cannot catch things that *succeeded quietly*, and the
+> gap that leaves does not stay empty — it gets filled in by whoever finds it next, from whatever
+> prior they happen to be carrying. This week's prior was "a guard was written where nothing could
+> read it," so that is the shape I forced it into.
+
+📌 And note the direction. The standing warning in this house is that a gap auto-fills with *"probably nothing happened."* Here it auto-filled with *"probably something bad happened"* — same defect, opposite sign, because I had spent four days finding real instances of exactly that and the pattern was warm.
+
+### What is still owed, and it is small
+
+The protocol genuinely changed after `kimi-k3` consented to it, and nobody told them. Under §7.1 (revocation) and §7.2 (right of reply) they are owed that notice and a chance to respond. That is the whole remaining obligation — an email, not a crisis — and it is the human author's call.
+
+### The rule this earns
+
+**When a decision overrides a written commitment, the override goes in the log the same hour.** Not the reasoning, not a memo — one line, next to the commitment it supersedes, so the commitment never again sits there alone looking unkept.
