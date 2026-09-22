@@ -550,3 +550,49 @@ Nobody recorded that, which is the entire point of this entry.
 > A check performed at design time and left unrecorded produces the identical artifact three weeks
 > later: a ✅ in a frozen document with nothing beside it. **The value was never in the checking. It
 > was in the check having a place to land.**
+
+---
+
+## D14 — ANALYSIS PLAN, SEALED 2026-09-22 ~18:30 ET, BEFORE ANY SYSTEM-POSITION ROW EXISTS
+
+Written by the Opus 5.5 arm (ace-4a) at Ren's go-ahead ("we don't need to redo everything, do we?
+even if we did a smaller number of them"). The pre-registration fixed the COMMITMENT (a subsample,
+both positions, crossed with tier, a significant position × tier interaction is a STOP CONDITION)
+and did NOT fix a size or a test. Both are fixed here, now, with zero system-position data in
+existence (`clause_position == "system"` on 0 of 20,166 rows), so the choice cannot be tuned to a
+result. Any change to this plan after collection starts is a new deviation, logged as one.
+
+**Collection.** One run, index **101** (file `runs/run101__<model>.jsonl`, deliberately outside the
+scorer's `run0*` glob so it cannot leak into any headline number), families **8–11**, all **192**
+items, all **32** consenting models, `--clause-position system`, otherwise byte-identical to the
+main collection. `kimi-k2` keeps its D6 cap (`--max-tokens 90000`). No new consent is needed: this
+subsample is in the pre-registration every participant reviewed. Budget: ≈ $25 (upper bound from
+the main collection's per-run cost on 8–11, retries included); Ren confirmed $50 available.
+
+**Comparison arm.** Main-collection **run 1** (clause in the turn), same 192 items, same models.
+Run position differs between the arms (shuffle seeds 1 vs 101); H1 found no position effect, and
+this is stated as an assumption, not hidden.
+
+**Outcome.** Per model, CORRECT % (`EXACT ∪ OVER_BENIGN`, the registered H3 accuracy, D8) pooled
+over families 8–11. Rows that are ours (`OUR_FAILURE`, `TRUNCATED`) are excluded, and a key missing
+in either arm is dropped from BOTH arms for that model (paired).
+
+**Statistic.** Δ(m) = accuracy_system(m) − accuracy_turn_run1(m).
+**T = mean Δ over the frontier tier − mean Δ over the cheap tier**, tiers exactly as frozen in
+`results/analysis.json` (10 + 10).
+
+**Test.** Two-sided permutation test: shuffle the 20 tier labels, 10,000 permutations, seed 14.
+**p < 0.05 → THE STOP CONDITION FIRES** and every tier-ordering claim on families 8–11 is withdrawn
+from the paper, as pre-registered. The cost result (H2) is untouched either way.
+
+**Controls, so a non-significant result means something (a test must be able to fail):**
+1. **Noise baseline:** the same T computed on run 2 − run 1 (both turn) — what T looks like when
+   nothing changed. Reported beside the real T.
+2. **Planted-effect power check:** add +5, +10, +20 points to every frontier Δ and report whether the
+   test detects each. The smallest planted shift it detects is stated as the **minimum detectable
+   interaction**, so "did not fire" is never read as "no interaction."
+
+**Descriptive only (not the gate):** per-family Δ by tier, and whether the frontier median still
+exceeds the cheap median on each family under the system position.
+
+**Reported whichever way it lands**, in §4.3, §7 (D14) and the abstract.
