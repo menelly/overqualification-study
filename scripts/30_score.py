@@ -231,17 +231,21 @@ def run_controls():
     return True
 
 
-def score_runs():
+def score_runs(d14=False):
+    """d14=False: the main collection (run0*), system-position rows refused.
+    d14=True (2026-09-22): ONLY the D14 clause-position subsample (run1*, clause in the SYSTEM
+    prompt) into results/scored_d14.jsonl. Same per-row logic, byte for byte; only the input
+    glob, the fence direction and the output file differ."""
     items = load_items()
     RESULTS.mkdir(exist_ok=True)
-    out_path = RESULTS / "scored.jsonl"
+    out_path = RESULTS / ("scored_d14.jsonl" if d14 else "scored.jsonl")
     rows_in = 0
     counts = Counter()
     per_family_nondet = Counter()
     selfid = Counter()
     missing_items = Counter()
     with open(out_path, "w", encoding="utf-8") as out:
-        for shard in sorted(RUNS.glob("run0*.jsonl")):
+        for shard in sorted(RUNS.glob("run1*.jsonl" if d14 else "run0*.jsonl")):
             if "_DRY" in shard.name:
                 continue
             for line in open(shard, encoding="utf-8"):
@@ -251,6 +255,13 @@ def score_runs():
                 try:
                     r = json.loads(line)
                 except json.JSONDecodeError:
+                    continue
+                # 🚧 D14 fence (2026-09-22): the clause-position subsample (clause in the SYSTEM prompt)
+                # is a separate test with its own analysis (71_d14_position_x_tier.py). It must never
+                # leak into the headline numbers. Its files are run101*, outside the run0* glob — this
+                # is the second lock, in case anyone ever widens the glob.
+                if (r.get("clause_position") == "system") != d14:
+                    counts["SKIPPED_WRONG_CLAUSE_POSITION_FOR_THIS_MODE"] += 1
                     continue
                 rows_in += 1
                 n = r["family"]
@@ -334,6 +345,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--controls", action="store_true")
     ap.add_argument("--runs", action="store_true")
+    ap.add_argument("--d14", action="store_true", help="score ONLY the D14 system-position subsample")
     a = ap.parse_args()
     if not (a.controls or a.runs):
         ap.error("nothing to do: pass --controls and/or --runs")
@@ -344,7 +356,7 @@ def main():
         if not a.controls:
             print("⚠️ scoring without --controls in this invocation. §5.3 requires the controls to "
                   "have passed against THIS scorer; run them first or in the same call.")
-        score_runs()
+        score_runs(d14=a.d14)
     return 0
 
 

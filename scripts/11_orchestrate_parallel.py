@@ -31,7 +31,11 @@ def main():
     ap.add_argument("--run", type=int, default=1)
     ap.add_argument("--workers", type=int, default=10)
     ap.add_argument("--sleep", type=float, default=0.6)
+    # D14 (2026-09-22): pass the clause position through, and the D6 per-model token cap
+    ap.add_argument("--clause-position", choices=["turn", "system"], default="turn")
+    ap.add_argument("--max-tokens-for", default="", help="model=N[,model=N] — D6 caps only")
     a = ap.parse_args()
+    caps = dict(kv.split("=") for kv in a.max_tokens_for.split(",") if kv)
 
     if a.models.startswith("@"):
         models = [m.strip() for m in Path(a.models[1:]).read_text().split(",") if m.strip()]
@@ -49,7 +53,10 @@ def main():
         cmd = [sys.executable, "-u", str(HERE / "10_run_items.py"),
                "--families", a.families, "--models", model,
                "--run", str(a.run), "--sleep", str(a.sleep),
-               "--out-suffix", "__" + slug(model)]
+               "--out-suffix", "__" + slug(model),
+               "--clause-position", a.clause_position]
+        if model in caps:
+            cmd += ["--max-tokens", caps[model]]
         log = open(RUNS / ("worker_%s.log" % slug(model)), "a", encoding="utf-8")
         return subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT)
 
