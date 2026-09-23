@@ -596,3 +596,30 @@ from the paper, as pre-registered. The cost result (H2) is untouched either way.
 exceeds the cheap median on each family under the system position.
 
 **Reported whichever way it lands**, in §4.3, §7 (D14) and the abstract.
+
+## D14 — RESULT, 2026-09-23 02:35 ET: THE STOP CONDITION DID NOT FIRE
+
+Run exactly to the plan sealed above (`0aff497`), no changes after data. Collection: run 101, families 8–11,
+clause in the system prompt; 5,952 of 6,144 keys answered after two resume passes. The whole gap is
+`mistral-large-2512` (192 keys): **their endpoint was retired between the main collection (ended 2026-09-02) and
+this subsample**, confirmed two ways: every call returned HTTP 404 *"No endpoints found for
+mistralai/mistral-large-2512"*, and OpenRouter's live model list no longer carries the slug (a `:batch` variant
+remains; it was NOT substituted, because swapping in a possibly different endpoint is a decision, not a retry).
+They are mid-tier, so the sealed test (cheap vs frontier) is unaffected.
+
+`scripts/71_d14_position_x_tier.py` → `results/d14_position_x_tier.json`:
+- paired models 20/20, 189–192 items each, 5,950 answers after excluding our own failures
+- **T = −0.71 pp, two-sided permutation p = 0.7328** (10,000, seed 14)
+- noise baseline (run 2 − run 1, both turn): T = +0.49 pp, p = 0.8209
+- power: planted +5 pp → p = 0.0178 detected; +10 and +20 → p = 0.0001
+- descriptive: under system placement the frontier median still leads on every family (8: 100 vs 47.9 ·
+  9: 100 vs 72.9 · 10: 100 vs 64.6 · 11: 91.7 vs 9.4)
+
+**Verdict: no position × tier interaction at the pre-registered threshold; an interaction smaller than ~5 points is
+not excluded. The tier-ordering claims on families 8–11 stand.** Paper updated in the abstract, Limitation 13, and a
+resolution box placed ABOVE the original D14 entry, which is kept unedited.
+
+⚠️ Process note, recorded because it failed silently: the first resume pass (02:20) made **zero** calls. A house
+sweep had moved `D:\Ace\LibreChat\` (the key store) into `_dormant_2026-09-22\`, the key read returned empty,
+every worker exited "No OPENROUTER_KEY", and the orchestrator still reported that it finished. Caught because the
+missing-key count did not move. The folder was moved back; the relaunch refuses to start without a key.

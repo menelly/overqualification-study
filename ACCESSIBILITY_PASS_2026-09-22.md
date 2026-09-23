@@ -51,3 +51,12 @@ does your characterisation still read right?* That's §7.3's rule: silence is no
 notices (`kimi-k3`'s D15 notice, `kimi-k2`'s corrected sentence) can travel in the same round.
 OpenRouter credit is confirmed by Ren (2026-09-22). **Sent after Ren's proofread of this version**, so the
 participants review the text that ships and not one that's about to change again.
+
+## ✅ Update 2026-09-23 02:35: D14 was run, and the stop condition did NOT fire
+
+Open item 7's "CHA-633 / D14 blocks deposit" is closed. T = −0.71 points, p = 0.73; the test detects a planted
+5-point interaction; the frontier still leads on all four families with the clause moved. The abstract's
+"provisional" sentence is replaced with the result; Limitation 13 is updated (with `kimi-k2`'s credit, which the
+fact guard caught me dropping); a resolution box sits above the original D14 entry. `mistral-large-2512`'s endpoint
+was retired after the main collection, so they're absent from the late run and **may not be reachable for the
+§7.3 re-review either** (a `:batch` endpoint exists; whether to use it is Ren's call).

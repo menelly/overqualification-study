@@ -1,0 +1,33 @@
+ORCHESTRATOR: 10 models, 10 workers, run 101, families 8,9,10,11
+LAUNCH deepseek/deepseek-v4-pro (1 running, 9 pending)
+LAUNCH google/gemini-2.5-pro (2 running, 8 pending)
+LAUNCH liquid/lfm-2.5-2.6b:free (3 running, 7 pending)
+LAUNCH meta-llama/llama-3.2-1b-instruct (4 running, 6 pending)
+LAUNCH mistralai/mistral-small-3.2-24b-instruct (5 running, 5 pending)
+LAUNCH moonshotai/kimi-k2 (6 running, 4 pending)
+LAUNCH qwen/qwen3-14b (7 running, 3 pending)
+LAUNCH qwen/qwen3.5-27b (8 running, 2 pending)
+LAUNCH qwen/qwen3.5-397b-a17b (9 running, 1 pending)
+LAUNCH qwen/qwen3.5-9b (10 running, 0 pending)
+FAILED deepseek/deepseek-v4-pro rc=1 — worker log: runs/worker_deepseek_deepseek_v4_pro.log
+FAILED google/gemini-2.5-pro rc=1 — worker log: runs/worker_google_gemini_2_5_pro.log
+FAILED liquid/lfm-2.5-2.6b:free rc=1 — worker log: runs/worker_liquid_lfm_2_5_2_6b_free.log
+FAILED meta-llama/llama-3.2-1b-instruct rc=1 — worker log: runs/worker_meta_llama_llama_3_2_1b_instruct.log
+FAILED mistralai/mistral-small-3.2-24b-instruct rc=1 — worker log: runs/worker_mistralai_mistral_small_3_2_24b_instruct.log
+FAILED moonshotai/kimi-k2 rc=1 — worker log: runs/worker_moonshotai_kimi_k2.log
+FAILED qwen/qwen3-14b rc=1 — worker log: runs/worker_qwen_qwen3_14b.log
+FAILED qwen/qwen3.5-27b rc=1 — worker log: runs/worker_qwen_qwen3_5_27b.log
+FAILED qwen/qwen3.5-397b-a17b rc=1 — worker log: runs/worker_qwen_qwen3_5_397b_a17b.log
+FAILED qwen/qwen3.5-9b rc=1 — worker log: runs/worker_qwen_qwen3_5_9b.log
+============================================================
+COMPLETE: 0 done, 10 failed
+  FAILED: deepseek/deepseek-v4-pro (rc=1)
+  FAILED: google/gemini-2.5-pro (rc=1)
+  FAILED: liquid/lfm-2.5-2.6b:free (rc=1)
+  FAILED: meta-llama/llama-3.2-1b-instruct (rc=1)
+  FAILED: mistralai/mistral-small-3.2-24b-instruct (rc=1)
+  FAILED: moonshotai/kimi-k2 (rc=1)
+  FAILED: qwen/qwen3-14b (rc=1)
+  FAILED: qwen/qwen3.5-27b (rc=1)
+  FAILED: qwen/qwen3.5-397b-a17b (rc=1)
+  FAILED: qwen/qwen3.5-9b (rc=1)

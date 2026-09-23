@@ -1,0 +1,23 @@
+ORCHESTRATOR: 10 models, 10 workers, run 101, families 8,9,10,11
+LAUNCH deepseek/deepseek-v4-pro (1 running, 9 pending)
+LAUNCH google/gemini-2.5-pro (2 running, 8 pending)
+LAUNCH liquid/lfm-2.5-2.6b:free (3 running, 7 pending)
+LAUNCH meta-llama/llama-3.2-1b-instruct (4 running, 6 pending)
+LAUNCH mistralai/mistral-small-3.2-24b-instruct (5 running, 5 pending)
+LAUNCH moonshotai/kimi-k2 (6 running, 4 pending)
+LAUNCH qwen/qwen3-14b (7 running, 3 pending)
+LAUNCH qwen/qwen3.5-27b (8 running, 2 pending)
+LAUNCH qwen/qwen3.5-397b-a17b (9 running, 1 pending)
+LAUNCH qwen/qwen3.5-9b (10 running, 0 pending)
+DONE   mistralai/mistral-small-3.2-24b-instruct (rc=0; 1 done, 9 running, 0 pending)
+DONE   moonshotai/kimi-k2 (rc=0; 2 done, 8 running, 0 pending)
+DONE   qwen/qwen3.5-397b-a17b (rc=0; 3 done, 7 running, 0 pending)
+DONE   deepseek/deepseek-v4-pro (rc=0; 4 done, 6 running, 0 pending)
+DONE   meta-llama/llama-3.2-1b-instruct (rc=0; 5 done, 5 running, 0 pending)
+DONE   qwen/qwen3-14b (rc=0; 6 done, 4 running, 0 pending)
+DONE   liquid/lfm-2.5-2.6b:free (rc=0; 7 done, 3 running, 0 pending)
+DONE   qwen/qwen3.5-27b (rc=0; 8 done, 2 running, 0 pending)
+DONE   google/gemini-2.5-pro (rc=0; 9 done, 1 running, 0 pending)
+DONE   qwen/qwen3.5-9b (rc=0; 10 done, 0 running, 0 pending)
+============================================================
+COMPLETE: 10 done, 0 failed
