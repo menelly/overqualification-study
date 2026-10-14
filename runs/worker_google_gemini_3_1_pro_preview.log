@@ -297,3 +297,41 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__google_gemini_3_1_pro_preview.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__google_gemini_3_1_pro_preview.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 50 ok, 0 failed
+     ... 75 attempted, 75 ok, 0 failed
+     ... 100 attempted, 100 ok, 0 failed
+     ... 125 attempted, 125 ok, 0 failed
+     ... 150 attempted, 150 ok, 0 failed
+     ... 175 attempted, 175 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 192
+     replies carrying CONFIDENCE: 192 / 192  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

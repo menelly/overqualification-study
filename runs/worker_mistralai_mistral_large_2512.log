@@ -293,3 +293,56 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__mistralai_mistral_large_2512.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__mistralai_mistral_large_2512.jsonl
+  already collected (skipped): 1589
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+     ... 25 attempted, 0 ok, 25 failed
+     ... 50 attempted, 0 ok, 50 failed
+     ... 75 attempted, 0 ok, 75 failed
+     ... 100 attempted, 0 ok, 100 failed
+     ... 125 attempted, 0 ok, 125 failed
+     ... 150 attempted, 0 ok, 150 failed
+     ... 175 attempted, 0 ok, 175 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 0
+     WE failed to complete  : 192
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_05          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k9_07          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_09          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_07          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k3_03          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_01          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_04          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k3_09          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k9_01          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k9_06          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k9_04          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k3_07          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k7_11          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_03          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       • mistralai/mistral-large-2512 f08 f08:f08_k5_10          API_ERROR: HTTP 404: {"error":{"message":"No endpoints found for mistralai/mistral-large-2512.","code":404},"user_id":"user_2vb6tid
+       … and 177 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
