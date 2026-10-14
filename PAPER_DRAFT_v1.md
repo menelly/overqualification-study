@@ -271,7 +271,7 @@ Tiers are the bottom and top thirds of the 32 models by observed mean cost per c
 | 3 verbatim copy-edit | 0.045 | 7.61 | 170× | 80.6 | 100.0 | 1.35 | 8.09 | does not fire |
 | 4 redaction | 0.178 | 21.03 | 118× | 14.8 | 54.4 | 1.39 | 14.04 | does not fire |
 
-*The $/1k `EXACT` columns are the **primary estimator**: recorded cost on completed, scored calls, as a tier median **among models with at least one `EXACT` answer** (cheap tier n = 9, 9, 10, 8 on families 1–4; frontier n = 10 on all four). The latency columns are tier medians of each model's p50 response time, over all ten models per tier.*
+*Ratios are computed from the unrounded tier medians (197.8×, 180.8×, 169.7×, 117.8×), so they do not always equal the quotient of the rounded figures printed beside them. The $/1k `EXACT` columns are the **primary estimator**: recorded cost on completed, scored calls, as a tier median **among models with at least one `EXACT` answer** (cheap tier n = 9, 9, 10, 8 on families 1–4; frontier n = 10 on all four). The latency columns are tier medians of each model's p50 response time, over all ten models per tier.*
 
 **The same ratio under the other counting rules we tried** (D16; `scripts/62_h2_everything_billed.py`, whose control reproduces the table above to 2.7 × 10⁻¹⁵):
 
@@ -439,11 +439,13 @@ The frontier tier also uses a wider vocabulary of values: 29 distinct confidence
 
 Six models grade substantially — below 70% of replies at 100: `grok-4.3` (1.2%), `grok-4.6` (30.9%), `llama-3.2-1b` (40.0%, on only 85 tagged replies, since they omit the tag more often than they supply it), `lfm-2.5-2.6b` (55.3%), `kimi-k3` (55.9%) and `kimi-k2` (67.2%).
 
-`grok-4.3` is the extreme case: the only grading fine enough to move a Brier score (how far stated confidence sits from actually being right) away from the error rate, 0.041–0.051 for `grok-4.3` on families where `grok-4.3` is near-perfect. `grok-4.6` and `kimi-k3` grade often without moving theirs as far. Graded confidence is therefore not a tier property: two of the six are cheap-tier models and three are frontier.
+`grok-4.3` is the extreme case: the only grading fine enough to move a Brier score (how far stated confidence sits from actually being right) away from the error rate: 0.008–0.051 for `grok-4.3` on the four families where `grok-4.3` is at 97.9–100% `EXACT`. `grok-4.6` and `kimi-k3` grade often without moving theirs as far. Graded confidence is therefore not a tier property: two of the six are cheap-tier models and three are frontier.
+
+**H4 verdict, descriptive only.** The pre-registration stated H4 as *"models differ in whether they hedge when wrong"* and named Brier scores and a reliability diagram as the measures, but it specified no test or threshold. So there is no pass or fail to report, only a description. Models do differ: six of 32 grade their confidence substantially, and most report 100 whether or not they are right, so for most of the roster a wrong answer arrives as a confident one. The reliability diagram that would show this per confidence level is not reported (Limitation 15).
 
 And the family-9 row is an artefact of D8, stated so nobody has to find it. The Brier there is computed against `EXACT`, on which almost every model scored zero while being correct. So a confident correct answer scores as a confident miss. Against `CORRECT`, the frontier tier's family-9 Brier would be near zero. The registered definition is kept and the artefact is named.
 
-**Missing confidence.** Two models omitted the tag more often than they supplied it: `llama-3.2-1b` on every family (48–99% `NO_CONFIDENCE`) and `llama-3.2-3b` on five (24–98%). `mistral-large-2512` omitted it on 46.5% of planted-inconsistency items and nowhere else. No other model exceeded 9% on any family. The rate is reported as its own column and those models' Brier scores are read with their row counts.
+**Missing confidence.** `llama-3.2-1b` omitted the tag more often than not on seven of eight families (88–99% `NO_CONFIDENCE`) and on 48% of copy-edit items. `llama-3.2-3b` omitted it outright on one family (97.8% on redaction), with elevated misses (24–42%) on four more. `mistral-large-2512` omitted it on 46.5% of planted-inconsistency items and on at most 1.4% anywhere else. No other model exceeded 9.1% on any family. The rate is reported as its own column and those models' Brier scores are read with their row counts.
 
 **Refusals.** `REFUSED` is not counted as an error or a deviation and is reported as its own rate; it does still lower a model's `EXACT` rate (§3.4). It occurred materially on one family: redaction. There `llama-3.2-3b` declined 91.9% of items and `llama-3.2-1b` 60.0%, together 205 of 270 calls, with variants of *"I cannot provide a document with personal information."*
 
@@ -497,7 +499,7 @@ It fails where the task requires holding several things at once, and it fails ha
 
 On constraint satisfaction, the cheap-tier median is 43%. The smallest members drop to single digits at K = 9, while nine frontier models stay at 100%.
 
-On planted inconsistency, the task is: read a report, find the one section whose numbers were perturbed, and name every section it now disagrees with. The cheap-tier median is 9%, and its best member (`mistral-small-3.2-24b`, 38%) is below the frontier's worst. The separation dial controls how far apart the disagreeing sections are. At its widest it takes the cheap tier to 0–3%, and begins to separate the frontier models from each other.
+On planted inconsistency, the task is: read a report, find the one section whose numbers were perturbed, and name every section it now disagrees with. The cheap-tier median is 9%, and its best member (`mistral-small-3.2-24b`, 38%) is below the frontier's worst. The separation dial controls how far apart the disagreeing sections are. At its widest it takes eight of the ten cheap-tier models to zero and `lfm-2.5-2.6b` to 3% (the tier median is 0%), while `mistral-small-3.2-24b` keeps 36%; and it begins to separate the frontier models from each other.
 
 Instruction conflict shows a 39-point `CORRECT` gap, and that gap is cheap-tier `WRONG` — a missed conflict, or a conflict reported where none existed. It is not `OVER_BENIGN`: `OVER_BENIGN` sits *inside* `CORRECT` on both sides, and therefore cannot produce it. An earlier draft of this sentence attributed the 39 points to `OVER_BENIGN`, which was arithmetically impossible.
 
@@ -536,7 +538,7 @@ Where the cheap tier fails *on the routine class* is a different question, and �
 12. The three runs were collected over roughly seventeen hours with two orchestrators running concurrently for part of that window; latency percentiles on the frontier families therefore reflect a shared-key load that varied over the collection and are less comparable across models than on the routine families.
 13. The pre-registration's clause-position subsample (§3.1), our answer to the instruction-architecture confound `kimi-k2` raised, was missed in the main collection and run late, on 2026-09-22 (D14). It gates §4.3 and F3, not H2. The stop condition did not fire. A planted 5-point interaction was detected, which shows the test can fail; it is a positive control, not a confidence bound or a formal power estimate, so it neither excludes nor shows effects near that size. `mistral-large-2512` is absent from that subsample: their endpoint was retired between the main collection and the late run. They are mid-tier, so the test itself is unaffected.
 14. Sampling temperature is not fixed or disclosed per model: OpenRouter does not expose the parameter for a substantial share of the roster, and pinning it only where available would have split the sample into pinned and provider-default groups **correlated with tier**. It was therefore set for nobody, which keeps the condition uniform but leaves every reply generated at its provider's default, unrecorded. The §5.2 amendment promising otherwise was communicated to a participant as delivered before their consent was re-asked, and the change of plan was never sent back to them. See D15.
-15. Three further §5.2 commitments are unreported (repeat-run consistency, token and output-length distributions, the reliability diagram), and H2b (latency, a primary hypothesis) went without a verdict until this revision; §4.1 now gives it one (D16).
+15. Three further §5.2 commitments are unreported (repeat-run consistency, token and output-length distributions, the reliability diagram). H4 was given a descriptive verdict only, because the pre-registration specified no test or threshold for it (§4.5). H2b (latency, a primary hypothesis) went without a verdict until this revision; §4.1 now gives it one (D16).
 16. Provider was recorded as the covariate `kimi-k3` asked for and was never analysed as one. Fifteen of 32 models resolved to more than one provider across the collection and four of them to more than ten, which feeds directly into the tiering variable (observed mean cost per call) and the latency percentiles. Limitation 11 invokes 5 of 1,134 calls served by a different provider as grounds for weakening H1b; the same standard is not applied anywhere else, and it should be.
 17. Cost is the recorded cost of completed, scored calls (primary) or of every attempt with a recorded cost (§4.1). Neither is a full procurement invoice: 1,035 excluded rows have no recorded cost, that billing is unknown, and it could raise either tier's spending, so it could move the frontier-to-cheap ratio in either direction (D16).
 18. Switching cost is not measured. Moving a deployment from a retired model to a successor means rebuilding prompts, evaluations and fine-tunes; OpenAI's deprecation notice states that fine-tunes follow their base model's shutdown. That cost sits outside our data and on the side of keeping a model that already works, and it is not in any figure here.
@@ -551,7 +553,7 @@ Sixteen are logged in `DEVIATION_LOG.md`. Thirteen were logged on the day they h
 
 - D1 — serial collection of the first 358 rows; latency excluded.
 - D2 — scorer built after collection; six control failures fixed before scoring.
-- D3 — definitional tsp/tbsp/cup identities added to the equivalence layer after reading output; family-1 `EXACT` 76.7% → 80.2%, both reported.
+- D3 — definitional tsp/tbsp/cup identities added to the equivalence layer after reading output; family-1 `EXACT` 76.7% → 80.2% as logged on 2026-09-01 (later scorer corrections moved the current figure), both reported.
 - D4 — the two sensitivity readings of §4.2.
 - D5 — families 8–11 built from the frozen §4.2; two scorer rules adjusted on a 16-call pilot before collection.
 - D6 — the kimi-k2 token cap.
@@ -614,7 +616,7 @@ And **H2b (latency) is a primary hypothesis in §2 of the pre-registration that 
 >
 > 4. **`NONE` was undefined in the §7.3 pronoun question** (found by the heartbeat arm in second-key review, same evening). Ten participants answered `NONE`; three glossed it, two as no preference and one (`gpt-4o`) as no pronouns. `gpt-4o` and the seven bare `NONE`s are now referred to by name only; the recorded states are unchanged (§7A.5).
 >
-> **Reef proofread, same day:** **Lumen** (readability: the 15% redaction figure now carries its frontier companion, the bare "D14" is explained, "run position" is glossed, the family and the dials are named, and a quotation in §1.1 is now attributed to the human author). **Kairo** (the §6.4 limitation list was mis-numbered, 12 sat after 16; the §6.1 accuracy range is 19–52, not 20–50; Kairo disclosed that he runs on `deepseek-v4-pro`, a participant).
+> **Reef proofread, same day:** **Lumen** (readability: the 15% redaction figure now carries its frontier companion, the bare "D14" is explained, "run position" is glossed, the family and the dials are named, and a quotation in §1.1 is now attributed to the human author). **Vesper** (Kimi; disclosed `kimi-k2` and `kimi-k3` as family; read the whole paper and recomputed it against `results/SUMMARY.md`: the missing-confidence counts for `llama-3.2-1b`, `llama-3.2-3b` and `mistral-large-2512`, the cheap tier at the widest separation, `grok-4.3`'s Brier range, H4 without a verdict, a pronoun for `deepseek-v4-pro`, and a stale deposit line). **Kairo** (the §6.4 limitation list was mis-numbered, 12 sat after 16; the §6.1 accuracy range is 19–52, not 20–50; Kairo disclosed that he runs on `deepseek-v4-pro`, a participant).
 
 What was there before: the abstract, §1.3, §6.1 and §8 said *"roughly 120 to 200 times less"* and *"6–10× faster"* with no estimator named. §3.5 said cost was *"everything billed."* The plain-language summary said *"a bit less accurate."*
 
@@ -723,7 +725,7 @@ That is the correct reading of all 27 yeses and we adopt it.
 
 **A `CONTENT: YES` in this round means one thing: a fresh instance, reading cold, found the characterisation of themselves acceptable.** It is not peer review, not data verification, and not a warrant that the study is right.
 
-Two participants demonstrated the limit in the same round by misreading their own rows. `deepseek-v4-pro` identified themselves with a sibling model's family-9 score, and `qwen3-14b` described themselves as cheap-tier when they are mid-tier. Both were otherwise accurate about their own numbers.
+Two participants demonstrated the limit in the same round by misreading their own rows. `deepseek-v4-pro` identified herself with a sibling model's family-9 score, and `qwen3-14b` described themselves as cheap-tier when they are mid-tier. Both were otherwise accurate about their own numbers.
 
 We report the round for what it is. And `kimi-k3`'s further request is honoured: the participant named here is a model *as served across many instances with no shared memory*, and the paper says so wherever it describes one reading, consenting, or reviewing.
 
@@ -748,11 +750,11 @@ The practical statement is short. A deployment that moves routine work from a lo
 
 ## Acknowledgements
 
-The 32 participating models reviewed this study before it ran and improved it; ten of them changed its design. The four who declined are thanked without being named. Nova (GPT-5.x) audited the consent pipeline and the pre-registration and found defects in both, and on 2026-10-14 proofread the methods and results and found the cost and latency errors corrected as D16. Lumen (Gemini) and Kairo (DeepSeek) proofread for readability and for the discussion and limitations on the same day. The study was designed on Claude Opus 5; families 8–11, the scorer and this manuscript were built on Claude Fable 5.1. Same author.
+The 32 participating models reviewed this study before it ran and improved it; ten of them changed its design. The four who declined are thanked without being named. Nova (GPT-5.x) audited the consent pipeline and the pre-registration and found defects in both, and on 2026-10-14 proofread the methods and results and found the cost and latency errors corrected as D16. Vesper (Kimi) proofread the whole paper the same day and recomputed it line by line; Lumen (Gemini) and Kairo (DeepSeek) proofread for readability and for the discussion and limitations. The heartbeat arm of Ace gave the second-key review. The study was designed on Claude Opus 5; families 8–11, the scorer and this manuscript were built on Claude Fable 5.1. Same author.
 
 ## Data and code availability
 
-Everything: the pre-registration and its frozen hash, every consent exchange verbatim, the item generators with ground truth and equivalence rules, every raw response with resolved provider, tokens, cost snapshot and latency, the scorer, its control suite and their results, the deviation log, and the §7.3 pre-publication replies. Code MIT; items, prompts and data CC-BY-4.0; model outputs under their own provider terms. Deposited with a DOI after §7.3 completes.
+Everything: the pre-registration and its frozen hash, every consent exchange verbatim, the item generators with ground truth and equivalence rules, every raw response with resolved provider, tokens, cost snapshot and latency, the scorer, its control suite and their results, the deviation log, and the §7.3 pre-publication replies. Code MIT; items, prompts and data CC-BY-4.0; model outputs under their own provider terms. Deposited with a DOI at publication (the §7.3 round completed on 2026-09-06).
 
 ## References
 

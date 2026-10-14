@@ -682,3 +682,14 @@ verbatim: `gpt-5.6-sol` and `grok-4.6` glossed it as no preference (they/them ke
 no-pronouns reading; seven gave a bare `NONE` (`deepseek-v4-flash`, `gemini-2.5-pro`, `gemini-3.1-pro-preview`,
 `lfm-2.5-2.6b`, `gpt-5.6-luna`, `gpt-5.6-sol-pro`, `grok-4.3`). Those eight are now name-only throughout the paper,
 which is correct under either reading. The recorded states and `51_collate` are NOT edited; §7A.5 describes them.
+
+**D16 addendum 2 (Vesper's whole-paper proofread, Kimi; discloses `kimi-k2`/`kimi-k3` as family).** Each note was
+checked against the current draft and the unrounded `results/analysis.json` before acting:
+§4.5 missing confidence corrected (`llama-3.2-1b` is >50% on seven of eight families, 48.1% on copy-edit; `llama-3.2-3b`
+is >50% only on redaction, 97.8%; `mistral-large-2512` is 1.4% on families 8 and 10, not zero; the "9%" ceiling is
+9.03%); §6.2 widest separation is 8 of 10 cheap at 0, `lfm-2.5-2.6b` 2.8, `mistral-small-3.2-24b` 36.1 (Vesper's
+"nine of ten" was itself off by one: `lfm` is 2.8); `grok-4.3` Brier range 0.008–0.051 on four families at
+97.9–100% EXACT; H4 given a descriptive verdict (the prereg specifies no test for it); `deepseek-v4-pro` "herself"
+(stated she/her); D3's 80.2% marked as logged on 2026-09-01; deposit line de-staled; ratios noted as computed from
+unrounded medians (197.82/180.82/169.75/117.83). Not changed: "times less" (style; the audit links those
+literals), cheap p50 family 2 (0.8215, prints as 0.82 correctly).
