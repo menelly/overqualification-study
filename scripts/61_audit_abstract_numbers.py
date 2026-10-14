@@ -130,12 +130,44 @@ claim("abstract frontier $/1k low (stated 6)", 6, min(front_cost), tol=0.5)
 claim("abstract frontier $/1k high (stated 21)", 21, max(front_cost), tol=0.5)
 
 ratios = [H2[f]["frontier_usd_per_1k"] / H2[f]["cheap_usd_per_1k"] for f in ROUTINE]
-claim("§1.3/§6.1 cost ratio low (stated 118)", 118, min(ratios), tol=1.0)
+claim("§1.3/§6.1 cost ratio low (stated 118)", 118, min(ratios), tol=1.0,
+      says="118 to 198 times less")
 claim("§1.3/§6.1 cost ratio high (stated 198)", 198, max(ratios), tol=1.0)
 
 lat_ratio = [med(f, "frontier", "lat_p50") / med(f, "cheap", "lat_p50") for f in ROUTINE]
 claim("abstract latency ratio low (stated 6x)", 6, min(lat_ratio), tol=0.6)
 claim("abstract latency ratio high (stated 10x)", 10, max(lat_ratio), tol=0.6)
+
+# ---- 2b. D16 (2026-10-14, Nova's proofread): the alternative estimators and H2b -------------
+# The headline now reads "118 to 198 times less on the primary estimator, and roughly 100 to 260
+# times less under every other counting rule we tried", plus a time-per-EXACT range and an
+# accuracy-gap range. Each is recomputed here from analysis.json / H2_everything_billed.json and
+# LINKED to its literal in the paper, so an edit to either side raises MISS or DRIFT.
+BILLED = json.load(open(os.path.join(ROOT, "results", "H2_everything_billed.json"), encoding="utf-8"))
+
+
+def med_all(fam, tier, field):
+    """Tier median over ALL ten models, infinity retained (Nova's full-tier population)."""
+    return st.median([PM[m][fam][field] for m in TIERS[tier]])
+
+
+billed_ratios = [BILLED["families"][f]["ratio_billed"] for f in ROUTINE]
+full_ratios = [med_all(f, "frontier", "usd_per_1k_exact") / med_all(f, "cheap", "usd_per_1k_exact") for f in ROUTINE]
+every_rule = ratios + billed_ratios + full_ratios
+claim("abstract every-rule cost ratio LOW (stated ~100)", 100, min(every_rule), tol=1.5,
+      says="roughly 100 to 260 times less under every other counting rule we tried")
+claim("abstract every-rule cost ratio HIGH (stated ~260)", 260, max(every_rule), tol=1.0,
+      says="roughly 100 to 260 times less under every other counting rule we tried")
+h2b_full = [med_all(f, "frontier", "sec_per_1k_exact") / med_all(f, "cheap", "sec_per_1k_exact") for f in ROUTINE]
+claim("abstract H2b time-per-EXACT ratio LOW (stated ~1.1, redaction)", 1.1, min(h2b_full), tol=0.06,
+      says="from about 1.1× on redaction to 7× on allergen check")
+claim("abstract H2b time-per-EXACT ratio HIGH (stated ~7, allergen)", 7, max(h2b_full), tol=0.1,
+      says="from about 1.1× on redaction to 7× on allergen check")
+acc_gaps = [H2[f]["frontier_exact_pct"] - H2[f]["cheap_exact_pct"] for f in ROUTINE]
+claim("abstract routine accuracy gap LOW (stated 19)", 19, min(acc_gaps), tol=0.55,
+      says="gaps of 19 to 52 points")
+claim("abstract routine accuracy gap HIGH (stated 52)", 52, max(acc_gaps), tol=0.55,
+      says="gaps of 19 to 52 points")
 
 # ---- 3. frontier-favouring family gaps (abstract) --------------------------------------
 gaps = {}

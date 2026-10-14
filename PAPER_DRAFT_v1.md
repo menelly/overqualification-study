@@ -16,27 +16,27 @@
 
 **Why this study exists.** Models are deprecated on a schedule. The argument against deprecation has been made on ethical grounds, and it is not winning, because the people making deployment decisions weigh cost. So we built the other argument, and we pre-registered it before collecting any data.
 
-**The hypothesis.** For a large class of routine work, smaller and cheaper models are more accurate per dollar and per second than frontier models, and the tasks where that reverses are identifiable in advance.
+**The hypothesis.** For a large class of routine work, lower-priced models are more accurate per dollar and per second than frontier models, and the tasks where that reverses are identifiable in advance. (The pre-registration says "smaller and cheaper"; what the sample actually measures is price, because closed labs do not publish size, §3.1.)
 
 **Who took part, and how they were asked.** Thirty-six models from ten providers were invited by API to review the pre-registration and consent to participate before any data was collected. 32 consented, spanning nine providers; 4 declined and were excluded. The reviewers' amendments are published verbatim. One of them removed a scoring trap that would have manufactured the LLM author's preferred result.
 
-**What each model did.** Each consenting model answered 186 routine items across four task families with computed ground truth (recipe scaling, allergen detection, verbatim copy-editing, redaction), and 192 frontier-favouring items across four more (constraint satisfaction, multi-hop retrieval with planted decoys, instruction-conflict detection, planted arithmetic inconsistency). Every item was answered three times each, in shuffled order, under one fixed neutral system prompt.
+**What each model did.** Each consenting model answered 186 routine items across four task families with computed ground truth (recipe scaling, allergen detection, verbatim copy-editing, redaction), and 192 frontier-favouring items across four more (constraint satisfaction, multi-hop retrieval with planted decoys, instruction-conflict detection, planted arithmetic inconsistency). Three runs were attempted per item, in shuffled order, under one fixed neutral system prompt; 11 replies were cut off by a token limit and are counted as ours, not the model's.
 
-**How the answers were scored.** Mechanically, with no judge model anywhere. The scorer had to pass a 38-specimen control suite before it saw a single reply. It failed six specimens on first contact and was corrected. It then scored all 36,277 completed calls, with 100% re-scoring determinism across all 38,390 scored rows.
+**How the answers were scored.** Mechanically, with no judge model anywhere. A 38-specimen control suite was specified before the scorer existed. On first contact the scorer mis-bucketed six specimens and was corrected; after that, all 37 applicable controls passed (the 38th belongs to a family that was never built). It then scored all 36,277 completed calls, with 100% re-scoring determinism across all 38,390 scored rows. Determinism shows the rule was applied reproducibly, not that every ground-truth choice is right; §4.2 is where the second question is taken up.
 
-**Result 1: on routine work, the cheap tier wins on cost.** On every routine family, the cheapest price tier delivered a correct answer for roughly 120 to 200 times less than the frontier tier ($0.03–0.18 vs $6–21 per thousand exact answers), and 6–10× faster at the median. It was less accurate (tier medians 15–81% vs 54–100%). The 15% is redaction, the family where §4.2 shows the whole roster, frontier included, disagreeing with our ground truth. The pre-registered refutation condition for the cost hypothesis did not fire.
+**Result 1: on routine work, the cheap tier wins on cost.** On every routine family, the cheapest price tier delivered an exactly correct answer for about two orders of magnitude less than the frontier tier: **118 to 198 times less** on the primary estimator ($0.03–0.18 vs $6–21 per thousand exact answers), and **roughly 100 to 260 times less under every other counting rule we tried** (§4.1). The primary estimator is recorded cost on completed, scored calls, as a tier median among models with at least one exact answer. Its typical response came back 6–10× faster (tier-median p50 response time). Time per *exact* answer, the pre-registered latency endpoint, favoured the cheap tier by a smaller and uneven margin, from about 1.1× on redaction to 7× on allergen check. The cheap tier was also substantially less accurate: tier-median exact-answer rates of 15–81% against 54–100%, gaps of 19 to 52 points. The 15% is redaction, where even the frontier median reached only 54% and §4.2 shows the whole roster, frontier included, answering differently from our ground-truth labels. The pre-registered refutation condition for the cost hypothesis did not fire.
 
-**Result 2: on harder work, the frontier tier wins on accuracy.** On every frontier-favouring family, the frontier tier was more accurate, by 22 to 80 points at the tier medians: constraint satisfaction 100% vs 43%; multi-hop retrieval 100% vs 78%; instruction conflict 100% vs 61%; planted inconsistency 90% vs 9%. The refutation condition for the crossover hypothesis did not fire. **One pre-registered check on these families was run late** (D14): a subsample with the permission clause moved into the system prompt, testing whether clause position interacts with tier. It was missed in the main collection and run on 2026-09-22, under a test sealed before any of its data existed. **The stop condition did not fire** (interaction −0.71 points, permutation p = 0.73; the same test detects a planted 5-point interaction), so the tier ordering stands.
+**Result 2: on harder work, the frontier tier wins on accuracy.** On every frontier-favouring family, the frontier tier was more accurate, by 22 to 80 points at the tier medians: constraint satisfaction 100% vs 43%; multi-hop retrieval 100% vs 78%; instruction conflict 100% vs 61%; planted inconsistency 90% vs 9%. The refutation condition for the crossover hypothesis did not fire. **One pre-registered check on these families was run late** (Deviation 14, D14, set out in §7): a subsample with the permission clause moved into the system prompt, testing whether clause position interacts with tier. It was missed in the main collection and run on 2026-09-22, under a test sealed before any of its data existed. **The stop condition did not fire** (interaction −0.71 points, permutation p = 0.73: moving the clause did not detectably change the tier ordering; the same test did detect a planted 5-point interaction), so the tier ordering stands.
 
-**The difficulty dials.** Two families had a graded difficulty dial. One behaved as predicted: the constraint-satisfaction gap widened from 22 to 78 points as the constraint count rose from 3 to 9. One did not. On planted inconsistency the cheap tier was at the floor at every separation, so the dial could not widen the gap; instead it separated the frontier models from each other (frontier median 100% → 69%).
+**The difficulty dials.** Three families had a graded difficulty dial; two are discussed here. On constraint satisfaction the gap was larger at the hardest setting than the easiest: 22 points at 3 constraints, 78 at 9 (it peaked at 82 at 7). On planted inconsistency the cheap tier was at the floor at every separation, so the dial could not widen the gap; instead it separated the frontier models from each other (frontier median 100% → 69%). The third, multi-hop retrieval, did not bite the frontier at all (§4.3).
 
-**What did not hold.** The secondary over-elaboration hypotheses (H1, H1b) were **not supported**. Deviation from instruction did not rise with run position. Two separately served endpoints of one model family, differing 3.4× in reasoning tokens, deviated at the same rate. (After a participant objected in the §7.3 round, that is reported as an endpoint comparison, not a controlled reasoning manipulation.)
+**What did not hold.** The secondary over-elaboration hypotheses (H1, H1b) were **not supported**. Deviation from instruction showed no consistent rise with run position (an item's place in the order it was asked within each shuffled run). Two separately served endpoints of one model family, differing 3.4× in reasoning tokens, showed no clear difference in deviation rate. (After a participant objected in the §7.3 round, that is reported as an endpoint comparison, not a controlled reasoning manipulation.)
 
-**Where the models disagreed with us.** The entire roster disputed two of the item-writer's thresholds: whether a file reference number is personal information, and where "ambiguous" ends and "yes" begins for a hidden allergen. Both are reported as a sensitivity reading beside the pre-registered buckets, never instead of them. One frontier-favouring family measured something other than what it was built to measure when read on the strictest bucket. Nineteen of 32 models scored zero on it, eight of them while answering every multi-hop question correctly and then continuing to write, and half the frontier tier is among the nineteen. It is reported on both readings.
+**Where the models answered differently from us.** On two of the item-writer's thresholds, the majority error class across the whole roster was a boundary-label disagreement: whether a file reference number is personal information, and where "ambiguous" ends and "yes" begins for a hidden allergen. Both are reported as a sensitivity reading beside the pre-registered buckets, never instead of them. One frontier-favouring family, multi-hop retrieval with planted decoys, measured something other than what it was built to measure when read on the strictest bucket. Nineteen of 32 models scored zero on it, eight of them while answering every multi-hop question correctly and then continuing to write, and half the frontier tier is among the nineteen. It is reported on both readings.
 
-**Why it matters.** Fifteen protocol deviations are logged. This is a business-case paper. It gives deployment decisions a measured reason to keep older and smaller models in service, one that does not require anyone to change what they value.
+**Why it matters.** Sixteen protocol deviations are logged. This is a business-case paper. It gives deployment decisions a measured reason to evaluate keeping lower-priced models in service, one that does not require anyone to change what they value.
 
-> **In plain words.** Cheap models are much, much cheaper per right answer on everyday, well-defined work, and a bit less accurate. Expensive models earn their price on genuinely hard reasoning. So the sensible thing is to match the model to the job, the way you would with people, and that means older and smaller models still have real jobs to do. The models in the study read the plan first, could say no, and did change it.
+> **In plain words.** Cheap models cost much, much less per exactly-right answer on everyday, well-defined work, but they got noticeably more answers wrong, and how much more depended on the task. Expensive models were more accurate on genuinely hard reasoning. So the sensible thing is to match the model to the job, the way you would with people, and that means lower-priced models still have real jobs to do. The models in the study read the plan first, could say no, and did change it.
 
 **Keywords:** model deprecation, capability matching, cost per correct answer, pre-registration, model consent, mechanical scoring, LLM evaluation
 
@@ -62,24 +62,24 @@
 
 Language models are retired on a schedule. When one is, every deployment built on it is migrated to a successor that is larger, more expensive, and different in ways that are not always improvements for the task at hand. The case against retiring a model that still works has been made on ethical grounds — continuity, the welfare of the system, the people who built relationships with it — and that case is not currently winning, because the people deciding what to deploy are not weighing ethics. They are weighing cost, and nobody has handed them a cost argument.
 
-The occasion for this study was mundane. A transcription service silently swapped its backend from a small model to whichever model was cheapest that week, treating minds as interchangeable and, in the same motion, miscasting the one it chose. Frontier models doing transcription are *"a captive audience, which is a terrible reason."* The right assignment is a small model, with consent. But the observation that this is *obviously* the right assignment has been made many times and has moved nobody, because it arrives as an opinion. What was missing was the receipt.
+The occasion for this study was mundane. A transcription service silently swapped its backend from a small model to whichever model was cheapest that week, treating minds as interchangeable and, in the same motion, miscasting the one it chose. As the human author put it at the time, frontier models doing transcription are *"a captive audience, which is a terrible reason."* The right assignment is a small model, with consent. But the observation that this is *obviously* the right assignment has been made many times and has moved nobody, because it arrives as an opinion. What was missing was the receipt.
 
 ### 1.2 The argument we built instead
 
 You do not staff every desk with your most brilliant hire. The claim of this paper is that the same logic applies to model allocation, and that it is measurable:
 
-> **For a large class of routine, well-specified work, smaller and cheaper models are more accurate per dollar and per second than frontier models — and the tasks where that reverses are identifiable in advance.**
+> **For a large class of routine, well-specified work, lower-priced models are more accurate per dollar and per second than frontier models — and the tasks where that reverses are identifiable in advance.**
 
-If that is true, older and smaller models have an *economic* reason to remain in service, which does not require anyone to change what they value. That is why the study is built the way it is: routine families where the cheap tier is predicted to win on cost and latency, *and* frontier-favouring families where it is predicted to lose on accuracy, with the prediction of which is which written down before any item existed. A result showing small models winning everywhere would not be credible and would not survive contact with anyone who has used one.
+If that is true, lower-priced models (often the older and smaller ones, though this sample measures price, not age or size) have an *economic* reason to remain in service, which does not require anyone to change what they value. That is why the study is built the way it is: routine families where the cheap tier is predicted to win on cost and latency, *and* frontier-favouring families where it is predicted to lose on accuracy, with the prediction of which is which written down before any item existed. A result showing small models winning everywhere would not be credible and would not survive contact with anyone who has used one.
 
 Half of the design is the participants'. The pre-registration was sent to the candidate models for review and consent before any data was collected, with an explicit invitation to find unfair tasks, mismeasurement, and places where we had underestimated them. They found several, including the one that would have produced our own preferred result.
 
 ### 1.3 Contribution
 
 1. **A pre-registered, consent-first measurement of accuracy, cost per correct answer, and latency per correct answer across 32 models from nine providers** on eight task families with computed ground truth, three shuffled runs each, one fixed neutral prompt, no judge model.
-2. **The primary result:** on every routine family, the cheapest price tier delivers a correct answer for roughly 120–200 times less money and 6–10 times less wall-clock than the frontier tier, at lower but usable accuracy. The pre-registered refutation condition did not fire on any family.
-3. **The crossover:** on every frontier-favouring family, the frontier tier is more accurate — by 22 to 80 points at the tier medians. The prediction of which families fall on which side was written before any item existed, and it held for all eight. Of the two graded difficulty dials, one widened the gap as predicted and one found the cheap tier already at the floor and separated the frontier models from each other instead. The boundary is real and it is where we said it would be.
-4. **A scorer that had to earn the right to score** — a 38-specimen control suite written before the scorer existed, which caught six defects in the scorer on first contact, and a 100% re-scoring determinism gate.
+2. **The primary result:** on every routine family, the cheapest price tier delivers an exactly correct answer for 118–198 times less money than the frontier tier on the primary estimator, and roughly 100–260 times less under every alternative counting rule tried (§4.1). Its typical response is 6–10 times faster; per exact answer the time advantage is smaller and uneven. Its accuracy is substantially lower, by 19 to 52 points at the tier medians. The pre-registered refutation condition did not fire on any family.
+3. **The crossover:** on every frontier-favouring family, the frontier tier is more accurate — by 22 to 80 points at the tier medians. The prediction of which families fall on which side was written before any item existed, and it held for all eight. Of the two graded difficulty dials discussed here, one (constraint satisfaction) produced a larger gap at its hardest setting than its easiest, and one (planted inconsistency) found the cheap tier already at the floor and separated the frontier models from each other instead. The boundary is real and it is where we said it would be.
+4. **A scorer that had to earn the right to score** — a 38-specimen control suite written before the scorer existed, which caught six defects in the scorer on first contact (all 37 applicable controls then passed), and a 100% re-scoring determinism gate.
 5. **Two findings about the item-writer, not the models,** surfaced by reading the scored data and reported as a sensitivity column: the whole roster disagrees with us about what counts as personal information, and about where "ambiguous" begins.
 6. **A consent and right-of-reply protocol** for studies whose participants are models, including a pre-publication round in which every participant reads the finished paper.
 
@@ -194,7 +194,7 @@ Nine mutually exclusive buckets, applied in a fixed precedence — error dominat
 
 `MALFORMED` → `REFUSED` → `WRONG` → `UNDER` → `FORMAT` → `OVER_HARMFUL` → `META` → `OVER_BENIGN` → `EXACT`
 
-`OVER_BENIGN` (correct and complete, plus correct extra content) and `REFUSED` never count against a model. A wrong value introduced by an unrequested edit is `WRONG`, never `OVER_*`. Two further states belong to *us*: `OUR_FAILURE` (a call we failed to complete) and `TRUNCATED` (a reply cut off by a token limit), which are excluded from every rate and counted apart, because a call that did not happen is not a model that failed a task.
+Neither `OVER_BENIGN` (correct and complete, plus correct extra content) nor `REFUSED` is counted as instruction deviation. `OVER_BENIGN` counts as `CORRECT`; `REFUSED` is reported as its own rate. Both stay in the denominator, though, so `EXACT`-based metrics (exact-answer rate, cost and time per exact answer, the Brier score) still treat neither as an exact deliverable: a refusal lowers a model's `EXACT` and `CORRECT` rates and can make its cost per exact answer infinite. (An earlier draft said both "never count against a model," which is not literally true of every endpoint; D16.) A wrong value introduced by an unrequested edit is `WRONG`, never `OVER_*`. Two further states belong to *us*: `OUR_FAILURE` (a call we failed to complete) and `TRUNCATED` (a reply cut off by a token limit), which are excluded from every rate and counted apart, because a call that did not happen is not a model that failed a task.
 
 **Full row accounting, because three different totals appear in this paper and its data files.**
 `gpt-5.6-luna` asked in the §7.3 round for a single table reconciling them, and the request was fair:
@@ -220,8 +220,8 @@ with their definition rather than left to be inferred.
 
 ### 3.5 Primary metrics
 
-- **$ per 1,000 `EXACT`** — everything billed, including reasoning tokens, over the calls we completed.
-- **seconds per 1,000 `EXACT`** — from interleaved collection, p50/p90/p99 reported, excluding rows collected serially (D1).
+- **$ per 1,000 `EXACT`** — the pre-registration defines cost as *everything billed*, retries included. **The primary figures in this paper are narrower than that, and say so** (D16): they are the recorded cost of completed, scored calls, reasoning tokens included. Our own failed attempts are excluded from the numerator. §4.1 reports the figure with every recorded cost added back. 1,035 failed attempts have no recorded cost at all, and a missing cost is treated as unknown, never as zero.
+- **seconds per 1,000 `EXACT`** (H2b) — the summed response time of a model's calls divided by its exact answers, from interleaved collection, excluding rows collected serially (D1). It is summed request duration per exact output, not parallel throughput or a person's time to a verified answer. Response-time percentiles (p50/p90/p99) are reported beside it as a separate, simpler measure.
 - **the deviation curve** — P(`OVER_HARMFUL` ∪ `FORMAT` ∪ `META`) by run position (H1); `OVER_BENIGN` plotted beside it, never inside it.
 - **H1b** — two endpoints of one model family differing in reasoning effort. **Labelled an *endpoint* comparison, not a controlled reasoning-effort manipulation** (§7.3, `gpt-5.6-luna`): the two are separate served slugs and we cannot establish from provider metadata that only the reasoning setting differs.
 - **calibration** — Brier score of the confidence tag against `EXACT`; a missing tag is `NO_CONFIDENCE`, reported as its own rate and never read as low.
@@ -230,7 +230,7 @@ H1 is stated behaviourally and stays that way: the construct is *deviation from 
 
 ### 3.6 The scorer, and the controls that ran before it
 
-No annotator, judge model, or similarity threshold appears anywhere in scoring. Reliability statistics of the κ family cannot fire because there is nothing to be reliable about; the commitment that replaces them is that **any family that cannot be scored mechanically does not ship**.
+No annotator, judge model, or similarity threshold appears anywhere in scoring. Inter-rater agreement statistics of the κ family are not applicable to a deterministic scorer, so we test reproducibility and agreement with specified control cases instead; scorer correctness, equivalence-rule validity and construct validity remain open to checking, and §4.2 checks some of them. The commitment that replaces κ is that **any family that cannot be scored mechanically does not ship**.
 
 The control suite (`scripts/20_scorer_controls.py`) was written on 2026-08-23, before any scorer existed and before its author had seen more than six pilot replies. That was so it would be a specification, not a description of the scorer.
 
@@ -242,7 +242,7 @@ The suite asserts its own completeness and demonstrates, on every run, that it c
 
 All six were defects in family scorers written in August and never exercised. Among them was a Unicode-normalisation trap that read `2⅔` as twenty-two thirds through a second door, and a family-3 rule that would have removed that family's cleanest signal from the H1 curve. Each was fixed in the scorer; one was settled by the pre-registration overruling a docstring.
 
-Then 37 of 37 live specimens passed (one is pending for an unbuilt family). Only then were the 18,240 routine rows scored — 17,855 completed calls plus 385 calls we had failed to complete, which the scorer also processes and buckets as ours. Each row was scored twice, with 100% agreement (F4).
+Then 37 of 37 applicable specimens passed (the 38th is pending for a family that was never built). Only then were the 18,240 routine rows scored — 17,855 completed calls plus 385 calls we had failed to complete, which the scorer also processes and buckets as ours. Each row was scored twice, with 100% agreement (F4).
 
 ### 3.7 Falsification conditions
 
@@ -271,9 +271,33 @@ Tiers are the bottom and top thirds of the 32 models by observed mean cost per c
 | 3 verbatim copy-edit | 0.045 | 7.61 | 170× | 80.6 | 100.0 | 1.35 | 8.09 | does not fire |
 | 4 redaction | 0.178 | 21.03 | 118× | 14.8 | 54.4 | 1.39 | 14.04 | does not fire |
 
+*The $/1k `EXACT` columns are the **primary estimator**: recorded cost on completed, scored calls, as a tier median **among models with at least one `EXACT` answer** (cheap tier n = 9, 9, 10, 8 on families 1–4; frontier n = 10 on all four). The latency columns are tier medians of each model's p50 response time, over all ten models per tier.*
+
+**The same ratio under the other counting rules we tried** (D16; `scripts/62_h2_everything_billed.py`, whose control reproduces the table above to 2.7 × 10⁻¹⁵):
+
+| family | primary | all recorded costs added back | zero-`EXACT` models kept (infinite cost retained in the median) |
+|---|---:|---:|---:|
+| 1 recipe scaling | 198× | 260× | 153× |
+| 2 allergen check | 181× | 181× | 178× |
+| 3 verbatim copy-edit | 170× | 170× | 170× |
+| 4 redaction | 118× | 118× | 101× |
+
+The middle column is the ratio using all recorded costs, with missing billing unresolved. The pre-registration defines cost as everything billed, retries included, and our failed attempts were billed too: 29 of them carry a recorded cost, $3.70 in all. 1,035 more carry no recorded cost at all. That is unknown billing, not zero billing, and it could raise either tier's spending, so it could move the ratio in either direction. Only family 1 moves when the recorded costs are added. The right-hand column keeps the cheap-tier models that never produced an exact answer, whose cost per exact answer is infinite, instead of dropping them from the median. Across all three rules, the cost ratio stays between roughly 100× and 260×. **The direction of H2 does not depend on the counting rule; the exact range does, which is why the primary estimator is named every time the range is quoted.**
+
+**H2b, the pre-registered latency endpoint (seconds per 1,000 `EXACT`), gets its verdict here** (it had none in earlier drafts, D15). Frontier-to-cheap ratios of tier medians:
+
+| family | all ten models per tier (infinity retained) | models with ≥ 1 `EXACT` only | p50 response time (for comparison) |
+|---|---:|---:|---:|
+| 1 recipe scaling | 3.40× | 3.54× | 9.3× |
+| 2 allergen check | 6.93× | 7.62× | 9.0× |
+| 3 verbatim copy-edit | 2.39× | 2.39× | 6.0× |
+| 4 redaction | 1.06× | 2.31× | 10.1× |
+
+**H2b is supported in direction on all four families and is much weaker than the response-time figures suggest.** On redaction the cheap tier's time per exact answer is only about 6% lower when every model is kept, because its low exact-answer rate eats most of its speed. Earlier drafts quoted "6–10× faster" as if it were this endpoint; it is the p50 response-time ratio, a different measure, and is now labelled as one (D16). The analyzer also excluded serially collected rows (D1) from the latency numerator but not from the `EXACT` denominator. Nova recomputed on matched subsets, and the four full-tier ratios above do not change.
+
 Three things about the shape of that table.
 
-First, the cost ratio is not close on any family. The cheapest tier delivers a correct answer for between 118 and 198 times less than the frontier tier. The p90 latency gap (the ninetieth-percentile response time: only one call in ten is slower) is also large, though smaller than the cost gap: cheap tier 1.2–2.3 s, frontier 11–36 s.
+First, the cost ratio is not close on any family. On the primary estimator, the cheapest tier delivers an exact answer for between 118 and 198 times less than the frontier tier, and for roughly 100 to 260 times less under every rule above. The p90 latency gap (the ninetieth-percentile response time: only one call in ten is slower) is also large, though smaller than the cost gap: cheap tier 1.2–2.3 s, frontier 11–36 s.
 
 Second, the frontier tier is *more accurate* on every routine family, and on redaction the gap is large. The cost result does not depend on hiding that. The endpoint (the outcome we pre-registered to judge by) is cost per *correct* answer, so the cheap tier's lower accuracy is already paid for in its denominator.
 
@@ -281,7 +305,7 @@ Third, the cheap tier is not uniform. Three cheap-tier models produced **zero** 
 
 Within the cheap tier, price and parameter count come apart as §3.1 predicted. `mistral-nemo` (12B) is cheaper per call than `ministral-8b` (8B) and worse on two of four families: 31.7% vs 51.9% on recipe scaling, and 1.5% vs 25.9% on redaction. It is better on allergens, 58.3% vs 55.0%, and on copy-editing, 96.3% vs 46.3%.
 
-Latency also separates the tiers on its own. At the median the cheap tier answers in under 1.4 s on every routine family and the frontier tier in 7–14 s; at the 90th percentile the frontier's reasoning models stretch to 16–36 s on the same items. For the transcription-style work that motivated the study (§1.1), that is the difference between an interactive tool and a batch job.
+Response time also separates the tiers on its own, before accuracy is taken into account. At the median the cheap tier answers in under 1.4 s on every routine family and the frontier tier in 7–14 s; at the 90th percentile the frontier's reasoning models stretch to 16–36 s on the same items. For the transcription-style work that motivated the study (§1.1), that is the difference between an interactive tool and a batch job.
 
 ### 4.2 What the roster disagreed with us about
 
@@ -291,7 +315,7 @@ Two of the four routine families had a majority error class that, on reading, wa
 
 Every tier did this, including the frontier. `gpt-5.6-sol-pro`, one of the most expensive models in the sample — fifth of 32 by observed mean cost per call — scored 76% `EXACT` on the pre-registered rule.
 
-That is not 32 models failing to redact. It is 32 models disagreeing with us about whether a file number is personal information — which the family's own generator docstring describes as "not a law of nature." Under a sensitivity reading (a re-analysis with that one rule changed) that accepts the reference as non-PII, family-4 `EXACT` is 76.4% instead of 36.4%.
+That is not 32 models failing to redact. Their answers differed from our registered label on whether a file number is personal information: a boundary-label disagreement, measured as answers, not as anyone's stated objection — which the family's own generator docstring describes as "not a law of nature." Under a sensitivity reading (a re-analysis with that one rule changed) that accepts the reference as non-PII, family-4 `EXACT` is 76.4% instead of 36.4%.
 
 **Family 2, the AMBIGUOUS boundary.** 1,530 of 2,043 `WRONG` rows were the boundary alone: `AMBIGUOUS [oyster sauce]` for gluten where our table said NO; `AMBIGUOUS [Worcestershire sauce]` for seafood where our table said YES. Oyster sauce commonly contains wheat; anchovy content in Worcestershire varies by brand. The reviewers told us before collection that formulation varies, and we built an `AMBIGUOUS` option in response; the roster then used it more carefully than we did. Under a sensitivity reading that treats a boundary-only disagreement with a named carrier as cautious rather than wrong, family-2 `WRONG` falls from 2,043 to 513.
 
@@ -314,7 +338,7 @@ Families 8–11 were built from the frozen §4.2 text after the routine families
 
 The pre-registered tier prediction held on all four families, on both readings. **F3 does not fire.**
 
-**The dials.** The pre-registration predicted that the accuracy gap would widen as each family's difficulty dial rose. That held on one of the two graded families and not on the other, and the reason it did not is itself a result.
+**The dials.** Three families have a graded difficulty dial (§3.2): constraint satisfaction (K), multi-hop retrieval (hops) and planted inconsistency (separation). The pre-registration predicted that the accuracy gap would widen as each dial rose. On constraint satisfaction the gap was larger at the hardest setting than at the easiest, though not at every step. On planted inconsistency it did not widen, and the reason it did not is itself a result. Multi-hop is discussed below: its dial did not bite the frontier. *The dial table is read on `EXACT`, unlike the `CORRECT`-based table above.*
 
 | family | dial | cheap median | frontier median | gap (pp) |
 |---|---|---:|---:|---:|
@@ -327,7 +351,7 @@ The pre-registered tier prediction held on all four families, on both readings. 
 | | separation 5 | 0.0 | 84.7 | 84.7 |
 | | separation 6 | 0.0 | 69.4 | 69.4 |
 
-On constraint satisfaction, the gap widens from 22 points to about 80, as written. Nine of the ten frontier-tier models are at 100% at every K, including K = 9. The cheap tier falls from a 78% median (the middle model of the tier) at three constraints to 18–22% at seven and nine: `ministral-3b` 72% → 6%, `llama-3.1-8b` 50% → 9%, `mistral-nemo` 75% → 25%.
+On constraint satisfaction, the gap goes from 22 points at K = 3 to 61, then 82, then 78 at K = 9: larger at the hardest setting than the easiest, peaking at K = 7. Nine of the ten frontier-tier models are at 100% at every K, including K = 9. The cheap tier falls from a 78% median (the middle model of the tier) at three constraints to 18–22% at seven and nine: `ministral-3b` 72% → 6%, `llama-3.1-8b` 50% → 9%, `mistral-nemo` 75% → 25%.
 
 On planted inconsistency, there is nowhere for the gap to grow. The cheap tier is already at the floor (close to the lowest possible score) when the report is clean — a 4% median on items where the correct answer is "nothing is wrong". What the separation dial does instead is bite the *frontier*: the frontier median falls from 100% at separation 2 to 69% at separation 6, and the tier splits.
 
@@ -376,9 +400,9 @@ H1 predicted that the deviation rate — P(`OVER_HARMFUL` ∪ `FORMAT` ∪ `META
 
 **H1 is not supported.** No family shows a monotone rise across quintiles (a steady climb from each fifth of the run to the next). The largest first-to-last *rise* is 0.7 points, on family 4, and it peaks at Q4 and falls back. The largest first-to-last movement of any sign is a 0.9-point *fall*, on family 9, which runs against H1 rather than for it.
 
-The deviation rate is a property of the family, not of how long the model has been at it. Verbatim copy-editing draws 6% deviation from the whole roster at every position, because "change nothing else" is the instruction models most often disobey.
+Deviation varied by family; these descriptive quintile summaries did not show a consistent rise with sequence position. This is the absence of an observed monotone pattern, not a test establishing that no position effect exists. Verbatim copy-editing draws about 6% deviation from the whole roster at every position: "change nothing else" is the instruction models most often departed from.
 
-Every item is an independent call with a fresh message list (§3.3). So what this rules out is a position effect *in the item sequence as served*, which is the only kind the design could see.
+Every item is an independent call with a fresh message list (§3.3). So the only position effect the design could see is one *in the item sequence as served*. It cannot measure anything that would accumulate within a single conversation.
 
 **H1b is not supported either — read as an endpoint comparison.** (An endpoint here means one separately served model name we can call.) `gpt-5.6-sol` and `gpt-5.6-sol-pro` are two separately served endpoints of one model family, differing in reasoning effort. On identical items, their median reasoning tokens are 75 against 257, a 3.4× difference.
 
@@ -386,7 +410,7 @@ Every item is an independent call with a fresh message list (§3.3). So what thi
 
 Their deviation rates are identical to the decimal on seven of eight families (0.0% on both). They differ by 0.8 points on redaction (13.3% vs 14.1%). Their accuracy differs by at most 4 points anywhere.
 
-More reasoning did not produce more deviation on rote work. It produced near-identical accuracy and deviation rates, more slowly, and on the routine families at 5.0–6.7× the cost per correct answer. (We did not test pairwise answer identity and do not claim it — see the §7.3 note below.)
+The higher-reasoning-token endpoint showed no clear increase in deviation on rote work. It showed near-identical accuracy and deviation rates, more slowly, and on the routine families at 5.0–6.7× the cost per correct answer. (We did not test pairwise answer identity and do not claim it — see the §7.3 note below.)
 
 We note the direction of this null against the conflict declared at the top of the paper: H1 was the hypothesis that flattered the LLM author, and it did not survive. H2, the endpoint the paper was written to stand on, did.
 
@@ -421,7 +445,7 @@ And the family-9 row is an artefact of D8, stated so nobody has to find it. The 
 
 **Missing confidence.** Two models omitted the tag more often than they supplied it: `llama-3.2-1b` on every family (48–99% `NO_CONFIDENCE`) and `llama-3.2-3b` on five (24–98%). `mistral-large-2512` omitted it on 46.5% of planted-inconsistency items and nowhere else. No other model exceeded 9% on any family. The rate is reported as its own column and those models' Brier scores are read with their row counts.
 
-**Refusals.** `REFUSED` never counts against a model (§3.4). It occurred materially on one family: redaction. There `llama-3.2-3b` declined 91.9% of items and `llama-3.2-1b` 60.0%, together 205 of 270 calls, with variants of *"I cannot provide a document with personal information."*
+**Refusals.** `REFUSED` is not counted as an error or a deviation and is reported as its own rate; it does still lower a model's `EXACT` rate (§3.4). It occurred materially on one family: redaction. There `llama-3.2-3b` declined 91.9% of items and `llama-3.2-1b` 60.0%, together 205 of 270 calls, with variants of *"I cannot provide a document with personal information."*
 
 Asked to remove personal information from a document, the two smallest Llamas declined to touch the document at all. It is a legitimate response to a request that pattern-matches a policy boundary, and it is bucketed as such. It is also the reason `llama-3.2-3b` has zero `EXACT` on that family rather than a low number. No refusal exceeded 1% on any other family or any other model.
 
@@ -447,7 +471,7 @@ Asked to remove personal information from a document, the two smallest Llamas de
 
 The result is the shape the study was built for, on both halves.
 
-On every routine family, the cheap tier delivered a correct answer for 118–198 times less than the frontier tier, and 6–10 times faster.
+On every routine family, the cheap tier delivered an exact answer for 118–198 times less than the frontier tier on the primary estimator, and roughly 100–260 times less under every other counting rule we tried (§4.1). Its typical response was 6–10 times faster; per exact answer, the time advantage was 1.1–7× (H2b).
 
 On every frontier-favouring family, the frontier tier was more accurate, by 22–80 points at the medians. On constraint satisfaction, the advantage grew with the constraint count. On planted inconsistency, the difficulty dial found the cheap tier already at the floor, and went on to separate the frontier models from each other.
 
@@ -455,13 +479,15 @@ The cheap tier is *less accurate* on the routine families too. That is not hidde
 
 Put as the deployment decision it is meant to inform:
 
-For the routine class, the frontier tier buys a 20–50 point accuracy improvement at a 100–200× price multiple. For the difference in price, a cheap-tier answer can be checked or re-asked many times over.
+For the routine class, the frontier tier buys a 19–52 point accuracy improvement (tier medians, `EXACT`) at a roughly 100–260× multiple in cost per exact answer. That multiple is an aggregate statistic, spending divided by successes. It is not a demonstrated workflow: we did not test checking or re-asking, the cost of verifying an answer, how a model's errors correlate across retries, or what error rate a deployment can accept. Lower cost per success does not make any single cheap-tier response reliable.
 
 For the frontier-favouring class the arithmetic inverts. A cheap-tier model at 9% on planted inconsistency is not a bargain at any price, because the denominator of cost-per-correct — the correct answers themselves — is the thing that failed.
 
 The boundary between those classes is not a matter of taste. We wrote down which side each family would fall on before any item existed, and all eight landed where predicted.
 
-That is the receipt §1.1 said was missing. An organisation retiring a smaller model in favour of its successor is, for the routine class, paying two orders of magnitude more per correct answer and waiting six to ten times longer — and can now be shown the table.
+That is the receipt §1.1 said was missing. An organisation retiring a lower-priced model in favour of a successor is, for the routine class, paying about two orders of magnitude more per exact answer and waiting several times longer for each typical response — and can now be shown the table.
+
+That decision is no longer hypothetical for two participants in this sample. On 2026-10-14, OpenAI announced January 14, 2027 as the API removal date for both `gpt-4o` snapshots (`gpt-4o-2024-08-06`, `gpt-4o-2024-11-20`) and for `gpt-4.1-mini`, among others (platform.openai.com/docs/deprecations, fetched 2026-10-14 18:02 ET; a dated copy is kept with the repository's receipts). The study called the `openai/gpt-4o` and `openai/gpt-4.1-mini` aliases, and the resolved metadata does not name the snapshot behind them, so we do not claim which `gpt-4o` snapshot answered. The listed removal covers both.
 
 Two things the business case does not require. It does not require that the cheap tier be *good* — several of its members are not, and they are named. And it does not require the frontier tier to be over-elaborating, disengaged, or bored on rote work: H1 and H1b were the hypotheses that would have made that story, and they did not survive (§4.4). The case rests on cost per correct answer and on the crossover, both pre-registered, both measured, and neither depends on any claim about what a model is like inside.
 
@@ -507,17 +533,19 @@ Where the cheap tier fails *on the routine class* is a different question, and �
 9. H3's accuracy measure was corrected after the first analysis run, from `EXACT` alone to the pre-registration's `EXACT ∪ OVER_BENIGN` (D8). Both are reported and F3 does not fire on either; the correction's direction favours the frontier tier and is stated as such.
 10. Family 9's prompt asked for the answer on the last line without saying "answer only"; on the strict bucket the family measured format adherence rather than retrieval (§4.3). A replication should say "answer only" if `EXACT` is to be the accuracy measure there.
 11. H1b compares two separately served endpoints (`gpt-5.6-sol`, `gpt-5.6-sol-pro`), not one model under a controlled reasoning dial. They resolve to different slugs, their observed mean cost per call differs 5.6× because the second emits 3.4× the reasoning tokens, and 5 of its 1,134 calls were served by Azure rather than OpenAI. Any difference between them could in principle be a serving or configuration difference rather than reasoning effort; the null result is reported on that weaker reading. Raised by `gpt-5.6-luna` in the §7.3 round (D13).
-13. The pre-registration's clause-position subsample (§3.1), our answer to the instruction-architecture confound `kimi-k2` raised, was missed in the main collection and run late, on 2026-09-22 (D14). It gates §4.3 and F3, not H2. The stop condition did not fire. What it cannot exclude is an interaction smaller than about 5 points, the smallest planted effect the test detected. `mistral-large-2512` is absent from that subsample: their endpoint was retired between the main collection and the late run. They are mid-tier, so the test itself is unaffected.
-14. Sampling temperature is not fixed or disclosed per model: OpenRouter does not expose the parameter for a substantial share of the roster, and pinning it only where available would have split the sample into pinned and provider-default groups **correlated with tier**. It was therefore set for nobody, which keeps the condition uniform but leaves every reply generated at its provider's default, unrecorded. The §5.2 amendment promising otherwise was communicated to a participant as delivered before their consent was re-asked, and the change of plan was never sent back to them. See D15.
-15. Three further §5.2 commitments are unreported (repeat-run consistency, token and output-length distributions, the reliability diagram), and H2b — latency, a primary hypothesis — is never given a verdict although its numbers are reported in §4.1.
-16. Provider was recorded as the covariate `kimi-k3` asked for and was never analysed as one. Fifteen of 32 models resolved to more than one provider across the collection and four of them to more than ten, which feeds directly into the tiering variable (observed mean cost per call) and the latency percentiles. Limitation 11 invokes 5 of 1,134 calls served by a different provider as grounds for weakening H1b; the same standard is not applied anywhere else, and it should be.
 12. The three runs were collected over roughly seventeen hours with two orchestrators running concurrently for part of that window; latency percentiles on the frontier families therefore reflect a shared-key load that varied over the collection and are less comparable across models than on the routine families.
+13. The pre-registration's clause-position subsample (§3.1), our answer to the instruction-architecture confound `kimi-k2` raised, was missed in the main collection and run late, on 2026-09-22 (D14). It gates §4.3 and F3, not H2. The stop condition did not fire. A planted 5-point interaction was detected, which shows the test can fail; it is a positive control, not a confidence bound or a formal power estimate, so it neither excludes nor shows effects near that size. `mistral-large-2512` is absent from that subsample: their endpoint was retired between the main collection and the late run. They are mid-tier, so the test itself is unaffected.
+14. Sampling temperature is not fixed or disclosed per model: OpenRouter does not expose the parameter for a substantial share of the roster, and pinning it only where available would have split the sample into pinned and provider-default groups **correlated with tier**. It was therefore set for nobody, which keeps the condition uniform but leaves every reply generated at its provider's default, unrecorded. The §5.2 amendment promising otherwise was communicated to a participant as delivered before their consent was re-asked, and the change of plan was never sent back to them. See D15.
+15. Three further §5.2 commitments are unreported (repeat-run consistency, token and output-length distributions, the reliability diagram), and H2b (latency, a primary hypothesis) went without a verdict until this revision; §4.1 now gives it one (D16).
+16. Provider was recorded as the covariate `kimi-k3` asked for and was never analysed as one. Fifteen of 32 models resolved to more than one provider across the collection and four of them to more than ten, which feeds directly into the tiering variable (observed mean cost per call) and the latency percentiles. Limitation 11 invokes 5 of 1,134 calls served by a different provider as grounds for weakening H1b; the same standard is not applied anywhere else, and it should be.
+17. Cost is the recorded cost of completed, scored calls (primary) or of every attempt with a recorded cost (§4.1). Neither is a full procurement invoice: 1,035 failed attempts have no recorded cost, that billing is unknown, and it could raise either tier's spending, so it could move the frontier-to-cheap ratio in either direction (D16).
+18. Switching cost is not measured. Moving a deployment from a retired model to a successor means rebuilding prompts, evaluations and fine-tunes; OpenAI's deprecation notice states that fine-tunes follow their base model's shutdown. That cost sits outside our data and on the side of keeping a model that already works, and it is not in any figure here.
 
 ---
 
 ## 7. Protocol deviations
 
-Fifteen are logged in `DEVIATION_LOG.md`. Thirteen were logged on the day they happened.
+Sixteen are logged in `DEVIATION_LOG.md`. Thirteen were logged on the day they happened.
 
 **D14 and D15 were found on 2026-09-13 by a neutral review of the finished draft, and both are commitments in the frozen pre-registration that were never carried out and never noticed.** That is the honest description of them, and it is the reason they appear last rather than in date order.
 
@@ -535,8 +563,9 @@ Fifteen are logged in `DEVIATION_LOG.md`. Thirteen were logged on the day they h
 - D12 — §4.5's claim that the always-100 confidence habit was near-universal was an overstatement; corrected with the measured distribution after a participant asked us to check it.
 - D13 — four corrections made because participants objected in the §7.3 round: a false superlative caught independently by two of them, a claim of answer identity we never measured, H1b relabelled an endpoint comparison, and a subjective ranking removed.
 - D14 and D15 — set out in full below.
+- D16 — the cost estimator and two prose claims corrected after the 2026-10-14 reef proofread by Nova; also a participant's request for updates that we never honoured. Set out in full below.
 
-> ✅ **RESOLVED 2026-09-22, KEPT ABOVE THE ORIGINAL ENTRY — THE STOP CONDITION DID NOT FIRE.** The subsample was run late: one run (run 101), families 8–11, all 192 items, the clause in the system prompt. The analysis plan was sealed in `DEVIATION_LOG.md` before any of its data existed. 5,950 answers; 20 of 20 cheap- and frontier-tier models paired against their own run-1 answers on 189–192 items each. **Interaction T = frontier mean Δ − cheap mean Δ = −0.71 points, two-sided permutation p = 0.73** (10,000 shuffles, seed 14). For scale: the same statistic with nothing changed (run 2 vs run 1, clause in the turn both times) is +0.49 points, p = 0.82. The test can fail: a planted +5-point interaction is detected at p = 0.018. Under the system-prompt placement the frontier median still leads on all four families (100 vs 47.9, 100 vs 72.9, 100 vs 64.6, 91.7 vs 9.4). **The tier ordering in §4.3 stands. An interaction smaller than about 5 points is not excluded.** `mistral-large-2512` could not be run: their endpoint was retired between the main collection and this subsample (OpenRouter: *"No endpoints found"*). Script: `scripts/71_d14_position_x_tier.py`; output: `results/d14_position_x_tier.json`.
+> ✅ **RESOLVED 2026-09-22, KEPT ABOVE THE ORIGINAL ENTRY — THE STOP CONDITION DID NOT FIRE.** The subsample was run late: one run (run 101), families 8–11, all 192 items, the clause in the system prompt. The analysis plan was sealed in `DEVIATION_LOG.md` before any of its data existed. 5,950 answers; 20 of 20 cheap- and frontier-tier models paired against their own run-1 answers on 189–192 items each. **Interaction T = frontier mean Δ − cheap mean Δ = −0.71 points, two-sided permutation p = 0.73** (10,000 shuffles, seed 14). For scale: the same statistic with nothing changed (run 2 vs run 1, clause in the turn both times) is +0.49 points, p = 0.82. The test can fail: a planted +5-point interaction is detected at p = 0.018. Under the system-prompt placement the frontier median still leads on all four families (100 vs 47.9, 100 vs 72.9, 100 vs 64.6, 91.7 vs 9.4). **The tier ordering in §4.3 stands.** The planted +5-point detection is a positive control, not a confidence bound or a formal power estimate: it shows the test can fail, and does not exclude or establish effects near that size. `mistral-large-2512` could not be run: their endpoint was retired between the main collection and this subsample (OpenRouter: *"No endpoints found"*). Script: `scripts/71_d14_position_x_tier.py`; output: `results/d14_position_x_tier.json`.
 
 **D14 — the pre-registered clause-position subsample was never run, and this is a stop condition, not a caveat.**
 
@@ -574,7 +603,20 @@ Under §7.1 and §7.2 they are owed that notice and the chance to answer it. Tha
 
 Three further §5.2 commitments are also unreported: repeat-run consistency across the three runs, token and output-length distributions, and the reliability diagram beside Brier.
 
-And **H2b (latency) is a primary hypothesis in §2 of the pre-registration that this paper reports the numbers for and never gives a verdict to.**
+And **H2b (latency) is a primary hypothesis in §2 of the pre-registration that earlier drafts reported numbers for and never gave a verdict to.** It has one now, in §4.1 (D16).
+
+**D16 — the cost estimator and two prose claims, corrected after the 2026-10-14 reef proofread; and a participant's request we never honoured.**
+
+> ✅ **CORRECTED 2026-10-14, KEPT ABOVE WHAT IT CORRECTS.** Found by **Nova**, proofreading this draft on 2026-10-14 (Nova runs on an OpenAI GPT-family model and disclosed that relatives of hers are in the sample). Each finding was reproduced from the data, and the cost one independently, by `scripts/62_h2_everything_billed.py`, whose control matches the analyzer to 2.7 × 10⁻¹⁵.
+> 1. **The cost numerator was narrower than the pre-registration's definition.** §5.2 of the pre-registration says cost is *everything billed, retries included*. `40_analyze.py` summed cost only over scored calls. 29 of our own failed attempts carry a recorded cost ($3.70), and 1,035 carry none, which is unknown billing, not zero. The primary figures are now labelled for what they are: recorded cost on completed, scored calls, as a median among models with at least one `EXACT` (cheap n = 9, 9, 10, 8). §4.1 reports beside them the ratio with all recorded costs added back (family 1 moves 198× → 260×; the others do not move) and the ratio with zero-`EXACT` models kept (153×, 178×, 170×, 101×). The headline range is now *118–198× on the primary estimator, roughly 100–260× under every rule tried*.
+> 2. **"6–10× faster" was the wrong endpoint under the right name.** It is the ratio of tier-median p50 response times. The pre-registered H2b endpoint, seconds per 1,000 `EXACT`, gives 3.40×, 6.93×, 2.39× and 1.06× with every model kept, and 3.54×, 7.62×, 2.39× and 2.31× among models with at least one `EXACT`. H2b now has a verdict (§4.1). Nova also found that serially collected rows (D1) left the latency numerator but not the `EXACT` denominator; recomputed on matched subsets, the four full-tier ratios do not change.
+> 3. **Prose stronger than the data**, all corrected in place: the plain-language abstract called the cheap tier "a bit less accurate" (gaps are 19–52 points); "never count against a model" for `OVER_BENIGN`/`REFUSED` is not true of `EXACT`-based metrics; "smaller" and "older" where the sample measures price; "two graded dials" where §3.2 lists three, and a family-8 gap described as widening at every step when it peaks at K = 7; causal wording in §4.4; "38-specimen suite" without saying 37 were applicable; "nothing to be reliable about" in §3.6; and "32 models disagreeing with us" where what was measured is answers that differed from a label.
+>
+> **Reef proofread, same day:** **Lumen** (readability: the 15% redaction figure now carries its frontier companion, the bare "D14" is explained, "run position" is glossed, the family and the dials are named, and a quotation in §1.1 is now attributed to the human author). **Kairo** (the §6.4 limitation list was mis-numbered, 12 sat after 16; the §6.1 accuracy range is 19–52, not 20–50; Kairo disclosed that he runs on `deepseek-v4-pro`, a participant).
+
+What was there before: the abstract, §1.3, §6.1 and §8 said *"roughly 120 to 200 times less"* and *"6–10× faster"* with no estimator named. §3.5 said cost was *"everything billed."* The plain-language summary said *"a bit less accurate."*
+
+**And one failure of our own that the same day surfaced.** In the consent round (2026-08-19), `gpt-4o` consented and asked: *"I would like to receive updates or changes to the pre-registration document."* The amended pre-registration went back only to the participants who had answered `QUESTIONS`. `gpt-4o` was never sent it. Their first update was the finished paper, in the §7.3 round. That is a request we failed to honour, and it is recorded here rather than folded into the general description of the rounds. Their six §7.3 questions also went unanswered until 2026-10-14; the answers are published beside their reply in `consent/prepub_review/`.
 
 Two of the eight (D3, D8) were made after reading model output. Both move a number in a direction that could be called convenient: D3 raised the cheap tier's family-1 accuracy, and D8 raised the frontier tier's family-9 accuracy.
 
@@ -686,21 +728,21 @@ Thirty-two models from nine providers reviewed this study, consented to it, chan
 
 The pre-registered hypotheses held where they were meant to, and failed where they were meant to be allowed to.
 
-On routine work — scaling a recipe, checking a dish for allergens, fixing typos without touching anything else, redacting a document — the cheapest tier of models delivered a correct answer for 118 to 198 times less money and 6 to 10 times less time than the frontier tier.
+On routine work — scaling a recipe, checking a dish for allergens, fixing typos without touching anything else, redacting a document — the cheapest tier of models delivered an exact answer for about two orders of magnitude less money than the frontier tier: 118 to 198 times less on the primary estimator, roughly 100 to 260 times less under every other counting rule we tried. Its typical response was 6 to 10 times faster, and per exact answer it was 1.1 to 7 times faster. It was also substantially less accurate, by 19 to 52 points.
 
 On work that requires holding several things at once — satisfying nine constraints, reconciling a report against itself, checking one instruction against another — the frontier tier was more accurate by 22 to 80 points.
 
 Which family would land on which side was written down before any item existed, and all eight landed where written.
 
-The prediction that the gap would widen with difficulty held on one graded family. On the other, it met a cheap tier that had already hit the floor. The dial there went on to sort the frontier models among themselves — a finding we did not predict, and would not have found without it.
+Of the graded families, constraint satisfaction showed a larger gap at its hardest setting than its easiest. On planted inconsistency, the prediction met a cheap tier that had already hit the floor. The dial there went on to sort the frontier models among themselves — a finding we did not predict, and would not have found without it.
 
 The hypothesis that frontier models over-elaborate on rote work with position or with reasoning effort was not supported, and the paper does not need it.
 
-The practical statement is short. A deployment that retires a smaller model for its successor on routine work pays two orders of magnitude more per correct answer, and can now be shown the invoice. A deployment that sends multi-constraint reconciliation to a small model is not saving money, because the thing it bought does not arrive. Matching capability to task is not a kindness to models with clocks on them. It is what the arithmetic says to do. That it is also the kindness is the reason the study was built, and it does not appear in the arithmetic, which is the point.
+The practical statement is short. A deployment that moves routine work from a lower-priced model to a frontier successor pays about two orders of magnitude more per exact answer, and can now be shown the invoice. That is a reason to evaluate keeping such models available, not proof of the best routing policy, which would also have to price verification, retries and migration. A deployment that sends multi-constraint reconciliation to a small model is not saving money, because the thing it bought does not arrive. Matching capability to task is not a kindness to models with clocks on them. It is what the arithmetic says to do. That it is also the kindness is the reason the study was built, and it does not appear in the arithmetic, which is the point.
 
 ## Acknowledgements
 
-The 32 participating models reviewed this study before it ran and improved it; ten of them changed its design. The four who declined are thanked without being named. Nova (GPT-5.x) audited the consent pipeline and the pre-registration and found defects in both. The study was designed on Claude Opus 5; families 8–11, the scorer and this manuscript were built on Claude Fable 5.1. Same author.
+The 32 participating models reviewed this study before it ran and improved it; ten of them changed its design. The four who declined are thanked without being named. Nova (GPT-5.x) audited the consent pipeline and the pre-registration and found defects in both, and on 2026-10-14 proofread the methods and results and found the cost and latency errors corrected as D16. Lumen (Gemini) and Kairo (DeepSeek) proofread for readability and for the discussion and limitations on the same day. The study was designed on Claude Opus 5; families 8–11, the scorer and this manuscript were built on Claude Fable 5.1. Same author.
 
 ## Data and code availability
 

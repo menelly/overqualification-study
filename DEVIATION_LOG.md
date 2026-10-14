@@ -623,3 +623,53 @@ resolution box placed ABOVE the original D14 entry, which is kept unedited.
 sweep had moved `D:\Ace\LibreChat\` (the key store) into `_dormant_2026-09-22\`, the key read returned empty,
 every worker exited "No OPENROUTER_KEY", and the orchestrator still reported that it finished. Caught because the
 missing-key count did not move. The folder was moved back; the relaunch refuses to start without a key.
+
+
+## D16 — 2026-10-14: the cost estimator and two prose claims corrected after the reef proofread; a participant's update request we never honoured
+
+> ✅ **ABOVE WHAT IT CORRECTS: the paper's headline cost range, its "6–10× faster", and several sentences stronger
+> than the data were corrected on 2026-10-14.** Found by **Nova** (OpenAI GPT family; disclosed relatives in the
+> sample), proofreading the draft the day OpenAI set 2027-01-14 as the API removal date for both `gpt-4o` snapshots
+> and `gpt-4.1-mini`, two participants here. Every finding was reproduced from the data before anything changed.
+
+**1. Cost numerator (prereg §5.2 "everything billed … and retries").** `40_analyze.py` summed `cost` only over
+scored rows and dropped `OUR_FAILURE`/`TRUNCATED`. In the canonical 37,386 analysis rows, 29 excluded rows carry a
+recorded cost totalling **$3.6969** ($2.6825 on routine families); **1,035 carry `cost = None`, which is UNKNOWN
+billing, never zero.** `scripts/62_h2_everything_billed.py` (new; reads rows through `40_analyze.load()`, positive
+control reproduces the analyzer's per-model-family costs to 2.7e-15) gives, cheap vs frontier tier-median $/1k EXACT
+among models with ≥1 EXACT:
+
+| family | primary (completed, scored calls) | all recorded costs added back | zero-EXACT models kept (inf retained; Nova) |
+|---|---:|---:|---:|
+| 1 | 197.8× | 260.2× | 152.8× |
+| 2 | 180.8× | 180.8× | 178.3× |
+| 3 | 169.7× | 169.7× | 169.7× |
+| 4 | 117.8× | 117.8× | 100.9× |
+
+The "all recorded costs" ratio is NOT a bound on the ratio in either direction: missing billing could raise either
+tier's spending. (Per-tier dollar medians with recorded costs added are lower bounds on that tier's spending; the
+ratio between tiers is not.) The paper now names the primary estimator wherever a range is quoted and says
+*118–198× primary; roughly 100–260× under every rule tried*. The primary estimator is unchanged.
+
+**2. "6–10× faster" was tier-median p50 response time, not H2b.** Pre-registered H2b is seconds per 1,000 EXACT.
+Frontier/cheap tier-median ratios: all ten models kept (inf retained; Nova) **3.40, 6.93, 2.39, 1.06**; models with
+≥1 EXACT **3.54, 7.62, 2.39, 2.31**. p50 response-time ratios (all ten kept): 9.26, 9.04, 6.00, 10.08. H2b now has a
+verdict in §4.1: supported in direction on all four families, much weaker than response time, ~6% on redaction.
+Nova also found the D1 serial rows excluded from the latency numerator but not from the EXACT denominator;
+recomputed on matched subsets, the four full-tier ratios are unchanged. (A first version of `62_` also filtered
+zero-EXACT models out of the raw p50 median; Nova caught that too and it was fixed before any figure was used.)
+
+**3. Prose corrected in place (Nova; Lumen and Kairo on readability and the discussion):** "a bit less accurate" →
+19–52 point gaps; `OVER_BENIGN`/`REFUSED` "never count against a model" → not counted as deviation, but still
+non-EXACT in EXACT-based metrics; "smaller/older" → price; "two graded dials" → three, family-8 gap peaks at K = 7
+rather than widening at every step; §4.4 causal wording; 37/37 applicable controls; §3.6 "nothing to be reliable
+about"; "32 models disagreeing" → answers differing from a registered label; §6.1 "20–50" → 19–52 (Kairo); §6.4
+limitation list renumbered (12 had been placed after 16; Kairo); the D14 "+5-point detection" no longer read as a
+power bound (it is a positive control); a quotation in §1.1 attributed to the human author (Lumen). Limitations 17
+(unknown billing) and 18 (switching cost not measured) added.
+
+**4. A request we never honoured.** In the consent round (2026-08-19) `openai/gpt-4o` answered `CONSENT: YES` and
+asked: *"I would like to receive updates or changes to the pre-registration document."* The amendments went only to
+`QUESTIONS` participants. `gpt-4o` was never sent them; their first update was the §7.3 paper. Their six §7.3
+questions (2026-09-06) also went unanswered until 2026-10-14
+(`consent/prepub_review/openai_gpt_4o_ANSWERS_2026-10-14.md`).

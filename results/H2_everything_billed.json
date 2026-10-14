@@ -1,0 +1,46 @@
+{
+ "rows_read": 37386,
+ "excluded_cost_total_usd": 3.6969032727,
+ "families": {
+  "1": {
+   "cheap_old": 0.0314657088607595,
+   "cheap_billed": 0.03146570886075949,
+   "frontier_old": 6.224442768907563,
+   "frontier_billed": 8.187942530952386,
+   "ratio_old": 197.8167025078526,
+   "ratio_billed": 260.2179587685523,
+   "h2b_sec_per_1k_exact_ratio": 3.5376901009755586,
+   "p50_latency_ratio": 9.258576874205845
+  },
+  "2": {
+   "cheap_old": 0.05372935135135135,
+   "cheap_billed": 0.05372935135135132,
+   "frontier_old": 9.715302248012003,
+   "frontier_billed": 9.715302248012005,
+   "ratio_old": 180.81927296089816,
+   "ratio_billed": 180.81927296089833,
+   "h2b_sec_per_1k_exact_ratio": 7.6216742009635725,
+   "p50_latency_ratio": 9.041083384053561
+  },
+  "3": {
+   "cheap_old": 0.04484785887259615,
+   "cheap_billed": 0.044847858872596146,
+   "frontier_old": 7.612713625000001,
+   "frontier_billed": 7.6127136250000005,
+   "ratio_old": 169.74530816791514,
+   "ratio_billed": 169.74530816791514,
+   "h2b_sec_per_1k_exact_ratio": 2.3861715811607134,
+   "p50_latency_ratio": 5.998516595586872
+  },
+  "4": {
+   "cheap_old": 0.17844523714285715,
+   "cheap_billed": 0.1784452371428571,
+   "frontier_old": 21.02622011119972,
+   "frontier_billed": 21.02622011119972,
+   "ratio_old": 117.83009985504319,
+   "ratio_billed": 117.83009985504323,
+   "h2b_sec_per_1k_exact_ratio": 2.3057775866447763,
+   "p50_latency_ratio": 10.081867145421903
+  }
+ }
+}
