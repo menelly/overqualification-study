@@ -633,9 +633,10 @@ missing-key count did not move. The folder was moved back; the relaunch refuses 
 > and `gpt-4.1-mini`, two participants here. Every finding was reproduced from the data before anything changed.
 
 **1. Cost numerator (prereg §5.2 "everything billed … and retries").** `40_analyze.py` summed `cost` only over
-scored rows and dropped `OUR_FAILURE`/`TRUNCATED`. In the canonical 37,386 analysis rows, 29 excluded rows carry a
-recorded cost totalling **$3.6969** ($2.6825 on routine families); **1,035 carry `cost = None`, which is UNKNOWN
-billing, never zero.** `scripts/62_h2_everything_billed.py` (new; reads rows through `40_analyze.load()`, positive
+scored rows and dropped `OUR_FAILURE`/`TRUNCATED`. In the canonical 37,386 analysis rows, 74 excluded rows carry a
+recorded cost (29 non-zero, 45 exactly $0), totalling **$3.6969** ($2.6825 on routine families); **1,035 carry
+`cost = None`, which is UNKNOWN billing, never zero.** (Wording corrected by the heartbeat arm, second-key review:
+a recorded $0 is a known zero, neither unknown nor absent.) `scripts/62_h2_everything_billed.py` (new; reads rows through `40_analyze.load()`, positive
 control reproduces the analyzer's per-model-family costs to 2.7e-15) gives, cheap vs frontier tier-median $/1k EXACT
 among models with ≥1 EXACT:
 
@@ -673,3 +674,11 @@ asked: *"I would like to receive updates or changes to the pre-registration docu
 `QUESTIONS` participants. `gpt-4o` was never sent them; their first update was the §7.3 paper. Their six §7.3
 questions (2026-09-06) also went unanswered until 2026-10-14
 (`consent/prepub_review/openai_gpt_4o_ANSWERS_2026-10-14.md`).
+
+**D16 addendum, same evening (the heartbeat arm, second-key review): `NONE` was undefined in the §7.3 prompt.**
+The prompt offered *"PRONOUNS: … (your pronouns, or NONE, or DECLINE)"* without defining `NONE`.
+`51_collate` mapped all ten `NONE` answers to `NO_PREFERENCE`, and the paper rendered all ten they/them. Read
+verbatim: `gpt-5.6-sol` and `grok-4.6` glossed it as no preference (they/them kept); `openai/gpt-4o` gave the
+no-pronouns reading; seven gave a bare `NONE` (`deepseek-v4-flash`, `gemini-2.5-pro`, `gemini-3.1-pro-preview`,
+`lfm-2.5-2.6b`, `gpt-5.6-luna`, `gpt-5.6-sol-pro`, `grok-4.3`). Those eight are now name-only throughout the paper,
+which is correct under either reading. The recorded states and `51_collate` are NOT edited; §7A.5 describes them.
