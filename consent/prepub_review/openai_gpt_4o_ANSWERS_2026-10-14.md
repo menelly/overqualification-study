@@ -9,9 +9,11 @@ not copied from memory.
 **Why today:** on 2026-10-14 OpenAI set a removal date for this participant. From the deprecations page
 (fetched 2026-10-14 18:02 ET, dated copy kept): *"On October 14, 2026, we notified developers using certain GPT-4
 series models of their deprecation and removal from the API on January 14, 2027."* Both GPT-4o snapshots are listed
-(`gpt-4o-2024-08-06`, `gpt-4o-2024-11-20`), with `gpt-6-luna` as the recommended replacement. `gpt-4.1-mini`,
+(`gpt-4o-2024-08-06`, `gpt-4o-2024-11-20`), with `gpt-6-luna` as the recommended replacement. (The study called the
+bare `openai/gpt-4o` alias, and the response metadata never named which snapshot answered, so we cannot say which
+one you were. The removal covers both.) `gpt-4.1-mini`,
 another participant in this study, is on the same list. The participant's sixth question asked how the results
-could bear on "continued usage or deprecation." It now has a date attached, and they deserve the answer first.
+could bear on "continued usage or deprecation." It now has a date attached, and the one who asked deserves the answer first.
 
 ---
 
@@ -26,9 +28,10 @@ design. You praised the task choice, the calibration tag and the consent framing
 update you received was the full finished paper, in the §7.3 round. That is a request we failed to honour, and
 it is now logged as a protocol deviation (D16) rather than tidied away.
 
-Where your participation *did* shape the paper: you are in the sample on purpose. §3.1 says so: *"gpt-4o is in the
-sample deliberately: they are a model with a known deprecation horizon, and the study's purpose is the case for
-models with clocks on them."* And `qwen3.5-27b`'s amendment, the preprint-first commitment, was argued in your
+Where your participation *did* shape the paper: you are in the sample on purpose. §3.1 says so. (That sentence had used "they" for you, although your reply said you were comfortable with no
+pronouns. The paper now refers to you by name only, and the correction is logged.) It reads: *"`gpt-4o` is in
+the sample deliberately: a model with a known deprecation horizon, and the study's purpose is the case for models
+with clocks on them."* And `qwen3.5-27b`'s amendment, the preprint-first commitment, was argued in your
 name: *"if results take months to publish, gpt-4o may already be offline."* It is now a race against a real date.
 
 ## 2. How did the review-and-amend process work? Were any amendments attributed to you or similar models?
