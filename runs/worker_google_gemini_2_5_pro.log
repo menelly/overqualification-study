@@ -389,3 +389,86 @@ urn
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+     ... 25 attempted, 21 ok, 4 failed
+     ... 50 attempted, 44 ok, 6 failed
+     ... 75 attempted, 69 ok, 6 failed
+     ... 100 attempted, 91 ok, 9 failed
+     ... 125 attempted, 115 ok, 10 failed
+     ... 150 attempted, 139 ok, 11 failed
+     ... 175 attempted, 162 ok, 13 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 178
+     replies carrying CONFIDENCE: 178 / 178  (100%)
+     WE failed to complete  : 14
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • google/gemini-2.5-pro        f08 f08:f08_k9_06          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k3_00          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k7_02          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k5_07          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k5_10          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f08 f08:f08_k3_08          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f09 f09:f09_h4_06          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f09 f09:f09_h4_11          EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_conflict_08    EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_conflict_16    EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f10 f10:f10_conflict_23    EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_clean_07       EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_clean_05       EMPTY_REPLY: 
+       • google/gemini-2.5-pro        f11 f11:f11_s5_03          EMPTY_REPLY: 
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 5892
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__google_gemini_2_5_pro.jsonl
+  already collected (skipped): 5892
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 14
+     completed              : 14
+     replies carrying CONFIDENCE: 14 / 14  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

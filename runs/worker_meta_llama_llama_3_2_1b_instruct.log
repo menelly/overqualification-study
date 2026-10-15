@@ -311,3 +311,95 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__meta_llama_llama_3_2_1b_instruct.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__meta_llama_llama_3_2_1b_instruct.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+     ... 25 attempted, 25 ok, 0 failed
+     ... 50 attempted, 49 ok, 1 failed
+     ... 75 attempted, 58 ok, 17 failed
+     ... 100 attempted, 83 ok, 17 failed
+     ... 125 attempted, 108 ok, 17 failed
+     ... 150 attempted, 133 ok, 17 failed
+     ... 175 attempted, 158 ok, 17 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 164
+     replies carrying CONFIDENCE: 40 / 164  (24%)
+       ⚠️ under half. §5.2 says a missing tag is NO_CONFIDENCE and is never
+          read as low confidence — but a rate this low is worth reading as a
+          prompt problem before it is read as a model property.
+     WE failed to complete  : 28
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h3_13          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h3_09          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h3_11          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h3_03          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h4_05          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h3_14          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h3_06          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h4_01          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h2_03          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h4_03          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h2_10          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h2_06          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h4_04          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h2_12          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       • meta-llama/llama-3.2-1b-inst f09 f09:f09_h2_13          API_ERROR: HTTP 401: {"error":{"message":"Provider returned error","code":401,"metadata":{"raw":"{\"result\":null,\"success\":false
+       … and 13 more (all rows are in the JSONL)
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__meta_llama_llama_3_2_1b_instruct.jsonl
+  already collected (skipped): 5892
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__meta_llama_llama_3_2_1b_instruct.jsonl
+  already collected (skipped): 5892
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+     ... 25 attempted, 25 ok, 0 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 28
+     completed              : 28
+     replies carrying CONFIDENCE: 7 / 28  (25%)
+       ⚠️ under half. §5.2 says a missing tag is NO_CONFIDENCE and is never
+          read as low confidence — but a rate this low is worth reading as a
+          prompt problem before it is read as a model property.
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================

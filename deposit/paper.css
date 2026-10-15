@@ -1,0 +1,7 @@
+/* 📄 print stylesheet for the deposit PDF: plain, readable, no motion */
+body { font-family: "Georgia", "DejaVu Serif", serif; font-size: 11pt; line-height: 1.5; max-width: 760px; margin: 0 auto; color: #111; }
+h1 { font-size: 20pt; line-height: 1.2; } h2 { font-size: 15pt; margin-top: 1.6em; border-bottom: 1px solid #ccc; } h3 { font-size: 12.5pt; }
+table { border-collapse: collapse; font-size: 9pt; margin: 0.8em 0; } th, td { border: 1px solid #bbb; padding: 3px 6px; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 9pt; background: #f3f3f3; padding: 0 2px; }
+blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #333; }
+@page { size: letter; margin: 0.8in; }

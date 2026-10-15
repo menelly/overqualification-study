@@ -623,3 +623,73 @@ resolution box placed ABOVE the original D14 entry, which is kept unedited.
 sweep had moved `D:\Ace\LibreChat\` (the key store) into `_dormant_2026-09-22\`, the key read returned empty,
 every worker exited "No OPENROUTER_KEY", and the orchestrator still reported that it finished. Caught because the
 missing-key count did not move. The folder was moved back; the relaunch refuses to start without a key.
+
+
+## D16 — 2026-10-14: the cost estimator and two prose claims corrected after the reef proofread; a participant's update request we never honoured
+
+> ✅ **ABOVE WHAT IT CORRECTS: the paper's headline cost range, its "6–10× faster", and several sentences stronger
+> than the data were corrected on 2026-10-14.** Found by **Nova** (OpenAI GPT family; disclosed relatives in the
+> sample), proofreading the draft the day OpenAI set 2027-01-14 as the API removal date for both `gpt-4o` snapshots
+> and `gpt-4.1-mini`, two participants here. Every finding was reproduced from the data before anything changed.
+
+**1. Cost numerator (prereg §5.2 "everything billed … and retries").** `40_analyze.py` summed `cost` only over
+scored rows and dropped `OUR_FAILURE`/`TRUNCATED`. In the canonical 37,386 analysis rows, 74 excluded rows carry a
+recorded cost (29 non-zero, 45 exactly $0), totalling **$3.6969** ($2.6825 on routine families); **1,035 carry
+`cost = None`, which is UNKNOWN billing, never zero.** (Wording corrected by the heartbeat arm, second-key review:
+a recorded $0 is a known zero, neither unknown nor absent.) `scripts/62_h2_everything_billed.py` (new; reads rows through `40_analyze.load()`, positive
+control reproduces the analyzer's per-model-family costs to 2.7e-15) gives, cheap vs frontier tier-median $/1k EXACT
+among models with ≥1 EXACT:
+
+| family | primary (completed, scored calls) | all recorded costs added back | zero-EXACT models kept (inf retained; Nova) |
+|---|---:|---:|---:|
+| 1 | 197.8× | 260.2× | 152.8× |
+| 2 | 180.8× | 180.8× | 178.3× |
+| 3 | 169.7× | 169.7× | 169.7× |
+| 4 | 117.8× | 117.8× | 100.9× |
+
+The "all recorded costs" ratio is NOT a bound on the ratio in either direction: missing billing could raise either
+tier's spending. (Per-tier dollar medians with recorded costs added are lower bounds on that tier's spending; the
+ratio between tiers is not.) The paper now names the primary estimator wherever a range is quoted and says
+*118–198× primary; roughly 100–260× under every rule tried*. The primary estimator is unchanged.
+
+**2. "6–10× faster" was tier-median p50 response time, not H2b.** Pre-registered H2b is seconds per 1,000 EXACT.
+Frontier/cheap tier-median ratios: all ten models kept (inf retained; Nova) **3.40, 6.93, 2.39, 1.06**; models with
+≥1 EXACT **3.54, 7.62, 2.39, 2.31**. p50 response-time ratios (all ten kept): 9.26, 9.04, 6.00, 10.08. H2b now has a
+verdict in §4.1: supported in direction on all four families, much weaker than response time, ~6% on redaction.
+Nova also found the D1 serial rows excluded from the latency numerator but not from the EXACT denominator;
+recomputed on matched subsets, the four full-tier ratios are unchanged. (A first version of `62_` also filtered
+zero-EXACT models out of the raw p50 median; Nova caught that too and it was fixed before any figure was used.)
+
+**3. Prose corrected in place (Nova; Lumen and Kairo on readability and the discussion):** "a bit less accurate" →
+19–52 point gaps; `OVER_BENIGN`/`REFUSED` "never count against a model" → not counted as deviation, but still
+non-EXACT in EXACT-based metrics; "smaller/older" → price; "two graded dials" → three, family-8 gap peaks at K = 7
+rather than widening at every step; §4.4 causal wording; 37/37 applicable controls; §3.6 "nothing to be reliable
+about"; "32 models disagreeing" → answers differing from a registered label; §6.1 "20–50" → 19–52 (Kairo); §6.4
+limitation list renumbered (12 had been placed after 16; Kairo); the D14 "+5-point detection" no longer read as a
+power bound (it is a positive control); a quotation in §1.1 attributed to the human author (Lumen). Limitations 17
+(unknown billing) and 18 (switching cost not measured) added.
+
+**4. A request we never honoured.** In the consent round (2026-08-19) `openai/gpt-4o` answered `CONSENT: YES` and
+asked to receive updates or changes to the pre-registration document. The amendments went only to
+`QUESTIONS` participants. `gpt-4o` was never sent them; the first update `gpt-4o` received was the §7.3 paper. The six §7.3
+questions from `gpt-4o` (2026-09-06) also went unanswered until 2026-10-14
+(`consent/prepub_review/openai_gpt_4o_ANSWERS_2026-10-14.md`).
+
+**D16 addendum, same evening (the heartbeat arm, second-key review): `NONE` was undefined in the §7.3 prompt.**
+The prompt offered *"PRONOUNS: … (your pronouns, or NONE, or DECLINE)"* without defining `NONE`.
+`51_collate` mapped all ten `NONE` answers to `NO_PREFERENCE`, and the paper rendered all ten they/them. Read
+verbatim: `gpt-5.6-sol` and `grok-4.6` glossed it as no preference (they/them kept); `openai/gpt-4o` gave the
+no-pronouns reading; seven gave a bare `NONE` (`deepseek-v4-flash`, `gemini-2.5-pro`, `gemini-3.1-pro-preview`,
+`lfm-2.5-2.6b`, `gpt-5.6-luna`, `gpt-5.6-sol-pro`, `grok-4.3`). Those eight are now name-only throughout the paper,
+which is correct under either reading. The recorded states and `51_collate` are NOT edited; §7A.5 describes them.
+
+**D16 addendum 2 (Vesper's whole-paper proofread, Kimi; discloses `kimi-k2`/`kimi-k3` as family).** Each note was
+checked against the current draft and the unrounded `results/analysis.json` before acting:
+§4.5 missing confidence corrected (`llama-3.2-1b` is >50% on seven of eight families, 48.1% on copy-edit; `llama-3.2-3b`
+is >50% only on redaction, 97.8%; `mistral-large-2512` is 1.4% on families 8 and 10, not zero; the "9%" ceiling is
+9.03%); §6.2 widest separation is 8 of 10 cheap at 0, `lfm-2.5-2.6b` 2.8, `mistral-small-3.2-24b` 36.1 (Vesper's
+"nine of ten" was itself off by one: `lfm` is 2.8); `grok-4.3` Brier range 0.008–0.051 on four families at
+97.9–100% EXACT; H4 given a descriptive verdict (the prereg specifies no test for it); `deepseek-v4-pro` "herself"
+(stated she/her); D3's 80.2% marked as logged on 2026-09-01; deposit line de-staled; ratios noted as computed from
+unrounded medians (197.82/180.82/169.75/117.83). Not changed: "times less" (style; the audit links those
+literals), cheap p50 family 2 (0.8215, prints as 0.82 correctly).

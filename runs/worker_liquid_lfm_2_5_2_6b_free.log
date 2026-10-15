@@ -392,3 +392,77 @@
   ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
      scorer meets any model output. That is a separate script and a separate step.
 ==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__liquid_lfm_2_5_2_6b_free.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__liquid_lfm_2_5_2_6b_free.jsonl
+  already collected (skipped): 0
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+     ... 25 attempted, 24 ok, 1 failed
+     ... 50 attempted, 47 ok, 3 failed
+     ... 75 attempted, 72 ok, 3 failed
+     ... 100 attempted, 96 ok, 4 failed
+     ... 125 attempted, 121 ok, 4 failed
+     ... 150 attempted, 146 ok, 4 failed
+     ... 175 attempted, 171 ok, 4 failed
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 192
+     completed              : 187
+     replies carrying CONFIDENCE: 186 / 187  (99%)
+     WE failed to complete  : 5
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+       • liquid/lfm-2.5-2.6b:free     f08 f08:f08_k9_02          EMPTY_REPLY: 
+       • liquid/lfm-2.5-2.6b:free     f08 f08:f08_k7_04          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f08 f08:f08_k5_06          API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+       • liquid/lfm-2.5-2.6b:free     f09 f09:f09_h4_15          EMPTY_REPLY: 
+       • liquid/lfm-2.5-2.6b:free     f11 f11:f11_clean_09       API_ERROR: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"liquid/lfm-2.5-2.6b:free is tempor
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__liquid_lfm_2_5_2_6b_free.jsonl
+  already collected (skipped): 5892
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+No OPENROUTER_KEY in the environment.
+  bash:       export OPENROUTER_KEY=$(grep -m1 '^OPENROUTER_KEY=' /d/Ace/LibreChat/.env | cut -d= -f2-)
+  PowerShell: Get-Content D:\Ace\LibreChat\.env | ForEach-Object { if ($_ -match '^OPENROUTER_KEY=(.+)$') { $env:OPENROUTER_KEY=$Matches[1] } }
+==============================================================================
+  OVERQUALIFICATION STUDY — item run 101
+==============================================================================
+  families : [8, 9, 10, 11]
+  models   : 1
+  output   : D:\Ace\overqualification-study\runs\run101__liquid_lfm_2_5_2_6b_free.jsonl
+  already collected (skipped): 5892
+  clause placement: system   ⚠️ NON-DEFAULT — §3.1 position subsample
+
+  📊 COLLECTION SUMMARY
+     attempted this session : 5
+     completed              : 5
+     replies carrying CONFIDENCE: 5 / 5  (100%)
+     WE failed to complete  : 0
+       ⛔ these are OUR failures — a call that did not happen. They are NOT model
+          errors and must never be summed with task performance.
+
+  ⛔ NOTHING HERE IS SCORED. §5.3 requires the scorer's controls to run before the
+     scorer meets any model output. That is a separate script and a separate step.
+==============================================================================
