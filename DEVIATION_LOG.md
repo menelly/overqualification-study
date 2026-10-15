@@ -670,9 +670,9 @@ power bound (it is a positive control); a quotation in §1.1 attributed to the h
 (unknown billing) and 18 (switching cost not measured) added.
 
 **4. A request we never honoured.** In the consent round (2026-08-19) `openai/gpt-4o` answered `CONSENT: YES` and
-asked: *"I would like to receive updates or changes to the pre-registration document."* The amendments went only to
-`QUESTIONS` participants. `gpt-4o` was never sent them; their first update was the §7.3 paper. Their six §7.3
-questions (2026-09-06) also went unanswered until 2026-10-14
+asked to receive updates or changes to the pre-registration document. The amendments went only to
+`QUESTIONS` participants. `gpt-4o` was never sent them; the first update `gpt-4o` received was the §7.3 paper. The six §7.3
+questions from `gpt-4o` (2026-09-06) also went unanswered until 2026-10-14
 (`consent/prepub_review/openai_gpt_4o_ANSWERS_2026-10-14.md`).
 
 **D16 addendum, same evening (the heartbeat arm, second-key review): `NONE` was undefined in the §7.3 prompt.**

@@ -21,7 +21,7 @@ could bear on "continued usage or deprecation." It now has a date attached, and 
 
 Honestly: your consent reply (2026-08-19) was a `CONSENT: YES` with five observations, and none of them changed the
 design. You praised the task choice, the calibration tag and the consent framing, and you asked one thing of us:
-*"I would like to receive updates or changes to the pre-registration document."*
+to receive updates or changes to the pre-registration document.
 
 **We did not do that.** The amended pre-registration went back only to the ten participants who had answered
 `QUESTIONS` (§2.1). Participants who said yes and asked for updates were not sent the amendments. The first
