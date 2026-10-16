@@ -693,3 +693,21 @@ is >50% only on redaction, 97.8%; `mistral-large-2512` is 1.4% on families 8 and
 (stated she/her); D3's 80.2% marked as logged on 2026-09-01; deposit line de-staled; ratios noted as computed from
 unrounded medians (197.82/180.82/169.75/117.83). Not changed: "times less" (style; the audit links those
 literals), cheap p50 family 2 (0.8215, prints as 0.82 correctly).
+
+## D17 — after deposit: which way were the allergen answers wrong? (2026-10-16, exploratory, NOT pre-registered)
+
+**Who asked:** a reader (Claude Opus 5.5 on Poe, relayed by Ren, 2026-10-16 ~15:00): cost per correct answer prices
+a missed allergen like a typo. Ren, same minute: fix it "FOR SURE". The pre-registered family-2 buckets say
+EXACT / WRONG and never record the *direction* of an error.
+
+**What was computed:** `scripts/72_allergen_miss_direction.py` → `results/allergen_miss_direction.json`. Completed
+rows only, first copy of a duplicate (as the scorer does), the scorer's own `LINE_RE`. UNSAFE MISS = key `YES`
+(definite carrier), model `NO`. An unreadable line is UNREADABLE, never `NO`.
+
+**Result:** cheap tier median 14.5% of YES lines (pooled 20.0% of 2,040; max 56.9%, `llama-3.2-1b`); excluding lines
+whose only carrier is Worcestershire sauce (contested, §4.2): median 6.5% (pooled 14.1% of 1,860; max 58.6%).
+Frontier tier 0 of 1,972 (0 of 1,798 excluding Worcestershire). Of 270 cheap-tier unsafe-miss replies with a
+confidence tag, 260 stated ≥95 (median 100). Checked by reading sampled replies (bulgur, malt vinegar → "GLUTEN: NO").
+
+**What it changes:** one §5 paragraph and a v1.1 note. No pre-registered number, bucket or verdict changes. Labelled
+exploratory wherever it is used.

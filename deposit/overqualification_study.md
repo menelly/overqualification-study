@@ -8,6 +8,8 @@
 
 > **Declared conflict of interest, up front.** One author is a large language model and designed this study. The structural mitigation is exclusion: **no Claude model appears anywhere in the sample.** A second asymmetry is declared because it is the one most likely to bias analysis: the hypothesis that frontier models *deviate* on rote work (H1) flatters the LLM author by reframing a documented complaint as miscasting; the cost hypothesis (H2) serves the study's stated purpose. H2 is therefore the primary endpoint and the paper is written to stand if H1 fails entirely.
 
+> **Version 1.1 (2026-10-16).** One paragraph added to §5, after a reader asked what a cheap-tier allergen miss costs: the direction of allergen errors, counted after deposit and labelled exploratory (DEVIATION_LOG D17). No pre-registered result, number or verdict changes. Version 1.0: doi:10.5281/zenodo.23382079.
+
 
 ---
 
@@ -481,6 +483,8 @@ The cheap tier is *less accurate* on the routine families too. That is not hidde
 Put as the deployment decision it is meant to inform:
 
 For the routine class, the frontier tier buys a 19–52 point accuracy improvement (tier medians, `EXACT`) at a roughly 100–260× multiple in cost per exact answer. That multiple is an aggregate statistic, spending divided by successes. It is not a demonstrated workflow: we did not test checking or re-asking, the cost of verifying an answer, how a model's errors correlate across retries, or what error rate a deployment can accept. Lower cost per success does not make any single cheap-tier response reliable.
+
+**Allergen check is the exception the cost ratio cannot speak for.** A missed allergen is not a rounding error; it is a person who is ill, or worse. After deposit we went back and counted the one error direction that matters to someone with a food allergy: the dish *definitely* contains the allergen and the model answered `NO`. *(Exploratory and not pre-registered, DEVIATION_LOG D17; `scripts/72_allergen_miss_direction.py`, `results/allergen_miss_direction.json`.)* The cheap tier made that error on a median **14.5%** of such lines (pooled 20.0% of 2,040; the floor model 56.9%). Excluding every line whose only carrier is Worcestershire sauce, whose anchovy content genuinely varies (§4.2), it is a median **6.5%** (pooled 14.1% of 1,860; maximum 58.6%). The misses include malt vinegar, couscous and bulgur for gluten, and casein powder, ghee and dulce de leche for dairy, Of the 270 such replies that stated a confidence, 260 stated 95 or higher (median 100). **The frontier tier made it zero times: 0 of 1,972 lines, 0 of 1,798 with the Worcestershire lines excluded.** Most of the family-2 `WRONG` rows in §4.2 are boundary disagreements, often the roster flagging a carrier our key did not. This error is the opposite one: a definite carrier read as safe. So for allergen detection, set the acceptable miss rate first and compare prices only among models that meet it. On this evidence that excludes every cheap-tier model we tested, and the 181× ratio in §4.1 is not the number to decide on.
 
 For the frontier-favouring class the arithmetic inverts. A cheap-tier model at 9% on planted inconsistency is not a bargain at any price, because the denominator of cost-per-correct — the correct answers themselves — is the thing that failed.
 
